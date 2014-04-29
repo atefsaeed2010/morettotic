@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- Layout set for data you can use accordingly -->
+
+    <RadioGroup
+        android:id="@+id/radioGroupRole1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/radioButtonTranslator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/radioButtonUser"
+            android:layout_alignBottom="@+id/radioButtonUser"
+            android:layout_toRightOf="@+id/radioButtonUser"
+            android:text="TRANSLATOR" />
+
+        <RadioButton
+            android:id="@+id/radioButtonUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="USER" />
+    </RadioGroup>
+
+    <RelativeLayout
+        android:id="@+id/rel_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/radioGroupRole1"
+        android:padding="10dip" >
+
+        <TextView
+            android:id="@+id/textViewProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="@string/proficiency"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <Button
+            android:id="@+id/buttonFinish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/password11"
+            android:background="@drawable/bt_save" />
+
+        <EditText
+            android:id="@+id/birthday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/name"
+            android:ems="10"
+            android:hint="@string/birth"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/paypallacc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/birthday"
+            android:ems="10"
+            android:hint="@string/paypall_acc"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/password12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/paypallacc"
+            android:ems="10"
+            android:hint="@string/passwd"
+            android:imeActionId="@+id/login"
+            android:imeActionLabel="@string/passwd"
+            android:imeOptions="actionUnspecified"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@string/passwd" />
+
+        <EditText
+            android:id="@+id/password11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/password12"
+            android:ems="10"
+            android:hint="@string/passwd"
+            android:imeActionId="@+id/login"
+            android:imeActionLabel="@string/passwd"
+            android:imeOptions="actionUnspecified"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@string/passwd" />
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textViewProfile"
+            android:layout_below="@+id/textViewProfile"
+            android:layout_marginTop="77dp"
+            android:ems="10"
+            android:hint="@string/name"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:singleLine="true" >
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/ButtonAvatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/buttonFinish"
+            android:layout_alignBottom="@+id/buttonFinish"
+            android:layout_toLeftOf="@+id/buttonFinish"
+            android:background="@drawable/bt_upload1" />
+
+    </RelativeLayout>
+
+    <RadioGroup
+        android:id="@+id/radioGroupFlags"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/rel_data"
+        android:layout_marginTop="50dp"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/radioButtonBrazil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/ic_brasil"
+            android:text="BR" />
+
+        <RadioButton
+            android:id="@+id/radioButtonGr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/ic_germany"
+            android:text="GR" />
+
+        <RadioButton
+            android:id="@+id/radioButtonEua"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/ic_eua"
+            android:text="EN" />
+
+        <RadioButton
+            android:id="@+id/radioButtonFrance"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/checkBoxEula"
+            android:button="@drawable/ic_france"
+            android:text="FR" />
+    </RadioGroup>
+
+</RelativeLayout>
