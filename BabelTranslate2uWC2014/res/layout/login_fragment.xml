@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- you can set layout accordingly -->
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="98dp"
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/password12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/email"
+        android:ems="10"
+        android:hint="@string/passwd"
+        android:imeActionId="@+id/login"
+        android:imeActionLabel="@string/passwd"
+        android:imeOptions="actionUnspecified"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:singleLine="true" >
+
+        <requestFocus />
+    </EditText>
+
+    <RadioGroup
+        android:id="@+id/radioGroupRole1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/password12"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/radioButtonFrance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/checkBoxEula"
+            android:button="@drawable/ic_france"
+            android:text="FR" />
+
+        <RadioButton
+            android:id="@+id/radioButtonBrazil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/ic_brasil"
+            android:checked="true"
+            android:text="BR" />
+
+        <RadioButton
+            android:id="@+id/radioButtonGr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/ic_germany"
+            android:text="GR" />
+
+        <RadioButton
+            android:id="@+id/radioButtonEua"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/radioButtonFrance"
+            android:button="@drawable/ic_eua"
+            android:text="EN" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/sign_in_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/checkBoxEula"
+        android:hint="Signin or register"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:text="Signin or register" />
+
+    <CheckBox
+        android:id="@+id/checkBoxEula"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/radioGroupRole1"
+        android:checked="true"
+        android:text="@string/eula" />
+
+</RelativeLayout>
