@@ -114,10 +114,10 @@ public class CSIPService {
 		SipCallSession initialSession = a.getIntent().getParcelableExtra(
 				SipManager.EXTRA_CALL_INFO);
 
-		synchronized (callMutex) {
+		/*synchronized (callMutex) {
 			callsInfo = new SipCallSession[1];
 			callsInfo[0] = initialSession;
-		}
+		}*/
 
 		((MainActivity) a).bindService(new Intent(a, SipService.class),
 				instance);
