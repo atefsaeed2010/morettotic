@@ -56,12 +56,12 @@ public class FragmentConference extends Fragment {
 		final Button desligar = (Button) rootView.findViewById(R.id.button2);
 		CSIPService csipService = CSIPService.getInstance(getActivity(),
 				MY_PROFILE);
-		if (!csipService.isChamadaEmAndamento()) {
+		/*if (!csipService.isChamadaEmAndamento()) {
 			CSIPService.getInstance(getActivity(), MY_PROFILE).ligar();
 			atender.setVisibility(View.GONE);
 		} else {
 			atender.setVisibility(View.VISIBLE);
-		}
+		}*/
 		desligar.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				// Perform action on click

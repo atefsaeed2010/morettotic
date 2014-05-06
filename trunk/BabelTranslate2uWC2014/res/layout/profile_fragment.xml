@@ -48,14 +48,6 @@
             android:text="@string/proficiency"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <Button
-            android:id="@+id/buttonFinish"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignRight="@+id/password11"
-            android:background="@drawable/bt_save" />
-
         <EditText
             android:id="@+id/birthday"
             android:layout_width="match_parent"
@@ -130,12 +122,22 @@
 
         <Button
             android:id="@+id/ButtonAvatar"
+            style="@style/button_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/buttonFinish"
             android:layout_alignBottom="@+id/buttonFinish"
             android:layout_toLeftOf="@+id/buttonFinish"
-            android:background="@drawable/bt_upload1" />
+            android:text="Avatar" />
+
+        <Button
+            android:id="@+id/buttonFinish"
+            style="@style/button_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text="Save" />
 
     </RelativeLayout>
 

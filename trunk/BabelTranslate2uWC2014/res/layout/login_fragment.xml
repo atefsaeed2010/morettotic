@@ -87,6 +87,7 @@
         android:hint="Signin or register"
         android:paddingLeft="32dp"
         android:paddingRight="32dp"
+        style="@style/button_text" 
         android:text="Signin or register" />
 
     <CheckBox

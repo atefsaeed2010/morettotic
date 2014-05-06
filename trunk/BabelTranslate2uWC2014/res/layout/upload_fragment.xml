@@ -32,9 +32,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/webView1"
+        android:layout_below="@+id/messageText"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="19dp"
-        android:background="@drawable/ic_avatar_edit"
+        android:background="@drawable/pprofile"
         android:text=" " />
 
     <Button
@@ -43,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:hint="Upload"
-        android:background="@drawable/bt_upload1"/>
+        android:text="Upload"
+        style="@style/button_text"/>
 
 </RelativeLayout>
