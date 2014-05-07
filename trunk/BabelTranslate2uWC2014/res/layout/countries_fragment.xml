@@ -1,59 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/btjapao"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
     <!-- you can set layout accordingly -->
 
-    <ImageButton
-        android:id="@+id/imageButtonFR"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView1"
-        android:layout_marginLeft="68dp"
-        android:src="@drawable/ic_france" />
-
-    <ImageButton
-        android:id="@+id/imageButtonEN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/imageButtonGR"
-        android:layout_marginLeft="68dp"
-        android:src="@drawable/ic_eua" />
-
-    <TextView
-        android:id="@+id/TextView01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_alignParentTop="true"
-        android:text="Service Type"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <ImageButton
-        android:id="@+id/imageButtonBR"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imageButtonGR"
-        android:layout_alignTop="@+id/imageButtonEN"
-        android:src="@drawable/ic_brasil" />
-
-    <ImageButton
-        android:id="@+id/imageButtonGR"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_marginLeft="22dp"
-        android:layout_toRightOf="@+id/imageButtonFR"
-        android:src="@drawable/ic_germany" />
-
     <Spinner
         android:id="@+id/spinner1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/TextView01"
+        android:layout_centerHorizontal="true"
         android:entries="@array/service_array" />
 
     <TextView
@@ -64,5 +21,80 @@
         android:layout_centerHorizontal="true"
         android:text="Translate to"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ImageButton
+        android:id="@+id/imageButtonEN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_toLeftOf="@+id/textView1"
+        android:src="@drawable/uk" />
+
+    <ImageButton
+        android:id="@+id/imageButtonCH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageButtonES"
+        android:layout_toLeftOf="@+id/textView1"
+        android:src="@drawable/ch" />
+
+    <ImageButton
+        android:id="@+id/imageButtonES"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageButtonEN"
+        android:layout_toRightOf="@+id/imageButtonEN"
+        android:src="@drawable/sp" />
+
+    <ImageButton
+        android:id="@+id/imageButtonFR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageButtonCH"
+        android:layout_toRightOf="@+id/imageButtonES"
+        android:src="@drawable/fr" />
+
+    <ImageButton
+        android:id="@+id/imageButtonGR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageButtonCH"
+        android:layout_toRightOf="@+id/imageButtonFR"
+        android:src="@drawable/gr" />
+
+    <ImageButton
+        android:id="@+id/imageButtonJP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageButtonCH"
+        android:layout_toLeftOf="@+id/imageButtonFR"
+        android:src="@drawable/jp" />
+
+    <ImageButton
+        android:id="@+id/imageButtonBR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageButtonJP"
+        android:layout_toLeftOf="@+id/imageButtonGR"
+        android:src="@drawable/br" />
+
+    <ImageButton
+        android:id="@+id/imageButtonMR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageButtonGR"
+        android:layout_below="@+id/imageButtonGR"
+        android:src="@drawable/mr" />
+
+    <Button
+        android:id="@+id/buttonCallTranslator"
+        style="@style/button_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/imageButtonCH"
+        android:layout_marginTop="72dp"
+        android:text="Call a translator" />
 
 </RelativeLayout>
