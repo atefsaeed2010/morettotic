@@ -49,14 +49,14 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/checkBoxEula"
-            android:button="@drawable/ic_france"
+            android:button="@drawable/fr"
             android:text="FR" />
 
         <RadioButton
             android:id="@+id/radioButtonBrazil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:button="@drawable/ic_brasil"
+            android:button="@drawable/br"
             android:checked="true"
             android:text="BR" />
 
@@ -64,7 +64,7 @@
             android:id="@+id/radioButtonGr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:button="@drawable/ic_germany"
+            android:button="@drawable/gr"
             android:text="GR" />
 
         <RadioButton
@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/radioButtonFrance"
-            android:button="@drawable/ic_eua"
+            android:button="@drawable/uk"
             android:text="EN" />
     </RadioGroup>
 
