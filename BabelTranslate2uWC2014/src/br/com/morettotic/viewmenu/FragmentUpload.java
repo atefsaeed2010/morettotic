@@ -1,18 +1,13 @@
 package br.com.morettotic.viewmenu;
 
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
+import static br.com.morettotic.entity.Profile.MAIN_URL;
+import static br.com.morettotic.entity.Profile.UPLOAD_CONFIG;
+import static br.com.morettotic.viewmenu.MainActivity.MY_PROFILE;
+
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-
-import br.com.morettotic.entity.Profile;
-import br.com.morettotic.viewmenu.httputil.URLParser;
-
-import com.vizteck.navigationdrawer.R;
 
 import android.app.Fragment;
 import android.app.ProgressDialog;
@@ -27,14 +22,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import static br.com.morettotic.viewmenu.MainActivity.*;
-import static br.com.morettotic.entity.Profile.*;
+import br.com.morettotic.entity.Profile;
+import br.com.morettotic.viewmenu.httputil.URLParser;
+
+import com.vizteck.navigationdrawer.R;
 
 public class FragmentUpload extends Fragment {
 	TextView messageText;

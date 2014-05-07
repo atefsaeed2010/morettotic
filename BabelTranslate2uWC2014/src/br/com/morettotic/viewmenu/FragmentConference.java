@@ -46,7 +46,7 @@ public class FragmentConference extends Fragment {
 				.findViewById(R.id.textView3);
 
 		credits.setText("Credits: (" + MY_PROFILE.getCredits() + ") minutes");
-
+     
 		dialog = new ProgressDialog(rootView.getContext());
 		WebView web = (WebView) rootView.findViewById(R.id.avatarIdWebView);
 		// web.loadUrl("http://nosnaldeia.com.br/babel_json_services/libs/avatars/resized_IMG_20140322_180057.jpg");
