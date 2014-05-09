@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/btjapao"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:gravity="left" >
 
     <!-- you can set layout accordingly -->
 
@@ -22,79 +23,92 @@
         android:text="Translate to"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <ImageButton
-        android:id="@+id/imageButtonEN"
+    <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_toLeftOf="@+id/textView1"
-        android:src="@drawable/uk" />
+        android:layout_alignLeft="@+id/linearLayout1"
+        android:layout_below="@+id/linearLayout1" >
 
-    <ImageButton
-        android:id="@+id/imageButtonCH"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageButtonES"
-        android:layout_toLeftOf="@+id/textView1"
-        android:src="@drawable/ch" />
+        <ImageButton
+            android:id="@+id/imageButtonBR"
+            style="@style/button_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/br_b" />
 
-    <ImageButton
-        android:id="@+id/imageButtonES"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/imageButtonEN"
-        android:layout_toRightOf="@+id/imageButtonEN"
-        android:src="@drawable/sp" />
+        <ImageButton
+            android:id="@+id/imageButtonMR"
+            style="@style/button_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/mr_b" />
+    </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/imageButtonFR"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/imageButtonCH"
-        android:layout_toRightOf="@+id/imageButtonES"
-        android:src="@drawable/fr" />
+        android:layout_alignLeft="@+id/linearLayout2"
+        android:layout_below="@+id/linearLayout2" >
 
-    <ImageButton
-        android:id="@+id/imageButtonGR"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/imageButtonCH"
-        android:layout_toRightOf="@+id/imageButtonFR"
-        android:src="@drawable/gr" />
+        <ImageButton
+            android:id="@+id/imageButtonJP"
+            style="@style/button_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="42dp"
+            android:src="@drawable/jp_b" />
 
-    <ImageButton
-        android:id="@+id/imageButtonJP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/imageButtonCH"
-        android:layout_toLeftOf="@+id/imageButtonFR"
-        android:src="@drawable/jp" />
+        <ImageButton
+            android:id="@+id/imageButtonGR"
+            style="@style/button_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/gr_b" />
+    </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/imageButtonBR"
+    <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/imageButtonJP"
-        android:layout_toLeftOf="@+id/imageButtonGR"
-        android:src="@drawable/br" />
+        android:layout_alignLeft="@+id/linearLayout1"
+        android:layout_below="@+id/textView1" >
 
-    <ImageButton
-        android:id="@+id/imageButtonMR"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imageButtonGR"
-        android:layout_below="@+id/imageButtonGR"
-        android:src="@drawable/mr" />
+        <ImageButton
+            android:id="@+id/imageButtonES"
+            style="@style/button_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/es_b" />
 
-    <Button
-        android:id="@+id/buttonCallTranslator"
-        style="@style/button_call"
+        <ImageButton
+            android:id="@+id/imageButtonCH"
+            style="@style/button_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ch_b" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/imageButtonCH"
-        android:layout_marginTop="72dp"
-        android:text="Call a translator" />
+        android:layout_below="@+id/linearLayout3"
+        android:layout_centerHorizontal="true" >
+
+        <ImageButton
+            android:id="@+id/imageButtonEN"
+            style="@style/button_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/uk_b" />
+
+        <ImageButton
+            android:id="@+id/imageButtonFR"
+            style="@style/button_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fr_b" />
+    </LinearLayout>
 
 </RelativeLayout>
