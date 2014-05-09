@@ -11,7 +11,7 @@
  * @data 11/03/2014
  * http://nosnaldeia.com.br/babel_json_services/?login=super@gmail.com&passwd=123456&proficiency=FR
  **/
-include 'db_vars.config.php';
+include_once 'db_vars.config.php';
 
 //Recupera parametros
 $email = $_GET['login'];

@@ -11,7 +11,7 @@
  * @data 11/03/2014
  * 
  **/
-include 'db_vars.config.php';
+include_once 'db_vars.config.php';
 
 //init vars
 $id = $_GET['id_user'];
