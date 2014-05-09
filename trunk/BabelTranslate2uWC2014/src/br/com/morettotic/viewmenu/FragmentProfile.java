@@ -4,6 +4,7 @@ import java.net.URLEncoder;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
 //http://www.nosnaldeia.com.br/babel_json_services/?action=SAVE_PROFILE&id_user=1&email=malacma@gmail.com&passwd=Password&name=MORETTO LAMM&birthday=2010-01-01&paypall_acc=12223kkjj12&nature=4&proficiency=PT&id_role=1
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
@@ -25,8 +26,10 @@ import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 import br.com.morettotic.entity.Profile;
 import br.com.morettotic.viewmenu.httputil.URLParser;
+import br.com.morettotic.viewmenu.httputil.UserPreferences;
 
 import com.vizteck.navigationdrawer.R;
+
 import static br.com.morettotic.viewmenu.MainActivity.*;
 import static br.com.morettotic.entity.Profile.*;
 
@@ -215,6 +218,7 @@ public class FragmentProfile extends Fragment {
 					dialog.setMessage("Loading...");
 					dialog.show();
 					new ProfileAction().execute(url);
+					
 				} else {
 					builder1.setMessage(msg.toString());
 					builder1.setCancelable(true);
