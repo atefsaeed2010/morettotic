@@ -16,7 +16,7 @@
 
          * 
          * */
-        include 'db_vars.config.php';
+        include_once 'db_vars.config.php';
 
         $id_user = $_GET['id_user'];
         
@@ -32,7 +32,7 @@
         //var_dump($row);
         $image = $row['image_path'];
 
-        echo "<img src=". $IMAGE_PATH . $image . " />";
+        echo "<img src=". $IMAGE_PATH . 'resized_' . $image . " />";
 
         mysql_close($con);
         ?>

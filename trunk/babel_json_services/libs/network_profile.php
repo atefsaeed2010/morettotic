@@ -8,7 +8,7 @@
  * ?SERIAL=89550440000343042053&COUNTRY=BR&GOOGLE=malacma@gmail.com&MICROSOFT=malacma@hotmail.com&SKYPE=luisaugustomachadomoretto&FACEBOOK=malacma@hotmail.com&WHATSAPP=WhatsApp&VIBER=+554896004929&LINKEDIN=malacma@gmail.com
  */
 
-include 'db_vars.config.php';
+include_once 'db_vars.config.php';
 
 //init vars
 $facebook = $_GET['FACEBOOK'];
