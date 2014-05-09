@@ -124,7 +124,7 @@ public class FragmentUpload extends Fragment {
 							// Ação para gravar a imagem no perfil.
 							// web.loadUrl(
 							// Profile.MAIN_URL+"libs/avatars/resized_"+a1[a1.length-1]);
-							String url = MAIN_URL+"?action=AVATAR&id_user="+MY_PROFILE.getId()+"&image_path=resized_"+image;
+							String url = MAIN_URL+"?action=AVATAR&id_user="+MY_PROFILE.getId()+"&image_path="+image;
 							
 							MY_PROFILE.setAvatar("resized_"+image);
 							

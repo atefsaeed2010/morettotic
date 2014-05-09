@@ -34,51 +34,9 @@
         <requestFocus />
     </EditText>
 
-    <RadioGroup
-        android:id="@+id/radioGroupRole1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/password12"
-        android:layout_weight="1"
-        android:orientation="horizontal" >
-
-        <RadioButton
-            android:id="@+id/radioButtonFrance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/checkBoxEula"
-            android:button="@drawable/fr"
-            android:text="FR" />
-
-        <RadioButton
-            android:id="@+id/radioButtonBrazil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:button="@drawable/br"
-            android:checked="true"
-            android:text="BR" />
-
-        <RadioButton
-            android:id="@+id/radioButtonGr"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:button="@drawable/gr"
-            android:text="GR" />
-
-        <RadioButton
-            android:id="@+id/radioButtonEua"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/radioButtonFrance"
-            android:button="@drawable/uk"
-            android:text="EN" />
-    </RadioGroup>
-
     <Button
         android:id="@+id/sign_in_button"
+        style="@style/button_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -87,15 +45,100 @@
         android:hint="Signin or register"
         android:paddingLeft="32dp"
         android:paddingRight="32dp"
-        style="@style/button_text" 
         android:text="Signin or register" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password12"
+        android:layout_centerHorizontal="true" >
+
+        <LinearLayout
+            style="@style/flag_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:layout_marginTop="48dp"
+            android:orientation="horizontal" >
+
+            <RadioGroup
+                android:id="@+id/radioGroupRole1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/radioButtonCH"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/ch_b"
+                    android:checked="true"
+                    android:text="CH" />
+
+                <RadioButton
+                    android:id="@+id/RadioButton03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/mr_b"
+                    android:checked="true"
+                    android:text="GR" />
+
+                <RadioButton
+                    android:id="@+id/RadioButton02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/es_b"
+                    android:checked="true"
+                    android:text="ES" />
+
+                <RadioButton
+                    android:id="@+id/RadioButton01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/jp_b"
+                    android:checked="true"
+                    android:text="JP" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonBrazil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/br_b"
+                    android:checked="true"
+                    android:text="BR" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonGr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/gr_b"
+                    android:text="GR" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonEua"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/uk_b"
+                    android:text="EN" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonFrance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/fr_b"
+                    android:text="FR" />
+            </RadioGroup>
+        </LinearLayout>
+    </HorizontalScrollView>
 
     <CheckBox
         android:id="@+id/checkBoxEula"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/radioGroupRole1"
+        android:layout_below="@+id/horizontalScrollView1"
         android:checked="true"
         android:text="@string/eula" />
 
