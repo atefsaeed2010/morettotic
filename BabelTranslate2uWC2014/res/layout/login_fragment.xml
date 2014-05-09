@@ -49,10 +49,14 @@
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView1"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/sign_in_button"
+        android:layout_alignRight="@+id/sign_in_button"
         android:layout_below="@+id/password12"
-        android:layout_centerHorizontal="true" >
+        android:layout_margin="5dp"
+        android:fadeScrollbars="false"
+        android:scrollbarAlwaysDrawVerticalTrack="true" >
 
         <LinearLayout
             style="@style/flag_bar"
@@ -71,7 +75,7 @@
 
                 <RadioButton
                     android:id="@+id/radioButtonCH"
-                    android:layout_width="wrap_content"
+                    android:layout_width="142dp"
                     android:layout_height="wrap_content"
                     android:button="@drawable/ch_b"
                     android:checked="true"
@@ -79,7 +83,7 @@
 
                 <RadioButton
                     android:id="@+id/RadioButton03"
-                    android:layout_width="wrap_content"
+                    android:layout_width="142dp"
                     android:layout_height="wrap_content"
                     android:button="@drawable/mr_b"
                     android:checked="true"
@@ -87,7 +91,7 @@
 
                 <RadioButton
                     android:id="@+id/RadioButton02"
-                    android:layout_width="wrap_content"
+                    android:layout_width="142dp"
                     android:layout_height="wrap_content"
                     android:button="@drawable/es_b"
                     android:checked="true"
@@ -95,7 +99,7 @@
 
                 <RadioButton
                     android:id="@+id/RadioButton01"
-                    android:layout_width="wrap_content"
+                    android:layout_width="142dp"
                     android:layout_height="wrap_content"
                     android:button="@drawable/jp_b"
                     android:checked="true"
@@ -103,7 +107,7 @@
 
                 <RadioButton
                     android:id="@+id/radioButtonBrazil"
-                    android:layout_width="wrap_content"
+                    android:layout_width="142dp"
                     android:layout_height="wrap_content"
                     android:button="@drawable/br_b"
                     android:checked="true"
@@ -111,21 +115,21 @@
 
                 <RadioButton
                     android:id="@+id/radioButtonGr"
-                    android:layout_width="wrap_content"
+                    android:layout_width="142dp"
                     android:layout_height="wrap_content"
                     android:button="@drawable/gr_b"
                     android:text="GR" />
 
                 <RadioButton
                     android:id="@+id/radioButtonEua"
-                    android:layout_width="wrap_content"
+                    android:layout_width="142dp"
                     android:layout_height="wrap_content"
                     android:button="@drawable/uk_b"
                     android:text="EN" />
 
                 <RadioButton
                     android:id="@+id/radioButtonFrance"
-                    android:layout_width="wrap_content"
+                    android:layout_width="142dp"
                     android:layout_height="wrap_content"
                     android:button="@drawable/fr_b"
                     android:text="FR" />

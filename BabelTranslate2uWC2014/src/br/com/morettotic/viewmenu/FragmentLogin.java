@@ -39,6 +39,7 @@ import android.widget.TextView;
 import br.com.morettotic.entity.Profile;
 import br.com.morettotic.sip.CSIPService;
 import br.com.morettotic.viewmenu.httputil.URLParser;
+import br.com.morettotic.viewmenu.httputil.UserPreferences;
 
 import com.vizteck.navigationdrawer.R;
 
@@ -49,7 +50,10 @@ public class FragmentLogin extends Fragment {
 	private ProgressDialog dialog = null;
 	private String url;
 	protected TextView passwd;
-	AlertDialog.Builder builder2;
+	private AlertDialog.Builder builder2;
+	private CheckBox eula;
+	private TextView email, passwd1;
+
 	// this Fragment will be called from MainActivity
 	public FragmentLogin() {
 	}
@@ -61,28 +65,18 @@ public class FragmentLogin extends Fragment {
 		final View rootView = inflater.inflate(R.layout.login_fragment,
 				container, false);
 		dialog = new ProgressDialog(rootView.getContext());
-		
-		
-	
-		
-		
-		
-		final TextView email = (TextView) rootView.findViewById(R.id.email);
-		final TextView passwd1 = (TextView) rootView
-				.findViewById(R.id.password12);
-		builder2 = new AlertDialog.Builder(rootView
-				.getContext());
-		if (MY_PROFILE.getEmail() != null) {
-			email.setText(MY_PROFILE.getEmail());
-			// passwd1.setText(MainActivity.MY_PROFILE.getPassWd());
-		}
-		if (MY_PROFILE.getPassWd() != null) {
-			passwd1.setText(MY_PROFILE.getPassWd());
-			// passwd1.setText(MainActivity.MY_PROFILE.getPassWd());
-		}
 
-		final CheckBox eula = (CheckBox) rootView
-				.findViewById(R.id.checkBoxEula);
+		email = (TextView) rootView.findViewById(R.id.email);
+		passwd1 = (TextView) rootView.findViewById(R.id.password12);
+		builder2 = new AlertDialog.Builder(rootView.getContext());
+
+		email.setText(UserPreferences.getEmail(MAINWINDOW));
+		// passwd1.setText(MainActivity.MY_PROFILE.getPassWd());
+
+		passwd1.setText(UserPreferences.getPass(MAINWINDOW));
+		// passwd1.setText(MainActivity.MY_PROFILE.getPassWd());
+
+		eula = (CheckBox) rootView.findViewById(R.id.checkBoxEula);
 		// final Intent intent = new Intent(this, ConfActivity.class);
 		eula.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
@@ -160,6 +154,10 @@ public class FragmentLogin extends Fragment {
 						MY_PROFILE.setPassWd(passwd.getText().toString());
 						MY_PROFILE.setPassWd(email.getText().toString());
 						MY_PROFILE.setNature(b.getText().toString());
+						
+						//Grava os dados de login nas preferencias locais do dispositivo
+						new UserPreferences(MAINWINDOW, email.getText().toString(),
+								passwd.getText().toString(), b.getText().toString());
 
 					}
 
@@ -218,7 +216,7 @@ public class FragmentLogin extends Fragment {
 		@Override
 		protected void onPostExecute(String result) {
 			// TODO Auto-generated method stub
-			
+
 			MY_PROFILE.setJson(result);
 
 			try {
@@ -228,9 +226,7 @@ public class FragmentLogin extends Fragment {
 					dialog.setMessage("Sorry. try again later.");
 
 				} else {
-					
-					
-					
+
 					MY_PROFILE.setId(js.getString(Profile.C_ID));
 					MY_PROFILE.setProficiency(js.getString(C_PROFICIENCY));
 					MY_PROFILE.setNature(js.getString(C_NATURE));
@@ -246,47 +242,47 @@ public class FragmentLogin extends Fragment {
 					MY_PROFILE.setRoleId(js.getString(C_ROLE));
 					MY_PROFILE.setPassWd(passwd.getText().toString());
 					MY_PROFILE.setError(null);
-					//Email existe e senha não bate.......
-					if(js.has(C_PASSWD_ERROR)){
+					// Email existe e senha não bate.......
+					if (js.has(C_PASSWD_ERROR)) {
 						MY_PROFILE.setError(js.getString(C_PASSWD_ERROR));
 					}
 					MY_PROFILE.setAuthenticated(true);
 
-					
 				}
 
 			} catch (Exception e) {
 				dialog.setMessage("Sorry. try again later.(" + e.getMessage()
 						+ ")");
 			} finally {
-				//Usuario e ou senha invalidos
-				if(MY_PROFILE.getError()!=null){//usuario e ou senha nao batem....
-					MY_PROFILE.setAuthenticated(false);//NAO LOGADO!
+				// Usuario e ou senha invalidos
+				if (MY_PROFILE.getError() != null) {// usuario e ou senha nao
+													// batem....
+					MY_PROFILE.setAuthenticated(false);// NAO LOGADO!
 					builder2.setMessage(MY_PROFILE.getError());
 					builder2.setCancelable(true);
 					builder2.setNegativeButton("OK",
 							new DialogInterface.OnClickListener() {
-								public void onClick(DialogInterface dialog, int id) {
+								public void onClick(DialogInterface dialog,
+										int id) {
 									dialog.cancel();
 								}
 							});
 
 					AlertDialog alert11 = builder2.create();
 					alert11.show();
-				}else{
-					//liga para o sipserver
+				} else {
+					// liga para o sipserver
 					CSIPService.getInstance(getActivity(), MY_PROFILE);
-					//Abre janela do perfil
-					if(MY_PROFILE.getId().equals("-1")){
+					// Abre janela do perfil
+					if (MY_PROFILE.getId().equals("-1")) {
 						MAINWINDOW.displayView(1);
-					}else{
+					} else {
 						MAINWINDOW.displayView(2);
 					}
-					
+
 				}
-				
-			
-				//Fecha loading
+
+				// Fecha loading
 				dialog.dismiss();
 
 			}
