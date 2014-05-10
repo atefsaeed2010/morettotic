@@ -245,8 +245,8 @@ public class FragmentProfile extends Fragment {
 		RadioGroup radio1 = (RadioGroup) root
 				.findViewById(R.id.radioGroupFlags);
 		radio1.setVisibility(isVisible);
-		TextView title = (TextView) root.findViewById(R.id.textViewProfile);
-		title.setVisibility(isVisible);
+		//TextView title = (TextView) root.findViewById(R.id.textViewProfile);
+		//title.setVisibility(isVisible);
 		final TextView paypall = (TextView) root
 				.findViewById(R.id.paypallacc);
 		paypall.setVisibility(View.GONE);

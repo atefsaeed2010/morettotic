@@ -43,7 +43,7 @@ public class FragmentConference extends Fragment {
 		translatorName.setText(MY_PROFILE.getTranslatorName());
 
 		final TextView credits = (TextView) rootView
-				.findViewById(R.id.textView3);
+				.findViewById(R.id.textViewCredits);
 
 		credits.setText("Credits: (" + MY_PROFILE.getCredits() + ") minutes");
 
