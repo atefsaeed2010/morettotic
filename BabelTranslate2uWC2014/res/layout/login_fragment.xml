@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="@drawable/bk_login" >
 
     <!-- you can set layout accordingly -->
 
@@ -60,6 +61,7 @@
 
         <LinearLayout
             style="@style/flag_bar"
+            android:background="@android:color/transparent"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="top"
@@ -85,7 +87,7 @@
                     android:id="@+id/RadioButton03"
                     android:layout_width="142dp"
                     android:layout_height="wrap_content"
-                    android:button="@drawable/mr_b"
+                    android:button="@drawable/mr"
                     android:checked="true"
                     android:text="GR" />
 
@@ -145,5 +147,15 @@
         android:layout_below="@+id/horizontalScrollView1"
         android:checked="true"
         android:text="@string/eula" />
+
+    <CheckBox
+        android:id="@+id/checkBoxConnected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/checkBoxEula"
+        android:layout_alignBottom="@+id/checkBoxEula"
+        android:layout_toLeftOf="@+id/checkBoxEula"
+        android:checked="true"
+        android:text="KEEP CONNECTED" />
 
 </RelativeLayout>

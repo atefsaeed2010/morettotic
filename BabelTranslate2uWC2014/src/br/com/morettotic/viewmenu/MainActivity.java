@@ -99,7 +99,7 @@ public class MainActivity extends Activity {
 		navDrawerItems.add(new NavDrawerItem("Babel2u Coins",
 				R.drawable.ic_payment));
 
-		navDrawerItems.add(new NavDrawerItem("Exit", R.drawable.ic_payment));
+		navDrawerItems.add(new NavDrawerItem("Exit", R.drawable.ic_exit));
 
 		// Recycle array
 		navMenuIcons.recycle();
