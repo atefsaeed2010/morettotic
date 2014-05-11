@@ -26,7 +26,9 @@ import com.vizteck.navigationdrawer.R;
 public class FragmentConference extends Fragment {
 	private JSONObject json;
 	private ProgressDialog dialog = null;
-
+	private TextView translatorName,credits;
+	private Button atender,desligar;
+	private View rootView;
 	// this Fragment will be called from MainActivity
 	public FragmentConference() {
 	}
@@ -35,14 +37,14 @@ public class FragmentConference extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
-		final View rootView = inflater.inflate(R.layout.conference_fragment,
+		rootView = inflater.inflate(R.layout.conference_fragment,
 				container, false);
-		final TextView translatorName = (TextView) rootView
+		translatorName = (TextView) rootView
 				.findViewById(R.id.textView1);
 
 		translatorName.setText(MY_PROFILE.getTranslatorName());
 
-		final TextView credits = (TextView) rootView
+		credits = (TextView) rootView
 				.findViewById(R.id.textViewCredits);
 
 		credits.setText("Credits: (" + MY_PROFILE.getCredits() + ") minutes");
@@ -52,8 +54,8 @@ public class FragmentConference extends Fragment {
 		// web.loadUrl("http://nosnaldeia.com.br/babel_json_services/libs/avatars/resized_IMG_20140322_180057.jpg");
 		web.loadUrl(MAIN_URL + "?action=AVATAR_VIEW&id_user="
 				+ MY_PROFILE.getTranslatorId());
-		final Button atender = (Button) rootView.findViewById(R.id.atender);
-		final Button desligar = (Button) rootView.findViewById(R.id.button2);
+		atender = (Button) rootView.findViewById(R.id.atender);
+		desligar = (Button) rootView.findViewById(R.id.button2);
 		CSIPService csipService = CSIPService.getInstance(getActivity(),
 				MY_PROFILE);
 		if (!csipService.isChamadaEmAndamento()) {

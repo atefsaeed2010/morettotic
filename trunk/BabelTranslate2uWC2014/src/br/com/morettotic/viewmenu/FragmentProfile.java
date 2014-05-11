@@ -5,6 +5,7 @@ import java.net.URLEncoder;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.annotation.SuppressLint;
 //http://www.nosnaldeia.com.br/babel_json_services/?action=SAVE_PROFILE&id_user=1&email=malacma@gmail.com&passwd=Password&name=MORETTO LAMM&birthday=2010-01-01&paypall_acc=12223kkjj12&nature=4&proficiency=PT&id_role=1
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
@@ -26,7 +27,6 @@ import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 import br.com.morettotic.entity.Profile;
 import br.com.morettotic.viewmenu.httputil.URLParser;
-import br.com.morettotic.viewmenu.httputil.UserPreferences;
 
 import com.vizteck.navigationdrawer.R;
 
@@ -39,12 +39,16 @@ import static br.com.morettotic.entity.Profile.*;
  * -01-01&paypall_acc=AAAS&nature=3&proficiency=FR&id_role=1&passwd=123456
  * 
  * */
+@SuppressLint("DefaultLocale")
 public class FragmentProfile extends Fragment {
 	// this Fragment will be called from MainActivity
 	private String url;
 	private ProgressDialog dialog = null;
 	private JSONObject js;
-
+	private TextView birthDay,paypall,name,pass1,pass2,passw1,passw2;
+	private RadioButton radioUser,radioTranslator, myCountry;
+	private RadioGroup gFlags,gRoles;
+	
 	public FragmentProfile() {
 	}
 
@@ -67,30 +71,30 @@ public class FragmentProfile extends Fragment {
 				case R.id.radioButtonUser:
 					// 'Incident' checked
 					showHideButtons(View.GONE, rootView);
-					System.out.println(R.id.radioButtonUser);
+					//System.out.println(R.id.radioButtonUser);
 					break;
 				case R.id.radioButtonTranslator:
 					showHideButtons(View.VISIBLE, rootView);
-					System.out.println(R.id.radioButtonTranslator);
+					//System.out.println(R.id.radioButtonTranslator);
 					break;
 				}
 			}
 		});
 
-		final TextView birthDay = (TextView) rootView
+		birthDay = (TextView) rootView
 				.findViewById(R.id.birthday);
-		final TextView name = (TextView) rootView.findViewById(R.id.name);
-		final TextView paypall = (TextView) rootView
+		name = (TextView) rootView.findViewById(R.id.name);
+		paypall = (TextView) rootView
 				.findViewById(R.id.paypallacc);
-		final RadioButton radioUser = (RadioButton) rootView
+		radioUser = (RadioButton) rootView
 				.findViewById(R.id.radioButtonUser);
-		final RadioButton radioTranslator = (RadioButton) rootView
+		radioTranslator = (RadioButton) rootView
 				.findViewById(R.id.radioButtonTranslator);
-		final RadioGroup gFlags = (RadioGroup) rootView
+		gFlags = (RadioGroup) rootView
 				.findViewById(R.id.radioGroupFlags);
-		final TextView pass1 = (TextView) rootView
+		pass1 = (TextView) rootView
 				.findViewById(R.id.password11);
-		final TextView pass2 = (TextView) rootView
+		pass2 = (TextView) rootView
 				.findViewById(R.id.password12);
 
 		//
@@ -140,19 +144,18 @@ public class FragmentProfile extends Fragment {
 
 			public void onClick(View v) {
 				hasErros = false;
-				TextView passw1 = (TextView) rootView
+				passw1 = (TextView) rootView
 						.findViewById(R.id.password11);
-				TextView passw2 = (TextView) rootView
+				passw2 = (TextView) rootView
 						.findViewById(R.id.password12);
-				RadioGroup gFlags = (RadioGroup) rootView
+				gFlags = (RadioGroup) rootView
 						.findViewById(R.id.radioGroupFlags);
-				RadioGroup gRoles = (RadioGroup) rootView
+				gRoles = (RadioGroup) rootView
 						.findViewById(R.id.radioGroupRole1);
-				TextView name = (TextView) rootView.findViewById(R.id.name);
-				TextView birth = (TextView) rootView
+				name = (TextView) rootView.findViewById(R.id.name);
+				birthDay = (TextView) rootView
 						.findViewById(R.id.birthday);
-				TextView pay = (TextView) rootView
-						.findViewById(R.id.paypallacc);
+				
 				StringBuilder msg = new StringBuilder();
 				String roleId = "1";
 				RadioButton b1 = null, b2 = null;
@@ -193,11 +196,11 @@ public class FragmentProfile extends Fragment {
 							+ URLEncoder.encode(name.getText().toString()
 									.toUpperCase(), "UTF-8")
 							+ "&birthday="
-							+ URLEncoder.encode(birth.getText().toString(),"UTF-8") 
+							+ URLEncoder.encode(birthDay.getText().toString(),"UTF-8") 
 							+ "&paypall_acc="+java.util.UUID.randomUUID().toString()
 							+ "&nature=" + MY_PROFILE.getNature();
-					if (b1 == null) {
-						url += "&proficiency=PT";
+					if (roleId.equals("1")) {
+						url += "&proficiency=BR";
 						url += "&id_role=1";
 					} else {
 						url += "&proficiency=" + b1.getText().toString();
@@ -236,7 +239,10 @@ public class FragmentProfile extends Fragment {
 
 			}
 		});
-
+		
+		//marca proficiencia
+		checkMyCountry(rootView,MY_PROFILE.getProficiency(),MY_PROFILE.getRoleId());
+		
 		return rootView;
 	}
 
@@ -313,7 +319,35 @@ public class FragmentProfile extends Fragment {
 		}
 
 	}
-	
+	//Marca a proficiencia caso ele seja tradutor
+	private void checkMyCountry(View rootView, String ctr, String role){
+		
+		if(role.equals("1")){
+			return;
+		}
+		
+		if(ctr.equals("1")){
+			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonBrazil);
+		}else if(ctr.equals("2")){
+			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonEua);
+		}else if(ctr.equals("3")){
+			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonGr);
+		}else if(ctr.equals("4")){
+			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonFrance);
+		}else if(ctr.equals("5")){
+			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonJP);
+		}else if(ctr.equals("6")){
+			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonCH);
+		}else if(ctr.equals("7")){
+			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonMR);
+		}else if(ctr.equals("8")){
+			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonES);
+		}else{
+			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonBrazil);
+		}
+		myCountry.setChecked(true);
+		
+	}
 	
 	
 	
