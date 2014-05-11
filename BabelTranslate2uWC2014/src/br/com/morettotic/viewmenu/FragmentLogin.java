@@ -48,16 +48,25 @@ public class FragmentLogin extends Fragment {
 	protected static final String FragmentProfile = null;
 	private boolean hasErros = false;
 	private ProgressDialog dialog = null;
-	private String url;
+	private static String url;
 	protected TextView passwd;
 	private AlertDialog.Builder builder2;
-	private CheckBox eula;
+	private CheckBox eula, saveInstance;
+	private RadioButton myCountry;
 	private TextView email, passwd1;
+	private Button button;
+	private final String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+			+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
-	// this Fragment will be called from MainActivity
-	public FragmentLogin() {
+	public FragmentLogin(){
+		
 	}
-
+	
+	public void onResume() {
+		super.onResume();
+		initProfile();
+	}
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -66,6 +75,8 @@ public class FragmentLogin extends Fragment {
 				container, false);
 		dialog = new ProgressDialog(rootView.getContext());
 
+		//initProfile();
+		
 		email = (TextView) rootView.findViewById(R.id.email);
 		passwd1 = (TextView) rootView.findViewById(R.id.password12);
 		builder2 = new AlertDialog.Builder(rootView.getContext());
@@ -77,6 +88,7 @@ public class FragmentLogin extends Fragment {
 		// passwd1.setText(MainActivity.MY_PROFILE.getPassWd());
 
 		eula = (CheckBox) rootView.findViewById(R.id.checkBoxEula);
+		saveInstance = (CheckBox) rootView.findViewById(R.id.checkBoxConnected);
 		// final Intent intent = new Intent(this, ConfActivity.class);
 		eula.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
@@ -97,8 +109,7 @@ public class FragmentLogin extends Fragment {
 			}
 		});
 
-		final Button button = (Button) rootView
-				.findViewById(R.id.sign_in_button);
+		button = (Button) rootView.findViewById(R.id.sign_in_button);
 
 		button.setOnClickListener(new View.OnClickListener() {
 
@@ -115,13 +126,10 @@ public class FragmentLogin extends Fragment {
 					// button's ID
 					int selected = g.getCheckedRadioButtonId();
 
-					final String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-							+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 					Pattern pattern;
 					Matcher matcher;
 
-					final TextView email = (TextView) rootView
-							.findViewById(R.id.email);
+					email = (TextView) rootView.findViewById(R.id.email);
 					pattern = Pattern.compile(EMAIL_PATTERN);
 					matcher = pattern.matcher(email.getText());
 
@@ -146,18 +154,23 @@ public class FragmentLogin extends Fragment {
 
 						passwd = (TextView) rootView
 								.findViewById(R.id.password12);
-						url = MAIN_URL + "?login=" + email.getText()
-								+ "&passwd=" + passwd.getText()
-								+ "&proficiency=" + b.getText();
+
+						url = getLoginUrl(email.getText().toString(), passwd
+								.getText().toString(), b.getText().toString());
 
 						// inicia o email e a senha nature
 						MY_PROFILE.setPassWd(passwd.getText().toString());
 						MY_PROFILE.setPassWd(email.getText().toString());
 						MY_PROFILE.setNature(b.getText().toString());
-						
-						//Grava os dados de login nas preferencias locais do dispositivo
-						new UserPreferences(MAINWINDOW, email.getText().toString(),
-								passwd.getText().toString(), b.getText().toString());
+
+						// Grava os dados de login nas preferencias locais do
+						// dispositivo se marcar a opção de gravar....
+						if (saveInstance.isChecked()) {
+							new UserPreferences(MAINWINDOW, 
+												email.getText().toString(), 
+												passwd.getText().toString(), 
+												b.getText().toString());
+						}
 
 					}
 
@@ -190,6 +203,9 @@ public class FragmentLogin extends Fragment {
 
 			}
 		});
+		//marca a bandeira
+		checkMyCountry(rootView, UserPreferences.getNature(MAINWINDOW));
+		
 		return rootView;
 	}
 
@@ -289,5 +305,49 @@ public class FragmentLogin extends Fragment {
 			super.onPostExecute(result);
 		}
 
+	}
+
+	public static final void initProfile() {
+		if (UserPreferences.hasProfile(MAINWINDOW)) {
+			String email = UserPreferences.getEmail(MAINWINDOW);
+			String pass = UserPreferences.getPass(MAINWINDOW);
+			String nature = UserPreferences.getNature(MAINWINDOW);
+			url = FragmentLogin.getLoginUrl(email, pass, nature);
+			
+			//new LoginAction().execute(url);
+			
+		}
+	}
+
+	public final static String getLoginUrl(String pEmail, String pSenha,
+			String pNature) {
+
+		url = MAIN_URL + "?login=" + pEmail + "&passwd=" + pSenha
+				+ "&proficiency=" + pNature;
+		return url;
+	}
+	
+	private void checkMyCountry(View rootView, String ctr){
+		if(ctr.equals("BR")){
+			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonBrazil);
+		}else if(ctr.equals("EN")){
+			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonEua);
+		}else if(ctr.equals("GR")){
+			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonGr);
+		}else if(ctr.equals("FR")){
+			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonFrance);
+		}else if(ctr.equals("JP")){
+			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonJP);
+		}else if(ctr.equals("CH")){
+			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonCH);
+		}else if(ctr.equals("MR")){
+			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonMR);
+		}else if(ctr.equals("ES")){
+			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonES);
+		}else{
+			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonBrazil);
+		}
+		myCountry.setChecked(true);
+		
 	}
 }

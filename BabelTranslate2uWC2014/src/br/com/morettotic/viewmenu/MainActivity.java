@@ -22,6 +22,7 @@ import android.widget.ListView;
 import br.com.morettotic.entity.Profile;
 import br.com.morettotic.sip.CSIPService;
 import br.com.morettotic.viewmenu.adapter.NavDrawerListAdapter;
+import br.com.morettotic.viewmenu.httputil.UserPreferences;
 import br.com.morettotic.viewmenu.model.NavDrawerItem;
 
 import com.vizteck.navigationdrawer.R;
@@ -133,6 +134,7 @@ public class MainActivity extends Activity {
 		if (savedInstanceState == null) {
 			displayView(0);
 		}
+		
 	}
 
 	/**
@@ -203,8 +205,11 @@ public class MainActivity extends Activity {
 			break;
 		case 6:
 			// CSIPService.getInstance(this,null).getConnection().
+			
+			
+			UserPreferences.destroy(this);
 			System.exit(0);
-			;
+			
 			break;
 		default:
 			break;

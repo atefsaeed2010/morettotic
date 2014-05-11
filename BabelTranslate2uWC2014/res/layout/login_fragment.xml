@@ -80,31 +80,27 @@
                     android:layout_width="142dp"
                     android:layout_height="wrap_content"
                     android:button="@drawable/ch_b"
-                    android:checked="true"
                     android:text="CH" />
 
                 <RadioButton
-                    android:id="@+id/RadioButton03"
+                    android:id="@+id/radioButtonMR"
                     android:layout_width="142dp"
                     android:layout_height="wrap_content"
                     android:button="@drawable/mr"
-                    android:checked="true"
-                    android:text="GR" />
+                    android:text="MR" />
 
                 <RadioButton
-                    android:id="@+id/RadioButton02"
+                    android:id="@+id/radioButtonES"
                     android:layout_width="142dp"
                     android:layout_height="wrap_content"
                     android:button="@drawable/es_b"
-                    android:checked="true"
                     android:text="ES" />
 
                 <RadioButton
-                    android:id="@+id/RadioButton01"
+                    android:id="@+id/radioButtonJP"
                     android:layout_width="142dp"
                     android:layout_height="wrap_content"
                     android:button="@drawable/jp_b"
-                    android:checked="true"
                     android:text="JP" />
 
                 <RadioButton
@@ -112,7 +108,6 @@
                     android:layout_width="142dp"
                     android:layout_height="wrap_content"
                     android:button="@drawable/br_b"
-                    android:checked="true"
                     android:text="BR" />
 
                 <RadioButton

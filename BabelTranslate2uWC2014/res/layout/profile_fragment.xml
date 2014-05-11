@@ -1,150 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/bk_profile" >
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bk_profile"
+    android:gravity="fill_horizontal" >
 
     <!-- Layout set for data you can use accordingly -->
 
-    <RelativeLayout
-        android:id="@+id/rel_data"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
-        android:padding="10dip" >
+        android:layout_alignParentRight="true"
+        android:orientation="vertical" >
 
-        <EditText
-            android:id="@+id/birthday"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/name"
-            android:ems="10"
-            android:hint="@string/birth"
-            android:inputType="textEmailAddress"
-            android:maxLines="1"
-            android:singleLine="true" />
-
-        <EditText
-            android:id="@+id/paypallacc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/birthday"
-            android:ems="10"
-            android:hint="@string/paypall_acc"
-            android:inputType="textEmailAddress"
-            android:maxLines="1"
-            android:singleLine="true" />
-
-        <EditText
-            android:id="@+id/password12"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/paypallacc"
-            android:ems="10"
-            android:hint="@string/passwd"
-            android:imeActionId="@+id/login"
-            android:imeActionLabel="@string/passwd"
-            android:imeOptions="actionUnspecified"
-            android:inputType="textPassword"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:text="@string/passwd" />
-
-        <EditText
-            android:id="@+id/password11"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/password12"
-            android:ems="10"
-            android:hint="@string/passwd"
-            android:imeActionId="@+id/login"
-            android:imeActionLabel="@string/passwd"
-            android:imeOptions="actionUnspecified"
-            android:inputType="textPassword"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:text="@string/passwd" />
-
-        <EditText
-            android:id="@+id/name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="77dp"
-            android:ems="10"
-            android:hint="@string/name"
-            android:inputType="textEmailAddress"
-            android:maxLines="1"
-            android:singleLine="true" />
-
-        <Button
-            android:id="@+id/ButtonAvatar"
-            style="@style/button_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/buttonFinish"
-            android:layout_alignBottom="@+id/buttonFinish"
-            android:layout_toLeftOf="@+id/buttonFinish"
-            android:text="Avatar" />
-
-        <Button
-            android:id="@+id/buttonFinish"
-            style="@style/button_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:text="Save" />
-
-        <RadioGroup
-            android:id="@+id/radioGroupFlags"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
-
-            <RadioButton
-                android:id="@+id/radioButtonBrazil"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:button="@drawable/br"
-                android:text="BR" />
-
-            <RadioButton
-                android:id="@+id/radioButtonGr"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:button="@drawable/gr"
-                android:text="GR" />
-
-            <RadioButton
-                android:id="@+id/radioButtonEua"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:button="@drawable/uk"
-                android:text="EN" />
-
-            <RadioButton
-                android:id="@+id/radioButtonFrance"
-                android:layout_width="115dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@+id/checkBoxEula"
-                android:button="@drawable/fr"
-                android:text="FR" />
-        </RadioGroup>
+       
 
         <RadioGroup
             android:id="@+id/radioGroupRole1"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/radioGroupFlags"
-            android:layout_weight="1"
+            android:layout_gravity="right"
             android:orientation="horizontal" >
 
             <RadioButton
@@ -164,6 +40,180 @@
                 android:layout_alignParentTop="true"
                 android:text="USER" />
         </RadioGroup>
-    </RelativeLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:fadeScrollbars="false"
+            android:scrollbarAlwaysDrawVerticalTrack="true" >
+
+            <LinearLayout
+                style="@style/flag_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="top"
+                android:layout_marginTop="48dp"
+                android:background="@android:color/transparent"
+                android:orientation="horizontal" >
+
+                <RadioGroup
+                    android:id="@+id/radioGroupFlags"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/radioButtonCH"
+                        android:layout_width="142dp"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/ch_b"
+                        android:text="CH" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonMR"
+                        android:layout_width="142dp"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/mr"
+                        android:text="MR" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonES"
+                        android:layout_width="142dp"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/es_b"
+                        android:text="ES" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonJP"
+                        android:layout_width="142dp"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/jp_b"
+                        android:text="JP" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonBrazil"
+                        android:layout_width="142dp"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/br_b"
+                        android:text="BR" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonGr"
+                        android:layout_width="142dp"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/gr_b"
+                        android:text="GR" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonEua"
+                        android:layout_width="142dp"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/uk_b"
+                        android:text="EN" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonFrance"
+                        android:layout_width="142dp"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/fr_b"
+                        android:text="FR" />
+                </RadioGroup>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="77dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/name"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:singleLine="true" >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/birthday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/birth"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/paypallacc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/paypall_acc"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/password12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/passwd"
+            android:imeActionId="@+id/login"
+            android:imeActionLabel="@string/passwd"
+            android:imeOptions="actionUnspecified"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@string/passwd" />
+
+        <EditText
+            android:id="@+id/password11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/passwd"
+            android:imeActionId="@+id/login"
+            android:imeActionLabel="@string/passwd"
+            android:imeOptions="actionUnspecified"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@string/passwd" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/ButtonAvatar"
+                style="@style/button_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Avatar" />
+
+            <Button
+                android:id="@+id/buttonFinish"
+                style="@style/button_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Save" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>

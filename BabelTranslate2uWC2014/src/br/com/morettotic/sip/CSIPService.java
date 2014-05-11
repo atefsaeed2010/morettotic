@@ -45,14 +45,10 @@ public class CSIPService {
 	private static String destino = "CS00016929@sps6.commcorp.com.br";
 	private Long idConexaoSIP = SipProfile.INVALID_ID;
 	private ISipService service;
-	private boolean serviceCSIPConectado;
 	private boolean usuarioSIPLogado;
 	private Activity activity;
 	private ServiceConnection connection;
 	private static Profile myProfile;
-	private static Object callMutex = new Object();
-	private static SipCallSession[] callsInfo = null;
-	private IOnCallActionTrigger onTriggerListener;
 	private boolean chamadaEmAndamento;
 	private DirecaoChamada direcaoChamada;
 
@@ -162,12 +158,10 @@ public class CSIPService {
 					idConexaoSIP = SipProfile.INVALID_ID;
 					autenticaServidor();
 				} else {
-					serviceCSIPConectado = true;
 				}
 			}
 
 			public void onServiceDisconnected(ComponentName arg0) {
-				serviceCSIPConectado = false;
 			}
 		};
 		this.activity.bindService(new Intent(this.activity, SipService.class),
@@ -222,7 +216,6 @@ public class CSIPService {
 		it.putExtra(SipManager.EXTRA_OUTGOING_ACTIVITY, new ComponentName(
 				this.activity, this.activity.getClass()));
 		this.activity.startService(it);
-		serviceCSIPConectado = true;
 		this.activity.registerReceiver(listenerChamada, new IntentFilter(
 				SipManager.ACTION_SIP_CALL_CHANGED));
 
@@ -230,6 +223,7 @@ public class CSIPService {
 
 	public void ligar() {
 		try {
+			setDestino(myProfile.getSipServ(),myProfile.getSipTranslatorU());
 			service.setSpeakerphoneOn(true);
 			// service.
 			service.makeCall(destino, idConexaoSIP.intValue());
@@ -240,7 +234,7 @@ public class CSIPService {
 		}
 	}
 
-	public void ligar(String pdestino) {
+	private void ligar(String pdestino) {
 		destino = pdestino;
 		ligar();
 	}
