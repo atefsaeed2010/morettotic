@@ -170,6 +170,8 @@ public class FragmentLogin extends Fragment {
 												email.getText().toString(), 
 												passwd.getText().toString(), 
 												b.getText().toString());
+						}else{
+							UserPreferences.destroy(MAINWINDOW);//Destroy as preferencias do noob....
 						}
 
 					}

@@ -53,11 +53,11 @@
     <string name="eua">Eua</string>
 
     <string-array name="service_array">
-        <item>Other</item>
+        <item>Tourism</item>
         <item>Health</item>
         <item>Security</item>
-        <item>Tourism</item>
         <item>Shop</item>
+        <item>Other</item>
     </string-array>
 
     <string name="title_activity_fragment_upload">FragmentUpload</string>

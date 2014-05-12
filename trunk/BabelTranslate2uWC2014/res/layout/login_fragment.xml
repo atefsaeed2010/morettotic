@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bk_login" >
+    android:background="@drawable/bk_login"
+    android:gravity="end" >
 
     <!-- you can set layout accordingly -->
 
@@ -61,11 +62,11 @@
 
         <LinearLayout
             style="@style/flag_bar"
-            android:background="@android:color/transparent"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="140dp"
             android:layout_gravity="top"
             android:layout_marginTop="48dp"
+            android:background="@android:color/transparent"
             android:orientation="horizontal" >
 
             <RadioGroup
@@ -73,6 +74,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                
                 android:orientation="horizontal" >
 
                 <RadioButton
@@ -80,6 +82,7 @@
                     android:layout_width="142dp"
                     android:layout_height="wrap_content"
                     android:button="@drawable/ch_b"
+                    style="@style/radio_style"
                     android:text="CH" />
 
                 <RadioButton
@@ -87,12 +90,14 @@
                     android:layout_width="142dp"
                     android:layout_height="wrap_content"
                     android:button="@drawable/mr"
+                    style="@style/radio_style"
                     android:text="MR" />
 
                 <RadioButton
                     android:id="@+id/radioButtonES"
                     android:layout_width="142dp"
                     android:layout_height="wrap_content"
+                    style="@style/radio_style"
                     android:button="@drawable/es_b"
                     android:text="ES" />
 
@@ -100,12 +105,14 @@
                     android:id="@+id/radioButtonJP"
                     android:layout_width="142dp"
                     android:layout_height="wrap_content"
+                    style="@style/radio_style"
                     android:button="@drawable/jp_b"
                     android:text="JP" />
 
                 <RadioButton
                     android:id="@+id/radioButtonBrazil"
                     android:layout_width="142dp"
+                    style="@style/radio_style"
                     android:layout_height="wrap_content"
                     android:button="@drawable/br_b"
                     android:text="BR" />
@@ -113,6 +120,7 @@
                 <RadioButton
                     android:id="@+id/radioButtonGr"
                     android:layout_width="142dp"
+                    style="@style/radio_style"
                     android:layout_height="wrap_content"
                     android:button="@drawable/gr_b"
                     android:text="GR" />
@@ -120,6 +128,7 @@
                 <RadioButton
                     android:id="@+id/radioButtonEua"
                     android:layout_width="142dp"
+                    style="@style/radio_style"
                     android:layout_height="wrap_content"
                     android:button="@drawable/uk_b"
                     android:text="EN" />
@@ -128,6 +137,7 @@
                     android:id="@+id/radioButtonFrance"
                     android:layout_width="142dp"
                     android:layout_height="wrap_content"
+                    style="@style/radio_style"
                     android:button="@drawable/fr_b"
                     android:text="FR" />
             </RadioGroup>
@@ -151,6 +161,6 @@
         android:layout_alignBottom="@+id/checkBoxEula"
         android:layout_toLeftOf="@+id/checkBoxEula"
         android:checked="true"
-        android:text="KEEP CONNECTED" />
+        android:text="Remember me" />
 
 </RelativeLayout>

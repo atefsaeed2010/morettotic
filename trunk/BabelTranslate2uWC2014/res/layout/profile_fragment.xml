@@ -14,8 +14,6 @@
         android:layout_alignParentRight="true"
         android:orientation="vertical" >
 
-       
-
         <RadioGroup
             android:id="@+id/radioGroupRole1"
             android:layout_width="wrap_content"
@@ -68,6 +66,7 @@
 
                     <RadioButton
                         android:id="@+id/radioButtonCH"
+                        style="@style/radio_style"
                         android:layout_width="142dp"
                         android:layout_height="wrap_content"
                         android:button="@drawable/ch_b"
@@ -75,6 +74,7 @@
 
                     <RadioButton
                         android:id="@+id/radioButtonMR"
+                        style="@style/radio_style"
                         android:layout_width="142dp"
                         android:layout_height="wrap_content"
                         android:button="@drawable/mr"
@@ -82,6 +82,7 @@
 
                     <RadioButton
                         android:id="@+id/radioButtonES"
+                        style="@style/radio_style"
                         android:layout_width="142dp"
                         android:layout_height="wrap_content"
                         android:button="@drawable/es_b"
@@ -89,6 +90,7 @@
 
                     <RadioButton
                         android:id="@+id/radioButtonJP"
+                        style="@style/radio_style"
                         android:layout_width="142dp"
                         android:layout_height="wrap_content"
                         android:button="@drawable/jp_b"
@@ -96,6 +98,7 @@
 
                     <RadioButton
                         android:id="@+id/radioButtonBrazil"
+                        style="@style/radio_style"
                         android:layout_width="142dp"
                         android:layout_height="wrap_content"
                         android:button="@drawable/br_b"
@@ -103,6 +106,7 @@
 
                     <RadioButton
                         android:id="@+id/radioButtonGr"
+                        style="@style/radio_style"
                         android:layout_width="142dp"
                         android:layout_height="wrap_content"
                         android:button="@drawable/gr_b"
@@ -110,6 +114,7 @@
 
                     <RadioButton
                         android:id="@+id/radioButtonEua"
+                        style="@style/radio_style"
                         android:layout_width="142dp"
                         android:layout_height="wrap_content"
                         android:button="@drawable/uk_b"
@@ -117,6 +122,7 @@
 
                     <RadioButton
                         android:id="@+id/radioButtonFrance"
+                        style="@style/radio_style"
                         android:layout_width="142dp"
                         android:layout_height="wrap_content"
                         android:button="@drawable/fr_b"
@@ -213,7 +219,6 @@
                 android:layout_weight="1"
                 android:text="Save" />
         </LinearLayout>
-
     </LinearLayout>
 
 </RelativeLayout>
