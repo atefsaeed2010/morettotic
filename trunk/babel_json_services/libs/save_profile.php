@@ -11,7 +11,7 @@
  * @data 11/03/2014
  * 
  **/
-include_once 'db_vars.config.php';
+include 'db_vars.config.php';
 
 //init vars
 $id = $_GET['id_user'];
@@ -27,6 +27,9 @@ $passwd = $_GET['passwd'];
 
 //Acha a pk da lingua de proficiencia
 $query = "SELECT id_lang FROM language WHERE token =  '$proficiencyP'";
+
+//echo $query;
+
 $result = mysqli_query($con, $query);
 $row = mysqli_fetch_array($result);
 $proficiency = $row['id_lang'];
@@ -90,6 +93,7 @@ if ($id == "-1" || $id == "") {
 //echo $query;
 //Insere ou atualiza o usuario / tradutor
 $result = mysqli_query($con, $query);
+
 //Novo usuario. 
 //Vincula a conta sip
 //Pega uma conta no banco de dados cadastrada previamente e associa com o usuario

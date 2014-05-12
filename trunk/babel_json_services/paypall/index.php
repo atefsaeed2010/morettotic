@@ -46,7 +46,8 @@ $row = mysqli_fetch_array($result);
 
     <body style="background-image: url('http://www.seenergia.com.br/babel_json_services/libs/avatars/bg_icon.png')">
         <div class="as_wrapper">
-            <h1>Babel2u Buy translate coins</h1>
+            <h1>            </h1>
+<br><br><br>
             <form action="paypal.php?sandbox=1&id=<?php echo $id ?>" method="post"> <?php // remove sandbox=1 for live transactions          ?>
                 <input type="hidden" name="action" value="process" />
                 <input type="hidden" name="cmd" value="_cart" /> <?php // use _cart for cart checkout          ?>
