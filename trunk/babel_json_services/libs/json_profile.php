@@ -13,30 +13,23 @@
  * */
 $query = '';
 if (isset($id) && $id != "-1") {//modo edicao
-    $query = "SELECT A.*, B.user,B.pass, C.servername FROM profile as A
-            left join sip_user as B on A.id_user = B.profile_id_user	
-            left join sip_server as C on B.sip_server_idsip_server = idsip_server
-            WHERE id_user ='$id'";
-    
-            $query1 = "update profile set online = true, avaliable = true WHERE id_user ='$id'";
-            $result = mysqli_query($con, $query1);
-            $row = mysqli_fetch_array($result);
-            $query1 = null;
+    $query = "SELECT * FROM `view_profile` WHERE id_user ='$id'";
+    $query1 = "update profile set online = true, avaliable = true WHERE id_user ='$id'";
+    $result = mysqli_query($con, $query1);
+    $row = mysqli_fetch_array($result);
+    $query1 = null;
 } else {
-    $query = "select passwd, count(*) as total from profile where email = '$email'";
+    $query = "SELECT * FROM `view_profile_count` where email = '$email'";
     $result = mysqli_query($con, $query);
     $row = mysqli_fetch_array($result);
     //Verificar se o email existe e a senha nao confere....
-    if($row['passwd']!=md5($passwd)&&$row['total']!='0'){
+    if ($row['passwd'] != md5($passwd) && $row['total'] != '0') {
         $profile->passWdError = 'Username or password dont match!';
-    }else{
+    } else {
         $mensagem = "newuser";
     }
     //Recupera o usuario pelo email e senha
-    $query = "SELECT A.*, B.user,B.pass, C.servername FROM profile as A
-            left join sip_user as B on A.id_user = B.profile_id_user	
-            left join sip_server as C on B.sip_server_idsip_server = idsip_server
-            WHERE email ='" . $email . "' AND passwd ='" . md5($passwd) . "'";
+    $query = "SELECT * FROM `view_profile` WHERE email ='" . $email . "' AND passwd ='" . md5($passwd) . "'";
 }
 
 //echo $query;

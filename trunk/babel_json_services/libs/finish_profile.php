@@ -31,12 +31,7 @@ $result = mysqli_query($con, $query);
 /**
  * UPDATE USER AND TRANSLATOR CREDITS ON SYSTEM
  */
-$query = "SELECT end_t,start_t,
-            ((select id_user from profile as c where c.id_user = a.from_c)) as id_from,
-            ((select id_user from profile as c where c.id_user = a.to_c)) as id_to,
-            ((select credits from profile as c where c.id_user = a.from_c)) as credits_user,
-            ((select credits from profile as c where c.id_user = a.to_c)) as credits_translator
-        FROM `call` as a WHERE token = '$token'";
+$query = "SELECT * FROM `view_call_info` WHERE token = '$token'";
 
 $result = mysqli_query($con, $query);
 $row = mysqli_fetch_array($result);
