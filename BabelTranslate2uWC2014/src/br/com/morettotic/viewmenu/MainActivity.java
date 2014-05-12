@@ -4,9 +4,11 @@ import java.util.ArrayList;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
@@ -89,7 +91,7 @@ public class MainActivity extends Activity {
 		navDrawerItems.add(new NavDrawerItem("Profile", R.drawable.ic_profile));
 
 		// list item in slider at 3 Conference
-		navDrawerItems.add(new NavDrawerItem("Translate 2",
+		navDrawerItems.add(new NavDrawerItem("Translate",
 				R.drawable.ic_translatetou));
 		// list item in slider at 3 Conference
 		navDrawerItems.add(new NavDrawerItem("Conference",
@@ -134,7 +136,7 @@ public class MainActivity extends Activity {
 		if (savedInstanceState == null) {
 			displayView(0);
 		}
-		
+
 	}
 
 	/**
@@ -182,55 +184,72 @@ public class MainActivity extends Activity {
 	}
 
 	public void displayView(int position) {
-		// update the main content with called Fragment
-		Fragment fragment = null;
-		switch (position) {
-		case 0:
-			fragment = new FragmentLogin();
-			break;
-		case 1:
-			fragment = new FragmentProfile();
-			break;
-		case 2:
-			fragment = new FragmentCountries();
-			break;
-		case 3:
-			fragment = new FragmentConference();
-			break;
-		case 4:
-			fragment = new FragmentUpload();
-			break;
-		case 5:
-			fragment = new FragmentPaypal();
-			break;
-		case 6:
-			// CSIPService.getInstance(this,null).getConnection().
-			
-			
-			UserPreferences.destroy(this);
-			System.exit(0);
-			
-			break;
-		default:
-			break;
-		}
-		// Se o perfil nao tiver informacoes abre o login sempre!!!!!!
-		if ((MY_PROFILE.getEmail().equals("") && MY_PROFILE.getPassWd().equals(
-				""))
-				|| !MY_PROFILE.isAuthenticated()) {
-			fragment = new FragmentLogin();
-		}
-		if (fragment != null) {
-			FragmentManager fragmentManager = getFragmentManager();
-			fragmentManager.beginTransaction()
-					.replace(R.id.frame_container, fragment).commit();
-			mDrawerList.setItemChecked(position, true);
-			mDrawerList.setSelection(position);
-			setTitle(navMenuTitles[position]);
-			mDrawerLayout.closeDrawer(mDrawerList);
-		} else {
+		try {
+			// update the main content with called Fragment
+			Fragment fragment = null;
+			switch (position) {
+			case 0:
+				fragment = new FragmentLogin();
+				break;
+			case 1:
+				fragment = new FragmentProfile();
+				break;
+			case 2:
+				fragment = new FragmentCountries();
+				break;
+			case 3://Se nao tiver destinatario nao pode abrir tela de chamada!
+				if(MY_PROFILE.getSipTranslatorU()==null){
+					fragment = new FragmentCountries();
+				}else{
+					fragment = new FragmentConference();
+				}
+				break;
+			case 4:
+				fragment = new FragmentUpload();
+				break;
+			case 5:
+				fragment = new FragmentPaypal();
+				break;
+			case 6:
+				// CSIPService.getInstance(this,null).getConnection().
+				MY_PROFILE = null;
+				UserPreferences.destroy(this);
+				System.exit(0);
 
-			Log.e("this is mainActivity", "Error in else case");
+				break;
+			default:
+				break;
+			}
+			// Se o perfil nao tiver informacoes abre o login sempre!!!!!!
+			if ((MY_PROFILE.getEmail().equals("") && MY_PROFILE.getPassWd()
+					.equals("")) || !MY_PROFILE.isAuthenticated()) {
+				fragment = new FragmentLogin();
+			}
+			if (fragment != null) {
+				FragmentManager fragmentManager = getFragmentManager();
+				fragmentManager.beginTransaction()
+						.replace(R.id.frame_container, fragment).commit();
+				mDrawerList.setItemChecked(position, true);
+				mDrawerList.setSelection(position);
+				setTitle(navMenuTitles[position]);
+				mDrawerLayout.closeDrawer(mDrawerList);
+			} else {
+
+				Log.e("this is mainActivity", "Error in else case");
+			}
+		} catch (Exception e) {
+			AlertDialog.Builder builder1 = new AlertDialog.Builder(this.getApplicationContext());
+			builder1.setMessage("Please try again later!"+e.toString());
+			builder1.setCancelable(true);
+			builder1.setNegativeButton("OK",
+					new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int id) {
+							dialog.cancel();
+						}
+					});
+
+			AlertDialog alert11 = builder1.create();
+			alert11.show();
 		}
 	}
 
