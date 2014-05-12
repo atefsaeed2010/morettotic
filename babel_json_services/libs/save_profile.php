@@ -98,18 +98,8 @@ $result = mysqli_query($con, $query);
 //Vincula a conta sip
 //Pega uma conta no banco de dados cadastrada previamente e associa com o usuario
 if($isNew){
-    $query = "SELECT idsip_user FROM sip_user WHERE profile_id_user IS NULL  LIMIT 1";
+    $query = "SELECT `fn_sipacc`('$email', '" . md5($passwd) . "') AS `fn_sipacc`;";
     //Executa a consulta 
-    $result = mysqli_query($con, $query);
-    $row = mysqli_fetch_array($result);
-    $idSipAcc = $row['idsip_user'];
-    //Consulta id usuario para atualiza o sip acc
-    $query = "SELECT id_user from profile where email = '" . $email . "' and passwd = '" . md5($passwd) . "'";
-    $result = mysqli_query($con, $query);
-    $row = mysqli_fetch_array($result);
-    $idUserP = $row['id_user'];
-    //Atualiza o sip user com o novo profile
-    $query = "update sip_user set profile_id_user = $idUserP where idsip_user = $idSipAcc";
     $result = mysqli_query($con, $query);
 }
 
