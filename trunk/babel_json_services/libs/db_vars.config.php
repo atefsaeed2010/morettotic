@@ -11,10 +11,10 @@
  * @data 11/03/2014
  * 
  * */
-$database = "173.248.156.2";//"mysql.nosnaldeia.com.br";
+$database = "173.248.156.2"; //"mysql.nosnaldeia.com.br";
 $db_user = "seenergi_babel";
 $db_pass = "1qaz2wsx";
-$db = "seenergi_babel";//"nosnaldeia01";
+$db = "seenergi_babel"; //"nosnaldeia01";
 
 $IMAGE_PATH = "http://www.seenergia.com.br/babel_json_services/libs/avatars/";
 
@@ -36,16 +36,22 @@ function isActive() {
 }
 
 function visitor_country() {
-    $ip = $_SERVER["REMOTE_ADDR"];
-    if (filter_var(@$_SERVER['HTTP_X_FORWARDED_FOR'], FILTER_VALIDATE_IP))
-        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    if (filter_var(@$_SERVER['HTTP_CLIENT_IP'], FILTER_VALIDATE_IP))
-        $ip = $_SERVER['HTTP_CLIENT_IP'];
+    $ip = getRemoteIp();
     $result = @json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip=" . $ip));
     //var_dump($result);
     return $result <> NULL ? $result : "Unknown";
 }
 
-
+function getRemoteIp() {
+    $ip = $_SERVER["REMOTE_ADDR"];
+    
+    if (filter_var(@$_SERVER['HTTP_X_FORWARDED_FOR'], FILTER_VALIDATE_IP))
+        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    
+    if (filter_var(@$_SERVER['HTTP_CLIENT_IP'], FILTER_VALIDATE_IP))
+        $ip = $_SERVER['HTTP_CLIENT_IP'];
+    
+    return $ip;
+}
 
 ?>
