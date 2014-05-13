@@ -17,6 +17,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.RatingBar;
+import android.widget.RatingBar.OnRatingBarChangeListener;
 import android.widget.TextView;
 import br.com.morettotic.sip.CSIPService;
 import br.com.morettotic.viewmenu.httputil.URLParser;
@@ -26,9 +28,11 @@ import com.vizteck.navigationdrawer.R;
 public class FragmentConference extends Fragment {
 	private JSONObject json;
 	private ProgressDialog dialog = null;
-	private TextView translatorName,credits;
-	private Button atender,desligar;
+	private TextView translatorName, credits;
+	private Button atender, desligar;
 	private View rootView;
+	private String avaliacao;
+
 	// this Fragment will be called from MainActivity
 	public FragmentConference() {
 	}
@@ -37,15 +41,13 @@ public class FragmentConference extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
-		rootView = inflater.inflate(R.layout.conference_fragment,
-				container, false);
-		translatorName = (TextView) rootView
-				.findViewById(R.id.textView1);
+		rootView = inflater.inflate(R.layout.conference_fragment, container,
+				false);
+		translatorName = (TextView) rootView.findViewById(R.id.textView1);
 
 		translatorName.setText(MY_PROFILE.getTranslatorName());
 
-		credits = (TextView) rootView
-				.findViewById(R.id.textViewCredits);
+		credits = (TextView) rootView.findViewById(R.id.textViewCredits);
 
 		credits.setText("Credits: (" + MY_PROFILE.getCredits() + ") minutes");
 
@@ -81,6 +83,17 @@ public class FragmentConference extends Fragment {
 				atender.setVisibility(View.GONE);
 			}
 		});
+
+		RatingBar ratingBar1 = (RatingBar) rootView
+				.findViewById(R.id.ratingBar1);
+		ratingBar1
+				.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
+					public void onRatingChanged(RatingBar ratingBar,
+							float rating, boolean fromUser) {
+						avaliacao = String.valueOf(rating);
+						// TODO - Enviar para o Servidor
+					}
+				});
 
 		return rootView;
 	}
