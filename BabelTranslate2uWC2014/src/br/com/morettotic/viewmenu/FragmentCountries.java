@@ -24,7 +24,7 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import br.com.morettotic.entity.ServiceType;
 import br.com.morettotic.sip.CSIPService;
-import br.com.morettotic.viewmenu.httputil.URLParser;
+import br.com.morettotic.viewmenu.utils.URLParser;
 
 import com.csipsimple.api.ISipService;
 import com.csipsimple.service.SipService;
@@ -226,9 +226,11 @@ public class FragmentCountries extends Fragment {
 				MY_PROFILE.setUserAvatar(json.getString(C_USER_AVATAR));
 				MY_PROFILE.setTranslatorAvatar(json.getString(C_TRANSLATOR_AVATAR));
 				MY_PROFILE.setCredits(json.getString(C_CREDITS));
+				MY_PROFILE.setSipTranslatorServer(json.getString(C_SIP_SERVER_T));
 				
 				if (json.getString(C_ID_TRANSLATOR).equals("null")) {
 					//dialog.setMessage("Try again later...\nNo translator avaliable or online");
+					//dialog.
 				} else {
 					hasTranslatorOnline = true;
 				}
@@ -251,7 +253,7 @@ public class FragmentCountries extends Fragment {
 		protected void onPostExecute(String result) {
 			// TODO Auto-generated method stub
 			MY_PROFILE.setJson(result);
-			CSIPService.setDestino(MY_PROFILE.getSipServ(), MY_PROFILE.getSipTranslatorU());
+			CSIPService.setDestino(MY_PROFILE.getSipTranslatorServer(), MY_PROFILE.getSipServ());
 			if(hasTranslatorOnline){
 				MAINWINDOW.displayView(3);
 			}
@@ -264,6 +266,8 @@ public class FragmentCountries extends Fragment {
 	
 	private void loadTranslator(String countryId,String countryName){
 		
+		new br.com.morettotic.viewmenu.utils.Vibrator2u(MainActivity.MAINWINDOW).callButton();
+
 		spinnerTxt = serviceType.getSelectedItem().toString();
 		
 		dialog.setMessage("Searching for a translator ("+countryName+")!");

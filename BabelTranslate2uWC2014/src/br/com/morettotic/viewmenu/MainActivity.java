@@ -24,8 +24,8 @@ import android.widget.ListView;
 import br.com.morettotic.entity.Profile;
 import br.com.morettotic.sip.CSIPService;
 import br.com.morettotic.viewmenu.adapter.NavDrawerListAdapter;
-import br.com.morettotic.viewmenu.httputil.UserPreferences;
 import br.com.morettotic.viewmenu.model.NavDrawerItem;
+import br.com.morettotic.viewmenu.utils.UserPreferences;
 
 import com.vizteck.navigationdrawer.R;
 
@@ -186,8 +186,7 @@ public class MainActivity extends Activity {
 
 	public void displayView(int position) {
 		try {
-			// update the main content with called Fragment
-			
+			// update the main content with called Fragment			
 			switch (position) {
 			case 0:
 				fragment = new FragmentLogin();
@@ -204,8 +203,9 @@ public class MainActivity extends Activity {
 					fragment = new FragmentCountries();
 				}
 				break;
+			//nunca passa aqui se nao tiver acesso a tela de chamadas e tiver comprado creditos!
 			case 3:// Se nao tiver destinatario nao pode abrir tela de chamada!
-				if (MY_PROFILE.getSipTranslatorU() == null) {
+				if (MY_PROFILE.getSipTranslatorU() == null || MY_PROFILE.getSipTranslatorU().equals("null")) {
 					displayView(2);
 				} else {
 					fragment = new FragmentConference();
@@ -218,7 +218,7 @@ public class MainActivity extends Activity {
 				fragment = new FragmentPaypal();
 				break;
 			case 6:
-				// CSIPService.getInstance(this,null).getConnection().
+				CSIPService.destroy();
 				MY_PROFILE = null;
 				//UserPreferences.destroy(this);
 				System.exit(0);

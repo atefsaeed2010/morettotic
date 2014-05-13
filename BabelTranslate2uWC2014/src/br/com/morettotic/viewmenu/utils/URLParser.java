@@ -1,4 +1,4 @@
-package br.com.morettotic.viewmenu.httputil;
+package br.com.morettotic.viewmenu.utils;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;

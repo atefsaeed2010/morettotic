@@ -1,4 +1,4 @@
-package br.com.morettotic.viewmenu.httputil;
+package br.com.morettotic.viewmenu.utils;
 
 import static br.com.morettotic.viewmenu.MainActivity.MAINWINDOW;
 import android.app.Activity;

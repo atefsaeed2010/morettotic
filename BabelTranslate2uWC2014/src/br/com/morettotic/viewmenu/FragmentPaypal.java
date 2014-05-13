@@ -10,25 +10,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
-import android.widget.Button;
-import br.com.morettotic.sip.CSIPService;
-
 import com.vizteck.navigationdrawer.R;
 
 public class FragmentPaypal extends Fragment {
-	// this Fragment will be called from MainActivity
-	public FragmentPaypal() {
-	}
+	private View rootView;
+	private AlertDialog.Builder builder1;
+	private WebView web;
+	private AlertDialog alert11;
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 		
 		
-		final View rootView = inflater.inflate(R.layout.paypal_fragment,
-				container, false);
-		AlertDialog.Builder builder1 = new AlertDialog.Builder(
-				rootView.getContext());
+		rootView = inflater.inflate(R.layout.paypal_fragment,container, false);
+		builder1 = new AlertDialog.Builder(rootView.getContext());
 		builder1.setMessage("Buy some coins to call a translator!");
 		builder1.setCancelable(true);
 		builder1.setNegativeButton("OK",
@@ -40,11 +35,14 @@ public class FragmentPaypal extends Fragment {
 					}
 				});
 
-		AlertDialog alert11 = builder1.create();
+		alert11 = builder1.create();
 		alert11.show();
-		WebView web = (WebView) rootView.findViewById(R.id.paypallWebView);
-		//web.e
+		
+		web = (WebView) rootView.findViewById(R.id.paypallWebView);
 		web.loadUrl(MAIN_URL + "paypall/?id="+MY_PROFILE.getId());
+		
+		//Vibra pro amigo comprar moedas
+		new br.com.morettotic.viewmenu.utils.Vibrator2u(MainActivity.MAINWINDOW).error();
 		
 		return rootView;
 	}
