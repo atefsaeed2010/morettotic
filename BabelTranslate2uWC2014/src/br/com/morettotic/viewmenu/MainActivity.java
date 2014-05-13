@@ -41,7 +41,7 @@ public class MainActivity extends Activity {
 	private String locale;
 	// App title "Navigation Drawer" in this example
 	private CharSequence mTitle;
-
+	private Fragment fragment = null;
 	// slider menu items details
 	private String[] navMenuTitles;
 	private TypedArray navMenuIcons;
@@ -97,7 +97,8 @@ public class MainActivity extends Activity {
 		navDrawerItems.add(new NavDrawerItem("Conference",
 				R.drawable.ic_conference));
 
-		navDrawerItems.add(new NavDrawerItem("Avatar", R.drawable.bt_upload));
+		navDrawerItems.add(new NavDrawerItem("Configurations",
+				R.drawable.ic_config));
 
 		navDrawerItems.add(new NavDrawerItem("Babel2u Coins",
 				R.drawable.ic_payment));
@@ -186,7 +187,7 @@ public class MainActivity extends Activity {
 	public void displayView(int position) {
 		try {
 			// update the main content with called Fragment
-			Fragment fragment = null;
+			
 			switch (position) {
 			case 0:
 				fragment = new FragmentLogin();
@@ -195,12 +196,18 @@ public class MainActivity extends Activity {
 				fragment = new FragmentProfile();
 				break;
 			case 2:
-				fragment = new FragmentCountries();
-				break;
-			case 3://Se nao tiver destinatario nao pode abrir tela de chamada!
-				if(MY_PROFILE.getSipTranslatorU()==null){
+				double credits = Float.parseFloat(MY_PROFILE.getCredits());
+				//Nao possui creditos meu amigo vai comprar!!!!!!
+				if (credits < 1) {
+					displayView(5);					
+				} else {
 					fragment = new FragmentCountries();
-				}else{
+				}
+				break;
+			case 3:// Se nao tiver destinatario nao pode abrir tela de chamada!
+				if (MY_PROFILE.getSipTranslatorU() == null) {
+					displayView(2);
+				} else {
 					fragment = new FragmentConference();
 				}
 				break;
@@ -213,7 +220,7 @@ public class MainActivity extends Activity {
 			case 6:
 				// CSIPService.getInstance(this,null).getConnection().
 				MY_PROFILE = null;
-				UserPreferences.destroy(this);
+				//UserPreferences.destroy(this);
 				System.exit(0);
 
 				break;
@@ -238,8 +245,9 @@ public class MainActivity extends Activity {
 				Log.e("this is mainActivity", "Error in else case");
 			}
 		} catch (Exception e) {
-			AlertDialog.Builder builder1 = new AlertDialog.Builder(this.getApplicationContext());
-			builder1.setMessage("Please try again later!"+e.toString());
+			AlertDialog.Builder builder1 = new AlertDialog.Builder(
+					this.getApplicationContext());
+			builder1.setMessage("Please try again later!" + e.toString());
 			builder1.setCancelable(true);
 			builder1.setNegativeButton("OK",
 					new DialogInterface.OnClickListener() {
