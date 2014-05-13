@@ -25,20 +25,7 @@ $id_service_type = $_GET['id_service_type'];
  *  SELECTS TRANSLATOR AVALIABLE AND ONLINE FOR A GIVEN LANGUAGE
  * 
  *  */
-$query = "SELECT 
-                id_user, 
-                name,
-                b.user,
-                b.pass,
-                c.servername,
-                email,
-                passwd
-            FROM 
-                profile AS a 
-            left join 
-                sip_user AS b on a.id_user = b.profile_id_user 
-            left join 
-                sip_server as c on b.sip_server_idsip_server = c.idsip_server 
+$query = "SELECT * FROM `view_profile_sip_acc`
             where 
                 a.fk_id_role = 2
                 and avaliable = 1
@@ -50,9 +37,6 @@ $query = "SELECT
 
 $result = mysqli_query($con, $query);
 $row = mysqli_fetch_array($result);
-
-
-
 
 //Init values
 $date = new DateTime();

@@ -19,7 +19,7 @@ if (isset($id) && $id != "-1") {//modo edicao
     $row = mysqli_fetch_array($result);
     $query1 = null;
 } else {
-    $query = "SELECT * FROM `view_profile_count` where email = '$email'";
+    $query = "select passwd, count(*) as total from profile where email = '$email'";
     $result = mysqli_query($con, $query);
     $row = mysqli_fetch_array($result);
     //Verificar se o email existe e a senha nao confere....

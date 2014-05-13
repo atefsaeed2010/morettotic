@@ -21,27 +21,15 @@
 include_once 'db_vars.config.php';
 
 $id_user = $_GET['id_user'];
-//Declara o id para o jsonobject
-$id = $_GET['id_user'];
 $image_path1 = $_GET['image_path'];
 
 if (!empty($id_user)) {
-    //Insere a nova imagem no banco  
-    $query = "insert into avatar (image_path) values ('$image_path1')";
+    //Insere a nova imagem no banco usando a funcao no mysql 
+    $query = " SELECT `fn_set_avatar`('$image_path1', '$id_user') AS `fn_set_avatar`";
     $result = mysqli_query($con, $query);
     $row = mysqli_fetch_array($result);
-    //Atualiza o profile para a nova imagem
-    $query = "update profile"
-            . " set avatar_idavatar = (select idavatar from avatar where image_path = '$image_path1' order by idavatar desc limit 1) where id_user = $id_user";
-
-    //echo $query;
-
-    $result = mysqli_query($con, $query);
-    $row = mysqli_fetch_array($result);
-    //var_dump($row);
 }
 mysql_close($con);
-//include 'json_profile.php';
 ?>
 <html>
     <body bgcolor="#ffffff" marginheight="0" marginwidth="0">
