@@ -21,7 +21,7 @@ import android.widget.RatingBar;
 import android.widget.RatingBar.OnRatingBarChangeListener;
 import android.widget.TextView;
 import br.com.morettotic.sip.CSIPService;
-import br.com.morettotic.viewmenu.httputil.URLParser;
+import br.com.morettotic.viewmenu.utils.URLParser;
 
 import com.vizteck.navigationdrawer.R;
 

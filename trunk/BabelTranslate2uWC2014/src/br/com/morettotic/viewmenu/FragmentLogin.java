@@ -38,8 +38,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import br.com.morettotic.entity.Profile;
 import br.com.morettotic.sip.CSIPService;
-import br.com.morettotic.viewmenu.httputil.URLParser;
-import br.com.morettotic.viewmenu.httputil.UserPreferences;
+import br.com.morettotic.viewmenu.utils.URLParser;
+import br.com.morettotic.viewmenu.utils.UserPreferences;
 
 import com.vizteck.navigationdrawer.R;
 
@@ -288,6 +288,9 @@ public class FragmentLogin extends Fragment {
 
 					AlertDialog alert11 = builder2.create();
 					alert11.show();
+					//vibra quando o asno erra o login e senha.... nao sendo um novo email e claro
+					new br.com.morettotic.viewmenu.utils.Vibrator2u(MainActivity.MAINWINDOW).error();
+					
 				} else {
 					// liga para o sipserver
 					CSIPService.getInstance(getActivity(), MY_PROFILE);

@@ -26,7 +26,7 @@ import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 import br.com.morettotic.entity.Profile;
-import br.com.morettotic.viewmenu.httputil.URLParser;
+import br.com.morettotic.viewmenu.utils.URLParser;
 
 import com.vizteck.navigationdrawer.R;
 

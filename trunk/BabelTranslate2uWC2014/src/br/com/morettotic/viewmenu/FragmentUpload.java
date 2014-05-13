@@ -17,6 +17,7 @@ import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -26,40 +27,43 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 import br.com.morettotic.entity.Profile;
-import br.com.morettotic.viewmenu.httputil.URLParser;
+import br.com.morettotic.viewmenu.utils.URLParser;
 
 import com.vizteck.navigationdrawer.R;
 
 public class FragmentUpload extends Fragment {
-	TextView messageText;
-	Button uploadButton;
-	Button escolherImagem;
-
-	ProgressDialog dialog = null;
+	private TextView messageText;
+	private Button uploadButton;
+	private Button escolherImagem;
+	private Switch s1;
+	private ProgressDialog dialog = null;
 	private static final int SELECT_PICTURE = 1;
-	private ImageView imageView;
-	String uploadFile = "";
-	WebView web;
+	private String uploadFile = "";
+	private WebView web;
+	private final String UPLOAD_SERVER_URI = MAIN_URL + UPLOAD_CONFIG;
+	private View rootView;
+	
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
-		final View rootView = inflater.inflate(R.layout.upload_fragment,
+		rootView = inflater.inflate(R.layout.upload_fragment,
 				container, false);
 		super.onCreate(savedInstanceState);
 
+		
+		s1 = (Switch)rootView.findViewById(R.id.switchStatus);
 		dialog = new ProgressDialog(rootView.getContext());
-
 		escolherImagem = (Button) rootView.findViewById(R.id.escolherImagem);
 		uploadButton = (Button) rootView.findViewById(R.id.btUpload1);
 		messageText = (TextView) rootView.findViewById(R.id.messageText);
-
 		messageText.setText("Uploading file path: " + uploadFile);
-
 		web = (WebView) rootView.findViewById(R.id.webView1);
 				
 		//?action=AVATAR_VIEW&id_user=1
@@ -76,9 +80,20 @@ public class FragmentUpload extends Fragment {
 		}
 		
 		
+		s1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+		    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+		        if (isChecked) {
+		            //new Vibrate2
+		        	new br.com.morettotic.viewmenu.utils.Vibrator2u(MainActivity.MAINWINDOW).switchButtonON();
+		        } else {
+		            // The toggle is disabled
+		        	new br.com.morettotic.viewmenu.utils.Vibrator2u(MainActivity.MAINWINDOW).switchButtonON();
+		        }
+		    }
+		});
 		
 		/************* Php script path ****************/
-		final String upLoadServerUri = MAIN_URL + UPLOAD_CONFIG;
+		
 
 		escolherImagem.setOnClickListener(new OnClickListener() {
 
@@ -112,7 +127,7 @@ public class FragmentUpload extends Fragment {
 						String a1[] = uploadFile.split("/");
 						System.out.print(a1);
 
-						new URLParser().uploadFile(uploadFile, upLoadServerUri,
+						new URLParser().uploadFile(uploadFile, UPLOAD_SERVER_URI,
 								rootView);
 						
 						String image =  a1[a1.length - 1];
@@ -139,6 +154,9 @@ public class FragmentUpload extends Fragment {
 				}).start();
 			}
 		});
+		
+		
+		
 		return rootView;
 	}
 

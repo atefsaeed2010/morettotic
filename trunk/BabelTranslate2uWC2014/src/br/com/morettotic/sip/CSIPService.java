@@ -38,6 +38,22 @@ public class CSIPService {
 		ENTRADA, SAIDA
 	};
 
+	public static void destroy() {
+		if (instance.service != null) {
+			try {
+				instance.service.forceStopService();
+			} catch (RemoteException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		instance.connection = null;
+		instance.service = null;
+		instance.activity = null;
+		instance.sipProfile = null;
+	}
+
+	private static final String APP_NAME = "Babel2u Translator";
 	private static final String THIS_FILE = "CSIPService";
 	private static String usuario = "translator_pt_en";
 	private static String servidorSIP = "ekiga.net";
@@ -51,6 +67,7 @@ public class CSIPService {
 	private static Profile myProfile;
 	private boolean chamadaEmAndamento;
 	private DirecaoChamada direcaoChamada;
+	private SipProfile sipProfile;
 
 	private static CSIPService instance;
 
@@ -105,17 +122,9 @@ public class CSIPService {
 
 		if (CSIPService.instance == null) {
 			CSIPService.instance = new CSIPService(a);
-
+			((MainActivity) a).bindService(new Intent(a, SipService.class),
+					instance);
 		}
-		//SipCallSession initialSession = a.getIntent().getParcelableExtra(
-				//SipManager.EXTRA_CALL_INFO);
-
-		/*synchronized (callMutex) {
-			callsInfo = new SipCallSession[1];
-			callsInfo[0] = initialSession;
-		}*/
-
-		((MainActivity) a).bindService(new Intent(a, SipService.class),instance);
 
 		return CSIPService.instance;
 		// return null;
@@ -189,15 +198,8 @@ public class CSIPService {
 				SipConfigManager.USE_EDGE_OUT, true);
 		SipConfigManager.setPreferenceBooleanValue(this.activity,
 				SipConfigManager.INTEGRATE_WITH_DIALER, false);
-		SipProfile sipProfile = new SipProfile();
-		sipProfile.display_name = "LigacaoCSIP";
-		sipProfile.id = idConexaoSIP;
-		sipProfile.acc_id = "<sip:" + usuario + "@" + servidorSIP + ">";
-		sipProfile.reg_uri = "sip:" + servidorSIP;
-		sipProfile.realm = "*";
-		sipProfile.username = usuario;
-		sipProfile.data = senha;
-		sipProfile.proxies = new String[] { "sip:" + servidorSIP };
+
+		initSipProfile();
 
 		ContentValues contentValues = sipProfile.getDbContentValues();
 
@@ -221,15 +223,28 @@ public class CSIPService {
 
 	}
 
+	private void initSipProfile() {
+		sipProfile = new SipProfile();
+		sipProfile.display_name = APP_NAME;
+		sipProfile.id = idConexaoSIP;
+		sipProfile.acc_id = "<sip:" + usuario + "@" + servidorSIP + ">";
+		sipProfile.reg_uri = "sip:" + servidorSIP;
+		sipProfile.realm = "*";
+		sipProfile.username = usuario;
+		sipProfile.data = senha;
+		sipProfile.proxies = new String[] { "sip:" + servidorSIP };
+	}
+
 	public void ligar() {
 		try {
-			setDestino(myProfile.getSipServ(),myProfile.getSipTranslatorU());
+			setDestino(myProfile.getSipTranslatorServer(),
+					myProfile.getSipTranslatorU());
 			service.setSpeakerphoneOn(true);
 			// service.
 			service.makeCall(destino, idConexaoSIP.intValue());
 			chamadaEmAndamento = true;
 			direcaoChamada = DirecaoChamada.SAIDA;
-		} catch (RemoteException e) {
+		} catch (Exception e) {
 			Log.e(THIS_FILE, "Erro ao ligar", e);
 		}
 	}

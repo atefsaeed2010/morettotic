@@ -28,6 +28,7 @@ public class Profile implements Serializable {
 	public static final String MAIN_URL = "http://www.seenergia.com.br/babel_json_services/";//"http://www.nosnaldeia.com.br/babel_json_services/";
 	public static final String AVATAR = "libs/avatars/resized_";
 	public static final String C_SIP_SERVER = "serverName";
+	public static final String C_SIP_SERVER_T = "servername";
 	public static final String C_SIP_USER = "user";
 	public static final String C_SIP_PASS = "pass";
 	public static final String C_ID_TRANSLATOR = "id_translator";
@@ -60,7 +61,7 @@ public class Profile implements Serializable {
 	private String sipPass;
 	private String sipServ;
 	private boolean isAuthenticated = false;
-	private String sipTranslatorU;
+	private String sipTranslatorU, sipTranslatorServer;
 	private String callToken;
 	private String userAvatar,translatorAvatar;
 	
@@ -259,6 +260,14 @@ public class Profile implements Serializable {
 
 	public void setTranslatorAvatar(String translatorAvatar) {
 		this.translatorAvatar = translatorAvatar;
+	}
+
+	public String getSipTranslatorServer() {
+		return sipTranslatorServer;
+	}
+
+	public void setSipTranslatorServer(String sipTranslatorServer) {
+		this.sipTranslatorServer = sipTranslatorServer;
 	}
 
 }
