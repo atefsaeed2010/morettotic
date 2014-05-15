@@ -59,8 +59,8 @@ public class CSIPService {
 	private static String servidorSIP = "ekiga.net";
 	private static String senha = "translator_pt_en";
 	private static String destino = "CS00016929@sps6.commcorp.com.br";
-	private Long idConexaoSIP = SipProfile.INVALID_ID;
-	private ISipService service;
+	private static Long idConexaoSIP = SipProfile.INVALID_ID;
+	private static ISipService service;
 	private boolean usuarioSIPLogado;
 	private Activity activity;
 	private ServiceConnection connection;
@@ -68,6 +68,7 @@ public class CSIPService {
 	private boolean chamadaEmAndamento;
 	private DirecaoChamada direcaoChamada;
 	private SipProfile sipProfile;
+	private static SipProfileState sipProfileState;
 
 	private static CSIPService instance;
 
@@ -78,6 +79,20 @@ public class CSIPService {
 	public static void setDestino(String sName, String uName) {
 		destino = uName + "@" + sName;
 		// destino = uName;
+	}
+	
+	public static boolean isSipConnected(){
+		/*try {
+			//sipProfileState = service.getSipProfileState(idConexaoSIP.intValue());
+			//return sipProfileState.isValidForCall();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		
+*/	
+	return true;	
 	}
 
 	private BroadcastReceiver listenerChamada = new BroadcastReceiver() {
@@ -122,10 +137,20 @@ public class CSIPService {
 
 		if (CSIPService.instance == null) {
 			CSIPService.instance = new CSIPService(a);
-			((MainActivity) a).bindService(new Intent(a, SipService.class),
-					instance);
+			((MainActivity) a).bindService(new Intent(a, SipService.class),instance);
 		}
-
+		
+		isSipConnected();
+		//
+	//	try {
+			//service.sipStart();
+			//sipProfileState.getStatusText();
+	//	} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+	//		e.printStackTrace();
+	//	}
+		
+		
 		return CSIPService.instance;
 		// return null;
 	}
@@ -148,8 +173,7 @@ public class CSIPService {
 						if (cursor.moveToFirst()) {
 							SipProfile foundProfile = new SipProfile(cursor);
 							idConexaoSIP = foundProfile.id;
-							SipProfileState sipProfileState = service
-									.getSipProfileState(idConexaoSIP.intValue());
+							sipProfileState = service.getSipProfileState(idConexaoSIP.intValue());
 							if (sipProfileState != null) {
 								usuarioSIPLogado = sipProfileState.isActive()
 										&& sipProfileState.isValidForCall()
@@ -171,6 +195,7 @@ public class CSIPService {
 			}
 
 			public void onServiceDisconnected(ComponentName arg0) {
+				autenticaServidor();
 			}
 		};
 		this.activity.bindService(new Intent(this.activity, SipService.class),
