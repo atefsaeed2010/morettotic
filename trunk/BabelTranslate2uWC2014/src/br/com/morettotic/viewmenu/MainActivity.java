@@ -205,7 +205,7 @@ public class MainActivity extends Activity {
 				break;
 			//nunca passa aqui se nao tiver acesso a tela de chamadas e tiver comprado creditos!
 			case 3:// Se nao tiver destinatario nao pode abrir tela de chamada!
-				if (MY_PROFILE.getSipTranslatorU() == null || MY_PROFILE.getSipTranslatorU().equals("null")) {
+				if (MY_PROFILE.getRoleId().equals("1")&&(MY_PROFILE.getSipTranslatorU() == null || MY_PROFILE.getSipTranslatorU().equals("null"))) {
 					displayView(2);
 				} else {
 					fragment = new FragmentConference();
