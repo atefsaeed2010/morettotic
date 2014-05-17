@@ -58,15 +58,15 @@ public class FragmentLogin extends Fragment {
 	private final String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
 			+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
-	public FragmentLogin(){
-		
+	public FragmentLogin() {
+
 	}
-	
+
 	public void onResume() {
 		super.onResume();
 		initProfile();
 	}
-	
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -75,8 +75,8 @@ public class FragmentLogin extends Fragment {
 				container, false);
 		dialog = new ProgressDialog(rootView.getContext());
 
-		//initProfile();
-		
+		// initProfile();
+
 		email = (TextView) rootView.findViewById(R.id.email);
 		passwd1 = (TextView) rootView.findViewById(R.id.password12);
 		builder2 = new AlertDialog.Builder(rootView.getContext());
@@ -164,14 +164,15 @@ public class FragmentLogin extends Fragment {
 						MY_PROFILE.setNature(b.getText().toString());
 
 						// Grava os dados de login nas preferencias locais do
-						// dispositivo se marcar a opção de gravar....
+						// dispositivo se marcar a opï¿½ï¿½o de gravar....
 						if (saveInstance.isChecked()) {
-							new UserPreferences(MAINWINDOW, 
-												email.getText().toString(), 
-												passwd.getText().toString(), 
-												b.getText().toString());
-						}else{
-							UserPreferences.destroy(MAINWINDOW);//Destroy as preferencias do noob....
+							new UserPreferences(MAINWINDOW, email.getText()
+									.toString(), passwd.getText().toString(), b
+									.getText().toString());
+						} else {
+							UserPreferences.destroy(MAINWINDOW);// Destroy as
+																// preferencias
+																// do noob....
 						}
 
 					}
@@ -205,9 +206,19 @@ public class FragmentLogin extends Fragment {
 
 			}
 		});
-		//marca a bandeira
+		// marca a bandeira
 		checkMyCountry(rootView, UserPreferences.getNature(MAINWINDOW));
-		
+
+		// Posiciona o scroll no item selecionado
+		rootView.findViewById(R.id.horizontalScrollView1).post(new Runnable() {
+			@Override
+			public void run() {
+				rootView.findViewById(R.id.horizontalScrollView1).scrollTo(
+						myCountry.getLeft(), 0);
+			}
+
+		});
+
 		return rootView;
 	}
 
@@ -260,7 +271,7 @@ public class FragmentLogin extends Fragment {
 					MY_PROFILE.setRoleId(js.getString(C_ROLE));
 					MY_PROFILE.setPassWd(passwd.getText().toString());
 					MY_PROFILE.setError(null);
-					// Email existe e senha não bate.......
+					// Email existe e senha nï¿½o bate.......
 					if (js.has(C_PASSWD_ERROR)) {
 						MY_PROFILE.setError(js.getString(C_PASSWD_ERROR));
 					}
@@ -288,9 +299,11 @@ public class FragmentLogin extends Fragment {
 
 					AlertDialog alert11 = builder2.create();
 					alert11.show();
-					//vibra quando o asno erra o login e senha.... nao sendo um novo email e claro
-					new br.com.morettotic.viewmenu.utils.Vibrator2u(MainActivity.MAINWINDOW).error();
-					
+					// vibra quando o asno erra o login e senha.... nao sendo um
+					// novo email e claro
+					new br.com.morettotic.viewmenu.utils.Vibrator2u(
+							MainActivity.MAINWINDOW).error();
+
 				} else {
 					// liga para o sipserver
 					CSIPService.getInstance(getActivity(), MY_PROFILE);
@@ -318,9 +331,9 @@ public class FragmentLogin extends Fragment {
 			String pass = UserPreferences.getPass(MAINWINDOW);
 			String nature = UserPreferences.getNature(MAINWINDOW);
 			url = FragmentLogin.getLoginUrl(email, pass, nature);
-			
-			//new LoginAction().execute(url);
-			
+
+			// new LoginAction().execute(url);
+
 		}
 	}
 
@@ -331,28 +344,31 @@ public class FragmentLogin extends Fragment {
 				+ "&proficiency=" + pNature;
 		return url;
 	}
-	
-	private void checkMyCountry(View rootView, String ctr){
-		if(ctr.equals("BR")){
-			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonBrazil);
-		}else if(ctr.equals("EN")){
-			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonEua);
-		}else if(ctr.equals("GR")){
+
+	private void checkMyCountry(View rootView, String ctr) {
+		if (ctr.equals("BR")) {
+			myCountry = (RadioButton) rootView
+					.findViewById(R.id.radioButtonBrazil);
+		} else if (ctr.equals("EN")) {
+			myCountry = (RadioButton) rootView
+					.findViewById(R.id.radioButtonEua);
+		} else if (ctr.equals("GR")) {
 			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonGr);
-		}else if(ctr.equals("FR")){
-			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonFrance);
-		}else if(ctr.equals("JP")){
+		} else if (ctr.equals("FR")) {
+			myCountry = (RadioButton) rootView
+					.findViewById(R.id.radioButtonFrance);
+		} else if (ctr.equals("JP")) {
 			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonJP);
-		}else if(ctr.equals("CH")){
+		} else if (ctr.equals("CH")) {
 			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonCH);
-		}else if(ctr.equals("MR")){
+		} else if (ctr.equals("MR")) {
 			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonMR);
-		}else if(ctr.equals("ES")){
+		} else if (ctr.equals("ES")) {
 			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonES);
-		}else{
-			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonBrazil);
+		} else {
+			myCountry = (RadioButton) rootView
+					.findViewById(R.id.radioButtonBrazil);
 		}
 		myCountry.setChecked(true);
-		
 	}
 }
