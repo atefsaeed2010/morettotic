@@ -48,6 +48,7 @@ public class FragmentProfile extends Fragment {
 	private TextView birthDay,paypall,name,pass1,pass2,passw1,passw2;
 	private RadioButton radioUser,radioTranslator, myCountry;
 	private RadioGroup gFlags,gRoles;
+	private View rootView;
 	
 	public FragmentProfile() {
 	}
@@ -56,7 +57,7 @@ public class FragmentProfile extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
-		final View rootView = inflater.inflate(R.layout.profile_fragment,
+		rootView = inflater.inflate(R.layout.profile_fragment,
 				container, false);
 
 		dialog = new ProgressDialog(rootView.getContext());
@@ -242,7 +243,14 @@ public class FragmentProfile extends Fragment {
 		
 		//marca proficiencia
 		checkMyCountry(rootView,MY_PROFILE.getProficiency(),MY_PROFILE.getRoleId());
-		
+		rootView.findViewById(R.id.horizontalScrollView1).post(new Runnable() {
+			@Override
+			public void run() {
+				rootView.findViewById(R.id.horizontalScrollView1).scrollTo(
+						myCountry.getLeft(), 0);
+			}
+
+		});
 		return rootView;
 	}
 
@@ -346,6 +354,9 @@ public class FragmentProfile extends Fragment {
 			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonBrazil);
 		}
 		myCountry.setChecked(true);
+		myCountry.scrollTo(myCountry.getLeft(), 0);
+		
+		
 		
 	}
 	
