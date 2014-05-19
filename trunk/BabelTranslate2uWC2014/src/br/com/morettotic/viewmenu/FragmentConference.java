@@ -86,8 +86,7 @@ public class FragmentConference extends Fragment {
 
 		RatingBar ratingBar1 = (RatingBar) rootView
 				.findViewById(R.id.ratingBar1);
-		ratingBar1
-				.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
+		ratingBar1.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
 					public void onRatingChanged(RatingBar ratingBar,
 							float rating, boolean fromUser) {
 						avaliacao = String.valueOf(rating);

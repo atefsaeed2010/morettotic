@@ -370,5 +370,6 @@ public class FragmentLogin extends Fragment {
 					.findViewById(R.id.radioButtonBrazil);
 		}
 		myCountry.setChecked(true);
+		myCountry.scrollTo(	myCountry.getLeft(), 0);
 	}
 }
