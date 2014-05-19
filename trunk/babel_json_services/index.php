@@ -40,13 +40,16 @@ switch ($action) {
     case "PAYPALL_CALLBACK":
         //include './libs/paypall/index.php';
         break;
-     case "PAYPAL_REQUEST":
+    case "PAYPAL_REQUEST":
         include './paypall/index.php';
         break;
     case "NETWORK":
         include './libs/network_profile.php';
         break;
-    //@babel_json_services/?login=george.martins@gmail.com&passwd=123456   
+    //?action=EVALUATION&id_user=1&id_trans=139&rate=1.4
+    case "EVALUATION":
+        include './libs/evaluation_profile.php';
+        break;
     default:
         include './libs/login_profile.php';
         break;
