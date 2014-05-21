@@ -246,6 +246,7 @@ public class FragmentProfile extends Fragment {
 		rootView.findViewById(R.id.horizontalScrollView1).post(new Runnable() {
 			@Override
 			public void run() {
+				if(myCountry!=null)
 				rootView.findViewById(R.id.horizontalScrollView1).scrollTo(
 						myCountry.getLeft(), 0);
 			}
