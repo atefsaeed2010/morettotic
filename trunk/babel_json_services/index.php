@@ -50,6 +50,10 @@ switch ($action) {
     case "EVALUATION":
         include './libs/evaluation_profile.php';
         break;
+    //?action=STATUS&id_user=1&online=1
+     case "STATUS":
+        include './libs/status_profile.php';
+        break;
     default:
         include './libs/login_profile.php';
         break;
