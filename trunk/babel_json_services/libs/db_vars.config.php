@@ -19,7 +19,7 @@ $db = "seenergi_babel"; //"nosnaldeia01";
 //
 //Parametros do sistema
 $IMAGE_PATH = "http://www.seenergia.com.br/babel_json_services/libs/avatars/";
-$mensagem = "WARNING: MENSAGEM NAO INFORMADA ! DECLARE SUA MENSAGEM PARA CADA AÇÃO NA VARIAVEL PHP #mensagem";
+$mensagem = "WARNING: MENSAGEM NAO INFORMADA !";
 
 //Conexao global
 $con = mysqli_connect($database, $db_user, $db_pass, $db);

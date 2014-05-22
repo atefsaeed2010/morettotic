@@ -23,8 +23,9 @@ public class FragmentPaypal extends Fragment {
 		
 		
 		rootView = inflater.inflate(R.layout.paypal_fragment,container, false);
-		builder1 = new AlertDialog.Builder(rootView.getContext());
-		builder1.setMessage("Buy some coins to call a translator!");
+		builder1 = new AlertDialog.Builder(MAINWINDOW);
+		builder1.setMessage("Buy coins!");
+		builder1.setIcon(R.drawable.ic_payment);
 		builder1.setCancelable(true);
 		builder1.setNegativeButton("OK",
 				new DialogInterface.OnClickListener() {
@@ -35,8 +36,8 @@ public class FragmentPaypal extends Fragment {
 					}
 				});
 
-		alert11 = builder1.create();
-		alert11.show();
+		//alert11 = builder1.create();
+		builder1.show();
 		
 		web = (WebView) rootView.findViewById(R.id.paypallWebView);
 		web.loadUrl(MAIN_URL + "paypall/?id="+MY_PROFILE.getId());
