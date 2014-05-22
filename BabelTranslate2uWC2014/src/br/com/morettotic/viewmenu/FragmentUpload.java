@@ -4,6 +4,8 @@ import static br.com.morettotic.entity.Profile.MAIN_URL;
 import static br.com.morettotic.entity.Profile.UPLOAD_CONFIG;
 import static br.com.morettotic.viewmenu.MainActivity.MY_PROFILE;
 
+import static br.com.morettotic.viewmenu.MainActivity.MAINWINDOW;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -32,6 +34,8 @@ import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import br.com.morettotic.entity.Profile;
+import br.com.morettotic.sip.CSIPService;
+import br.com.morettotic.viewmenu.action.DefaultAction;
 import br.com.morettotic.viewmenu.utils.URLParser;
 
 import com.vizteck.navigationdrawer.R;
@@ -82,13 +86,20 @@ public class FragmentUpload extends Fragment {
 		
 		s1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 		    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+		    	String status = "OFF";
 		        if (isChecked) {
 		            //new Vibrate2
-		        	new br.com.morettotic.viewmenu.utils.Vibrator2u(MainActivity.MAINWINDOW).switchButtonON();
+		        	status = "ON";
+		        	CSIPService.getInstance(MAINWINDOW, MY_PROFILE);
+		        	new br.com.morettotic.viewmenu.utils.Vibrator2u(MAINWINDOW).switchButtonON();
 		        } else {
+		        	//CSIPService.destroy();
 		            // The toggle is disabled
-		        	new br.com.morettotic.viewmenu.utils.Vibrator2u(MainActivity.MAINWINDOW).switchButtonON();
+		        	new br.com.morettotic.viewmenu.utils.Vibrator2u(MAINWINDOW).switchButtonOFF();
 		        }
+		        DefaultAction da = new DefaultAction();
+		        da.setStatusAction(MY_PROFILE.getId(), status);
+		        da.execute();
 		    }
 		});
 		
@@ -102,10 +113,7 @@ public class FragmentUpload extends Fragment {
 				Intent intent = new Intent();
 				intent.setType("image/*");
 				intent.setAction(Intent.ACTION_GET_CONTENT);
-				startActivityForResult(
-						Intent.createChooser(intent, "Pic your avatar"),
-						SELECT_PICTURE);
-
+				startActivityForResult(Intent.createChooser(intent, "Pic your avatar"),SELECT_PICTURE);
 			}
 		});
 
@@ -136,7 +144,7 @@ public class FragmentUpload extends Fragment {
 						
 						if (!(MY_PROFILE.getId().equals("")
 								&& MY_PROFILE.getId().equals("-1"))) {
-							// Ação para gravar a imagem no perfil.
+							// Aï¿½ï¿½o para gravar a imagem no perfil.
 							// web.loadUrl(
 							// Profile.MAIN_URL+"libs/avatars/resized_"+a1[a1.length-1]);
 							String url = MAIN_URL+"?action=AVATAR&id_user="+MY_PROFILE.getId()+"&image_path="+image;

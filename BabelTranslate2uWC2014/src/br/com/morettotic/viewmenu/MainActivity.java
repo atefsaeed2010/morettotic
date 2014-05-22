@@ -1,5 +1,7 @@
 package br.com.morettotic.viewmenu;
 
+import static br.com.morettotic.viewmenu.MainActivity.MY_PROFILE;
+
 import java.util.ArrayList;
 
 import android.annotation.SuppressLint;
@@ -23,6 +25,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import br.com.morettotic.entity.Profile;
 import br.com.morettotic.sip.CSIPService;
+import br.com.morettotic.viewmenu.action.DefaultAction;
 import br.com.morettotic.viewmenu.adapter.NavDrawerListAdapter;
 import br.com.morettotic.viewmenu.model.NavDrawerItem;
 import br.com.morettotic.viewmenu.utils.UserPreferences;
@@ -218,11 +221,7 @@ public class MainActivity extends Activity {
 				fragment = new FragmentPaypal();
 				break;
 			case 6:
-				CSIPService.destroy();
-				MY_PROFILE = null;
-				//UserPreferences.destroy(this);
-				System.exit(0);
-
+				destroy();
 				break;
 			default:
 				break;
@@ -259,6 +258,41 @@ public class MainActivity extends Activity {
 			AlertDialog alert11 = builder1.create();
 			alert11.show();
 		}
+	}
+
+	private void destroy() {
+		AlertDialog.Builder adb = new AlertDialog.Builder(this);
+
+	    adb.setTitle("Exit?");
+	    adb.setIcon(R.drawable.ic_exit);
+
+	    adb.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+	        public void onClick(DialogInterface dialog, int which) {
+	        	
+	        	CSIPService.destroy();
+	            DefaultAction da = new DefaultAction();
+	            da.setStatusAction(MY_PROFILE.getId(), "OFF");
+	            da.execute();	    		
+	    		
+	    		try {
+	    			Thread.sleep(5000);
+	    		} catch (InterruptedException e) {
+	    			// TODO Auto-generated catch block
+	    			//e.printStackTrace();
+	    		}
+	    		MY_PROFILE = null;
+	    		MAINWINDOW.finish();
+	    		//System.exit(0);
+	      } });
+
+
+	    adb.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+	        public void onClick(DialogInterface dialog, int which) {
+	        	displayView(2);
+	      } });
+	    adb.show();
+		
+		
 	}
 
 	@Override
