@@ -11,12 +11,15 @@
  * @data 11/03/2014
  * 
  * */
+//parametros do banco
 $database = "173.248.156.2"; //"mysql.nosnaldeia.com.br";
 $db_user = "seenergi_babel";
 $db_pass = "1qaz2wsx";
 $db = "seenergi_babel"; //"nosnaldeia01";
-
+//
+//Parametros do sistema
 $IMAGE_PATH = "http://www.seenergia.com.br/babel_json_services/libs/avatars/";
+$mensagem = "WARNING: MENSAGEM NAO INFORMADA ! DECLARE SUA MENSAGEM PARA CADA AÇÃO NA VARIAVEL PHP #mensagem";
 
 //Conexao global
 $con = mysqli_connect($database, $db_user, $db_pass, $db);
