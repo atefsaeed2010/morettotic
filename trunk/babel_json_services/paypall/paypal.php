@@ -104,7 +104,7 @@ session_start();
  */
 ?>
 
-<body style="background-image: url('http://www.seenergia.com.br/babel_json_services/libs/avatars/bg_icon.png')">
+<body style="background-image: url('http://www.nosnaldeia.com.br/babel_json_services/libs/avatars/bg_icon.png')">
 
     <?php
     require_once("paypal_class.php");

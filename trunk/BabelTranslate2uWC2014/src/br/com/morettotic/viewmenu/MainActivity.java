@@ -281,8 +281,8 @@ public class MainActivity extends Activity {
 	    			//e.printStackTrace();
 	    		}
 	    		MY_PROFILE = null;
-	    		MAINWINDOW.finish();
-	    		//System.exit(0);
+	    		//MAINWINDOW.finish();
+	    		System.exit(0);
 	      } });
 
 

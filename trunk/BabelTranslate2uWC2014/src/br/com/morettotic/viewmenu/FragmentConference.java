@@ -65,8 +65,12 @@ public class FragmentConference extends Fragment {
 		CSIPService csipService = CSIPService.getInstance(getActivity(),MY_PROFILE);
 		
 		if (!csipService.isChamadaEmAndamento()) {
-			CSIPService.getInstance(getActivity(), MY_PROFILE).ligar();
-			atender.setVisibility(View.GONE);
+			if (MY_PROFILE.getSipTranslatorU() == null || MY_PROFILE.getSipTranslatorU().equals("null")) {
+				MAINWINDOW.displayView(2);
+			}else{
+				CSIPService.getInstance(getActivity(), MY_PROFILE).ligar();
+				atender.setVisibility(View.GONE);
+			}
 		} else {
 			ratingBar1.setVisibility(View.GONE);//Tradutor nao visualiza  a barra de votacao
 			web.loadUrl(MAIN_URL + "?action=AVATAR_VIEW&id_user="+ MY_PROFILE.getId());

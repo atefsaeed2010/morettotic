@@ -54,6 +54,10 @@ switch ($action) {
      case "STATUS":
         include './libs/status_profile.php';
         break;
+    //?action=STATUS&id_user=1&online=1
+     case "BUSCACEP":
+        include './libs/json_address.php';
+        break;
     default:
         include './libs/login_profile.php';
         break;

@@ -18,8 +18,10 @@ $db_pass = "1qaz2wsx";
 $db = "seenergi_babel"; //"nosnaldeia01";
 //
 //Parametros do sistema
-$IMAGE_PATH = "http://www.seenergia.com.br/babel_json_services/libs/avatars/";
+$IMAGE_PATH = "http://www.nosnaldeia.com.br/babel_json_services/libs/avatars/";
+
 $mensagem = "WARNING: MENSAGEM NAO INFORMADA !";
+
 
 //Conexao global
 $con = mysqli_connect($database, $db_user, $db_pass, $db);
@@ -39,9 +41,14 @@ function isActive() {
 }
 
 function visitor_country() {
+    
     $ip = getRemoteIp();
-    $result = @json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip=" . $ip));
-    //var_dump($result);
+       
+    /* @var $GEOIP_PATH type */
+    $file = file_get_contents("http://www.geoplugin.net/json.gp?ip=".$ip);
+    //echo $file;
+    $result = json_decode($file);
+    //ar_dump($result);
     return $result <> NULL ? $result : "Unknown";
 }
 
