@@ -12,6 +12,7 @@
     </style> 
     <body style="background-image: url('http://www.seenergia.com.br/babel_json_services/libs/avatars/bg_icon.png')">
         <div class="as_wrapper">
+            <br><br><br>
             <h1>Payment Babel2u Coins  Transaction Done Successfully</h1>
         </div>
     </body>

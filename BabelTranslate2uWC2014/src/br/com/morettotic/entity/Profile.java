@@ -25,7 +25,7 @@ public class Profile implements Serializable {
 	public static final String C_MESSAGE = "message";
 	public static final String C_ROLE = "role";
 	public static final String C_PASSWD = "passwd";
-	public static final String MAIN_URL = "http://www.seenergia.com.br/babel_json_services/";//"http://www.nosnaldeia.com.br/babel_json_services/";
+	public static final String MAIN_URL = "http://www.nosnaldeia.com.br/babel_json_services/";//"http://www.nosnaldeia.com.br/babel_json_services/";
 	public static final String AVATAR = "libs/avatars/resized_";
 	public static final String C_SIP_SERVER = "serverName";
 	public static final String C_SIP_SERVER_T = "servername";

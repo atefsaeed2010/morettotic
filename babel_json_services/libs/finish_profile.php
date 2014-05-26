@@ -33,6 +33,8 @@ $result = mysqli_query($con, $query);
  */
 $query = "SELECT * FROM `view_call_info` WHERE token = '$token'";
 
+//echo $query;
+
 $result = mysqli_query($con, $query);
 $row = mysqli_fetch_array($result);
 
@@ -53,7 +55,14 @@ $interval = $start_date->diff($end_date);
 $hours = $interval->format('%h');
 $minutes = $interval->format('%i');
 
-$credits = ($minutes);
+
+$spend_credits = ((50*$minutes)/60);
+//echo $hours;
+//echo $spend_credits;
+//echo $interval;
+//echo "           ".$credits_user;
+
+$credits = ($spend_credits);
 $credits_user-=$credits;
 $credits_translator+=$credits;
 
