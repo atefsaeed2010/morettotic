@@ -38,12 +38,25 @@
             android:layout_marginTop="14dp"
             android:numStars="5" />
 
-        <TextView
-            android:id="@+id/textViewTime"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Time:(5:32)" />
+            android:layout_gravity="center" >
+
+            <TextView
+                android:id="@+id/textViewTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time" />
+
+            <Chronometer
+                android:id="@+id/chronometer1"
+                android:layout_width="62dp"
+                android:layout_height="wrap_content"
+                android:text="Chronometer"
+                android:visibility="gone" />
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textViewCredits"
@@ -87,10 +100,10 @@
         android:layout_centerHorizontal="true" >
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/imageViewFrom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_eua" />
+            android:background="@drawable/br_b" />
 
         <Button
             android:id="@+id/buttonSeta"
@@ -101,11 +114,11 @@
              />
 
         <ImageView
-            android:id="@+id/imageView1"
+            android:id="@+id/imageViewTo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:src="@drawable/ic_brasil" />
+            android:background="@drawable/uk_b" />
 
     </LinearLayout>
 

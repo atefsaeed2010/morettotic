@@ -275,6 +275,8 @@ public class FragmentCountries extends Fragment {
 		
 		ServiceType st = ServiceType.valueOf(spinnerTxt);
 		
+		MY_PROFILE.setCallToLanguage(countryId);
+		
 		url = MAIN_URL + "?action=CALL_PROFILE&nature="
 				+ MY_PROFILE.getNature() + "&proficiency="+countryId
 				+"&id_user="+ MY_PROFILE.getId() 
