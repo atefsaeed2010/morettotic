@@ -1,7 +1,6 @@
 package br.com.morettotic.entity;
 
 import java.io.Serializable;
-import java.util.UUID;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -63,7 +62,7 @@ public class Profile implements Serializable {
 	private boolean isAuthenticated = false;
 	private String sipTranslatorU, sipTranslatorServer;
 	private String callToken;
-	private String userAvatar,translatorAvatar;
+	private String userAvatar,translatorAvatar,callToLanguage;
 	
 	
 	private String translatorId,translatorName;
@@ -268,6 +267,14 @@ public class Profile implements Serializable {
 
 	public void setSipTranslatorServer(String sipTranslatorServer) {
 		this.sipTranslatorServer = sipTranslatorServer;
+	}
+
+	public String getCallToLanguage() {
+		return callToLanguage;
+	}
+
+	public void setCallToLanguage(String callToLanguage) {
+		this.callToLanguage = callToLanguage;
 	}
 
 }

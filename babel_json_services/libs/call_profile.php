@@ -27,13 +27,11 @@ $id_service_type = $_GET['id_service_type'];
  *  */
 $query = "SELECT * FROM `view_profile_sip_acc`
             where 
-                a.fk_id_role = 2
+                fk_id_role = 2
                 and avaliable = 1
                 and (nature = $nature or nature = $proficiency) 
                 and (proficiency = $nature or proficiency = $proficiency)
 		and id_user<>$id";
-
-//echo $query;
 
 $result = mysqli_query($con, $query);
 $row = mysqli_fetch_array($result);
@@ -61,36 +59,32 @@ $profile->call_token = $token;
  * 
  *  */
 //if ($profile->sip_user_t != null) {
+//Seta o usuario e tradutor como ocupados
+$query = "SELECT `fn_set_busy`('$id', '". $profile->id_translator ."') AS `fn_set_busy`";
+$result = mysqli_query($con, $query);
 
-    $query = "SELECT fn_get_avatar('" . $profile->id_translator . "') AS fn_get_avatar";
-    $result = mysqli_query($con, $query);
-    $row = mysqli_fetch_array($result);
-    $profile->translator_avatar = $row['fn_get_avatar'];
+//Recupera os avatars
+$query = "SELECT fn_get_avatar('" . $profile->id_translator . "') AS fn_get_avatar";
+$result = mysqli_query($con, $query);
+$row = mysqli_fetch_array($result);
+$profile->translator_avatar = $row['fn_get_avatar'];
 
-    $query = "SELECT fn_get_avatar('" . $id . "') AS fn_get_avatar";
-    $result = mysqli_query($con, $query);
-    $row = mysqli_fetch_array($result);
-    $profile->user_avatar = $row['fn_get_avatar'];
+$query = "SELECT fn_get_avatar('" . $id . "') AS fn_get_avatar";
+$result = mysqli_query($con, $query);
+$row = mysqli_fetch_array($result);
+$profile->user_avatar = $row['fn_get_avatar'];
 
-    $query = "INSERT INTO `call` ("
-            . " `id_call`, "
-            . " `start_t`, "
-            . " `end_t`, "
-            . " `from_c`, "
-            . " `to_c`, "
-            . " `service_type_idservice_type`, "
-            . " `token`) "
-            . "VALUES (NULL, '" . gmdate("Y-m-d\TH:i:s\Z", $timestamp) . "', '" . gmdate("Y-m-d\TH:i:s\Z", $timestamp) . "', '$id', '" . $profile->id_translator . "', '$id_service_type', '$token');";
+$query = "INSERT INTO `call` ("
+        . " `id_call`, "
+        . " `start_t`, "
+        . " `end_t`, "
+        . " `from_c`, "
+        . " `to_c`, "
+        . " `service_type_idservice_type`, "
+        . " `token`) "
+        . "VALUES (NULL, '" . gmdate("Y-m-d\TH:i:s\Z", $timestamp) . "', '" . gmdate("Y-m-d\TH:i:s\Z", $timestamp) . "', '$id', '" . $profile->id_translator . "', '$id_service_type', '$token');";
 //Insert call info
-    $result = mysqli_query($con, $query);
+$result = mysqli_query($con, $query);
 //echo $query;
-//var_dump($result);
-//Update User and translator status
-    $query = "update profile set online = 1 and avaliable = false where id_user=" . $row['id_user'];
-    $result = mysqli_query($con, $query);
-    $query = "update profile set online = 1 and avaliable = false where id_user=" . $id;
-    $result = mysqli_query($con, $query);
-//}
-//Show Call json object
 include 'json_profile.php';
 ?>

@@ -5,21 +5,29 @@ import static br.com.morettotic.entity.Profile.MAIN_URL;
 import static br.com.morettotic.viewmenu.MainActivity.MAINWINDOW;
 import static br.com.morettotic.viewmenu.MainActivity.MY_PROFILE;
 
+import java.util.*;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Fragment;
 import android.app.ProgressDialog;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.Chronometer;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.RatingBar.OnRatingBarChangeListener;
 import android.widget.TextView;
+import android.widget.Chronometer.OnChronometerTickListener;
 import br.com.morettotic.sip.CSIPService;
 import br.com.morettotic.viewmenu.utils.URLParser;
 
@@ -27,11 +35,15 @@ import com.vizteck.navigationdrawer.R;
 
 public class FragmentConference extends Fragment {
 	private ProgressDialog dialog = null;
-	private TextView translatorName, credits;
+	private TextView translatorName, credits,textViewTime;
 	private Button atender, desligar;
 	private View rootView;
 	private RatingBar ratingBar1;
 	private WebView web;
+	private ImageView from,to;
+	private long startTime, countUp;
+	private Chronometer stopWatch;
+	
 
 	// this Fragment will be called from MainActivity
 	public FragmentConference() {
@@ -44,11 +56,32 @@ public class FragmentConference extends Fragment {
 		rootView = inflater.inflate(R.layout.conference_fragment, container,
 				false);
 		translatorName = (TextView) rootView.findViewById(R.id.textView1);
-
+		
+		from = (ImageView) rootView.findViewById(R.id.imageViewFrom);
+		to = (ImageView) rootView.findViewById(R.id.imageViewTo);
+		//to.set
+		//Change flags 
+		setBackgroundStyle(from, MY_PROFILE.getNature().charAt(0));
+		setBackgroundStyle(to,MY_PROFILE.getCallToLanguage().charAt(0) );
+		
 		translatorName.setText(MY_PROFILE.getTranslatorName());
 
 		credits = (TextView) rootView.findViewById(R.id.textViewCredits);
+		stopWatch = (Chronometer) rootView.findViewById(R.id.chronometer1);
+        startTime = SystemClock.elapsedRealtime();
 
+        textViewTime= (TextView) rootView.findViewById(R.id.textViewTime);
+        stopWatch.setOnChronometerTickListener(new OnChronometerTickListener(){
+            @Override
+            public void onChronometerTick(Chronometer arg0) {
+                countUp = (SystemClock.elapsedRealtime() - arg0.getBase()) / 1000;
+                String asText = (countUp / 60) + ":" + (countUp % 60); 
+                textViewTime.setText(asText);
+            }
+        });
+        
+		
+		
 		credits.setText("Credits: (" + MY_PROFILE.getCredits() + ") minutes");
 
 		dialog = new ProgressDialog(rootView.getContext());
@@ -70,6 +103,7 @@ public class FragmentConference extends Fragment {
 			}else{
 				CSIPService.getInstance(getActivity(), MY_PROFILE).ligar();
 				atender.setVisibility(View.GONE);
+				stopWatch.start();
 			}
 		} else {
 			ratingBar1.setVisibility(View.GONE);//Tradutor nao visualiza  a barra de votacao
@@ -91,6 +125,7 @@ public class FragmentConference extends Fragment {
 			public void onClick(View v) {
 				CSIPService.getInstance(getActivity(), MY_PROFILE).atender();
 				atender.setVisibility(View.GONE);
+				stopWatch.start();
 			}
 		});
 
@@ -107,7 +142,7 @@ public class FragmentConference extends Fragment {
 						ratingBar1.setVisibility(View.GONE);//votou some
 					}
 				});
-
+		
 		return rootView;
 	}
 
@@ -189,5 +224,38 @@ public class FragmentConference extends Fragment {
 			super.onPostExecute(result);
 		}
 
+	}
+	
+	private void setBackgroundStyle(ImageView imageV, char from){
+		switch(from){
+		case '1':
+			imageV.setBackgroundResource(R.drawable.br_b);
+			break;
+		case '2':
+			imageV.setBackgroundResource(R.drawable.uk_b);
+			break;
+		case '3':
+			imageV.setBackgroundResource(R.drawable.gr_b);
+			break;
+		case '4':
+			imageV.setBackgroundResource(R.drawable.fr_b);
+			break;
+		case '5':
+			imageV.setBackgroundResource(R.drawable.jp_b);
+			break;
+		case '6':
+			imageV.setBackgroundResource(R.drawable.ch_b);
+			break;
+		case '7':
+			imageV.setBackgroundResource(R.drawable.mr_b);
+			break;
+		case '8':
+			imageV.setBackgroundResource(R.drawable.es_b);
+			break;
+	
+		}
+			
+		
+		//imageV.setBackgroundResource(R.drawable.ic_brasil);
 	}
 }
