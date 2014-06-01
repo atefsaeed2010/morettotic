@@ -1,4 +1,5 @@
 <?php
+include_once 'webservice.php';
 
 /**
  * 
@@ -41,15 +42,9 @@ function isActive() {
 }
 
 function visitor_country() {
-    
     $ip = getRemoteIp();
-       
-    /* @var $GEOIP_PATH type */
-    $file = file_get_contents("http://www.geoplugin.net/json.gp?ip=".$ip);
-    //echo $file;
-    $result = json_decode($file);
-    //ar_dump($result);
-    return $result <> NULL ? $result : "Unknown";
+    $ws = new WebService();
+    return $ws->geGeoLocationInfoJSON($ip);    
 }
 
 function getRemoteIp() {
