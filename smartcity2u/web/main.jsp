@@ -9,10 +9,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Lol tools</title>
+        <link href="stylesheets/main.css" rel="stylesheet" type="text/css"/>
+        <title>Smartcities - Ubiquos data</title>
     </head>
     <body>
-        <h1>Lol tools list (br tools)</h1>
+        <h1>Smartcities - Ubiquos data</h1>
         <ul>
             <li><a href="cepservice?cep=88020100">cep (DADOS POR CEP)</a></li>
             <li><a href="geocodeservice?ip=150.162.141.1">ip lat lon (LAT LON PARA UM IP)</a></li>         
