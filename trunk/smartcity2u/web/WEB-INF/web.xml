@@ -16,6 +16,10 @@
         <servlet-name>WeatherService</servlet-name>
         <servlet-class>smartcities.control.WeatherService</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>contactsservice</servlet-name>
+        <servlet-class>smartcities.control.ContactsService</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ufservice</servlet-name>
         <url-pattern>/ufservice</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>WeatherService</servlet-name>
         <url-pattern>/weatherservice</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>contactsservice</servlet-name>
+        <url-pattern>/contactservice</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>main.jsp</welcome-file>

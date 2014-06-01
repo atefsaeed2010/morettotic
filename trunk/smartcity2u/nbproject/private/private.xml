@@ -3,11 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/lamm/Desktop/rep/Guestbook/src/java/smartcities/control/UFService.java</file>
-            <file>file:/home/lamm/Desktop/rep/Guestbook/web/WEB-INF/appengine-web.xml</file>
-            <file>file:/home/lamm/Desktop/rep/Guestbook/src/java/smartcities/control/WeatherService.java</file>
-            <file>file:/home/lamm/Desktop/rep/Guestbook/web/WEB-INF/web.xml</file>
-            <file>file:/home/lamm/Desktop/rep/Guestbook/web/main.jsp</file>
+            <file>file:/home/lamm/Desktop/rep/smartcity2u/src/java/smartcities/control/ContactsService.java</file>
         </group>
     </open-files>
 </project-private>
