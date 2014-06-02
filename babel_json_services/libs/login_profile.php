@@ -24,6 +24,9 @@ $mensagem = "Login";
 $ip = getRemoteIp();
 
 $query = " SELECT `fn_login`('$ip', '$email','$proficiency') AS `fn_login`";
+
+//echo $query;
+
 $result = mysqli_query($con, $query);
 $row = mysqli_fetch_array($result);
 $nature = $row['fn_login'];
