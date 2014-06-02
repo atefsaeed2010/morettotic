@@ -30,15 +30,18 @@ if (isset($id) && $id != "-1") {//modo edicao
     }
     //Recupera o usuario pelo email e senha
     $query = "SELECT * FROM `view_profile` WHERE email ='" . $email . "' AND passwd ='" . md5($passwd) . "'";
+   //echo $query;
 }
 
 //echo $query;
 $result = mysqli_query($con, $query);
 $row = mysqli_fetch_array($result);
 
+//var_dump($row);
+
 //JSON PROFILE ATTRS
 $profile->id_user = $row['id_user'] == null ? "-1" : $row['id_user'];
-$profile->name = $row['name'] == null ? "" : $row['name'];
+$profile->name = $row['name'] == null ? "" : mb_convert_encoding($row['name'],"UTF-8");
 $profile->email = $row['email'] == null ? $email : $row['email'];
 $profile->birthday = $row['birthday'] == null ? "" : $row['birthday'];
 $profile->paypall_acc = $row['paypall_acc'] == null ? '' : $row['paypall_acc'];
