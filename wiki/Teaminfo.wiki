@@ -1,13 +1,10 @@
-#summary One-sentence summary of this page.
+#Todo
 
-= Introduction =
+= List @Todo = 
 
-Add your content here.
+== UNIVOX ==
 
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+  * SITE (CONSULTA SALDO, COMPRA CREDITO, PAGAMENTO)
+  * COMPRAR NUVEM DO GOOGLE
+  * INSTALAR UM SERVIDOR SIP 
+  * CRIAR SCRIPT PARA CADASTRAR CONTAS DINAMICAMENTE.
