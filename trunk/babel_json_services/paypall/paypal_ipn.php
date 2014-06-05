@@ -133,7 +133,7 @@ if ($paypalReturn->payment_status == PAYMENT_COMPLETED) {
     $saida.=$query;
     
     //notifica o babel e os usuarios
-    $message = 'Instant Payment Notification - Recieved Payment (Babel2u Coins)';
+    $message = 'Instant Payment Notification - Recieved Payment (UNIVOXER Coins)';
     $message.= '\n';
     $message.= 'Your payment status is:' . $paypalReturn->payment_status;
     $message.= '\n';
@@ -143,10 +143,10 @@ if ($paypalReturn->payment_status == PAYMENT_COMPLETED) {
 
     $saida.=$message;
 
-    mail("malacma@gmail.com", "BABEL2u Coins", $message.' '.$saida, "From: " . $paypalReturn->payer_email . "\n");
-    mail($paypalReturn->payer_email, "BABEL2u Coins (Sucess)", $message, "From: malacma@gmail.com\n");
+    mail("malacma@gmail.com", "UNIVOXER Coins", $message.' '.$saida, "From: " . $paypalReturn->payer_email . "\n");
+    mail($paypalReturn->payer_email, "UNIVOXER Coins (Sucess)", $message, "From: malacma@gmail.com\n");
 } else {
-     mail($paypalReturn->payer_email, "BABEL2u Coins (Failure)", $message, "From: malacma@gmail.com\n");
+     mail($paypalReturn->payer_email, "UNIVOXER Coins (Failure)", $message, "From: malacma@gmail.com\n");
 }
 //GERA O LOG DE SAIDA!
 $file = fopen("pplog.dat", "w+");
