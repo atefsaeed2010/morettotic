@@ -8,3 +8,7 @@
   * COMPRAR NUVEM DO GOOGLE
   * INSTALAR UM SERVIDOR SIP 
   * CRIAR SCRIPT PARA CADASTRAR CONTAS DINAMICAMENTE.
+
+=links=
+
+[https://docs.google.com/spreadsheets/d/1Lihpvvuc3ePCxTnhWqNlgyXepjb8sVomPBxlKoXHDdU/edit?usp=sharing]
