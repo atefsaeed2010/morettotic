@@ -105,18 +105,21 @@ session_start();
 ?>
 
 <body style="background-image: url('http://www.nosnaldeia.com.br/babel_json_services/libs/avatars/bg_icon.png')">
-
+    <br>
+    <br>
+    <br>
+    <br>
     <?php
     require_once("paypal_class.php");
     require_once("../libs/db_vars.config.php"); // include the library file
-    
+
     define('EMAIL_ADD', 'malacma@gmail.com'); // define any notification email
     define('PAYPAL_EMAIL_ADD', 'malacma-facilitator@gmail.com'); // facilitator email which will receive payments change this email to a live paypal account id when the site goes live
     define('PAYMENT_COMPLETED', 'Completed');
-    
+
     $p = new paypal_class(); // paypal class
     $p->admin_mail = EMAIL_ADD; // set notification email
-    
+
     $action = $_REQUEST["action"];
 
     switch ($action) {

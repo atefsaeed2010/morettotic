@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta content="text/html; charset=windows-1252" http-equiv="content-type">
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.24/themes/base/jquery-ui.css">
-    <script language="javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script language="javascript" src="http://code.jquery.com/ui/jquery-ui-git.js"></script>
-    <script>
+    <head>
+        <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.24/themes/base/jquery-ui.css">
+        <script language="javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script language="javascript" src="http://code.jquery.com/ui/jquery-ui-git.js"></script>
+        <script>
             function validateEmail(email) {
                 var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                 return re.test(email);
             }
-    </script>
-    <style>
+        </script>
+        <style>
             body {
                 font-family: 'Lucida Grande', Verdana, Arial, sans-serif;
                 margin-left: 0px;
@@ -83,78 +83,81 @@
                 height: 30px;
             }
         </style>
-    <title>form_univoxxer</title>
-  </head>
-  <body>
-    <form name="form1" class="wrapper1">
-      <table class="wrapper1" border="0">
-        <tbody>
-          <tr>
-            <td nowrap="nowrap"> <label><input name="tipo" value="1" type="radio">Usuario</label>
-            </td>
-            <td nowrap="nowrap"> <label><input checked="true" name="tipo" value="2"
-                  type="radio">Tradutor</label></td>
-          </tr>
-          <tr>
-            <td style="text-align: right;">nome</td>
-            <td><input name="name" class="mbt1" value="nome" type="text"></td>
-          </tr>
-          <tr>
-            <td style="text-align: right;">email</td>
-            <td><input class="mbt1" name="email1" value="email" type="email"><br>
-            </td>
-          </tr>
-          <tr>
-            <td style="text-align: right;">nascimento</td>
-            <td><input name="birthday" class="mbt1" value="12/01/1984" type="date"></td>
-          </tr>
-          <tr>
-            <td style="text-align: right;">senha </td>
-            <td><input name="passwd1" class="mbt1" type="password"> <br>
-            </td>
-          </tr>
-          <tr>
-            <td style="text-align: right;">senha(confirmação) </td>
-            <td><input name="passwd2" class="mbt1" type="password"> <br>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2"><input id="bt_gravar_perfil" value="Gravar perfil" onclick="saveProfile()"
-                class="mbt" type="button"> </td>
-          </tr>
-        </tbody>
-      </table>
-    </form>
-    <script>
-    
-     function saveProfile() {
+        <title>form_univoxxer</title>
+    </head>
+    <body>
+        <div id="msg1"></div>
+        <form name="form1" class="wrapper1">
+            <table class="wrapper1" border="0">
+                <tbody>
+                    <tr>
+                        <td nowrap="nowrap"> <label><input name="tipo" value="1" type="radio">Usuario</label>
+                        </td>
+                        <td nowrap="nowrap"> <label><input checked="true" name="tipo" value="2"
+                                                           type="radio">Tradutor</label></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">nome</td>
+                        <td><input name="name" class="mbt1" value="nome" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">email</td>
+                        <td><input class="mbt1" name="email1" value="email" type="email"><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">nascimento</td>
+                        <td><input name="birthday" class="mbt1" value="12/01/1984" type="date"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">senha </td>
+                        <td><input name="passwd1" class="mbt1" type="password"> <br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">senha(confirma&ccedil;&atilde;o) </td>
+                        <td><input name="passwd2" class="mbt1" type="password"> <br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input id="bt_gravar_perfil" value="Gravar perfil" onclick="saveProfile()"
+                                               class="mbt" type="button"> </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        <script>
+
+            function saveProfile() {
                 //alert();
+                var mMsg = document.getElementById("msg1");
                 if (!validateEmail(document.form1.email1.value)) {
-                    alert("Email invalid!");
-                    return;
+                    mMsg.innerHTML = "Email invalid!";
+                   
+                            return;
                 }
                 if (document.form1.email1.value == "") {
-                    alert("Email required!");
+                    mMsg.innerHTML = " Email required!";
                     return;
                 }
                 if (document.form1.name.value == "") {
-                    alert("Name required!");
+                    mMsg.innerHTML = " Name required!";
                     return;
                 }
                 if (document.form1.birthday.value == "") {
-                    alert("Birthday required!");
+                    mMsg.innerHTML = 'Birthday required!';
                     return;
                 }
                 if (document.form1.passwd1.value != document.form1.passwd2.value) {
-                    alert("Password dont match!");
+                    mMsg.innerHTML = 'Password dont match!';
                     return;
                 }
                 if (document.form1.passwd1.value.length < 7) {
-                    alert("Password requires at least 7 characters!");
+                    mMsg.innerHTML = 'Password requires at least 7 characters! ';
                     return;
                 }
 
-            
+
 
                 var MyUrl = "http://www.nosnaldeia.com.br/babel_json_services/?action=SAVE_PROFILE&"
                         + "id_user=-1&email="
@@ -164,7 +167,7 @@
                         + "&birthday="
                         + document.form1.birthday.value
                         + "&paypall_acc="
-                        + "wpUnvx"+Math.random()
+                        + "wpUnvx" + Math.random()
                         + "&nature=1&proficiency=BR"
                         + "&id_role="
                         + document.form1.tipo.value
@@ -178,19 +181,16 @@
                     dataType: "json",
                     // funÃ§Ã£o para de sucesso
                     success: function(data) {
-                        alert(data.id_user);
+                        //alert(data.id_user);
                         if (data.id_user == "-1") {
-                            alert("Already registered!")
+                            mMsg.innerHTML = '****Already registered! Verify your password';
                         } else {
-                            
-                            alert("Welcome! Account sucefully added!")
-                              //saveAvatar()
-                            //atualiza o usuario maldito com a foto do facebook
+                            mMsg.innerHTML = 'Welcome! Account sucefully added!';
                         }
 
                     }
                 });
             }
-    </script>
-  </body>
+        </script>
+    </body>
 </html>

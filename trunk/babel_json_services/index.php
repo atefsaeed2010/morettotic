@@ -21,6 +21,9 @@ switch ($action) {
     case "SAVE_PROFILE":
         include './libs/save_profile.php';
         break;
+     case "SAVE_PROFILEV":
+        include './libs/save_profile.html';
+        break;
     //@babel_json_services/?action=CALL_PROFILE&nature=2&proficiency=3&id_user=2&id_service_type=3
     case "CALL_PROFILE":
         include './libs/call_profile.php';
@@ -51,16 +54,30 @@ switch ($action) {
         include './libs/evaluation_profile.php';
         break;
     //?action=STATUS&id_user=1&online=1
-     case "STATUS":
+    case "STATUS":
         include './libs/status_profile.php';
         break;
     //?action=STATUS&id_user=1&online=1
-     case "BUSCACEP":
+    case "BUSCACEP":
         include './libs/json_address.php';
         break;
-        //?action=STATUS&id_user=1&online=1
-     case "ACKPASSWD":
+    //?action=STATUS&id_user=1&online=1
+    case "ACKPASSWD":
         include './libs/email_profile.php';
+        break;
+    ///babel_json_services/?action=REQPAY&email=nono@mail.com
+    case "REQPAY":
+        include './paypall/paypal_request_pay.php';
+        break;
+    case "REQPAYV":
+        include './paypall/paypal_request_pay.html';
+        break;
+    ///babel_json_services/?action=REQPAY&email=nono@mail.com
+    case "SHOWPAY":
+        include './paypall/paypal.html';
+        break;
+    case "SHOWCOINS":
+        include './paypall/coins.html';
         break;
     default:
         include './libs/login_profile.php';
