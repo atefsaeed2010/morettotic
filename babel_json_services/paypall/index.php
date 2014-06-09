@@ -94,7 +94,7 @@ $row = mysqli_fetch_array($result);
             <br>
                 <br>
                     <br>
-                        <form action="paypal.php?sandbox=1&id=<?php echo $id ?>" method="post" name="form1"> <?php // remove sandbox=1 for live transactions                     ?>
+                        <form action="paypal.php?id=<?php echo $id ?>" method="post" name="form1"> <?php // remove sandbox=1 for live transactions                     ?>
                             <input type="hidden" name="action" value="process" />
                             <input type="hidden" name="cmd" value="_cart" /> <?php // use _cart for cart checkout                     ?>
                             <input type="hidden" name="currency_code" value="USD" />

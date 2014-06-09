@@ -116,7 +116,7 @@ public class LoginService extends GenericService {
             response.getWriter().print("<h5>Download and login on app to set your language </h5>");
             response.getWriter().print("<h5>Thank you </h5>");
 
-            response.getWriter().print("<h5><a href='http://www.nosnaldeia.com.br/babel_json_services/paypall/?id=" + idUser + "' target='_blank'>buy credits</a></h5>");
+            response.getWriter().print("<h5><a href='http://www.nosnaldeia.com.br/babel_json_services/paypall/?id=" + idUser + "'>buy credits</a></h5>");
 
             //url = "http://www.nosnaldeia.com.br/babel_json_services/?login=" + getUser().getEmail().toUpperCase() + "&passwd=" + pasString;
             //sb = UrlParser.bufferURL(response, url);
