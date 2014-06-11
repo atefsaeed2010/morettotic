@@ -265,6 +265,41 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
          */
         public static final int activityChooserViewStyle=0x7f010037;
         /** 
+    The size of the ad. It must be one of BANNER, FULL_BANNER, LEADERBOARD,
+    MEDIUM_RECTANGLE, SMART_BANNER, WIDE_SKYSCRAPER, or
+    &lt;width&gt;x&lt;height&gt;.
+    
+         <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int adSize=0x7f010064;
+        /** 
+    A comma-separated list of the supported ad sizes. The sizes must be one of
+    BANNER, FULL_BANNER, LEADERBOARD, MEDIUM_RECTANGLE, SMART_BANNER,
+    WIDE_SKYSCRAPER, or &lt;width&gt;x&lt;height&gt;.
+    
+         <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int adSizes=0x7f010065;
+        /**  The ad unit ID. 
+         <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int adUnitId=0x7f010066;
+        /** 
 Determine whether the glow pad is allowed to scale to fit the bounds indicated
 by its parent. If this is set to false, no scaling will occur. If this is set to true
 scaling will occur to fit for any axis in which gravity is set to center.
@@ -310,6 +345,116 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int buttonStyleSmall=0x7f010019;
+        /**  Appearance of the buy button. Must be one of "classic", "grayscale" and "monochrome" 
+         <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>classic</code></td><td>1</td><td></td></tr>
+<tr><td><code>grayscale</code></td><td>2</td><td></td></tr>
+<tr><td><code>monochrome</code></td><td>3</td><td></td></tr>
+</table>
+         */
+        public static final int buyButtonAppearance=0x7f01007c;
+        /**  Height of the buy button. This includes an 8dp padding (4dp on each side) used for
+             pressed and focused states of the button. The value can be a specific height, e.g.
+             "48dp", or special values "match_parent" and "wrap_content". 
+         <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+<p>May be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>match_parent</code></td><td>-1</td><td></td></tr>
+<tr><td><code>wrap_content</code></td><td>-2</td><td></td></tr>
+</table>
+         */
+        public static final int buyButtonHeight=0x7f010079;
+        /**  Text on the buy button. Must be one of "buy_with_google", "buy_now" and "book_now" 
+         <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>buy_with_google</code></td><td>1</td><td></td></tr>
+<tr><td><code>buy_now</code></td><td>2</td><td></td></tr>
+<tr><td><code>book_now</code></td><td>3</td><td></td></tr>
+</table>
+         */
+        public static final int buyButtonText=0x7f01007b;
+        /**  Width of the buy button. This includes an 8dp padding (4dp on each side) used for
+             pressed and focused states of the button. The value can be a specific width, e.g.
+             "300dp", or special values "match_parent" and "wrap_content". 
+         <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+<p>May be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>match_parent</code></td><td>-1</td><td></td></tr>
+<tr><td><code>wrap_content</code></td><td>-2</td><td></td></tr>
+</table>
+         */
+        public static final int buyButtonWidth=0x7f01007a;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int cameraBearing=0x7f010068;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int cameraTargetLat=0x7f010069;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int cameraTargetLng=0x7f01006a;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int cameraTilt=0x7f01006b;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int cameraZoom=0x7f01006c;
         /**  Drawables to use for chevron animations. May be null. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -364,6 +509,19 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int dropdownListPreferredItemHeight=0x7f01002f;
+        /**  Google Wallet environment to use 
+         <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>production</code></td><td>1</td><td></td></tr>
+<tr><td><code>sandbox</code></td><td>0</td><td></td></tr>
+<tr><td><code>strict_sandbox</code></td><td>2</td><td></td></tr>
+</table>
+         */
+        public static final int environment=0x7f010076;
         /**  The drawable to show in the button for expanding the activities overflow popup.
              <strong>Note:</strong> Clients would like to set this drawable
              as a clue about the action the chosen activity will perform. For
@@ -392,6 +550,23 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int firstItemOffset=0x7f010055;
+        /**  Fragment mode 
+         <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>buyButton</code></td><td>1</td><td></td></tr>
+<tr><td><code>selectionDetails</code></td><td>2</td><td></td></tr>
+</table>
+         */
+        public static final int fragmentMode=0x7f010078;
+        /**  A style resource specifing attributes to customize the look and feel of WalletFragment 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int fragmentStyle=0x7f010077;
         /**  Radius of glow under finger. 
          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
@@ -586,6 +761,71 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int magneticTargets=0x7f010056;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>none</code></td><td>0</td><td></td></tr>
+<tr><td><code>normal</code></td><td>1</td><td></td></tr>
+<tr><td><code>satellite</code></td><td>2</td><td></td></tr>
+<tr><td><code>terrain</code></td><td>3</td><td></td></tr>
+<tr><td><code>hybrid</code></td><td>4</td><td></td></tr>
+</table>
+         */
+        public static final int mapType=0x7f010067;
+        /**  Masked wallet details background 
+         <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int maskedWalletDetailsBackground=0x7f01007f;
+        /**  "Change" button background in masked wallet details view 
+         <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int maskedWalletDetailsButtonBackground=0x7f010081;
+        /**  TextAppearance for the "Change" button in masked wallet details view 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int maskedWalletDetailsButtonTextAppearance=0x7f010080;
+        /**  TextAppearance for headers describing masked wallet details 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int maskedWalletDetailsHeaderTextAppearance=0x7f01007e;
+        /**  Type of the wallet logo image in masked wallet details view 
+         <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>classic</code></td><td>1</td><td></td></tr>
+<tr><td><code>monochrome</code></td><td>2</td><td></td></tr>
+</table>
+         */
+        public static final int maskedWalletDetailsLogoImageType=0x7f010083;
+        /**  Color of the Google Wallet logo text in masked wallet details view 
+         <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int maskedWalletDetailsLogoTextColor=0x7f010082;
+        /**  TextAppearance for masked wallet details 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int maskedWalletDetailsTextAppearance=0x7f01007d;
         /**  The type of navigation to use. 
          <p>Must be one of the following constant values.</p>
 <table>
@@ -738,6 +978,18 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int textColorPrimaryInverse=0x7f010020;
+        /**  Theme to be used for the Wallet selector 
+         <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>holo_dark</code></td><td>0</td><td></td></tr>
+<tr><td><code>holo_light</code></td><td>1</td><td></td></tr>
+</table>
+         */
+        public static final int theme=0x7f010075;
         /**  Specifies title text used for navigationMode="normal" 
          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
@@ -751,6 +1003,62 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int titleTextStyle=0x7f010000;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int uiCompass=0x7f01006d;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int uiRotateGestures=0x7f01006e;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int uiScrollGestures=0x7f01006f;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int uiTiltGestures=0x7f010070;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int uiZoomControls=0x7f010071;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int uiZoomGestures=0x7f010072;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int useViewLifecycle=0x7f010073;
         /**  Default vertical divider between menu items. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -841,6 +1149,14 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int windowSplitActionBar=0x7f010035;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int zOrderOnTop=0x7f010074;
     }
     public static final class bool {
         public static final int abs__action_bar_embed_tabs=0x7f070000;
@@ -881,20 +1197,54 @@ containing a value of this type.
         public static final int abs__bright_foreground_inverse_holo_dark=0x7f080006;
         public static final int abs__bright_foreground_inverse_holo_light=0x7f080007;
         public static final int abs__holo_blue_light=0x7f080008;
-        public static final int abs__primary_text_disable_only_holo_dark=0x7f080013;
-        public static final int abs__primary_text_holo_dark=0x7f080014;
-        public static final int abs__primary_text_holo_light=0x7f080015;
+        public static final int abs__primary_text_disable_only_holo_dark=0x7f08002a;
+        public static final int abs__primary_text_holo_dark=0x7f08002b;
+        public static final int abs__primary_text_holo_light=0x7f08002c;
         public static final int account_error=0x7f08000c;
         public static final int account_inactive=0x7f080009;
         public static final int account_unregistered=0x7f08000a;
         public static final int account_valid=0x7f08000b;
-        public static final int counter_text_bg=0x7f080011;
-        public static final int counter_text_color=0x7f080012;
-        public static final int list_background=0x7f08000e;
-        public static final int list_background_pressed=0x7f08000f;
-        public static final int list_divider=0x7f080010;
-        public static final int list_item_title=0x7f08000d;
-        public static final int tab_cond_text=0x7f080016;
+        public static final int common_action_bar_splitter=0x7f080016;
+        /**  Sign-in Button Colors 
+         */
+        public static final int common_signin_btn_dark_text_default=0x7f08000d;
+        public static final int common_signin_btn_dark_text_disabled=0x7f08000f;
+        public static final int common_signin_btn_dark_text_focused=0x7f080010;
+        public static final int common_signin_btn_dark_text_pressed=0x7f08000e;
+        public static final int common_signin_btn_default_background=0x7f080015;
+        public static final int common_signin_btn_light_text_default=0x7f080011;
+        public static final int common_signin_btn_light_text_disabled=0x7f080013;
+        public static final int common_signin_btn_light_text_focused=0x7f080014;
+        public static final int common_signin_btn_light_text_pressed=0x7f080012;
+        public static final int common_signin_btn_text_dark=0x7f08002d;
+        public static final int common_signin_btn_text_light=0x7f08002e;
+        public static final int counter_text_bg=0x7f080028;
+        public static final int counter_text_color=0x7f080029;
+        public static final int list_background=0x7f080025;
+        public static final int list_background_pressed=0x7f080026;
+        public static final int list_divider=0x7f080027;
+        public static final int list_item_title=0x7f080024;
+        public static final int tab_cond_text=0x7f08002f;
+        public static final int wallet_bright_foreground_disabled_holo_light=0x7f08001c;
+        /** 
+         Wallet colors to support consistent Wallet fragment holo dark UI in client application
+         regardless of the theme and device type
+    
+         */
+        public static final int wallet_bright_foreground_holo_dark=0x7f080017;
+        public static final int wallet_bright_foreground_holo_light=0x7f08001d;
+        public static final int wallet_dim_foreground_disabled_holo_dark=0x7f080019;
+        public static final int wallet_dim_foreground_holo_dark=0x7f080018;
+        public static final int wallet_dim_foreground_inverse_disabled_holo_dark=0x7f08001b;
+        public static final int wallet_dim_foreground_inverse_holo_dark=0x7f08001a;
+        public static final int wallet_highlighted_text_holo_dark=0x7f080021;
+        public static final int wallet_highlighted_text_holo_light=0x7f080020;
+        public static final int wallet_hint_foreground_holo_dark=0x7f08001f;
+        public static final int wallet_hint_foreground_holo_light=0x7f08001e;
+        public static final int wallet_holo_blue_light=0x7f080022;
+        public static final int wallet_link_text_light=0x7f080023;
+        public static final int wallet_primary_text_holo_light=0x7f080030;
+        public static final int wallet_secondary_text_holo_dark=0x7f080031;
     }
     public static final class dimen {
         /**  Default height of an action bar. 
@@ -1143,795 +1493,844 @@ So, (94 - 38)/2 ==> 28dp
         public static final int buttons=0x7f02004e;
         public static final int ch=0x7f02004f;
         public static final int ch_b=0x7f020050;
-        public static final int desligar=0x7f020051;
-        public static final int dial_background_texture=0x7f020052;
-        public static final int dial_num_0=0x7f020053;
-        public static final int dial_num_0_wht=0x7f020054;
-        public static final int dial_num_1=0x7f020055;
-        public static final int dial_num_1_wht=0x7f020056;
-        public static final int dial_num_2=0x7f020057;
-        public static final int dial_num_2_wht=0x7f020058;
-        public static final int dial_num_3=0x7f020059;
-        public static final int dial_num_3_wht=0x7f02005a;
-        public static final int dial_num_4=0x7f02005b;
-        public static final int dial_num_4_wht=0x7f02005c;
-        public static final int dial_num_5=0x7f02005d;
-        public static final int dial_num_5_wht=0x7f02005e;
-        public static final int dial_num_6=0x7f02005f;
-        public static final int dial_num_6_wht=0x7f020060;
-        public static final int dial_num_7=0x7f020061;
-        public static final int dial_num_7_wht=0x7f020062;
-        public static final int dial_num_8=0x7f020063;
-        public static final int dial_num_8_wht=0x7f020064;
-        public static final int dial_num_9=0x7f020065;
-        public static final int dial_num_9_wht=0x7f020066;
-        public static final int dial_num_pound=0x7f020067;
-        public static final int dial_num_pound_wht=0x7f020068;
-        public static final int dial_num_star=0x7f020069;
-        public static final int dial_num_star_wht=0x7f02006a;
-        public static final int dialpad_background=0x7f02006b;
-        public static final int drawer_list_selection=0x7f02006c;
-        public static final int emo_im_angel=0x7f02006d;
-        public static final int emo_im_cool=0x7f02006e;
-        public static final int emo_im_crying=0x7f02006f;
-        public static final int emo_im_embarrassed=0x7f020070;
-        public static final int emo_im_foot_in_mouth=0x7f020071;
-        public static final int emo_im_happy=0x7f020072;
-        public static final int emo_im_kissing=0x7f020073;
-        public static final int emo_im_laughing=0x7f020074;
-        public static final int emo_im_lips_are_sealed=0x7f020075;
-        public static final int emo_im_money_mouth=0x7f020076;
-        public static final int emo_im_sad=0x7f020077;
-        public static final int emo_im_surprised=0x7f020078;
-        public static final int emo_im_tongue_sticking_out=0x7f020079;
-        public static final int emo_im_undecided=0x7f02007a;
-        public static final int emo_im_winking=0x7f02007b;
-        public static final int emo_im_wtf=0x7f02007c;
-        public static final int emo_im_yelling=0x7f02007d;
-        public static final int end_call_background=0x7f02007e;
-        public static final int endcall_background_texture=0x7f02007f;
-        public static final int es_b=0x7f020080;
-        public static final int facebook=0x7f020081;
-        public static final int flag_bar=0x7f020082;
-        public static final int fr=0x7f020083;
-        public static final int fr_b=0x7f020084;
-        public static final int google=0x7f020085;
-        public static final int gr=0x7f020086;
-        public static final int gr_b=0x7f020087;
-        public static final int grabber=0x7f020088;
-        public static final int grey_bottom_gradient=0x7f020089;
-        public static final int grey_left_gradient=0x7f02008a;
-        public static final int grey_right_gradient=0x7f02008b;
-        public static final int grey_top_gradient=0x7f02008c;
-        public static final int ic_ab_dialer_holo_dark=0x7f02008d;
-        public static final int ic_ab_dialpad=0x7f02008e;
-        public static final int ic_ab_favourites_holo_dark=0x7f02008f;
-        public static final int ic_ab_history_holo_dark=0x7f020090;
-        public static final int ic_ab_text_holo_dark=0x7f020091;
-        public static final int ic_ab_trash_dark=0x7f020092;
-        public static final int ic_action_select_invert=0x7f020093;
-        public static final int ic_add_contact_holo_dark=0x7f020094;
-        public static final int ic_avatar=0x7f020095;
-        public static final int ic_avatar1=0x7f020096;
-        public static final int ic_avatar_edit=0x7f020097;
-        public static final int ic_babek2=0x7f020098;
-        public static final int ic_brasil=0x7f020099;
-        public static final int ic_call_incoming_holo_dark=0x7f02009a;
-        public static final int ic_call_missed_holo_dark=0x7f02009b;
-        public static final int ic_call_outgoing_holo_dark=0x7f02009c;
-        public static final int ic_conference=0x7f02009d;
-        public static final int ic_conference_off=0x7f02009e;
-        public static final int ic_config=0x7f02009f;
-        public static final int ic_contact_picture_180_holo_dark=0x7f0200a0;
-        public static final int ic_contact_picture_180_holo_light=0x7f0200a1;
-        public static final int ic_contact_picture_holo_dark=0x7f0200a2;
-        public static final int ic_contacts_holo_dark=0x7f0200a3;
-        public static final int ic_dial_action_call=0x7f0200a4;
-        public static final int ic_dial_action_delete=0x7f0200a5;
-        public static final int ic_divider_dashed_holo_dark=0x7f0200a6;
-        public static final int ic_drawer=0x7f0200a7;
-        public static final int ic_email_pending=0x7f0200a8;
-        public static final int ic_end_call=0x7f0200a9;
-        public static final int ic_eua=0x7f0200aa;
-        public static final int ic_exit=0x7f0200ab;
-        public static final int ic_france=0x7f0200ac;
-        public static final int ic_germany=0x7f0200ad;
-        public static final int ic_in_call_touch_answer=0x7f0200ae;
-        public static final int ic_in_call_touch_end=0x7f0200af;
-        public static final int ic_in_call_touch_handle=0x7f0200b0;
-        public static final int ic_in_call_touch_handle_normal=0x7f0200b1;
-        public static final int ic_in_call_touch_hold=0x7f0200b2;
-        public static final int ic_indicator_off=0x7f0200b3;
-        public static final int ic_indicator_on=0x7f0200b4;
-        public static final int ic_indicator_red=0x7f0200b5;
-        public static final int ic_indicator_yellow=0x7f0200b6;
-        public static final int ic_jog_dial_answer=0x7f0200b7;
-        public static final int ic_jog_dial_decline=0x7f0200b8;
-        public static final int ic_jog_dial_unlock=0x7f0200b9;
-        public static final int ic_launcher=0x7f0200ba;
-        public static final int ic_launcher_nightly=0x7f0200bb;
-        public static final int ic_launcher_phone=0x7f0200bc;
-        public static final int ic_lock_power_off=0x7f0200bd;
-        public static final int ic_lockscreen_answer=0x7f0200be;
-        public static final int ic_lockscreen_answer_activated=0x7f0200bf;
-        public static final int ic_lockscreen_answer_activated_layer=0x7f0200c0;
-        public static final int ic_lockscreen_answer_normal=0x7f0200c1;
-        public static final int ic_lockscreen_answer_normal_layer=0x7f0200c2;
-        public static final int ic_lockscreen_decline=0x7f0200c3;
-        public static final int ic_lockscreen_decline_activated=0x7f0200c4;
-        public static final int ic_lockscreen_decline_activated_layer=0x7f0200c5;
-        public static final int ic_lockscreen_decline_normal=0x7f0200c6;
-        public static final int ic_lockscreen_decline_normal_layer=0x7f0200c7;
-        public static final int ic_lockscreen_glowdot=0x7f0200c8;
-        public static final int ic_lockscreen_handle_pressed=0x7f0200c9;
-        public static final int ic_lockscreen_outerring=0x7f0200ca;
-        public static final int ic_login=0x7f0200cb;
-        public static final int ic_login12=0x7f0200cc;
-        public static final int ic_menu_account_list=0x7f0200cd;
-        public static final int ic_menu_answer_call=0x7f0200ce;
-        public static final int ic_menu_auto_answer=0x7f0200cf;
-        public static final int ic_menu_blocked_user=0x7f0200d0;
-        public static final int ic_menu_filter=0x7f0200d1;
-        public static final int ic_menu_goto=0x7f0200d2;
-        public static final int ic_menu_msg_compose_holo_dark=0x7f0200d3;
-        public static final int ic_menu_switch_digit=0x7f0200d4;
-        public static final int ic_menu_switch_txt=0x7f0200d5;
-        public static final int ic_micro_dark=0x7f0200d6;
-        public static final int ic_mute_holo_dark=0x7f0200d7;
-        public static final int ic_payment=0x7f0200d8;
-        public static final int ic_prefs_calls=0x7f0200d9;
-        public static final int ic_prefs_fast=0x7f0200da;
-        public static final int ic_prefs_filter=0x7f0200db;
-        public static final int ic_prefs_media=0x7f0200dc;
-        public static final int ic_prefs_media_video=0x7f0200dd;
-        public static final int ic_prefs_network=0x7f0200de;
-        public static final int ic_prefs_ui=0x7f0200df;
-        public static final int ic_profile=0x7f0200e0;
-        public static final int ic_sign_in_login=0x7f0200e1;
-        public static final int ic_sms_mms_not_delivered=0x7f0200e2;
-        public static final int ic_sound_bluetooth_holo_dark=0x7f0200e3;
-        public static final int ic_sound_speakerphone_holo_dark=0x7f0200e4;
-        public static final int ic_speaker_dark=0x7f0200e5;
-        public static final int ic_stat_sipok=0x7f0200e6;
-        public static final int ic_tab_selected_contacts=0x7f0200e7;
-        public static final int ic_translatetou=0x7f0200e8;
-        public static final int ic_wizard_050plus=0x7f0200e9;
-        public static final int ic_wizard_a1=0x7f0200ea;
-        public static final int ic_wizard_aaisp=0x7f0200eb;
-        public static final int ic_wizard_abaglobal=0x7f0200ec;
-        public static final int ic_wizard_abatel=0x7f0200ed;
-        public static final int ic_wizard_abcvoip=0x7f0200ee;
-        public static final int ic_wizard_adiptel=0x7f0200ef;
-        public static final int ic_wizard_advanced=0x7f0200f0;
-        public static final int ic_wizard_advancefone=0x7f0200f1;
-        public static final int ic_wizard_ajtel=0x7f0200f2;
-        public static final int ic_wizard_ale=0x7f0200f3;
-        public static final int ic_wizard_amivox=0x7f0200f4;
-        public static final int ic_wizard_anv=0x7f0200f5;
-        public static final int ic_wizard_babytel=0x7f0200f6;
-        public static final int ic_wizard_balses=0x7f0200f7;
-        public static final int ic_wizard_basic=0x7f0200f8;
-        public static final int ic_wizard_beeztel=0x7f0200f9;
-        public static final int ic_wizard_belcentrale=0x7f0200fa;
-        public static final int ic_wizard_bgcall=0x7f0200fb;
-        public static final int ic_wizard_bgopen=0x7f0200fc;
-        public static final int ic_wizard_bgtel=0x7f0200fd;
-        public static final int ic_wizard_blicnet=0x7f0200fe;
-        public static final int ic_wizard_blueface=0x7f0200ff;
-        public static final int ic_wizard_broadsoft=0x7f020100;
-        public static final int ic_wizard_broadvoice=0x7f020101;
-        public static final int ic_wizard_btone=0x7f020102;
-        public static final int ic_wizard_callcentric=0x7f020103;
-        public static final int ic_wizard_callmyway=0x7f020104;
-        public static final int ic_wizard_callromania=0x7f020105;
-        public static final int ic_wizard_callwithus=0x7f020106;
-        public static final int ic_wizard_camundanet=0x7f020107;
-        public static final int ic_wizard_catitel=0x7f020108;
-        public static final int ic_wizard_cellip=0x7f020109;
-        public static final int ic_wizard_chattaboxx=0x7f02010a;
-        public static final int ic_wizard_clickphone=0x7f02010b;
-        public static final int ic_wizard_cnx=0x7f02010c;
-        public static final int ic_wizard_commpeak=0x7f02010d;
-        public static final int ic_wizard_congstar=0x7f02010e;
-        public static final int ic_wizard_cotas=0x7f02010f;
-        public static final int ic_wizard_cryptel=0x7f020110;
-        public static final int ic_wizard_dell=0x7f020111;
-        public static final int ic_wizard_deltatelecom=0x7f020112;
-        public static final int ic_wizard_deltathree=0x7f020113;
-        public static final int ic_wizard_deps=0x7f020114;
-        public static final int ic_wizard_digitel=0x7f020115;
-        public static final int ic_wizard_directdial=0x7f020116;
-        public static final int ic_wizard_dvcng=0x7f020117;
-        public static final int ic_wizard_easybell=0x7f020118;
-        public static final int ic_wizard_easycallgr=0x7f020119;
-        public static final int ic_wizard_eha=0x7f02011a;
-        public static final int ic_wizard_ekiga=0x7f02011b;
-        public static final int ic_wizard_enaknet=0x7f02011c;
-        public static final int ic_wizard_eurotelefon=0x7f02011d;
-        public static final int ic_wizard_eutelia=0x7f02011e;
-        public static final int ic_wizard_expert=0x7f02011f;
-        public static final int ic_wizard_falavip=0x7f020120;
-        public static final int ic_wizard_fastvoip=0x7f020121;
-        public static final int ic_wizard_fayn=0x7f020122;
-        public static final int ic_wizard_fix2mod=0x7f020123;
-        public static final int ic_wizard_flowroute=0x7f020124;
-        public static final int ic_wizard_fongo=0x7f020125;
-        public static final int ic_wizard_freeconet=0x7f020126;
-        public static final int ic_wizard_freelycall=0x7f020127;
-        public static final int ic_wizard_freephonelineca=0x7f020128;
-        public static final int ic_wizard_freephonie=0x7f020129;
-        public static final int ic_wizard_freespeech=0x7f02012a;
-        public static final int ic_wizard_fringtalktw=0x7f02012b;
-        public static final int ic_wizard_fritzbox=0x7f02012c;
-        public static final int ic_wizard_fusion=0x7f02012d;
-        public static final int ic_wizard_globtelecom=0x7f02012e;
-        public static final int ic_wizard_gradwell=0x7f02012f;
-        public static final int ic_wizard_gsm=0x7f020130;
-        public static final int ic_wizard_gtel=0x7f020131;
-        public static final int ic_wizard_haloo=0x7f020132;
-        public static final int ic_wizard_haloo_centrala=0x7f020133;
-        public static final int ic_wizard_hibritel=0x7f020134;
-        public static final int ic_wizard_iinet=0x7f020135;
-        public static final int ic_wizard_indonix=0x7f020136;
-        public static final int ic_wizard_ingetel=0x7f020137;
-        public static final int ic_wizard_innotel=0x7f020138;
-        public static final int ic_wizard_inovent=0x7f020139;
-        public static final int ic_wizard_interphone365=0x7f02013a;
-        public static final int ic_wizard_intertelecom=0x7f02013b;
-        public static final int ic_wizard_ip2mobile=0x7f02013c;
-        public static final int ic_wizard_ipcomms=0x7f02013d;
-        public static final int ic_wizard_ippi=0x7f02013e;
-        public static final int ic_wizard_ipshka=0x7f02013f;
-        public static final int ic_wizard_iptel=0x7f020140;
-        public static final int ic_wizard_italkworld=0x7f020141;
-        public static final int ic_wizard_ittelenet=0x7f020142;
-        public static final int ic_wizard_keyyo=0x7f020143;
-        public static final int ic_wizard_kurira=0x7f020144;
-        public static final int ic_wizard_llamadas_xinternet=0x7f020145;
-        public static final int ic_wizard_localphone=0x7f020146;
-        public static final int ic_wizard_lolawireless=0x7f020147;
-        public static final int ic_wizard_megafon=0x7f020148;
-        public static final int ic_wizard_megatel=0x7f020149;
-        public static final int ic_wizard_megavoip=0x7f02014a;
-        public static final int ic_wizard_messagenet=0x7f02014b;
-        public static final int ic_wizard_mitelefono=0x7f02014c;
-        public static final int ic_wizard_mobex=0x7f02014d;
-        public static final int ic_wizard_mobile4u=0x7f02014e;
-        public static final int ic_wizard_mobilewifi=0x7f02014f;
-        public static final int ic_wizard_modulus=0x7f020150;
-        public static final int ic_wizard_mondotalk=0x7f020151;
-        public static final int ic_wizard_mtel=0x7f020152;
-        public static final int ic_wizard_multifon=0x7f020153;
-        public static final int ic_wizard_mundor=0x7f020154;
-        public static final int ic_wizard_mweb=0x7f020155;
-        public static final int ic_wizard_mydivert=0x7f020156;
-        public static final int ic_wizard_mynetphone=0x7f020157;
-        public static final int ic_wizard_necc=0x7f020158;
-        public static final int ic_wizard_netelip=0x7f020159;
-        public static final int ic_wizard_netgsm=0x7f02015a;
-        public static final int ic_wizard_netgsmsantral=0x7f02015b;
-        public static final int ic_wizard_neuftalk=0x7f02015c;
-        public static final int ic_wizard_nibtel=0x7f02015d;
-        public static final int ic_wizard_nymgo=0x7f02015e;
-        public static final int ic_wizard_ocn=0x7f02015f;
-        public static final int ic_wizard_odorik=0x7f020160;
-        public static final int ic_wizard_oneworldsip=0x7f020161;
-        public static final int ic_wizard_onsip=0x7f020162;
-        public static final int ic_wizard_optimum_lightpath=0x7f020163;
-        public static final int ic_wizard_optimus=0x7f020164;
-        public static final int ic_wizard_orbtalk=0x7f020165;
-        public static final int ic_wizard_ostel=0x7f020166;
-        public static final int ic_wizard_ostn=0x7f020167;
-        public static final int ic_wizard_ovh=0x7f020168;
-        public static final int ic_wizard_pbxes=0x7f020169;
-        public static final int ic_wizard_pennytel=0x7f02016a;
-        public static final int ic_wizard_peopleline=0x7f02016b;
-        public static final int ic_wizard_pfingo=0x7f02016c;
-        public static final int ic_wizard_phonepower=0x7f02016d;
-        public static final int ic_wizard_phonzo=0x7f02016e;
-        public static final int ic_wizard_planetphone=0x7f02016f;
-        public static final int ic_wizard_polfon=0x7f020170;
-        public static final int ic_wizard_pozitel=0x7f020171;
-        public static final int ic_wizard_pttjapan=0x7f020172;
-        public static final int ic_wizard_qtel=0x7f020173;
-        public static final int ic_wizard_rapidvox=0x7f020174;
-        public static final int ic_wizard_reachphones=0x7f020175;
-        public static final int ic_wizard_sapo=0x7f020176;
-        public static final int ic_wizard_sbohempevnalinko=0x7f020177;
-        public static final int ic_wizard_scarlet=0x7f020178;
-        public static final int ic_wizard_securdata=0x7f020179;
-        public static final int ic_wizard_securecall=0x7f02017a;
-        public static final int ic_wizard_sfr=0x7f02017b;
-        public static final int ic_wizard_sigapy=0x7f02017c;
-        public static final int ic_wizard_signumtel=0x7f02017d;
-        public static final int ic_wizard_sip2sip=0x7f02017e;
-        public static final int ic_wizard_sipcel=0x7f02017f;
-        public static final int ic_wizard_sipcentric=0x7f020180;
-        public static final int ic_wizard_sipgate=0x7f020181;
-        public static final int ic_wizard_sipkom=0x7f020182;
-        public static final int ic_wizard_sipme=0x7f020183;
-        public static final int ic_wizard_sipnet=0x7f020184;
-        public static final int ic_wizard_sipsorcery=0x7f020185;
-        public static final int ic_wizard_siptel=0x7f020186;
-        public static final int ic_wizard_sipwise=0x7f020187;
-        public static final int ic_wizard_skytel=0x7f020188;
-        public static final int ic_wizard_smarto=0x7f020189;
-        public static final int ic_wizard_soho66=0x7f02018a;
-        public static final int ic_wizard_sonetel=0x7f02018b;
-        public static final int ic_wizard_speakezi=0x7f02018c;
-        public static final int ic_wizard_spirit=0x7f02018d;
-        public static final int ic_wizard_spout=0x7f02018e;
-        public static final int ic_wizard_supercel=0x7f02018f;
-        public static final int ic_wizard_svanto=0x7f020190;
-        public static final int ic_wizard_t_online=0x7f020191;
-        public static final int ic_wizard_tanstagi=0x7f020192;
-        public static final int ic_wizard_tecobu=0x7f020193;
-        public static final int ic_wizard_telaccess=0x7f020194;
-        public static final int ic_wizard_telekom_srbija=0x7f020195;
-        public static final int ic_wizard_telemega=0x7f020196;
-        public static final int ic_wizard_telenative=0x7f020197;
-        public static final int ic_wizard_telphin=0x7f020198;
-        public static final int ic_wizard_telsome=0x7f020199;
-        public static final int ic_wizard_tenet=0x7f02019a;
-        public static final int ic_wizard_tlenofon=0x7f02019b;
-        public static final int ic_wizard_tpoint=0x7f02019c;
-        public static final int ic_wizard_traveltele=0x7f02019d;
-        public static final int ic_wizard_ukrcall=0x7f02019e;
-        public static final int ic_wizard_ukrtelecom=0x7f02019f;
-        public static final int ic_wizard_vanbergsystems=0x7f0201a0;
-        public static final int ic_wizard_vega=0x7f0201a1;
-        public static final int ic_wizard_viptel=0x7f0201a2;
-        public static final int ic_wizard_vitelity=0x7f0201a3;
-        public static final int ic_wizard_viva=0x7f0201a4;
-        public static final int ic_wizard_voipbel=0x7f0201a5;
-        public static final int ic_wizard_voipdoup=0x7f0201a6;
-        public static final int ic_wizard_voipllama=0x7f0201a7;
-        public static final int ic_wizard_voipms=0x7f0201a8;
-        public static final int ic_wizard_voipmuch=0x7f0201a9;
-        public static final int ic_wizard_voipnor=0x7f0201aa;
-        public static final int ic_wizard_voipplanet=0x7f0201ab;
-        public static final int ic_wizard_voipportal=0x7f0201ac;
-        public static final int ic_wizard_voiptelie=0x7f0201ad;
-        public static final int ic_wizard_voiptiger=0x7f0201ae;
-        public static final int ic_wizard_vono=0x7f0201af;
-        public static final int ic_wizard_voocall=0x7f0201b0;
-        public static final int ic_wizard_vostron=0x7f0201b1;
-        public static final int ic_wizard_vphone=0x7f0201b2;
-        public static final int ic_wizard_wimanx=0x7f0201b3;
-        public static final int ic_wizard_wimobile=0x7f0201b4;
-        public static final int ic_wizard_worlddialpoint=0x7f0201b5;
-        public static final int ic_wizard_xnet=0x7f0201b6;
-        public static final int ic_wizard_yesmy=0x7f0201b7;
-        public static final int ic_wizard_youmagic=0x7f0201b8;
-        public static final int ic_wizard_zadarma=0x7f0201b9;
-        public static final int ic_wizard_zeng=0x7f0201ba;
-        public static final int ic_wizard_zentc=0x7f0201bb;
-        public static final int ic_wizard_zonpt=0x7f0201bc;
-        public static final int ic_wizard_zoontelecom=0x7f0201bd;
-        public static final int icon=0x7f0201be;
-        public static final int icon_home=0x7f0201bf;
-        public static final int in_call_held_background=0x7f0201c0;
-        public static final int incall_bottom_bar_bg=0x7f0201c1;
-        public static final int jog_tab_bar_left_answer=0x7f0201c2;
-        public static final int jog_tab_bar_left_end_confirm_green=0x7f0201c3;
-        public static final int jog_tab_bar_left_end_normal=0x7f0201c4;
-        public static final int jog_tab_bar_left_end_pressed=0x7f0201c5;
-        public static final int jog_tab_bar_right_decline=0x7f0201c6;
-        public static final int jog_tab_bar_right_end_confirm_red=0x7f0201c7;
-        public static final int jog_tab_bar_right_end_normal=0x7f0201c8;
-        public static final int jog_tab_bar_right_end_pressed=0x7f0201c9;
-        public static final int jog_tab_left_answer=0x7f0201ca;
-        public static final int jog_tab_left_confirm_green=0x7f0201cb;
-        public static final int jog_tab_left_normal=0x7f0201cc;
-        public static final int jog_tab_left_pressed=0x7f0201cd;
-        public static final int jog_tab_right_confirm_red=0x7f0201ce;
-        public static final int jog_tab_right_decline=0x7f0201cf;
-        public static final int jog_tab_right_normal=0x7f0201d0;
-        public static final int jog_tab_right_pressed=0x7f0201d1;
-        public static final int jog_tab_target_green=0x7f0201d2;
-        public static final int jog_tab_target_red=0x7f0201d3;
-        public static final int jp=0x7f0201d4;
-        public static final int jp_b=0x7f0201d5;
-        public static final int ligar=0x7f0201d6;
-        public static final int linkedin=0x7f0201d7;
-        public static final int list_selector_background_pressed=0x7f0201d8;
-        public static final int mr=0x7f0201d9;
-        public static final int mr_b=0x7f0201da;
-        public static final int normal_bg_of_list_item=0x7f0201db;
-        public static final int notify_panel_notification_icon_bg=0x7f0201dc;
-        public static final int notify_panel_notification_icon_bg_tile=0x7f0201dd;
-        public static final int pprofile=0x7f0201de;
-        public static final int pressed_bg_of_list_item=0x7f0201df;
-        public static final int quickaction_arrow_down=0x7f0201e0;
-        public static final int quickaction_arrow_up=0x7f0201e1;
-        public static final int quickaction_bottom_frame=0x7f0201e2;
-        public static final int quickaction_slider_background=0x7f0201e3;
-        public static final int quickaction_slider_btn=0x7f0201e4;
-        public static final int quickaction_slider_btn_normal=0x7f0201e5;
-        public static final int quickaction_slider_btn_on=0x7f0201e6;
-        public static final int quickaction_slider_btn_pressed=0x7f0201e7;
-        public static final int quickaction_slider_btn_selected=0x7f0201e8;
-        public static final int quickaction_slider_grip_left=0x7f0201e9;
-        public static final int quickaction_slider_grip_right=0x7f0201ea;
-        public static final int quickaction_top_frame=0x7f0201eb;
-        public static final int radio_style=0x7f0201ec;
-        public static final int sp=0x7f0201ed;
-        public static final int stat_notify_sms=0x7f0201ee;
-        public static final int stat_sys_vp_phone_call=0x7f0201ef;
-        public static final int take_call_background=0x7f0201f0;
-        public static final int takecall_background_texture=0x7f0201f1;
-        public static final int transparent=0x7f0201f2;
-        public static final int uk=0x7f0201f3;
-        public static final int uk_b=0x7f0201f4;
-        public static final int warning_bloc_shape=0x7f0201f5;
-        public static final int windows=0x7f0201f6;
+        public static final int common_signin_btn_icon_dark=0x7f020051;
+        public static final int common_signin_btn_icon_disabled_dark=0x7f020052;
+        public static final int common_signin_btn_icon_disabled_focus_dark=0x7f020053;
+        public static final int common_signin_btn_icon_disabled_focus_light=0x7f020054;
+        public static final int common_signin_btn_icon_disabled_light=0x7f020055;
+        public static final int common_signin_btn_icon_focus_dark=0x7f020056;
+        public static final int common_signin_btn_icon_focus_light=0x7f020057;
+        public static final int common_signin_btn_icon_light=0x7f020058;
+        public static final int common_signin_btn_icon_normal_dark=0x7f020059;
+        public static final int common_signin_btn_icon_normal_light=0x7f02005a;
+        public static final int common_signin_btn_icon_pressed_dark=0x7f02005b;
+        public static final int common_signin_btn_icon_pressed_light=0x7f02005c;
+        public static final int common_signin_btn_text_dark=0x7f02005d;
+        public static final int common_signin_btn_text_disabled_dark=0x7f02005e;
+        public static final int common_signin_btn_text_disabled_focus_dark=0x7f02005f;
+        public static final int common_signin_btn_text_disabled_focus_light=0x7f020060;
+        public static final int common_signin_btn_text_disabled_light=0x7f020061;
+        public static final int common_signin_btn_text_focus_dark=0x7f020062;
+        public static final int common_signin_btn_text_focus_light=0x7f020063;
+        public static final int common_signin_btn_text_light=0x7f020064;
+        public static final int common_signin_btn_text_normal_dark=0x7f020065;
+        public static final int common_signin_btn_text_normal_light=0x7f020066;
+        public static final int common_signin_btn_text_pressed_dark=0x7f020067;
+        public static final int common_signin_btn_text_pressed_light=0x7f020068;
+        public static final int connect=0x7f020069;
+        public static final int desligar=0x7f02006a;
+        public static final int dial_background_texture=0x7f02006b;
+        public static final int dial_num_0=0x7f02006c;
+        public static final int dial_num_0_wht=0x7f02006d;
+        public static final int dial_num_1=0x7f02006e;
+        public static final int dial_num_1_wht=0x7f02006f;
+        public static final int dial_num_2=0x7f020070;
+        public static final int dial_num_2_wht=0x7f020071;
+        public static final int dial_num_3=0x7f020072;
+        public static final int dial_num_3_wht=0x7f020073;
+        public static final int dial_num_4=0x7f020074;
+        public static final int dial_num_4_wht=0x7f020075;
+        public static final int dial_num_5=0x7f020076;
+        public static final int dial_num_5_wht=0x7f020077;
+        public static final int dial_num_6=0x7f020078;
+        public static final int dial_num_6_wht=0x7f020079;
+        public static final int dial_num_7=0x7f02007a;
+        public static final int dial_num_7_wht=0x7f02007b;
+        public static final int dial_num_8=0x7f02007c;
+        public static final int dial_num_8_wht=0x7f02007d;
+        public static final int dial_num_9=0x7f02007e;
+        public static final int dial_num_9_wht=0x7f02007f;
+        public static final int dial_num_pound=0x7f020080;
+        public static final int dial_num_pound_wht=0x7f020081;
+        public static final int dial_num_star=0x7f020082;
+        public static final int dial_num_star_wht=0x7f020083;
+        public static final int dialpad_background=0x7f020084;
+        public static final int drawer_list_selection=0x7f020085;
+        public static final int emo_im_angel=0x7f020086;
+        public static final int emo_im_cool=0x7f020087;
+        public static final int emo_im_crying=0x7f020088;
+        public static final int emo_im_embarrassed=0x7f020089;
+        public static final int emo_im_foot_in_mouth=0x7f02008a;
+        public static final int emo_im_happy=0x7f02008b;
+        public static final int emo_im_kissing=0x7f02008c;
+        public static final int emo_im_laughing=0x7f02008d;
+        public static final int emo_im_lips_are_sealed=0x7f02008e;
+        public static final int emo_im_money_mouth=0x7f02008f;
+        public static final int emo_im_sad=0x7f020090;
+        public static final int emo_im_surprised=0x7f020091;
+        public static final int emo_im_tongue_sticking_out=0x7f020092;
+        public static final int emo_im_undecided=0x7f020093;
+        public static final int emo_im_winking=0x7f020094;
+        public static final int emo_im_wtf=0x7f020095;
+        public static final int emo_im_yelling=0x7f020096;
+        public static final int end_call_background=0x7f020097;
+        public static final int endcall_background_texture=0x7f020098;
+        public static final int es_b=0x7f020099;
+        public static final int facebook=0x7f02009a;
+        public static final int flag_bar=0x7f02009b;
+        public static final int fr=0x7f02009c;
+        public static final int fr_b=0x7f02009d;
+        public static final int google=0x7f02009e;
+        public static final int gr=0x7f02009f;
+        public static final int gr_b=0x7f0200a0;
+        public static final int grabber=0x7f0200a1;
+        public static final int grey_bottom_gradient=0x7f0200a2;
+        public static final int grey_left_gradient=0x7f0200a3;
+        public static final int grey_right_gradient=0x7f0200a4;
+        public static final int grey_top_gradient=0x7f0200a5;
+        public static final int ic_ab_dialer_holo_dark=0x7f0200a6;
+        public static final int ic_ab_dialpad=0x7f0200a7;
+        public static final int ic_ab_favourites_holo_dark=0x7f0200a8;
+        public static final int ic_ab_history_holo_dark=0x7f0200a9;
+        public static final int ic_ab_text_holo_dark=0x7f0200aa;
+        public static final int ic_ab_trash_dark=0x7f0200ab;
+        public static final int ic_action_select_invert=0x7f0200ac;
+        public static final int ic_add_contact_holo_dark=0x7f0200ad;
+        public static final int ic_avatar=0x7f0200ae;
+        public static final int ic_avatar1=0x7f0200af;
+        public static final int ic_avatar_edit=0x7f0200b0;
+        public static final int ic_babek2=0x7f0200b1;
+        public static final int ic_brasil=0x7f0200b2;
+        public static final int ic_call_incoming_holo_dark=0x7f0200b3;
+        public static final int ic_call_missed_holo_dark=0x7f0200b4;
+        public static final int ic_call_outgoing_holo_dark=0x7f0200b5;
+        public static final int ic_conference=0x7f0200b6;
+        public static final int ic_conference_off=0x7f0200b7;
+        public static final int ic_config=0x7f0200b8;
+        public static final int ic_contact_picture_180_holo_dark=0x7f0200b9;
+        public static final int ic_contact_picture_180_holo_light=0x7f0200ba;
+        public static final int ic_contact_picture_holo_dark=0x7f0200bb;
+        public static final int ic_contacts_holo_dark=0x7f0200bc;
+        public static final int ic_dial_action_call=0x7f0200bd;
+        public static final int ic_dial_action_delete=0x7f0200be;
+        public static final int ic_divider_dashed_holo_dark=0x7f0200bf;
+        public static final int ic_drawer=0x7f0200c0;
+        public static final int ic_email_pending=0x7f0200c1;
+        public static final int ic_end_call=0x7f0200c2;
+        public static final int ic_eua=0x7f0200c3;
+        public static final int ic_exit=0x7f0200c4;
+        public static final int ic_france=0x7f0200c5;
+        public static final int ic_germany=0x7f0200c6;
+        public static final int ic_in_call_touch_answer=0x7f0200c7;
+        public static final int ic_in_call_touch_end=0x7f0200c8;
+        public static final int ic_in_call_touch_handle=0x7f0200c9;
+        public static final int ic_in_call_touch_handle_normal=0x7f0200ca;
+        public static final int ic_in_call_touch_hold=0x7f0200cb;
+        public static final int ic_indicator_off=0x7f0200cc;
+        public static final int ic_indicator_on=0x7f0200cd;
+        public static final int ic_indicator_red=0x7f0200ce;
+        public static final int ic_indicator_yellow=0x7f0200cf;
+        public static final int ic_jog_dial_answer=0x7f0200d0;
+        public static final int ic_jog_dial_decline=0x7f0200d1;
+        public static final int ic_jog_dial_unlock=0x7f0200d2;
+        public static final int ic_launcher=0x7f0200d3;
+        public static final int ic_launcher_nightly=0x7f0200d4;
+        public static final int ic_launcher_phone=0x7f0200d5;
+        public static final int ic_lock_power_off=0x7f0200d6;
+        public static final int ic_lockscreen_answer=0x7f0200d7;
+        public static final int ic_lockscreen_answer_activated=0x7f0200d8;
+        public static final int ic_lockscreen_answer_activated_layer=0x7f0200d9;
+        public static final int ic_lockscreen_answer_normal=0x7f0200da;
+        public static final int ic_lockscreen_answer_normal_layer=0x7f0200db;
+        public static final int ic_lockscreen_decline=0x7f0200dc;
+        public static final int ic_lockscreen_decline_activated=0x7f0200dd;
+        public static final int ic_lockscreen_decline_activated_layer=0x7f0200de;
+        public static final int ic_lockscreen_decline_normal=0x7f0200df;
+        public static final int ic_lockscreen_decline_normal_layer=0x7f0200e0;
+        public static final int ic_lockscreen_glowdot=0x7f0200e1;
+        public static final int ic_lockscreen_handle_pressed=0x7f0200e2;
+        public static final int ic_lockscreen_outerring=0x7f0200e3;
+        public static final int ic_login=0x7f0200e4;
+        public static final int ic_login12=0x7f0200e5;
+        public static final int ic_menu_account_list=0x7f0200e6;
+        public static final int ic_menu_answer_call=0x7f0200e7;
+        public static final int ic_menu_auto_answer=0x7f0200e8;
+        public static final int ic_menu_blocked_user=0x7f0200e9;
+        public static final int ic_menu_filter=0x7f0200ea;
+        public static final int ic_menu_goto=0x7f0200eb;
+        public static final int ic_menu_msg_compose_holo_dark=0x7f0200ec;
+        public static final int ic_menu_switch_digit=0x7f0200ed;
+        public static final int ic_menu_switch_txt=0x7f0200ee;
+        public static final int ic_micro_dark=0x7f0200ef;
+        public static final int ic_mute_holo_dark=0x7f0200f0;
+        public static final int ic_payment=0x7f0200f1;
+        public static final int ic_plusone_medium_off_client=0x7f0200f2;
+        public static final int ic_plusone_small_off_client=0x7f0200f3;
+        public static final int ic_plusone_standard_off_client=0x7f0200f4;
+        public static final int ic_plusone_tall_off_client=0x7f0200f5;
+        public static final int ic_prefs_calls=0x7f0200f6;
+        public static final int ic_prefs_fast=0x7f0200f7;
+        public static final int ic_prefs_filter=0x7f0200f8;
+        public static final int ic_prefs_media=0x7f0200f9;
+        public static final int ic_prefs_media_video=0x7f0200fa;
+        public static final int ic_prefs_network=0x7f0200fb;
+        public static final int ic_prefs_ui=0x7f0200fc;
+        public static final int ic_profile=0x7f0200fd;
+        public static final int ic_sign_in_login=0x7f0200fe;
+        public static final int ic_sms_mms_not_delivered=0x7f0200ff;
+        public static final int ic_sound_bluetooth_holo_dark=0x7f020100;
+        public static final int ic_sound_speakerphone_holo_dark=0x7f020101;
+        public static final int ic_speaker_dark=0x7f020102;
+        public static final int ic_stat_sipok=0x7f020103;
+        public static final int ic_tab_selected_contacts=0x7f020104;
+        public static final int ic_translatetou=0x7f020105;
+        public static final int ic_wizard_050plus=0x7f020106;
+        public static final int ic_wizard_a1=0x7f020107;
+        public static final int ic_wizard_aaisp=0x7f020108;
+        public static final int ic_wizard_abaglobal=0x7f020109;
+        public static final int ic_wizard_abatel=0x7f02010a;
+        public static final int ic_wizard_abcvoip=0x7f02010b;
+        public static final int ic_wizard_adiptel=0x7f02010c;
+        public static final int ic_wizard_advanced=0x7f02010d;
+        public static final int ic_wizard_advancefone=0x7f02010e;
+        public static final int ic_wizard_ajtel=0x7f02010f;
+        public static final int ic_wizard_ale=0x7f020110;
+        public static final int ic_wizard_amivox=0x7f020111;
+        public static final int ic_wizard_anv=0x7f020112;
+        public static final int ic_wizard_babytel=0x7f020113;
+        public static final int ic_wizard_balses=0x7f020114;
+        public static final int ic_wizard_basic=0x7f020115;
+        public static final int ic_wizard_beeztel=0x7f020116;
+        public static final int ic_wizard_belcentrale=0x7f020117;
+        public static final int ic_wizard_bgcall=0x7f020118;
+        public static final int ic_wizard_bgopen=0x7f020119;
+        public static final int ic_wizard_bgtel=0x7f02011a;
+        public static final int ic_wizard_blicnet=0x7f02011b;
+        public static final int ic_wizard_blueface=0x7f02011c;
+        public static final int ic_wizard_broadsoft=0x7f02011d;
+        public static final int ic_wizard_broadvoice=0x7f02011e;
+        public static final int ic_wizard_btone=0x7f02011f;
+        public static final int ic_wizard_callcentric=0x7f020120;
+        public static final int ic_wizard_callmyway=0x7f020121;
+        public static final int ic_wizard_callromania=0x7f020122;
+        public static final int ic_wizard_callwithus=0x7f020123;
+        public static final int ic_wizard_camundanet=0x7f020124;
+        public static final int ic_wizard_catitel=0x7f020125;
+        public static final int ic_wizard_cellip=0x7f020126;
+        public static final int ic_wizard_chattaboxx=0x7f020127;
+        public static final int ic_wizard_clickphone=0x7f020128;
+        public static final int ic_wizard_cnx=0x7f020129;
+        public static final int ic_wizard_commpeak=0x7f02012a;
+        public static final int ic_wizard_congstar=0x7f02012b;
+        public static final int ic_wizard_cotas=0x7f02012c;
+        public static final int ic_wizard_cryptel=0x7f02012d;
+        public static final int ic_wizard_dell=0x7f02012e;
+        public static final int ic_wizard_deltatelecom=0x7f02012f;
+        public static final int ic_wizard_deltathree=0x7f020130;
+        public static final int ic_wizard_deps=0x7f020131;
+        public static final int ic_wizard_digitel=0x7f020132;
+        public static final int ic_wizard_directdial=0x7f020133;
+        public static final int ic_wizard_dvcng=0x7f020134;
+        public static final int ic_wizard_easybell=0x7f020135;
+        public static final int ic_wizard_easycallgr=0x7f020136;
+        public static final int ic_wizard_eha=0x7f020137;
+        public static final int ic_wizard_ekiga=0x7f020138;
+        public static final int ic_wizard_enaknet=0x7f020139;
+        public static final int ic_wizard_eurotelefon=0x7f02013a;
+        public static final int ic_wizard_eutelia=0x7f02013b;
+        public static final int ic_wizard_expert=0x7f02013c;
+        public static final int ic_wizard_falavip=0x7f02013d;
+        public static final int ic_wizard_fastvoip=0x7f02013e;
+        public static final int ic_wizard_fayn=0x7f02013f;
+        public static final int ic_wizard_fix2mod=0x7f020140;
+        public static final int ic_wizard_flowroute=0x7f020141;
+        public static final int ic_wizard_fongo=0x7f020142;
+        public static final int ic_wizard_freeconet=0x7f020143;
+        public static final int ic_wizard_freelycall=0x7f020144;
+        public static final int ic_wizard_freephonelineca=0x7f020145;
+        public static final int ic_wizard_freephonie=0x7f020146;
+        public static final int ic_wizard_freespeech=0x7f020147;
+        public static final int ic_wizard_fringtalktw=0x7f020148;
+        public static final int ic_wizard_fritzbox=0x7f020149;
+        public static final int ic_wizard_fusion=0x7f02014a;
+        public static final int ic_wizard_globtelecom=0x7f02014b;
+        public static final int ic_wizard_gradwell=0x7f02014c;
+        public static final int ic_wizard_gsm=0x7f02014d;
+        public static final int ic_wizard_gtel=0x7f02014e;
+        public static final int ic_wizard_haloo=0x7f02014f;
+        public static final int ic_wizard_haloo_centrala=0x7f020150;
+        public static final int ic_wizard_hibritel=0x7f020151;
+        public static final int ic_wizard_iinet=0x7f020152;
+        public static final int ic_wizard_indonix=0x7f020153;
+        public static final int ic_wizard_ingetel=0x7f020154;
+        public static final int ic_wizard_innotel=0x7f020155;
+        public static final int ic_wizard_inovent=0x7f020156;
+        public static final int ic_wizard_interphone365=0x7f020157;
+        public static final int ic_wizard_intertelecom=0x7f020158;
+        public static final int ic_wizard_ip2mobile=0x7f020159;
+        public static final int ic_wizard_ipcomms=0x7f02015a;
+        public static final int ic_wizard_ippi=0x7f02015b;
+        public static final int ic_wizard_ipshka=0x7f02015c;
+        public static final int ic_wizard_iptel=0x7f02015d;
+        public static final int ic_wizard_italkworld=0x7f02015e;
+        public static final int ic_wizard_ittelenet=0x7f02015f;
+        public static final int ic_wizard_keyyo=0x7f020160;
+        public static final int ic_wizard_kurira=0x7f020161;
+        public static final int ic_wizard_llamadas_xinternet=0x7f020162;
+        public static final int ic_wizard_localphone=0x7f020163;
+        public static final int ic_wizard_lolawireless=0x7f020164;
+        public static final int ic_wizard_megafon=0x7f020165;
+        public static final int ic_wizard_megatel=0x7f020166;
+        public static final int ic_wizard_megavoip=0x7f020167;
+        public static final int ic_wizard_messagenet=0x7f020168;
+        public static final int ic_wizard_mitelefono=0x7f020169;
+        public static final int ic_wizard_mobex=0x7f02016a;
+        public static final int ic_wizard_mobile4u=0x7f02016b;
+        public static final int ic_wizard_mobilewifi=0x7f02016c;
+        public static final int ic_wizard_modulus=0x7f02016d;
+        public static final int ic_wizard_mondotalk=0x7f02016e;
+        public static final int ic_wizard_mtel=0x7f02016f;
+        public static final int ic_wizard_multifon=0x7f020170;
+        public static final int ic_wizard_mundor=0x7f020171;
+        public static final int ic_wizard_mweb=0x7f020172;
+        public static final int ic_wizard_mydivert=0x7f020173;
+        public static final int ic_wizard_mynetphone=0x7f020174;
+        public static final int ic_wizard_necc=0x7f020175;
+        public static final int ic_wizard_netelip=0x7f020176;
+        public static final int ic_wizard_netgsm=0x7f020177;
+        public static final int ic_wizard_netgsmsantral=0x7f020178;
+        public static final int ic_wizard_neuftalk=0x7f020179;
+        public static final int ic_wizard_nibtel=0x7f02017a;
+        public static final int ic_wizard_nymgo=0x7f02017b;
+        public static final int ic_wizard_ocn=0x7f02017c;
+        public static final int ic_wizard_odorik=0x7f02017d;
+        public static final int ic_wizard_oneworldsip=0x7f02017e;
+        public static final int ic_wizard_onsip=0x7f02017f;
+        public static final int ic_wizard_optimum_lightpath=0x7f020180;
+        public static final int ic_wizard_optimus=0x7f020181;
+        public static final int ic_wizard_orbtalk=0x7f020182;
+        public static final int ic_wizard_ostel=0x7f020183;
+        public static final int ic_wizard_ostn=0x7f020184;
+        public static final int ic_wizard_ovh=0x7f020185;
+        public static final int ic_wizard_pbxes=0x7f020186;
+        public static final int ic_wizard_pennytel=0x7f020187;
+        public static final int ic_wizard_peopleline=0x7f020188;
+        public static final int ic_wizard_pfingo=0x7f020189;
+        public static final int ic_wizard_phonepower=0x7f02018a;
+        public static final int ic_wizard_phonzo=0x7f02018b;
+        public static final int ic_wizard_planetphone=0x7f02018c;
+        public static final int ic_wizard_polfon=0x7f02018d;
+        public static final int ic_wizard_pozitel=0x7f02018e;
+        public static final int ic_wizard_pttjapan=0x7f02018f;
+        public static final int ic_wizard_qtel=0x7f020190;
+        public static final int ic_wizard_rapidvox=0x7f020191;
+        public static final int ic_wizard_reachphones=0x7f020192;
+        public static final int ic_wizard_sapo=0x7f020193;
+        public static final int ic_wizard_sbohempevnalinko=0x7f020194;
+        public static final int ic_wizard_scarlet=0x7f020195;
+        public static final int ic_wizard_securdata=0x7f020196;
+        public static final int ic_wizard_securecall=0x7f020197;
+        public static final int ic_wizard_sfr=0x7f020198;
+        public static final int ic_wizard_sigapy=0x7f020199;
+        public static final int ic_wizard_signumtel=0x7f02019a;
+        public static final int ic_wizard_sip2sip=0x7f02019b;
+        public static final int ic_wizard_sipcel=0x7f02019c;
+        public static final int ic_wizard_sipcentric=0x7f02019d;
+        public static final int ic_wizard_sipgate=0x7f02019e;
+        public static final int ic_wizard_sipkom=0x7f02019f;
+        public static final int ic_wizard_sipme=0x7f0201a0;
+        public static final int ic_wizard_sipnet=0x7f0201a1;
+        public static final int ic_wizard_sipsorcery=0x7f0201a2;
+        public static final int ic_wizard_siptel=0x7f0201a3;
+        public static final int ic_wizard_sipwise=0x7f0201a4;
+        public static final int ic_wizard_skytel=0x7f0201a5;
+        public static final int ic_wizard_smarto=0x7f0201a6;
+        public static final int ic_wizard_soho66=0x7f0201a7;
+        public static final int ic_wizard_sonetel=0x7f0201a8;
+        public static final int ic_wizard_speakezi=0x7f0201a9;
+        public static final int ic_wizard_spirit=0x7f0201aa;
+        public static final int ic_wizard_spout=0x7f0201ab;
+        public static final int ic_wizard_supercel=0x7f0201ac;
+        public static final int ic_wizard_svanto=0x7f0201ad;
+        public static final int ic_wizard_t_online=0x7f0201ae;
+        public static final int ic_wizard_tanstagi=0x7f0201af;
+        public static final int ic_wizard_tecobu=0x7f0201b0;
+        public static final int ic_wizard_telaccess=0x7f0201b1;
+        public static final int ic_wizard_telekom_srbija=0x7f0201b2;
+        public static final int ic_wizard_telemega=0x7f0201b3;
+        public static final int ic_wizard_telenative=0x7f0201b4;
+        public static final int ic_wizard_telphin=0x7f0201b5;
+        public static final int ic_wizard_telsome=0x7f0201b6;
+        public static final int ic_wizard_tenet=0x7f0201b7;
+        public static final int ic_wizard_tlenofon=0x7f0201b8;
+        public static final int ic_wizard_tpoint=0x7f0201b9;
+        public static final int ic_wizard_traveltele=0x7f0201ba;
+        public static final int ic_wizard_ukrcall=0x7f0201bb;
+        public static final int ic_wizard_ukrtelecom=0x7f0201bc;
+        public static final int ic_wizard_vanbergsystems=0x7f0201bd;
+        public static final int ic_wizard_vega=0x7f0201be;
+        public static final int ic_wizard_viptel=0x7f0201bf;
+        public static final int ic_wizard_vitelity=0x7f0201c0;
+        public static final int ic_wizard_viva=0x7f0201c1;
+        public static final int ic_wizard_voipbel=0x7f0201c2;
+        public static final int ic_wizard_voipdoup=0x7f0201c3;
+        public static final int ic_wizard_voipllama=0x7f0201c4;
+        public static final int ic_wizard_voipms=0x7f0201c5;
+        public static final int ic_wizard_voipmuch=0x7f0201c6;
+        public static final int ic_wizard_voipnor=0x7f0201c7;
+        public static final int ic_wizard_voipplanet=0x7f0201c8;
+        public static final int ic_wizard_voipportal=0x7f0201c9;
+        public static final int ic_wizard_voiptelie=0x7f0201ca;
+        public static final int ic_wizard_voiptiger=0x7f0201cb;
+        public static final int ic_wizard_vono=0x7f0201cc;
+        public static final int ic_wizard_voocall=0x7f0201cd;
+        public static final int ic_wizard_vostron=0x7f0201ce;
+        public static final int ic_wizard_vphone=0x7f0201cf;
+        public static final int ic_wizard_wimanx=0x7f0201d0;
+        public static final int ic_wizard_wimobile=0x7f0201d1;
+        public static final int ic_wizard_worlddialpoint=0x7f0201d2;
+        public static final int ic_wizard_xnet=0x7f0201d3;
+        public static final int ic_wizard_yesmy=0x7f0201d4;
+        public static final int ic_wizard_youmagic=0x7f0201d5;
+        public static final int ic_wizard_zadarma=0x7f0201d6;
+        public static final int ic_wizard_zeng=0x7f0201d7;
+        public static final int ic_wizard_zentc=0x7f0201d8;
+        public static final int ic_wizard_zonpt=0x7f0201d9;
+        public static final int ic_wizard_zoontelecom=0x7f0201da;
+        public static final int icon=0x7f0201db;
+        public static final int icon_home=0x7f0201dc;
+        public static final int in_call_held_background=0x7f0201dd;
+        public static final int incall_bottom_bar_bg=0x7f0201de;
+        public static final int jog_tab_bar_left_answer=0x7f0201df;
+        public static final int jog_tab_bar_left_end_confirm_green=0x7f0201e0;
+        public static final int jog_tab_bar_left_end_normal=0x7f0201e1;
+        public static final int jog_tab_bar_left_end_pressed=0x7f0201e2;
+        public static final int jog_tab_bar_right_decline=0x7f0201e3;
+        public static final int jog_tab_bar_right_end_confirm_red=0x7f0201e4;
+        public static final int jog_tab_bar_right_end_normal=0x7f0201e5;
+        public static final int jog_tab_bar_right_end_pressed=0x7f0201e6;
+        public static final int jog_tab_left_answer=0x7f0201e7;
+        public static final int jog_tab_left_confirm_green=0x7f0201e8;
+        public static final int jog_tab_left_normal=0x7f0201e9;
+        public static final int jog_tab_left_pressed=0x7f0201ea;
+        public static final int jog_tab_right_confirm_red=0x7f0201eb;
+        public static final int jog_tab_right_decline=0x7f0201ec;
+        public static final int jog_tab_right_normal=0x7f0201ed;
+        public static final int jog_tab_right_pressed=0x7f0201ee;
+        public static final int jog_tab_target_green=0x7f0201ef;
+        public static final int jog_tab_target_red=0x7f0201f0;
+        public static final int jp=0x7f0201f1;
+        public static final int jp_b=0x7f0201f2;
+        public static final int ligar=0x7f0201f3;
+        public static final int linkedin=0x7f0201f4;
+        public static final int list_selector_background_pressed=0x7f0201f5;
+        public static final int mr=0x7f0201f6;
+        public static final int mr_b=0x7f0201f7;
+        public static final int normal_bg_of_list_item=0x7f0201f8;
+        public static final int notify_panel_notification_icon_bg=0x7f0201f9;
+        public static final int notify_panel_notification_icon_bg_tile=0x7f0201fa;
+        public static final int powered_by_google_dark=0x7f0201fb;
+        public static final int powered_by_google_light=0x7f0201fc;
+        public static final int pprofile=0x7f0201fd;
+        public static final int pressed_bg_of_list_item=0x7f0201fe;
+        public static final int quickaction_arrow_down=0x7f0201ff;
+        public static final int quickaction_arrow_up=0x7f020200;
+        public static final int quickaction_bottom_frame=0x7f020201;
+        public static final int quickaction_slider_background=0x7f020202;
+        public static final int quickaction_slider_btn=0x7f020203;
+        public static final int quickaction_slider_btn_normal=0x7f020204;
+        public static final int quickaction_slider_btn_on=0x7f020205;
+        public static final int quickaction_slider_btn_pressed=0x7f020206;
+        public static final int quickaction_slider_btn_selected=0x7f020207;
+        public static final int quickaction_slider_grip_left=0x7f020208;
+        public static final int quickaction_slider_grip_right=0x7f020209;
+        public static final int quickaction_top_frame=0x7f02020a;
+        public static final int radio_style=0x7f02020b;
+        public static final int sp=0x7f02020c;
+        public static final int stat_notify_sms=0x7f02020d;
+        public static final int stat_sys_vp_phone_call=0x7f02020e;
+        public static final int take_call_background=0x7f02020f;
+        public static final int takecall_background_texture=0x7f020210;
+        public static final int transparent=0x7f020211;
+        public static final int uk=0x7f020212;
+        public static final int uk_b=0x7f020213;
+        public static final int warning_bloc_shape=0x7f020214;
+        public static final int windows=0x7f020215;
     }
     public static final class id {
-        public static final int AccCheckBoxActive=0x7f06003d;
-        public static final int AccTextStatusView=0x7f060040;
-        public static final int AccTextView=0x7f06003a;
-        public static final int ButtonAvatar=0x7f060124;
-        public static final int abs__action_bar=0x7f060030;
-        public static final int abs__action_bar_container=0x7f06002f;
-        public static final int abs__action_bar_subtitle=0x7f06001f;
-        public static final int abs__action_bar_title=0x7f06001e;
-        public static final int abs__action_context_bar=0x7f060031;
+        public static final int AccCheckBoxActive=0x7f06004f;
+        public static final int AccTextStatusView=0x7f060052;
+        public static final int AccTextView=0x7f06004c;
+        public static final int ButtonAvatar=0x7f060136;
+        public static final int abs__action_bar=0x7f060042;
+        public static final int abs__action_bar_container=0x7f060041;
+        public static final int abs__action_bar_subtitle=0x7f060031;
+        public static final int abs__action_bar_title=0x7f060030;
+        public static final int abs__action_context_bar=0x7f060043;
         public static final int abs__action_menu_divider=0x7f06000c;
         public static final int abs__action_menu_presenter=0x7f06000d;
-        public static final int abs__action_mode_bar=0x7f060034;
-        public static final int abs__action_mode_bar_stub=0x7f060033;
-        public static final int abs__action_mode_close_button=0x7f060022;
-        public static final int abs__activity_chooser_view_content=0x7f060023;
-        public static final int abs__checkbox=0x7f06002c;
-        public static final int abs__content=0x7f06002b;
-        public static final int abs__default_activity_button=0x7f060026;
-        public static final int abs__expand_activities_button=0x7f060024;
+        public static final int abs__action_mode_bar=0x7f060046;
+        public static final int abs__action_mode_bar_stub=0x7f060045;
+        public static final int abs__action_mode_close_button=0x7f060034;
+        public static final int abs__activity_chooser_view_content=0x7f060035;
+        public static final int abs__checkbox=0x7f06003e;
+        public static final int abs__content=0x7f06003d;
+        public static final int abs__default_activity_button=0x7f060038;
+        public static final int abs__expand_activities_button=0x7f060036;
         public static final int abs__home=0x7f06000a;
-        public static final int abs__icon=0x7f060028;
-        public static final int abs__image=0x7f060025;
-        public static final int abs__imageButton=0x7f060020;
-        public static final int abs__list_item=0x7f060027;
+        public static final int abs__icon=0x7f06003a;
+        public static final int abs__image=0x7f060037;
+        public static final int abs__imageButton=0x7f060032;
+        public static final int abs__list_item=0x7f060039;
         public static final int abs__progress_circular=0x7f06000e;
         public static final int abs__progress_horizontal=0x7f06000f;
-        public static final int abs__radio=0x7f06002e;
-        public static final int abs__shortcut=0x7f06002d;
-        public static final int abs__split_action_bar=0x7f060032;
-        public static final int abs__textButton=0x7f060021;
-        public static final int abs__title=0x7f060029;
-        public static final int abs__titleDivider=0x7f06002a;
+        public static final int abs__radio=0x7f060040;
+        public static final int abs__shortcut=0x7f06003f;
+        public static final int abs__split_action_bar=0x7f060044;
+        public static final int abs__textButton=0x7f060033;
+        public static final int abs__title=0x7f06003b;
+        public static final int abs__titleDivider=0x7f06003c;
         public static final int abs__up=0x7f06000b;
-        public static final int accountChooserButton=0x7f060073;
-        public static final int accountChooserButtonText=0x7f0600bb;
-        public static final int account_label1=0x7f060111;
-        public static final int account_label2=0x7f060115;
-        public static final int account_label3=0x7f060119;
-        public static final int accounts_container=0x7f06010d;
-        public static final int action_icon=0x7f0600d7;
-        public static final int action_rate=0x7f060169;
-        public static final int action_settings=0x7f060159;
-        public static final int activeCallsGrid=0x7f0600ef;
-        public static final int addCallButton=0x7f060167;
-        public static final int arrow_down=0x7f06012b;
-        public static final int arrow_up=0x7f06012a;
-        public static final int atender=0x7f060082;
-        public static final int attachment=0x7f06008b;
-        public static final int audio_test=0x7f06016a;
-        public static final int audio_test_text=0x7f06004b;
-        public static final int autoCompleteList=0x7f06009a;
-        public static final int avatarIdWebView=0x7f06007c;
-        public static final int bar_onoff=0x7f06003e;
-        public static final int birthday=0x7f060121;
-        public static final int blue_separator=0x7f060053;
-        public static final int bluetoothButton=0x7f060166;
+        public static final int accountChooserButton=0x7f060085;
+        public static final int accountChooserButtonText=0x7f0600cd;
+        public static final int account_label1=0x7f060123;
+        public static final int account_label2=0x7f060127;
+        public static final int account_label3=0x7f06012b;
+        public static final int accounts_container=0x7f06011f;
+        public static final int action_icon=0x7f0600e9;
+        public static final int action_rate=0x7f06017b;
+        public static final int action_settings=0x7f06016b;
+        public static final int activeCallsGrid=0x7f060101;
+        public static final int addCallButton=0x7f060179;
+        public static final int arrow_down=0x7f06013d;
+        public static final int arrow_up=0x7f06013c;
+        public static final int atender=0x7f060094;
+        public static final int attachment=0x7f06009d;
+        public static final int audio_test=0x7f06017c;
+        public static final int audio_test_text=0x7f06005d;
+        public static final int autoCompleteList=0x7f0600ac;
+        public static final int avatarIdWebView=0x7f06008e;
+        public static final int bar_onoff=0x7f060050;
+        public static final int birthday=0x7f060133;
+        public static final int blue_separator=0x7f060065;
+        public static final int bluetoothButton=0x7f060178;
+        public static final int book_now=0x7f06002c;
         public static final int bottom=0x7f060011;
-        public static final int bottom_panel=0x7f060075;
-        public static final int btUpload1=0x7f060134;
-        public static final int btjapao=0x7f06008c;
-        public static final int btn_account=0x7f060148;
-        public static final int btn_shortcut=0x7f06014d;
-        public static final int button0=0x7f0600a4;
-        public static final int button1=0x7f06009b;
-        public static final int button2=0x7f060083;
-        public static final int button3=0x7f06009c;
-        public static final int button4=0x7f06009d;
-        public static final int button5=0x7f06009e;
-        public static final int button6=0x7f06009f;
-        public static final int button7=0x7f0600a0;
-        public static final int button8=0x7f0600a1;
-        public static final int button9=0x7f0600a2;
-        public static final int buttonFinish=0x7f060125;
-        public static final int buttonSeta=0x7f060086;
-        public static final int button_with_counter=0x7f060077;
-        public static final int buttonpound=0x7f0600a5;
-        public static final int buttonstar=0x7f0600a3;
-        public static final int call_action_bar=0x7f0600dc;
-        public static final int call_and_sms=0x7f060059;
-        public static final int call_and_sms_container=0x7f060058;
-        public static final int call_and_sms_label=0x7f06005c;
-        public static final int call_and_sms_main_action=0x7f06005a;
-        public static final int call_and_sms_text=0x7f06005b;
-        public static final int call_card_container=0x7f0600da;
-        public static final int call_choose_account=0x7f06005d;
-        public static final int call_count_and_date=0x7f06006a;
-        public static final int call_detail=0x7f060050;
-        public static final int call_log_divider=0x7f06006c;
-        public static final int call_secure_bar=0x7f0600e2;
-        public static final int call_secure_icon=0x7f0600e3;
-        public static final int call_secure_text=0x7f0600e4;
-        public static final int call_status_text=0x7f0600e1;
-        public static final int call_type=0x7f060068;
-        public static final int call_type_icon=0x7f06005f;
-        public static final int call_type_icons=0x7f060069;
-        public static final int call_type_text=0x7f060060;
-        public static final int cancel=0x7f06011c;
-        public static final int cancel_bt=0x7f060044;
-        public static final int cell1=0x7f06010e;
-        public static final int cell2=0x7f060112;
-        public static final int cell3=0x7f060116;
+        public static final int bottom_panel=0x7f060087;
+        public static final int btUpload1=0x7f060146;
+        public static final int btjapao=0x7f06009e;
+        public static final int btn_account=0x7f06015a;
+        public static final int btn_shortcut=0x7f06015f;
+        public static final int button0=0x7f0600b6;
+        public static final int button1=0x7f0600ad;
+        public static final int button2=0x7f060095;
+        public static final int button3=0x7f0600ae;
+        public static final int button4=0x7f0600af;
+        public static final int button5=0x7f0600b0;
+        public static final int button6=0x7f0600b1;
+        public static final int button7=0x7f0600b2;
+        public static final int button8=0x7f0600b3;
+        public static final int button9=0x7f0600b4;
+        public static final int buttonFinish=0x7f060137;
+        public static final int buttonSeta=0x7f060098;
+        public static final int button_with_counter=0x7f060089;
+        public static final int buttonpound=0x7f0600b7;
+        public static final int buttonstar=0x7f0600b5;
+        public static final int buyButton=0x7f060027;
+        public static final int buy_now=0x7f06002b;
+        public static final int buy_with_google=0x7f06002a;
+        public static final int call_action_bar=0x7f0600ee;
+        public static final int call_and_sms=0x7f06006b;
+        public static final int call_and_sms_container=0x7f06006a;
+        public static final int call_and_sms_label=0x7f06006e;
+        public static final int call_and_sms_main_action=0x7f06006c;
+        public static final int call_and_sms_text=0x7f06006d;
+        public static final int call_card_container=0x7f0600ec;
+        public static final int call_choose_account=0x7f06006f;
+        public static final int call_count_and_date=0x7f06007c;
+        public static final int call_detail=0x7f060062;
+        public static final int call_log_divider=0x7f06007e;
+        public static final int call_secure_bar=0x7f0600f4;
+        public static final int call_secure_icon=0x7f0600f5;
+        public static final int call_secure_text=0x7f0600f6;
+        public static final int call_status_text=0x7f0600f3;
+        public static final int call_type=0x7f06007a;
+        public static final int call_type_icon=0x7f060071;
+        public static final int call_type_icons=0x7f06007b;
+        public static final int call_type_text=0x7f060072;
+        public static final int cancel=0x7f06012e;
+        public static final int cancel_bt=0x7f060056;
+        public static final int cell1=0x7f060120;
+        public static final int cell2=0x7f060124;
+        public static final int cell3=0x7f060128;
         public static final int center=0x7f060018;
         public static final int center_horizontal=0x7f060016;
         public static final int center_vertical=0x7f060014;
-        public static final int checkBoxConnected=0x7f060107;
-        public static final int checkBoxEula=0x7f0600fc;
-        public static final int chronometer1=0x7f06007f;
+        public static final int checkBoxConnected=0x7f060119;
+        public static final int checkBoxEula=0x7f06010e;
+        public static final int chronometer1=0x7f060091;
+        public static final int classic=0x7f06002d;
         public static final int clip_horizontal=0x7f06001b;
         public static final int clip_vertical=0x7f06001a;
-        public static final int configure_view=0x7f0600d4;
-        public static final int contact_background=0x7f060052;
-        public static final int contact_name=0x7f0600d3;
-        public static final int contact_name_bar=0x7f0600dd;
-        public static final int contact_name_display_name=0x7f0600de;
-        public static final int contact_name_sip_address=0x7f0600df;
-        public static final int contact_photo=0x7f0600db;
-        public static final int contact_view=0x7f0600d2;
-        public static final int container=0x7f06013f;
-        public static final int controls=0x7f060051;
-        public static final int custom_wizard_row=0x7f060151;
-        public static final int custom_wizard_text=0x7f060152;
-        public static final int cw_captcha=0x7f06013e;
-        public static final int cw_captcha_container=0x7f06013b;
-        public static final int cw_captcha_img=0x7f06013c;
-        public static final int cw_captcha_progress=0x7f06013d;
-        public static final int cw_country_code=0x7f06013a;
-        public static final int cw_email=0x7f060138;
-        public static final int cw_first_name=0x7f060136;
-        public static final int cw_last_name=0x7f060137;
-        public static final int cw_phone=0x7f060139;
-        public static final int date=0x7f060061;
-        public static final int date_view=0x7f06010a;
-        public static final int declineCallButton=0x7f06015a;
-        public static final int delete=0x7f060153;
-        public static final int deleteButton=0x7f0600a9;
-        public static final int delivered_indicator=0x7f06010c;
-        public static final int detailedDisplayCallButton=0x7f060163;
-        public static final int details=0x7f06012f;
-        public static final int dialButton=0x7f0600a7;
-        public static final int dialPad=0x7f0600aa;
-        public static final int dialPadContainer=0x7f0600e7;
-        public static final int dialVideoButton=0x7f0600a6;
-        public static final int dialerCallBar=0x7f0600ab;
-        public static final int dialpad=0x7f060154;
-        public static final int dialtxt_domain_helper=0x7f0600bc;
-        public static final int dialtxt_user=0x7f0600ba;
-        public static final int digitsText=0x7f060099;
+        public static final int configure_view=0x7f0600e6;
+        public static final int contact_background=0x7f060064;
+        public static final int contact_name=0x7f0600e5;
+        public static final int contact_name_bar=0x7f0600ef;
+        public static final int contact_name_display_name=0x7f0600f0;
+        public static final int contact_name_sip_address=0x7f0600f1;
+        public static final int contact_photo=0x7f0600ed;
+        public static final int contact_view=0x7f0600e4;
+        public static final int container=0x7f060151;
+        public static final int controls=0x7f060063;
+        public static final int custom_wizard_row=0x7f060163;
+        public static final int custom_wizard_text=0x7f060164;
+        public static final int cw_captcha=0x7f060150;
+        public static final int cw_captcha_container=0x7f06014d;
+        public static final int cw_captcha_img=0x7f06014e;
+        public static final int cw_captcha_progress=0x7f06014f;
+        public static final int cw_country_code=0x7f06014c;
+        public static final int cw_email=0x7f06014a;
+        public static final int cw_first_name=0x7f060148;
+        public static final int cw_last_name=0x7f060149;
+        public static final int cw_phone=0x7f06014b;
+        public static final int date=0x7f060073;
+        public static final int date_view=0x7f06011c;
+        public static final int declineCallButton=0x7f06016c;
+        public static final int delete=0x7f060165;
+        public static final int deleteButton=0x7f0600bb;
+        public static final int delivered_indicator=0x7f06011e;
+        public static final int detailedDisplayCallButton=0x7f060175;
+        public static final int details=0x7f060141;
+        public static final int dialButton=0x7f0600b9;
+        public static final int dialPad=0x7f0600bc;
+        public static final int dialPadContainer=0x7f0600f9;
+        public static final int dialVideoButton=0x7f0600b8;
+        public static final int dialerCallBar=0x7f0600bd;
+        public static final int dialpad=0x7f060166;
+        public static final int dialtxt_domain_helper=0x7f0600ce;
+        public static final int dialtxt_user=0x7f0600cc;
+        public static final int digitsText=0x7f0600ab;
         public static final int disableHome=0x7f060009;
-        public static final int divider=0x7f06006b;
-        public static final int divider1=0x7f060088;
-        public static final int divider2=0x7f0600a8;
-        public static final int dontTakeCallButton=0x7f060047;
-        public static final int dontTakeCallButtonTxt=0x7f060048;
-        public static final int drawer_layout=0x7f060041;
-        public static final int dropAnswer=0x7f0600ea;
-        public static final int dropHangup=0x7f0600e9;
-        public static final int dropHold=0x7f0600eb;
-        public static final int dropXfer=0x7f0600ec;
-        public static final int dropZones=0x7f0600e8;
-        public static final int dtmfCallButton=0x7f060161;
-        public static final int duration=0x7f060062;
-        public static final int echo_cancellation=0x7f0600f6;
-        public static final int elapsedTime=0x7f0600e0;
-        public static final int email=0x7f0600f8;
-        public static final int embedded_text_editor=0x7f060076;
+        public static final int divider=0x7f06007d;
+        public static final int divider1=0x7f06009a;
+        public static final int divider2=0x7f0600ba;
+        public static final int dontTakeCallButton=0x7f060059;
+        public static final int dontTakeCallButtonTxt=0x7f06005a;
+        public static final int drawer_layout=0x7f060053;
+        public static final int dropAnswer=0x7f0600fc;
+        public static final int dropHangup=0x7f0600fb;
+        public static final int dropHold=0x7f0600fd;
+        public static final int dropXfer=0x7f0600fe;
+        public static final int dropZones=0x7f0600fa;
+        public static final int dtmfCallButton=0x7f060173;
+        public static final int duration=0x7f060074;
+        public static final int echo_cancellation=0x7f060108;
+        public static final int elapsedTime=0x7f0600f2;
+        public static final int email=0x7f06010a;
+        public static final int embedded_text_editor=0x7f060088;
         public static final int end=0x7f06001d;
-        public static final int endButton=0x7f0600e6;
-        public static final int end_call_bar=0x7f0600e5;
-        public static final int entiere_line=0x7f06006d;
-        public static final int error=0x7f06008a;
-        public static final int error_view=0x7f06010b;
-        public static final int escolherImagem=0x7f060132;
-        public static final int expert=0x7f06016b;
+        public static final int endButton=0x7f0600f8;
+        public static final int end_call_bar=0x7f0600f7;
+        public static final int entiere_line=0x7f06007f;
+        public static final int error=0x7f06009c;
+        public static final int error_view=0x7f06011d;
+        public static final int escolherImagem=0x7f060144;
+        public static final int expert=0x7f06017d;
         public static final int fill=0x7f060019;
         public static final int fill_horizontal=0x7f060017;
         public static final int fill_vertical=0x7f060015;
-        public static final int filter_action=0x7f0600b1;
-        public static final int filter_matches=0x7f0600b4;
-        public static final int filter_replace=0x7f0600b7;
-        public static final int footer=0x7f060129;
-        public static final int frame_container=0x7f060042;
-        public static final int from=0x7f060089;
-        public static final int glob_integrate=0x7f0600c1;
-        public static final int glob_integrate_text=0x7f0600c0;
-        public static final int glob_profile_always=0x7f0600c4;
-        public static final int glob_profile_always_text=0x7f0600c3;
-        public static final int glob_profile_never=0x7f0600ca;
-        public static final int glob_profile_never_text=0x7f0600c9;
-        public static final int glob_profile_wifi=0x7f0600c7;
-        public static final int glob_profile_wifi_text=0x7f0600c6;
-        public static final int glob_tg=0x7f0600cd;
-        public static final int glob_tg_text=0x7f0600cc;
-        public static final int grabber=0x7f06003f;
-        public static final int header=0x7f060126;
-        public static final int header_cfg_spinner=0x7f0600d0;
-        public static final int header_icon=0x7f0600cf;
-        public static final int header_presence_spinner=0x7f0600d1;
-        public static final int header_text=0x7f060056;
-        public static final int header_view=0x7f0600ce;
-        public static final int heldCallsGrid=0x7f0600f0;
-        public static final int history=0x7f06005e;
-        public static final int holdCallButton=0x7f06015e;
+        public static final int filter_action=0x7f0600c3;
+        public static final int filter_matches=0x7f0600c6;
+        public static final int filter_replace=0x7f0600c9;
+        public static final int footer=0x7f06013b;
+        public static final int frame_container=0x7f060054;
+        public static final int from=0x7f06009b;
+        public static final int glob_integrate=0x7f0600d3;
+        public static final int glob_integrate_text=0x7f0600d2;
+        public static final int glob_profile_always=0x7f0600d6;
+        public static final int glob_profile_always_text=0x7f0600d5;
+        public static final int glob_profile_never=0x7f0600dc;
+        public static final int glob_profile_never_text=0x7f0600db;
+        public static final int glob_profile_wifi=0x7f0600d9;
+        public static final int glob_profile_wifi_text=0x7f0600d8;
+        public static final int glob_tg=0x7f0600df;
+        public static final int glob_tg_text=0x7f0600de;
+        public static final int grabber=0x7f060051;
+        public static final int grayscale=0x7f06002e;
+        public static final int header=0x7f060138;
+        public static final int header_cfg_spinner=0x7f0600e2;
+        public static final int header_icon=0x7f0600e1;
+        public static final int header_presence_spinner=0x7f0600e3;
+        public static final int header_text=0x7f060068;
+        public static final int header_view=0x7f0600e0;
+        public static final int heldCallsGrid=0x7f060102;
+        public static final int history=0x7f060070;
+        public static final int holdCallButton=0x7f060170;
+        public static final int holo_dark=0x7f060022;
+        public static final int holo_light=0x7f060023;
         public static final int homeAsUp=0x7f060006;
-        public static final int horizontalScrollView1=0x7f0600fd;
-        public static final int icon=0x7f06006e;
-        public static final int icon1=0x7f060110;
-        public static final int icon2=0x7f060114;
-        public static final int icon3=0x7f060118;
-        public static final int iconContainer1=0x7f06010f;
-        public static final int iconContainer2=0x7f060113;
-        public static final int iconContainer3=0x7f060117;
-        public static final int imageButtonBR=0x7f060093;
-        public static final int imageButtonCH=0x7f060092;
-        public static final int imageButtonEN=0x7f06008f;
-        public static final int imageButtonES=0x7f060091;
-        public static final int imageButtonFR=0x7f060090;
-        public static final int imageButtonGR=0x7f060095;
-        public static final int imageButtonJP=0x7f060096;
-        public static final int imageButtonMR=0x7f060094;
-        public static final int imageViewFrom=0x7f060085;
-        public static final int imageViewTo=0x7f060087;
-        public static final int img_account=0x7f060149;
-        public static final int inCallAnswerControls=0x7f0600f1;
-        public static final int inCallContainer=0x7f0600ee;
-        public static final int inCallControls=0x7f0600f2;
-        public static final int ind_account=0x7f06014c;
-        public static final int indicator=0x7f06003c;
-        public static final int invert_selection=0x7f060155;
-        public static final int item_status_icon=0x7f0600d5;
-        public static final int item_status_text=0x7f0600d6;
-        public static final int label=0x7f06012d;
+        public static final int horizontalScrollView1=0x7f06010f;
+        public static final int hybrid=0x7f060021;
+        public static final int icon=0x7f060080;
+        public static final int icon1=0x7f060122;
+        public static final int icon2=0x7f060126;
+        public static final int icon3=0x7f06012a;
+        public static final int iconContainer1=0x7f060121;
+        public static final int iconContainer2=0x7f060125;
+        public static final int iconContainer3=0x7f060129;
+        public static final int imageButtonBR=0x7f0600a5;
+        public static final int imageButtonCH=0x7f0600a4;
+        public static final int imageButtonEN=0x7f0600a1;
+        public static final int imageButtonES=0x7f0600a3;
+        public static final int imageButtonFR=0x7f0600a2;
+        public static final int imageButtonGR=0x7f0600a7;
+        public static final int imageButtonJP=0x7f0600a8;
+        public static final int imageButtonMR=0x7f0600a6;
+        public static final int imageViewFrom=0x7f060097;
+        public static final int imageViewTo=0x7f060099;
+        public static final int img_account=0x7f06015b;
+        public static final int inCallAnswerControls=0x7f060103;
+        public static final int inCallContainer=0x7f060100;
+        public static final int inCallControls=0x7f060104;
+        public static final int ind_account=0x7f06015e;
+        public static final int indicator=0x7f06004e;
+        public static final int invert_selection=0x7f060167;
+        public static final int item_status_icon=0x7f0600e7;
+        public static final int item_status_text=0x7f0600e8;
+        public static final int label=0x7f06013f;
         public static final int left=0x7f060012;
-        public static final int line1=0x7f06006f;
-        public static final int linearLayout1=0x7f06007a;
-        public static final int linearLayout2=0x7f060084;
-        public static final int linearLayout3=0x7f060081;
-        public static final int linearLayout4=0x7f06008d;
-        public static final int list=0x7f060037;
-        public static final int listContainer=0x7f060038;
-        public static final int listFragment=0x7f06003b;
+        public static final int line1=0x7f060081;
+        public static final int linearLayout1=0x7f06008c;
+        public static final int linearLayout2=0x7f060096;
+        public static final int linearLayout3=0x7f060093;
+        public static final int linearLayout4=0x7f06009f;
+        public static final int list=0x7f060049;
+        public static final int listContainer=0x7f06004a;
+        public static final int listFragment=0x7f06004d;
         public static final int listMode=0x7f060002;
-        public static final int list_slidermenu=0x7f060043;
-        public static final int loading_indicator=0x7f0600be;
-        public static final int lockerOverlay=0x7f0600f3;
-        public static final int login=0x7f0600fa;
-        public static final int mainFrame=0x7f0600ed;
-        public static final int main_action=0x7f060055;
-        public static final int main_action_push_layer=0x7f060057;
-        public static final int matcher_block=0x7f0600b2;
-        public static final int matcher_type=0x7f0600b3;
-        public static final int mediaSettingsButton=0x7f060168;
-        public static final int messageText=0x7f060131;
-        public static final int message_block=0x7f060108;
-        public static final int micro_level=0x7f0600f5;
-        public static final int muteButton=0x7f060165;
-        public static final int name=0x7f060066;
-        public static final int name_and_label=0x7f06012c;
+        public static final int list_slidermenu=0x7f060055;
+        public static final int loading_indicator=0x7f0600d0;
+        public static final int lockerOverlay=0x7f060105;
+        public static final int login=0x7f06010c;
+        public static final int mainFrame=0x7f0600ff;
+        public static final int main_action=0x7f060067;
+        public static final int main_action_push_layer=0x7f060069;
+        public static final int match_parent=0x7f060029;
+        public static final int matcher_block=0x7f0600c4;
+        public static final int matcher_type=0x7f0600c5;
+        public static final int mediaSettingsButton=0x7f06017a;
+        public static final int messageText=0x7f060143;
+        public static final int message_block=0x7f06011a;
+        public static final int micro_level=0x7f060107;
+        public static final int monochrome=0x7f06002f;
+        public static final int muteButton=0x7f060177;
+        public static final int name=0x7f060078;
+        public static final int name_and_label=0x7f06013e;
+        public static final int none=0x7f06001e;
         public static final int normal=0x7f060001;
-        public static final int number=0x7f060067;
-        public static final int ok=0x7f06011d;
-        public static final int ok_bar=0x7f0600f7;
-        public static final int pager=0x7f060070;
-        public static final int password11=0x7f060123;
-        public static final int password12=0x7f0600f9;
-        public static final int paypallWebView=0x7f06011a;
-        public static final int paypallacc=0x7f060122;
-        public static final int photo_text_bar=0x7f060054;
-        public static final int primary_action_view=0x7f060063;
-        public static final int progressContainer=0x7f0600d9;
-        public static final int quick_contact_photo=0x7f060064;
-        public static final int quickaction=0x7f060128;
-        public static final int quickaction_icon=0x7f060035;
-        public static final int quickaction_text=0x7f060036;
-        public static final int radioButtonBrazil=0x7f060103;
-        public static final int radioButtonCH=0x7f0600ff;
-        public static final int radioButtonES=0x7f060101;
-        public static final int radioButtonEua=0x7f060105;
-        public static final int radioButtonFrance=0x7f060106;
-        public static final int radioButtonGr=0x7f060104;
-        public static final int radioButtonJP=0x7f060102;
-        public static final int radioButtonMR=0x7f060100;
-        public static final int radioButtonTranslator=0x7f06011e;
-        public static final int radioButtonUser=0x7f06011f;
-        public static final int radioGroupFlags=0x7f060120;
-        public static final int radioGroupRole1=0x7f0600fe;
-        public static final int ratingBar1=0x7f06007d;
-        public static final int recipients_subject_linear=0x7f060071;
-        public static final int recordCallButton=0x7f06015f;
-        public static final int replace_block=0x7f0600b5;
-        public static final int replace_type=0x7f0600b6;
-        public static final int reset_settings=0x7f06016c;
+        public static final int number=0x7f060079;
+        public static final int ok=0x7f06012f;
+        public static final int ok_bar=0x7f060109;
+        public static final int pager=0x7f060082;
+        public static final int password11=0x7f060135;
+        public static final int password12=0x7f06010b;
+        public static final int paypallWebView=0x7f06012c;
+        public static final int paypallacc=0x7f060134;
+        public static final int photo_text_bar=0x7f060066;
+        public static final int primary_action_view=0x7f060075;
+        public static final int production=0x7f060024;
+        public static final int progressContainer=0x7f0600eb;
+        public static final int quick_contact_photo=0x7f060076;
+        public static final int quickaction=0x7f06013a;
+        public static final int quickaction_icon=0x7f060047;
+        public static final int quickaction_text=0x7f060048;
+        public static final int radioButtonBrazil=0x7f060115;
+        public static final int radioButtonCH=0x7f060111;
+        public static final int radioButtonES=0x7f060113;
+        public static final int radioButtonEua=0x7f060117;
+        public static final int radioButtonFrance=0x7f060118;
+        public static final int radioButtonGr=0x7f060116;
+        public static final int radioButtonJP=0x7f060114;
+        public static final int radioButtonMR=0x7f060112;
+        public static final int radioButtonTranslator=0x7f060130;
+        public static final int radioButtonUser=0x7f060131;
+        public static final int radioGroupFlags=0x7f060132;
+        public static final int radioGroupRole1=0x7f060110;
+        public static final int ratingBar1=0x7f06008f;
+        public static final int recipients_subject_linear=0x7f060083;
+        public static final int recordCallButton=0x7f060171;
+        public static final int replace_block=0x7f0600c7;
+        public static final int replace_type=0x7f0600c8;
+        public static final int reset_settings=0x7f06017e;
         public static final int right=0x7f060013;
-        public static final int row_glob_integrate=0x7f0600bf;
-        public static final int row_glob_profile_always=0x7f0600c2;
-        public static final int row_glob_profile_never=0x7f0600c8;
-        public static final int row_glob_profile_wifi=0x7f0600c5;
-        public static final int row_glob_tg=0x7f0600cb;
-        public static final int rx_bar=0x7f06004f;
-        public static final int rx_icon=0x7f06004e;
-        public static final int save_bt=0x7f0600b8;
-        public static final int scroll=0x7f060127;
-        public static final int secondary_action_icon=0x7f060065;
-        public static final int send_button=0x7f060078;
-        public static final int set_group=0x7f060156;
-        public static final int set_sip_data=0x7f060157;
-        public static final int settings_container=0x7f060150;
-        public static final int share_presence=0x7f060158;
+        public static final int row_glob_integrate=0x7f0600d1;
+        public static final int row_glob_profile_always=0x7f0600d4;
+        public static final int row_glob_profile_never=0x7f0600da;
+        public static final int row_glob_profile_wifi=0x7f0600d7;
+        public static final int row_glob_tg=0x7f0600dd;
+        public static final int rx_bar=0x7f060061;
+        public static final int rx_icon=0x7f060060;
+        public static final int sandbox=0x7f060025;
+        public static final int satellite=0x7f06001f;
+        public static final int save_bt=0x7f0600ca;
+        public static final int scroll=0x7f060139;
+        public static final int secondary_action_icon=0x7f060077;
+        public static final int selectionDetails=0x7f060028;
+        public static final int send_button=0x7f06008a;
+        public static final int set_group=0x7f060168;
+        public static final int set_sip_data=0x7f060169;
+        public static final int settings_container=0x7f060162;
+        public static final int share_presence=0x7f06016a;
         public static final int showCustom=0x7f060008;
         public static final int showHome=0x7f060005;
         public static final int showTitle=0x7f060007;
-        public static final int sign_in_button=0x7f0600fb;
-        public static final int sip_uri=0x7f06011b;
-        public static final int speakerButton=0x7f060164;
-        public static final int speaker_level=0x7f0600f4;
-        public static final int spinner1=0x7f06008e;
+        public static final int sign_in_button=0x7f06010d;
+        public static final int sip_uri=0x7f06012d;
+        public static final int speakerButton=0x7f060176;
+        public static final int speaker_level=0x7f060106;
+        public static final int spinner1=0x7f0600a0;
         public static final int start=0x7f06001c;
-        public static final int status_icon=0x7f0600ac;
-        public static final int status_progress=0x7f0600af;
-        public static final int status_progress_wrapper=0x7f0600ae;
-        public static final int status_text=0x7f0600ad;
-        public static final int strut=0x7f06012e;
-        public static final int subject=0x7f060072;
-        public static final int subjectLabel=0x7f060074;
-        public static final int switchStatus=0x7f060130;
+        public static final int status_icon=0x7f0600be;
+        public static final int status_progress=0x7f0600c1;
+        public static final int status_progress_wrapper=0x7f0600c0;
+        public static final int status_text=0x7f0600bf;
+        public static final int strict_sandbox=0x7f060026;
+        public static final int strut=0x7f060140;
+        public static final int subject=0x7f060084;
+        public static final int subjectLabel=0x7f060086;
+        public static final int switchStatus=0x7f060142;
         public static final int tabMode=0x7f060003;
-        public static final int takeCallButton=0x7f060049;
-        public static final int takeCallButtonTxt=0x7f06004a;
-        public static final int terminateCallButton=0x7f06015b;
-        public static final int text=0x7f0600d8;
-        public static final int textView1=0x7f06007b;
-        public static final int textViewCredits=0x7f060080;
-        public static final int textViewTime=0x7f06007e;
-        public static final int text_counter=0x7f060079;
-        public static final int text_view=0x7f060109;
-        public static final int title=0x7f0600b0;
+        public static final int takeCallButton=0x7f06005b;
+        public static final int takeCallButtonTxt=0x7f06005c;
+        public static final int terminateCallButton=0x7f06016d;
+        public static final int terrain=0x7f060020;
+        public static final int text=0x7f0600ea;
+        public static final int textView1=0x7f06008d;
+        public static final int textViewCredits=0x7f060092;
+        public static final int textViewTime=0x7f060090;
+        public static final int text_counter=0x7f06008b;
+        public static final int text_view=0x7f06011b;
+        public static final int title=0x7f0600c2;
         public static final int top=0x7f060010;
-        public static final int topField=0x7f060098;
-        public static final int topFieldText=0x7f0600b9;
-        public static final int top_digit_dialer=0x7f060097;
-        public static final int transferCallButton=0x7f06015d;
-        public static final int tx_bar=0x7f06004d;
-        public static final int tx_icon=0x7f06004c;
-        public static final int txt_account=0x7f06014a;
-        public static final int txt_status=0x7f06014b;
+        public static final int topField=0x7f0600aa;
+        public static final int topFieldText=0x7f0600cb;
+        public static final int top_digit_dialer=0x7f0600a9;
+        public static final int transferCallButton=0x7f06016f;
+        public static final int tx_bar=0x7f06005f;
+        public static final int tx_icon=0x7f06005e;
+        public static final int txt_account=0x7f06015c;
+        public static final int txt_status=0x7f06015d;
         public static final int useLogo=0x7f060004;
-        public static final int validation_bar=0x7f060135;
-        public static final int videoCallButton=0x7f060162;
-        public static final int vmfield=0x7f060046;
-        public static final int vmfield_view=0x7f060045;
-        public static final int warn_desc=0x7f060141;
-        public static final int warn_desc2=0x7f060144;
-        public static final int warn_ignore=0x7f060142;
-        public static final int warn_priv_int_register=0x7f060145;
-        public static final int warn_stun_on=0x7f060143;
-        public static final int warn_title=0x7f060140;
-        public static final int warn_vpn_ics_1=0x7f060146;
-        public static final int warn_vpn_ics_5=0x7f060147;
-        public static final int webView1=0x7f060133;
-        public static final int webview=0x7f0600bd;
-        public static final int webview_container=0x7f06014e;
-        public static final int webview_progress=0x7f06014f;
-        public static final int wizard_icon=0x7f060039;
+        public static final int validation_bar=0x7f060147;
+        public static final int videoCallButton=0x7f060174;
+        public static final int vmfield=0x7f060058;
+        public static final int vmfield_view=0x7f060057;
+        public static final int warn_desc=0x7f060153;
+        public static final int warn_desc2=0x7f060156;
+        public static final int warn_ignore=0x7f060154;
+        public static final int warn_priv_int_register=0x7f060157;
+        public static final int warn_stun_on=0x7f060155;
+        public static final int warn_title=0x7f060152;
+        public static final int warn_vpn_ics_1=0x7f060158;
+        public static final int warn_vpn_ics_5=0x7f060159;
+        public static final int webView1=0x7f060145;
+        public static final int webview=0x7f0600cf;
+        public static final int webview_container=0x7f060160;
+        public static final int webview_progress=0x7f060161;
+        public static final int wizard_icon=0x7f06004b;
         public static final int wrap_content=0x7f060000;
-        public static final int xferCallButton=0x7f06015c;
-        public static final int zrtpAcceptance=0x7f060160;
+        public static final int xferCallButton=0x7f06016e;
+        public static final int zrtpAcceptance=0x7f060172;
     }
     public static final class integer {
         public static final int abs__max_action_buttons=0x7f0a0000;
@@ -1941,6 +2340,7 @@ So, (94 - 38)/2 ==> 28dp
          */
         public static final int dialpad_layout_weight_dialpad=0x7f0a0001;
         public static final int dialpad_layout_weight_digits=0x7f0a0003;
+        public static final int google_play_services_version=0x7f0a0005;
     }
     public static final class layout {
         public static final int abs__action_bar_home=0x7f030000;
@@ -2099,11 +2499,11 @@ So, (94 - 38)/2 ==> 28dp
         public static final int acct_registered=0x7f0b000e;
         public static final int acct_registering=0x7f0b000d;
         public static final int acct_unregistered=0x7f0b000b;
-        public static final int action_rateapp=0x7f0b02da;
-        public static final int action_refresh=0x7f0b02db;
+        public static final int action_rateapp=0x7f0b02fa;
+        public static final int action_refresh=0x7f0b02fb;
         /**  Menu Strings 
          */
-        public static final int action_settings=0x7f0b02d9;
+        public static final int action_settings=0x7f0b02f9;
         public static final int activate=0x7f0b022c;
         public static final int activate_account=0x7f0b01ec;
         public static final int activate_presence_sharing=0x7f0b0238;
@@ -2132,7 +2532,7 @@ Menu item in conversation screen for attaching something to the message being co
         public static final int add_call=0x7f0b0041;
         public static final int add_filter=0x7f0b01fa;
         public static final int advanced_ui=0x7f0b019b;
-        public static final int alemanha=0x7f0b02ec;
+        public static final int alemanha=0x7f0b030c;
         public static final int all=0x7f0b017b;
         /**  Menu item in conversation screen for returning to the conversation list 
 Menu item in conversation screen for returning to the conversation list
@@ -2275,6 +2675,12 @@ Media
         /** Media
          */
         public static final int audio_volume=0x7f0b0120;
+        public static final int auth_client_needs_enabling_title=0x7f0b02da;
+        public static final int auth_client_needs_installation_title=0x7f0b02db;
+        public static final int auth_client_needs_update_title=0x7f0b02dc;
+        public static final int auth_client_play_services_err_notification_msg=0x7f0b02dd;
+        public static final int auth_client_requested_by_msg=0x7f0b02de;
+        public static final int auth_client_using_bad_version_title=0x7f0b02d9;
         public static final int auto=0x7f0b0168;
         public static final int auto_answer=0x7f0b002b;
         public static final int auto_connect_bluetooth=0x7f0b017f;
@@ -2309,7 +2715,7 @@ Calls settings
         public static final int availability_profile=0x7f0b01c9;
         public static final int availability_tg=0x7f0b01d0;
         public static final int away=0x7f0b0236;
-        public static final int babel=0x7f0b02e8;
+        public static final int babel=0x7f0b0308;
         public static final int backup=0x7f0b020c;
         public static final int backup_restore=0x7f0b020b;
         public static final int band_for_3g=0x7f0b0158;
@@ -2317,9 +2723,9 @@ Calls settings
         public static final int band_for_gprs=0x7f0b0159;
         public static final int band_for_other=0x7f0b015b;
         public static final int band_for_wifi=0x7f0b0157;
-        public static final int birth=0x7f0b02e4;
+        public static final int birth=0x7f0b0304;
         public static final int bluetooth=0x7f0b003e;
-        public static final int brasil=0x7f0b02eb;
+        public static final int brasil=0x7f0b030b;
         public static final int busy=0x7f0b0237;
         public static final int buttons=0x7f0b01ad;
         public static final int ca_list_file=0x7f0b010d;
@@ -2364,6 +2770,95 @@ Calls settings
         public static final int codecs_extra_settings=0x7f0b0189;
         public static final int codecs_per_bandwidth=0x7f0b0185;
         public static final int codecs_per_bandwidth_desc=0x7f0b0186;
+        /**  Button in confirmation dialog to enable Google Play services.  Clicking it
+        will direct user to application settings of Google Play services where they
+        can enable it [CHAR LIMIT=40] 
+         */
+        public static final int common_google_play_services_enable_button=0x7f0b02ea;
+        /**  Message in confirmation dialog informing user they need to enable
+        Google Play services in application settings [CHAR LIMIT=NONE] 
+         */
+        public static final int common_google_play_services_enable_text=0x7f0b02e9;
+        /**  Title of confirmation dialog informing user they need to enable
+        Google Play services in application settings [CHAR LIMIT=40] 
+         */
+        public static final int common_google_play_services_enable_title=0x7f0b02e8;
+        /**   Requested by string saying which app requested the notification. [CHAR LIMIT=42] 
+         */
+        public static final int common_google_play_services_error_notification_requested_by_msg=0x7f0b02e3;
+        /**  Button in confirmation dialog for installing Google Play services [CHAR LIMIT=40] 
+         */
+        public static final int common_google_play_services_install_button=0x7f0b02e7;
+        /**  (For phones) Message in confirmation dialog informing user that
+        they need to install Google Play services (from Play Store) [CHAR LIMIT=NONE] 
+         */
+        public static final int common_google_play_services_install_text_phone=0x7f0b02e5;
+        /**  (For tablets) Message in confirmation dialog informing user that
+        they need to install Google Play services (from Play Store) [CHAR LIMIT=NONE] 
+         */
+        public static final int common_google_play_services_install_text_tablet=0x7f0b02e6;
+        /**  Title of confirmation dialog informing user that they need to install
+        Google Play services (from Play Store) [CHAR LIMIT=40] 
+         */
+        public static final int common_google_play_services_install_title=0x7f0b02e4;
+        /**  Message in confirmation dialog informing the user that they provided an invalid account. [CHAR LIMIT=NONE] 
+         */
+        public static final int common_google_play_services_invalid_account_text=0x7f0b02f0;
+        /**  Title of confirmation dialog informing the user that they provided an invalid account. [CHAR LIMIT=40] 
+         */
+        public static final int common_google_play_services_invalid_account_title=0x7f0b02ef;
+        /**   Title for notification shown when GooglePlayServices needs to be enabled for an
+        application to work. [CHAR LIMIT=70] 
+         */
+        public static final int common_google_play_services_needs_enabling_title=0x7f0b02e2;
+        /**  Message in confirmation dialog informing the user that a network error occurred. [CHAR LIMIT=NONE] 
+         */
+        public static final int common_google_play_services_network_error_text=0x7f0b02ee;
+        /**  Title of confirmation dialog informing the user that a network error occurred. [CHAR LIMIT=40] 
+         */
+        public static final int common_google_play_services_network_error_title=0x7f0b02ed;
+        /**   Title for notification shown when GooglePlayServices needs to be installed
+        for an application to work. [CHAR LIMIT=70] 
+         */
+        public static final int common_google_play_services_notification_needs_installation_title=0x7f0b02e0;
+        /**   Title for notification shown when GooglePlayServices needs to be updated for an
+        application to work. [CHAR LIMIT=70] 
+         */
+        public static final int common_google_play_services_notification_needs_update_title=0x7f0b02e1;
+        /**   Title for notification shown when GooglePlayServices is unavailable [CHAR LIMIT=42] 
+         */
+        public static final int common_google_play_services_notification_ticker=0x7f0b02df;
+        /**  Message in confirmation dialog informing user there is an unknown issue in Google Play
+        services [CHAR LIMIT=NONE] 
+         */
+        public static final int common_google_play_services_unknown_issue=0x7f0b02f1;
+        /**  Message in confirmation dialog informing user that date on the device is not correct,
+    causing certificate checks to fail. [CHAR LIMIT=NONE] 
+         */
+        public static final int common_google_play_services_unsupported_date_text=0x7f0b02f4;
+        /**  Message in confirmation dialog informing user that Google Play services is not supported on their device [CHAR LIMIT=NONE] 
+         */
+        public static final int common_google_play_services_unsupported_text=0x7f0b02f3;
+        /**  Title of confirmation dialog informing user that Google Play services is not supported on their device [CHAR LIMIT=40] 
+         */
+        public static final int common_google_play_services_unsupported_title=0x7f0b02f2;
+        /**  Button in confirmation dialog for updating Google Play services [CHAR LIMIT=40] 
+         */
+        public static final int common_google_play_services_update_button=0x7f0b02f5;
+        /**  Message in confirmation dialog informing user that they need to update
+        Google Play services (from Play Store) [CHAR LIMIT=NONE] 
+         */
+        public static final int common_google_play_services_update_text=0x7f0b02ec;
+        /**  Title of confirmation dialog informing user that they need to update
+        Google Play services (from Play Store) [CHAR LIMIT=40] 
+         */
+        public static final int common_google_play_services_update_title=0x7f0b02eb;
+        /**  Sign-in button text [CHAR LIMIT=15] 
+         */
+        public static final int common_signin_button_text=0x7f0b02f6;
+        /**  Long form sign-in button text [CHAR LIMIT=30] 
+         */
+        public static final int common_signin_button_text_long=0x7f0b02f7;
         /**  Title bar displayed in compose message activity before a recipient has been selected 
 Title bar displayed in compose message activity before a recipient has been selected
  Title bar displayed in compose message activity before a recipient has been selected 
@@ -2554,7 +3049,7 @@ Individual message context menu item
 Individual message context menu item
          */
         public static final int copy_message_text=0x7f0b0074;
-        public static final int countries_fragment=0x7f0b02e9;
+        public static final int countries_fragment=0x7f0b0309;
         public static final int country_code=0x7f0b0283;
         public static final int create_account=0x7f0b027d;
         /**  Summary text under "New Message" command; displays in conversation list 
@@ -2577,7 +3072,7 @@ Summary text under "New Message" command; displays in conversation list
          */
         public static final int create_new_message=0x7f0b0065;
         public static final int create_zrtp=0x7f0b017d;
-        public static final int credits=0x7f0b02e7;
+        public static final int credits=0x7f0b0307;
         public static final int csipsimple_shortcut=0x7f0b0233;
         public static final int custom_regexp=0x7f0b0032;
         public static final int data_digest=0x7f0b0164;
@@ -3902,7 +4397,7 @@ String describing the image on ImageButton zero
         public static final int description_image_button_zero=0x7f0b0020;
         /**  drawer_list_item Imageview Description 
          */
-        public static final int description_list_icon=0x7f0b02dc;
+        public static final int description_list_icon=0x7f0b02fc;
         public static final int dial_press_tone=0x7f0b01a2;
         public static final int dial_press_tone_desc=0x7f0b01a3;
         public static final int dial_press_vibrate=0x7f0b01a6;
@@ -4058,7 +4553,7 @@ Button text used for editing a slideshow (imperative verb)
 Button text used for editing a slideshow (imperative verb)
          */
         public static final int edit=0x7f0b0086;
-        public static final int email=0x7f0b02dd;
+        public static final int email=0x7f0b02fd;
         public static final int email_address=0x7f0b0281;
         public static final int empty_description=0x7f0b009b;
         public static final int enable_dns_srv=0x7f0b00ca;
@@ -4084,8 +4579,8 @@ Button text used for editing a slideshow (imperative verb)
         public static final int enable_vad=0x7f0b0124;
         public static final int enable_vad_desc=0x7f0b0125;
         public static final int ends_with=0x7f0b002d;
-        public static final int eua=0x7f0b02ed;
-        public static final int eula=0x7f0b02df;
+        public static final int eua=0x7f0b030d;
+        public static final int eula=0x7f0b02ff;
         /**  Settings modes 
 Settings modes
 Settings modes
@@ -4184,7 +4679,7 @@ Network
         public static final int force_no_update=0x7f0b00f0;
         public static final int force_no_update_desc=0x7f0b00f1;
         public static final int frames_per_rtp_packet=0x7f0b018a;
-        public static final int france=0x7f0b02ea;
+        public static final int france=0x7f0b030a;
         public static final int g729_frame_per_packet=0x7f0b018b;
         public static final int gadget_title=0x7f0b0217;
         /**  UI 
@@ -4221,7 +4716,7 @@ UI
         public static final int has_io_queue=0x7f0b0151;
         public static final int has_io_queue_desc=0x7f0b0152;
         public static final int has_more_than_n_digits=0x7f0b0030;
-        public static final int hello_world=0x7f0b02ef;
+        public static final int hello_world=0x7f0b030f;
         public static final int help=0x7f0b020e;
         /**  Sender to be used if the sender address has been hidden 
 Sender to be used if the sender address has been hidden
@@ -4287,7 +4782,7 @@ Dialog title for warning the user that the picture they are trying to attach is 
         public static final int keep_alive_interval_desc=0x7f0b00eb;
         public static final int keep_awake_incall=0x7f0b01af;
         public static final int keep_awake_incall_desc=0x7f0b01b0;
-        public static final int keep_connected=0x7f0b02f3;
+        public static final int keep_connected=0x7f0b0313;
         /**  Abbreviation for "kilobyte" 
 Abbreviation for "kilobyte"
  Abbreviation for "kilobyte" 
@@ -4571,7 +5066,7 @@ Name of the local user when displaying sender of an outgoing message (personal p
         public static final int missed_call=0x7f0b01f5;
         public static final int modify_account=0x7f0b01ef;
         public static final int mute=0x7f0b0040;
-        public static final int name=0x7f0b02e1;
+        public static final int name=0x7f0b0301;
         public static final int narrowband=0x7f0b0174;
         public static final int nat_traversal=0x7f0b00ce;
         public static final int native_dialer_integration=0x7f0b019a;
@@ -4693,8 +5188,8 @@ Hint text in message body field when keyboard is hidden
         public static final int outgoing_call_chooser_call_text=0x7f0b0209;
         public static final int override_nameserver=0x7f0b00cc;
         public static final int override_nameserver_desc=0x7f0b00cd;
-        public static final int passwd=0x7f0b02de;
-        public static final int paypall_acc=0x7f0b02e5;
+        public static final int passwd=0x7f0b02fe;
+        public static final int paypall_acc=0x7f0b0305;
         public static final int perfs=0x7f0b00a9;
         public static final int permdesc_configureSip=0x7f0b0015;
         public static final int permdesc_useSip=0x7f0b0013;
@@ -4723,7 +5218,7 @@ Hint text in message body field when keyboard is hidden
         public static final int prevent_screen_rotation_desc=0x7f0b01ba;
         public static final int privkey_file=0x7f0b0111;
         public static final int privkey_file_desc=0x7f0b0112;
-        public static final int proficiency=0x7f0b02e6;
+        public static final int proficiency=0x7f0b0306;
         public static final int recentCalls_empty=0x7f0b01f6;
         /**  Label in "Report" window 
 Label in "Report" window
@@ -4838,7 +5333,7 @@ Brief small label shown to right of message when it is being sent.
         public static final int setup_audio_before_init=0x7f0b0195;
         public static final int setup_audio_before_init_desc=0x7f0b0196;
         public static final int show_password=0x7f0b021e;
-        public static final int signin=0x7f0b02e0;
+        public static final int signin=0x7f0b0300;
         public static final int simple=0x7f0b0171;
         public static final int sip_audio_mode=0x7f0b0149;
         public static final int sip_audio_mode_desc=0x7f0b014a;
@@ -5034,10 +5529,10 @@ Status in "Report" window
         public static final int timer_min_se_desc=0x7f0b00f3;
         public static final int timer_sess_expires=0x7f0b00f4;
         public static final int timer_sess_expires_desc=0x7f0b00f5;
-        public static final int title_activity_em_chamada=0x7f0b02f1;
-        public static final int title_activity_fragment_upload=0x7f0b02ee;
-        public static final int title_activity_in_call=0x7f0b02f0;
-        public static final int title_activity_incall=0x7f0b02f2;
+        public static final int title_activity_em_chamada=0x7f0b0311;
+        public static final int title_activity_fragment_upload=0x7f0b030e;
+        public static final int title_activity_in_call=0x7f0b0310;
+        public static final int title_activity_incall=0x7f0b0312;
         /**  Security 
 <string name="ka_use_wake">Keep alive awake</string>
     <string name="ka_use_wake_desc">If activated keep alive will awake phone</string>
@@ -5095,9 +5590,9 @@ Security
         public static final int tls_password_desc=0x7f0b0114;
         public static final int touch_lock=0x7f0b003c;
         public static final int transfer_to_call=0x7f0b0050;
-        public static final int translateto=0x7f0b02f5;
-        public static final int translator=0x7f0b02e3;
-        public static final int transltateto=0x7f0b02f4;
+        public static final int translateto=0x7f0b0315;
+        public static final int translator=0x7f0b0303;
+        public static final int transltateto=0x7f0b0314;
         public static final int transport=0x7f0b00aa;
         public static final int transport_desc=0x7f0b00ab;
         public static final int transport_secure_full=0x7f0b0055;
@@ -5227,7 +5722,7 @@ Dialog box message indicating that a message could not be delivered
         public static final int use_wifi_out_desc=0x7f0b00ae;
         public static final int use_zrtp=0x7f0b011d;
         public static final int use_zrtp_desc=0x7f0b011e;
-        public static final int user=0x7f0b02e2;
+        public static final int user=0x7f0b0302;
         public static final int user_agent=0x7f0b00ee;
         public static final int user_agent_desc=0x7f0b00ef;
         public static final int verify_client=0x7f0b0117;
@@ -5376,6 +5871,10 @@ Button next to an attachment during message composition to view the attachment (
         public static final int w_sipgate_username=0x7f0b02ca;
         public static final int w_sipgate_username_desc=0x7f0b02cb;
         public static final int w_sipme_phone_number_desc=0x7f0b02cf;
+        /**  Text on a placeholder buy button when Google Play services is not
+         available or up-to-date 
+         */
+        public static final int wallet_buy_button_place_holder=0x7f0b02f8;
         public static final int warn_ignore=0x7f0b0245;
         /**  STUN enabled 
 STUN enabled
@@ -5470,11 +5969,11 @@ Text to be used for affirmative response button in dialog boxes
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f0c005b;
+        public static final int AppBaseTheme=0x7f0c005f;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f0c005c;
+        public static final int AppTheme=0x7f0c0060;
         public static final int ButtonBar=0x7f0c0048;
         public static final int ButtonBar_AlertDialog=0x7f0c004a;
         public static final int ButtonBarButton=0x7f0c0049;
@@ -5539,6 +6038,15 @@ Text to be used for affirmative response button in dialog boxes
         public static final int Theme_Sherlock_ForceOverflow=0x7f0c0043;
         public static final int Theme_Sherlock_NoActionBar=0x7f0c0042;
         public static final int Theme_Transparent=0x7f0c005a;
+        public static final int WalletFragmentDefaultButtonTextAppearance=0x7f0c005d;
+        public static final int WalletFragmentDefaultDetailsHeaderTextAppearance=0x7f0c005c;
+        public static final int WalletFragmentDefaultDetailsTextAppearance=0x7f0c005b;
+        /** 
+         Default style of the wallet fragment that will be used if not set explicitly
+         when fragment is created
+    
+         */
+        public static final int WalletFragmentDefaultStyle=0x7f0c005e;
         public static final int Widget=0x7f0c0000;
         public static final int Widget_Sherlock_ActionBar=0x7f0c0002;
         public static final int Widget_Sherlock_ActionBar_Solid=0x7f0c0003;
@@ -5573,15 +6081,15 @@ Text to be used for affirmative response button in dialog boxes
         public static final int Widget_Sherlock_ProgressBar_Horizontal=0x7f0c0026;
         public static final int Widget_Sherlock_Spinner_DropDown_ActionBar=0x7f0c001c;
         public static final int Widget_Sherlock_TextView_SpinnerItem=0x7f0c0027;
-        public static final int bt_login_new1=0x7f0c005d;
-        public static final int button_call=0x7f0c0060;
-        public static final int button_finish=0x7f0c005f;
-        public static final int button_text=0x7f0c005e;
-        public static final int flag_bar=0x7f0c0061;
+        public static final int bt_login_new1=0x7f0c0061;
+        public static final int button_call=0x7f0c0064;
+        public static final int button_finish=0x7f0c0063;
+        public static final int button_text=0x7f0c0062;
+        public static final int flag_bar=0x7f0c0065;
         public static final int formWhiteBlock=0x7f0c0054;
         public static final int homeTabIndicatorText=0x7f0c0053;
         public static final int list_left_column=0x7f0c004e;
-        public static final int radio_style=0x7f0c0062;
+        public static final int radio_style=0x7f0c0066;
     }
     public static final class xml {
         public static final int appshortcut_info=0x7f050000;
@@ -5605,6 +6113,81 @@ Text to be used for affirmative response button in dialog boxes
         public static final int w_simple_preferences=0x7f050012;
     }
     public static final class styleable {
+        /** Attributes that can be used with a AdsAttrs.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #AdsAttrs_adSize com.vizteck.navigationdrawer:adSize}</code></td><td>
+    The size of the ad.</td></tr>
+           <tr><td><code>{@link #AdsAttrs_adSizes com.vizteck.navigationdrawer:adSizes}</code></td><td>
+    A comma-separated list of the supported ad sizes.</td></tr>
+           <tr><td><code>{@link #AdsAttrs_adUnitId com.vizteck.navigationdrawer:adUnitId}</code></td><td> The ad unit ID.</td></tr>
+           </table>
+           @see #AdsAttrs_adSize
+           @see #AdsAttrs_adSizes
+           @see #AdsAttrs_adUnitId
+         */
+        public static final int[] AdsAttrs = {
+            0x7f010064, 0x7f010065, 0x7f010066
+        };
+        /**
+          <p>
+          @attr description
+          
+    The size of the ad. It must be one of BANNER, FULL_BANNER, LEADERBOARD,
+    MEDIUM_RECTANGLE, SMART_BANNER, WIDE_SKYSCRAPER, or
+    &lt;width&gt;x&lt;height&gt;.
+    
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name android:adSize
+        */
+        public static final int AdsAttrs_adSize = 0;
+        /**
+          <p>
+          @attr description
+          
+    A comma-separated list of the supported ad sizes. The sizes must be one of
+    BANNER, FULL_BANNER, LEADERBOARD, MEDIUM_RECTANGLE, SMART_BANNER,
+    WIDE_SKYSCRAPER, or &lt;width&gt;x&lt;height&gt;.
+    
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name android:adSizes
+        */
+        public static final int AdsAttrs_adSizes = 1;
+        /**
+          <p>
+          @attr description
+           The ad unit ID. 
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name android:adUnitId
+        */
+        public static final int AdsAttrs_adUnitId = 2;
         /** Attributes that can be used with a GlowPadView.
            <p>Includes the following attributes:</p>
            <table>
@@ -5673,7 +6256,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:allowScaling
+          @attr name android:allowScaling
         */
         public static final int GlowPadView_allowScaling = 6;
         /**
@@ -5689,7 +6272,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:alwaysTrackFinger
+          @attr name android:alwaysTrackFinger
         */
         public static final int GlowPadView_alwaysTrackFinger = 15;
         /**
@@ -5701,7 +6284,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:directionDescriptions
+          @attr name android:directionDescriptions
         */
         public static final int GlowPadView_directionDescriptions = 9;
         /**
@@ -5717,7 +6300,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:feedbackCount
+          @attr name android:feedbackCount
         */
         public static final int GlowPadView_feedbackCount = 14;
         /**
@@ -5733,7 +6316,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:firstItemOffset
+          @attr name android:firstItemOffset
         */
         public static final int GlowPadView_firstItemOffset = 4;
         /**
@@ -5751,7 +6334,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:glowRadius
+          @attr name android:glowRadius
         */
         public static final int GlowPadView_glowRadius = 3;
         /**
@@ -5790,7 +6373,7 @@ edge, a right gravity will clip the left edge, and neither will clip both edges.
 <tr><td><code>start</code></td><td>0x00800003</td><td> Push object to the beginning of its container, not changing its size. </td></tr>
 <tr><td><code>end</code></td><td>0x00800005</td><td> Push object to the end of its container, not changing its size. </td></tr>
 </table>
-          @attr name com.vizteck.navigationdrawer:gravity
+          @attr name android:gravity
         */
         public static final int GlowPadView_gravity = 16;
         /**
@@ -5802,7 +6385,7 @@ edge, a right gravity will clip the left edge, and neither will clip both edges.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:handleDrawable
+          @attr name android:handleDrawable
         */
         public static final int GlowPadView_handleDrawable = 10;
         /**
@@ -5820,7 +6403,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:innerRadius
+          @attr name android:innerRadius
         */
         public static final int GlowPadView_innerRadius = 2;
         /**
@@ -5836,7 +6419,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:magneticTargets
+          @attr name android:magneticTargets
         */
         public static final int GlowPadView_magneticTargets = 5;
         /**
@@ -5854,7 +6437,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:outerRadius
+          @attr name android:outerRadius
         */
         public static final int GlowPadView_outerRadius = 11;
         /**
@@ -5866,7 +6449,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:outerRingDrawable
+          @attr name android:outerRingDrawable
         */
         public static final int GlowPadView_outerRingDrawable = 0;
         /**
@@ -5878,7 +6461,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:pointDrawable
+          @attr name android:pointDrawable
         */
         public static final int GlowPadView_pointDrawable = 1;
         /**
@@ -5896,7 +6479,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:snapMargin
+          @attr name android:snapMargin
         */
         public static final int GlowPadView_snapMargin = 13;
         /**
@@ -5908,7 +6491,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:targetDescriptions
+          @attr name android:targetDescriptions
         */
         public static final int GlowPadView_targetDescriptions = 8;
         /**
@@ -5920,7 +6503,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:targetDrawables
+          @attr name android:targetDrawables
         */
         public static final int GlowPadView_targetDrawables = 7;
         /**
@@ -5936,9 +6519,253 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:vibrationDuration
+          @attr name android:vibrationDuration
         */
         public static final int GlowPadView_vibrationDuration = 12;
+        /** Attributes that can be used with a MapAttrs.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #MapAttrs_cameraBearing com.vizteck.navigationdrawer:cameraBearing}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraTargetLat com.vizteck.navigationdrawer:cameraTargetLat}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraTargetLng com.vizteck.navigationdrawer:cameraTargetLng}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraTilt com.vizteck.navigationdrawer:cameraTilt}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraZoom com.vizteck.navigationdrawer:cameraZoom}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_mapType com.vizteck.navigationdrawer:mapType}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiCompass com.vizteck.navigationdrawer:uiCompass}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiRotateGestures com.vizteck.navigationdrawer:uiRotateGestures}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiScrollGestures com.vizteck.navigationdrawer:uiScrollGestures}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiTiltGestures com.vizteck.navigationdrawer:uiTiltGestures}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiZoomControls com.vizteck.navigationdrawer:uiZoomControls}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiZoomGestures com.vizteck.navigationdrawer:uiZoomGestures}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_useViewLifecycle com.vizteck.navigationdrawer:useViewLifecycle}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_zOrderOnTop com.vizteck.navigationdrawer:zOrderOnTop}</code></td><td></td></tr>
+           </table>
+           @see #MapAttrs_cameraBearing
+           @see #MapAttrs_cameraTargetLat
+           @see #MapAttrs_cameraTargetLng
+           @see #MapAttrs_cameraTilt
+           @see #MapAttrs_cameraZoom
+           @see #MapAttrs_mapType
+           @see #MapAttrs_uiCompass
+           @see #MapAttrs_uiRotateGestures
+           @see #MapAttrs_uiScrollGestures
+           @see #MapAttrs_uiTiltGestures
+           @see #MapAttrs_uiZoomControls
+           @see #MapAttrs_uiZoomGestures
+           @see #MapAttrs_useViewLifecycle
+           @see #MapAttrs_zOrderOnTop
+         */
+        public static final int[] MapAttrs = {
+            0x7f010067, 0x7f010068, 0x7f010069, 0x7f01006a,
+            0x7f01006b, 0x7f01006c, 0x7f01006d, 0x7f01006e,
+            0x7f01006f, 0x7f010070, 0x7f010071, 0x7f010072,
+            0x7f010073, 0x7f010074
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.vizteck.navigationdrawer.R.attr#cameraBearing}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:cameraBearing
+        */
+        public static final int MapAttrs_cameraBearing = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.vizteck.navigationdrawer.R.attr#cameraTargetLat}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:cameraTargetLat
+        */
+        public static final int MapAttrs_cameraTargetLat = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.vizteck.navigationdrawer.R.attr#cameraTargetLng}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:cameraTargetLng
+        */
+        public static final int MapAttrs_cameraTargetLng = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.vizteck.navigationdrawer.R.attr#cameraTilt}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:cameraTilt
+        */
+        public static final int MapAttrs_cameraTilt = 4;
+        /**
+          <p>This symbol is the offset where the {@link com.vizteck.navigationdrawer.R.attr#cameraZoom}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:cameraZoom
+        */
+        public static final int MapAttrs_cameraZoom = 5;
+        /**
+          <p>This symbol is the offset where the {@link com.vizteck.navigationdrawer.R.attr#mapType}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>none</code></td><td>0</td><td></td></tr>
+<tr><td><code>normal</code></td><td>1</td><td></td></tr>
+<tr><td><code>satellite</code></td><td>2</td><td></td></tr>
+<tr><td><code>terrain</code></td><td>3</td><td></td></tr>
+<tr><td><code>hybrid</code></td><td>4</td><td></td></tr>
+</table>
+          @attr name android:mapType
+        */
+        public static final int MapAttrs_mapType = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.vizteck.navigationdrawer.R.attr#uiCompass}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:uiCompass
+        */
+        public static final int MapAttrs_uiCompass = 6;
+        /**
+          <p>This symbol is the offset where the {@link com.vizteck.navigationdrawer.R.attr#uiRotateGestures}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:uiRotateGestures
+        */
+        public static final int MapAttrs_uiRotateGestures = 7;
+        /**
+          <p>This symbol is the offset where the {@link com.vizteck.navigationdrawer.R.attr#uiScrollGestures}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:uiScrollGestures
+        */
+        public static final int MapAttrs_uiScrollGestures = 8;
+        /**
+          <p>This symbol is the offset where the {@link com.vizteck.navigationdrawer.R.attr#uiTiltGestures}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:uiTiltGestures
+        */
+        public static final int MapAttrs_uiTiltGestures = 9;
+        /**
+          <p>This symbol is the offset where the {@link com.vizteck.navigationdrawer.R.attr#uiZoomControls}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:uiZoomControls
+        */
+        public static final int MapAttrs_uiZoomControls = 10;
+        /**
+          <p>This symbol is the offset where the {@link com.vizteck.navigationdrawer.R.attr#uiZoomGestures}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:uiZoomGestures
+        */
+        public static final int MapAttrs_uiZoomGestures = 11;
+        /**
+          <p>This symbol is the offset where the {@link com.vizteck.navigationdrawer.R.attr#useViewLifecycle}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:useViewLifecycle
+        */
+        public static final int MapAttrs_useViewLifecycle = 12;
+        /**
+          <p>This symbol is the offset where the {@link com.vizteck.navigationdrawer.R.attr#zOrderOnTop}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:zOrderOnTop
+        */
+        public static final int MapAttrs_zOrderOnTop = 13;
         /** Attributes that can be used with a MultiWaveView.
            <p>Includes the following attributes:</p>
            <table>
@@ -5987,7 +6814,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:alwaysTrackFinger
+          @attr name android:alwaysTrackFinger
         */
         public static final int MultiWaveView_alwaysTrackFinger = 10;
         /**
@@ -5999,7 +6826,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:chevronDrawables
+          @attr name android:chevronDrawables
         */
         public static final int MultiWaveView_chevronDrawables = 4;
         /**
@@ -6011,7 +6838,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:directionDescriptions
+          @attr name android:directionDescriptions
         */
         public static final int MultiWaveView_directionDescriptions = 2;
         /**
@@ -6027,7 +6854,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:feedbackCount
+          @attr name android:feedbackCount
         */
         public static final int MultiWaveView_feedbackCount = 9;
         /**
@@ -6039,7 +6866,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:handleDrawable
+          @attr name android:handleDrawable
         */
         public static final int MultiWaveView_handleDrawable = 3;
         /**
@@ -6057,7 +6884,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:outerRadius
+          @attr name android:outerRadius
         */
         public static final int MultiWaveView_outerRadius = 6;
         /**
@@ -6075,7 +6902,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:snapMargin
+          @attr name android:snapMargin
         */
         public static final int MultiWaveView_snapMargin = 8;
         /**
@@ -6087,7 +6914,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:targetDescriptions
+          @attr name android:targetDescriptions
         */
         public static final int MultiWaveView_targetDescriptions = 1;
         /**
@@ -6099,7 +6926,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:targetDrawables
+          @attr name android:targetDrawables
         */
         public static final int MultiWaveView_targetDrawables = 0;
         /**
@@ -6115,7 +6942,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:vibrationDuration
+          @attr name android:vibrationDuration
         */
         public static final int MultiWaveView_vibrationDuration = 7;
         /**
@@ -6127,7 +6954,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:waveDrawable
+          @attr name android:waveDrawable
         */
         public static final int MultiWaveView_waveDrawable = 5;
         /**  Attributes used to style the Action Bar. 
@@ -6195,7 +7022,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:background
+          @attr name android:background
         */
         public static final int SherlockActionBar_background = 2;
         /**
@@ -6209,7 +7036,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:backgroundSplit
+          @attr name android:backgroundSplit
         */
         public static final int SherlockActionBar_backgroundSplit = 3;
         /**
@@ -6223,7 +7050,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:backgroundStacked
+          @attr name android:backgroundStacked
         */
         public static final int SherlockActionBar_backgroundStacked = 12;
         /**
@@ -6235,7 +7062,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:customNavigationLayout
+          @attr name android:customNavigationLayout
         */
         public static final int SherlockActionBar_customNavigationLayout = 13;
         /**
@@ -6258,7 +7085,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>disableHome</code></td><td>0x20</td><td></td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:displayOptions
+          @attr name android:displayOptions
         */
         public static final int SherlockActionBar_displayOptions = 7;
         /**
@@ -6270,7 +7097,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:divider
+          @attr name android:divider
         */
         public static final int SherlockActionBar_divider = 5;
         /**
@@ -6288,7 +7115,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:height
+          @attr name android:height
         */
         public static final int SherlockActionBar_height = 4;
         /**
@@ -6300,7 +7127,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:homeLayout
+          @attr name android:homeLayout
         */
         public static final int SherlockActionBar_homeLayout = 14;
         /**
@@ -6312,7 +7139,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:icon
+          @attr name android:icon
         */
         public static final int SherlockActionBar_icon = 10;
         /**
@@ -6324,7 +7151,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:indeterminateProgressStyle
+          @attr name android:indeterminateProgressStyle
         */
         public static final int SherlockActionBar_indeterminateProgressStyle = 16;
         /**
@@ -6343,7 +7170,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:itemPadding
+          @attr name android:itemPadding
         */
         public static final int SherlockActionBar_itemPadding = 18;
         /**
@@ -6355,7 +7182,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:logo
+          @attr name android:logo
         */
         public static final int SherlockActionBar_logo = 11;
         /**
@@ -6375,7 +7202,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>tabMode</code></td><td>2</td><td> The action bar will use a series of horizontal tabs for navigation. </td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:navigationMode
+          @attr name android:navigationMode
         */
         public static final int SherlockActionBar_navigationMode = 6;
         /**
@@ -6393,7 +7220,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:progressBarPadding
+          @attr name android:progressBarPadding
         */
         public static final int SherlockActionBar_progressBarPadding = 17;
         /**
@@ -6405,7 +7232,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:progressBarStyle
+          @attr name android:progressBarStyle
         */
         public static final int SherlockActionBar_progressBarStyle = 15;
         /**
@@ -6421,7 +7248,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:subtitle
+          @attr name android:subtitle
         */
         public static final int SherlockActionBar_subtitle = 9;
         /**
@@ -6433,7 +7260,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:subtitleTextStyle
+          @attr name android:subtitleTextStyle
         */
         public static final int SherlockActionBar_subtitleTextStyle = 1;
         /**
@@ -6449,7 +7276,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:title
+          @attr name android:title
         */
         public static final int SherlockActionBar_title = 8;
         /**
@@ -6461,7 +7288,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:titleTextStyle
+          @attr name android:titleTextStyle
         */
         public static final int SherlockActionBar_titleTextStyle = 0;
         /** Attributes that can be used with a SherlockActionMenuItemView.
@@ -6470,7 +7297,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #SherlockActionMenuItemView_android_minWidth android:minWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockActionMenuItemView_android_minWidth com.vizteck.navigationdrawer:android_minWidth}</code></td><td></td></tr>
            </table>
            @see #SherlockActionMenuItemView_android_minWidth
          */
@@ -6478,9 +7305,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x0101013f
         };
         /**
-          <p>This symbol is the offset where the {@link android.R.attr#minWidth}
+          <p>This symbol is the offset where the {@link com.vizteck.navigationdrawer.R.attr#android_minWidth}
           attribute's value can be found in the {@link #SherlockActionMenuItemView} array.
-          @attr name android:minWidth
+          @attr name android:android_minWidth
         */
         public static final int SherlockActionMenuItemView_android_minWidth = 0;
         /** Attributes that can be used with a SherlockActionMode.
@@ -6516,7 +7343,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:background
+          @attr name android:background
         */
         public static final int SherlockActionMode_background = 2;
         /**
@@ -6530,7 +7357,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:backgroundSplit
+          @attr name android:backgroundSplit
         */
         public static final int SherlockActionMode_backgroundSplit = 3;
         /**
@@ -6548,7 +7375,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:height
+          @attr name android:height
         */
         public static final int SherlockActionMode_height = 4;
         /**
@@ -6560,7 +7387,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:subtitleTextStyle
+          @attr name android:subtitleTextStyle
         */
         public static final int SherlockActionMode_subtitleTextStyle = 1;
         /**
@@ -6572,7 +7399,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:titleTextStyle
+          @attr name android:titleTextStyle
         */
         public static final int SherlockActionMode_titleTextStyle = 0;
         /** Attributes that can be used with a SherlockActivityChooserView.
@@ -6581,7 +7408,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #SherlockActivityChooserView_android_background android:background}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockActivityChooserView_android_background com.vizteck.navigationdrawer:android_background}</code></td><td></td></tr>
            <tr><td><code>{@link #SherlockActivityChooserView_expandActivityOverflowButtonDrawable com.vizteck.navigationdrawer:expandActivityOverflowButtonDrawable}</code></td><td> The drawable to show in the button for expanding the activities overflow popup.</td></tr>
            <tr><td><code>{@link #SherlockActivityChooserView_initialActivityCount com.vizteck.navigationdrawer:initialActivityCount}</code></td><td> The maximal number of items initially shown in the activity list.</td></tr>
            </table>
@@ -6593,9 +7420,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x010100d4, 0x7f01004f, 0x7f010050
         };
         /**
-          <p>This symbol is the offset where the {@link android.R.attr#background}
+          <p>This symbol is the offset where the {@link com.vizteck.navigationdrawer.R.attr#android_background}
           attribute's value can be found in the {@link #SherlockActivityChooserView} array.
-          @attr name android:background
+          @attr name android:android_background
         */
         public static final int SherlockActivityChooserView_android_background = 0;
         /**
@@ -6612,7 +7439,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:expandActivityOverflowButtonDrawable
+          @attr name android:expandActivityOverflowButtonDrawable
         */
         public static final int SherlockActivityChooserView_expandActivityOverflowButtonDrawable = 2;
         /**
@@ -6628,7 +7455,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:initialActivityCount
+          @attr name android:initialActivityCount
         */
         public static final int SherlockActivityChooserView_initialActivityCount = 1;
         /**  Base attributes that are available to all groups. 
@@ -6637,12 +7464,12 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #SherlockMenuGroup_android_checkableBehavior android:checkableBehavior}</code></td><td> Whether the items are capable of displaying a check mark.</td></tr>
-           <tr><td><code>{@link #SherlockMenuGroup_android_enabled android:enabled}</code></td><td> Whether the items are enabled.</td></tr>
-           <tr><td><code>{@link #SherlockMenuGroup_android_id android:id}</code></td><td> The ID of the group.</td></tr>
-           <tr><td><code>{@link #SherlockMenuGroup_android_menuCategory android:menuCategory}</code></td><td> The category applied to all items within this group.</td></tr>
-           <tr><td><code>{@link #SherlockMenuGroup_android_orderInCategory android:orderInCategory}</code></td><td> The order within the category applied to all items within this group.</td></tr>
-           <tr><td><code>{@link #SherlockMenuGroup_android_visible android:visible}</code></td><td> Whether the items are shown/visible.</td></tr>
+           <tr><td><code>{@link #SherlockMenuGroup_android_checkableBehavior com.vizteck.navigationdrawer:android_checkableBehavior}</code></td><td> Whether the items are capable of displaying a check mark.</td></tr>
+           <tr><td><code>{@link #SherlockMenuGroup_android_enabled com.vizteck.navigationdrawer:android_enabled}</code></td><td> Whether the items are enabled.</td></tr>
+           <tr><td><code>{@link #SherlockMenuGroup_android_id com.vizteck.navigationdrawer:android_id}</code></td><td> The ID of the group.</td></tr>
+           <tr><td><code>{@link #SherlockMenuGroup_android_menuCategory com.vizteck.navigationdrawer:android_menuCategory}</code></td><td> The category applied to all items within this group.</td></tr>
+           <tr><td><code>{@link #SherlockMenuGroup_android_orderInCategory com.vizteck.navigationdrawer:android_orderInCategory}</code></td><td> The order within the category applied to all items within this group.</td></tr>
+           <tr><td><code>{@link #SherlockMenuGroup_android_visible com.vizteck.navigationdrawer:android_visible}</code></td><td> Whether the items are shown/visible.</td></tr>
            </table>
            @see #SherlockMenuGroup_android_checkableBehavior
            @see #SherlockMenuGroup_android_enabled
@@ -6659,27 +7486,24 @@ containing a value of this type.
           <p>
           @attr description
            Whether the items are capable of displaying a check mark. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#checkableBehavior}.
-          @attr name android:checkableBehavior
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_checkableBehavior}.
+          @attr name android:android_checkableBehavior
         */
         public static final int SherlockMenuGroup_android_checkableBehavior = 5;
         /**
           <p>
           @attr description
            Whether the items are enabled. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#enabled}.
-          @attr name android:enabled
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_enabled}.
+          @attr name android:android_enabled
         */
         public static final int SherlockMenuGroup_android_enabled = 0;
         /**
           <p>
           @attr description
            The ID of the group. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#id}.
-          @attr name android:id
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_id}.
+          @attr name android:android_id
         */
         public static final int SherlockMenuGroup_android_id = 1;
         /**
@@ -6687,9 +7511,8 @@ containing a value of this type.
           @attr description
            The category applied to all items within this group.
              (This will be or'ed with the orderInCategory attribute.) 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#menuCategory}.
-          @attr name android:menuCategory
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_menuCategory}.
+          @attr name android:android_menuCategory
         */
         public static final int SherlockMenuGroup_android_menuCategory = 3;
         /**
@@ -6697,18 +7520,16 @@ containing a value of this type.
           @attr description
            The order within the category applied to all items within this group.
              (This will be or'ed with the category attribute.) 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#orderInCategory}.
-          @attr name android:orderInCategory
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_orderInCategory}.
+          @attr name android:android_orderInCategory
         */
         public static final int SherlockMenuGroup_android_orderInCategory = 4;
         /**
           <p>
           @attr description
            Whether the items are shown/visible. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#visible}.
-          @attr name android:visible
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_visible}.
+          @attr name android:android_visible
         */
         public static final int SherlockMenuGroup_android_visible = 2;
         /**  Base attributes that are available to all Item objects. 
@@ -6717,26 +7538,26 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_actionLayout android:actionLayout}</code></td><td> An optional layout to be used as an action view.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_actionProviderClass android:actionProviderClass}</code></td><td> The name of an optional ActionProvider class to instantiate an action view
+           <tr><td><code>{@link #SherlockMenuItem_android_actionLayout com.vizteck.navigationdrawer:android_actionLayout}</code></td><td> An optional layout to be used as an action view.</td></tr>
+           <tr><td><code>{@link #SherlockMenuItem_android_actionProviderClass com.vizteck.navigationdrawer:android_actionProviderClass}</code></td><td> The name of an optional ActionProvider class to instantiate an action view
              and perform operations such as default action for that menu item.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_actionViewClass android:actionViewClass}</code></td><td> The name of an optional View class to instantiate and use as an
+           <tr><td><code>{@link #SherlockMenuItem_android_actionViewClass com.vizteck.navigationdrawer:android_actionViewClass}</code></td><td> The name of an optional View class to instantiate and use as an
              action view.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_alphabeticShortcut android:alphabeticShortcut}</code></td><td> The alphabetic shortcut key.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_checkable android:checkable}</code></td><td> Whether the item is capable of displaying a check mark.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_checked android:checked}</code></td><td> Whether the item is checked.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_enabled android:enabled}</code></td><td> Whether the item is enabled.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_icon android:icon}</code></td><td> The icon associated with this item.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_id android:id}</code></td><td> The ID of the item.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_menuCategory android:menuCategory}</code></td><td> The category applied to the item.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_numericShortcut android:numericShortcut}</code></td><td> The numeric shortcut key.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_onClick android:onClick}</code></td><td> Name of a method on the Context used to inflate the menu that will be
+           <tr><td><code>{@link #SherlockMenuItem_android_alphabeticShortcut com.vizteck.navigationdrawer:android_alphabeticShortcut}</code></td><td> The alphabetic shortcut key.</td></tr>
+           <tr><td><code>{@link #SherlockMenuItem_android_checkable com.vizteck.navigationdrawer:android_checkable}</code></td><td> Whether the item is capable of displaying a check mark.</td></tr>
+           <tr><td><code>{@link #SherlockMenuItem_android_checked com.vizteck.navigationdrawer:android_checked}</code></td><td> Whether the item is checked.</td></tr>
+           <tr><td><code>{@link #SherlockMenuItem_android_enabled com.vizteck.navigationdrawer:android_enabled}</code></td><td> Whether the item is enabled.</td></tr>
+           <tr><td><code>{@link #SherlockMenuItem_android_icon com.vizteck.navigationdrawer:android_icon}</code></td><td> The icon associated with this item.</td></tr>
+           <tr><td><code>{@link #SherlockMenuItem_android_id com.vizteck.navigationdrawer:android_id}</code></td><td> The ID of the item.</td></tr>
+           <tr><td><code>{@link #SherlockMenuItem_android_menuCategory com.vizteck.navigationdrawer:android_menuCategory}</code></td><td> The category applied to the item.</td></tr>
+           <tr><td><code>{@link #SherlockMenuItem_android_numericShortcut com.vizteck.navigationdrawer:android_numericShortcut}</code></td><td> The numeric shortcut key.</td></tr>
+           <tr><td><code>{@link #SherlockMenuItem_android_onClick com.vizteck.navigationdrawer:android_onClick}</code></td><td> Name of a method on the Context used to inflate the menu that will be
              called when the item is clicked.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_orderInCategory android:orderInCategory}</code></td><td> The order within the category applied to the item.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_showAsAction android:showAsAction}</code></td><td> How this item should display in the Action Bar, if present.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_title android:title}</code></td><td> The title associated with the item.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_titleCondensed android:titleCondensed}</code></td><td> The condensed title associated with the item.</td></tr>
-           <tr><td><code>{@link #SherlockMenuItem_android_visible android:visible}</code></td><td> Whether the item is shown/visible.</td></tr>
+           <tr><td><code>{@link #SherlockMenuItem_android_orderInCategory com.vizteck.navigationdrawer:android_orderInCategory}</code></td><td> The order within the category applied to the item.</td></tr>
+           <tr><td><code>{@link #SherlockMenuItem_android_showAsAction com.vizteck.navigationdrawer:android_showAsAction}</code></td><td> How this item should display in the Action Bar, if present.</td></tr>
+           <tr><td><code>{@link #SherlockMenuItem_android_title com.vizteck.navigationdrawer:android_title}</code></td><td> The title associated with the item.</td></tr>
+           <tr><td><code>{@link #SherlockMenuItem_android_titleCondensed com.vizteck.navigationdrawer:android_titleCondensed}</code></td><td> The condensed title associated with the item.</td></tr>
+           <tr><td><code>{@link #SherlockMenuItem_android_visible com.vizteck.navigationdrawer:android_visible}</code></td><td> Whether the item is shown/visible.</td></tr>
            </table>
            @see #SherlockMenuItem_android_actionLayout
            @see #SherlockMenuItem_android_actionProviderClass
@@ -6769,9 +7590,8 @@ containing a value of this type.
            An optional layout to be used as an action view.
              See {@link android.view.MenuItem#setActionView(android.view.View)}
              for more info. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#actionLayout}.
-          @attr name android:actionLayout
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_actionLayout}.
+          @attr name android:android_actionLayout
         */
         public static final int SherlockMenuItem_android_actionLayout = 14;
         /**
@@ -6781,9 +7601,8 @@ containing a value of this type.
              and perform operations such as default action for that menu item.
              See {@link android.view.MenuItem#setActionProvider(android.view.ActionProvider)}
              for more info. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#actionProviderClass}.
-          @attr name android:actionProviderClass
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_actionProviderClass}.
+          @attr name android:android_actionProviderClass
         */
         public static final int SherlockMenuItem_android_actionProviderClass = 16;
         /**
@@ -6792,9 +7611,8 @@ containing a value of this type.
            The name of an optional View class to instantiate and use as an
              action view. See {@link android.view.MenuItem#setActionView(android.view.View)}
              for more info. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#actionViewClass}.
-          @attr name android:actionViewClass
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_actionViewClass}.
+          @attr name android:android_actionViewClass
         */
         public static final int SherlockMenuItem_android_actionViewClass = 15;
         /**
@@ -6802,18 +7620,16 @@ containing a value of this type.
           @attr description
            The alphabetic shortcut key.  This is the shortcut when using a keyboard
              with alphabetic keys. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#alphabeticShortcut}.
-          @attr name android:alphabeticShortcut
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_alphabeticShortcut}.
+          @attr name android:android_alphabeticShortcut
         */
         public static final int SherlockMenuItem_android_alphabeticShortcut = 9;
         /**
           <p>
           @attr description
            Whether the item is capable of displaying a check mark. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#checkable}.
-          @attr name android:checkable
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_checkable}.
+          @attr name android:android_checkable
         */
         public static final int SherlockMenuItem_android_checkable = 11;
         /**
@@ -6821,18 +7637,16 @@ containing a value of this type.
           @attr description
            Whether the item is checked.  Note that you must first have enabled checking with
              the checkable attribute or else the check mark will not appear. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#checked}.
-          @attr name android:checked
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_checked}.
+          @attr name android:android_checked
         */
         public static final int SherlockMenuItem_android_checked = 3;
         /**
           <p>
           @attr description
            Whether the item is enabled. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#enabled}.
-          @attr name android:enabled
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_enabled}.
+          @attr name android:android_enabled
         */
         public static final int SherlockMenuItem_android_enabled = 1;
         /**
@@ -6840,18 +7654,16 @@ containing a value of this type.
           @attr description
            The icon associated with this item.  This icon will not always be shown, so
              the title should be sufficient in describing this item. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#icon}.
-          @attr name android:icon
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_icon}.
+          @attr name android:android_icon
         */
         public static final int SherlockMenuItem_android_icon = 0;
         /**
           <p>
           @attr description
            The ID of the item. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#id}.
-          @attr name android:id
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_id}.
+          @attr name android:android_id
         */
         public static final int SherlockMenuItem_android_id = 2;
         /**
@@ -6859,9 +7671,8 @@ containing a value of this type.
           @attr description
            The category applied to the item.
              (This will be or'ed with the orderInCategory attribute.) 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#menuCategory}.
-          @attr name android:menuCategory
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_menuCategory}.
+          @attr name android:android_menuCategory
         */
         public static final int SherlockMenuItem_android_menuCategory = 5;
         /**
@@ -6869,9 +7680,8 @@ containing a value of this type.
           @attr description
            The numeric shortcut key.  This is the shortcut when using a numeric (e.g., 12-key)
              keyboard. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#numericShortcut}.
-          @attr name android:numericShortcut
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_numericShortcut}.
+          @attr name android:android_numericShortcut
         */
         public static final int SherlockMenuItem_android_numericShortcut = 10;
         /**
@@ -6879,9 +7689,8 @@ containing a value of this type.
           @attr description
            Name of a method on the Context used to inflate the menu that will be
              called when the item is clicked. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#onClick}.
-          @attr name android:onClick
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_onClick}.
+          @attr name android:android_onClick
         */
         public static final int SherlockMenuItem_android_onClick = 12;
         /**
@@ -6889,27 +7698,24 @@ containing a value of this type.
           @attr description
            The order within the category applied to the item.
              (This will be or'ed with the category attribute.) 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#orderInCategory}.
-          @attr name android:orderInCategory
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_orderInCategory}.
+          @attr name android:android_orderInCategory
         */
         public static final int SherlockMenuItem_android_orderInCategory = 6;
         /**
           <p>
           @attr description
            How this item should display in the Action Bar, if present. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#showAsAction}.
-          @attr name android:showAsAction
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_showAsAction}.
+          @attr name android:android_showAsAction
         */
         public static final int SherlockMenuItem_android_showAsAction = 13;
         /**
           <p>
           @attr description
            The title associated with the item. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#title}.
-          @attr name android:title
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_title}.
+          @attr name android:android_title
         */
         public static final int SherlockMenuItem_android_title = 7;
         /**
@@ -6917,18 +7723,16 @@ containing a value of this type.
           @attr description
            The condensed title associated with the item.  This is used in situations where the
              normal title may be too long to be displayed. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#titleCondensed}.
-          @attr name android:titleCondensed
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_titleCondensed}.
+          @attr name android:android_titleCondensed
         */
         public static final int SherlockMenuItem_android_titleCondensed = 8;
         /**
           <p>
           @attr description
            Whether the item is shown/visible. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#visible}.
-          @attr name android:visible
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_visible}.
+          @attr name android:android_visible
         */
         public static final int SherlockMenuItem_android_visible = 4;
         /** Attributes that can be used with a SherlockMenuView.
@@ -6970,7 +7774,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:headerBackground
+          @attr name android:headerBackground
         */
         public static final int SherlockMenuView_headerBackground = 3;
         /**
@@ -6982,7 +7786,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:horizontalDivider
+          @attr name android:horizontalDivider
         */
         public static final int SherlockMenuView_horizontalDivider = 1;
         /**
@@ -6996,7 +7800,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:itemBackground
+          @attr name android:itemBackground
         */
         public static final int SherlockMenuView_itemBackground = 4;
         /**
@@ -7012,7 +7816,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:itemIconDisabledAlpha
+          @attr name android:itemIconDisabledAlpha
         */
         public static final int SherlockMenuView_itemIconDisabledAlpha = 6;
         /**
@@ -7024,7 +7828,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:itemTextAppearance
+          @attr name android:itemTextAppearance
         */
         public static final int SherlockMenuView_itemTextAppearance = 0;
         /**
@@ -7040,7 +7844,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:preserveIconSpacing
+          @attr name android:preserveIconSpacing
         */
         public static final int SherlockMenuView_preserveIconSpacing = 7;
         /**
@@ -7052,7 +7856,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:verticalDivider
+          @attr name android:verticalDivider
         */
         public static final int SherlockMenuView_verticalDivider = 2;
         /**
@@ -7064,7 +7868,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:windowAnimationStyle
+          @attr name android:windowAnimationStyle
         */
         public static final int SherlockMenuView_windowAnimationStyle = 5;
         /** Attributes that can be used with a SherlockSpinner.
@@ -7073,17 +7877,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #SherlockSpinner_android_dropDownHorizontalOffset android:dropDownHorizontalOffset}</code></td><td> Horizontal offset from the spinner widget for positioning the dropdown
+           <tr><td><code>{@link #SherlockSpinner_android_dropDownHorizontalOffset com.vizteck.navigationdrawer:android_dropDownHorizontalOffset}</code></td><td> Horizontal offset from the spinner widget for positioning the dropdown
              in spinnerMode="dropdown".</td></tr>
-           <tr><td><code>{@link #SherlockSpinner_android_dropDownSelector android:dropDownSelector}</code></td><td> List selector to use for spinnerMode="dropdown" display.</td></tr>
-           <tr><td><code>{@link #SherlockSpinner_android_dropDownVerticalOffset android:dropDownVerticalOffset}</code></td><td> Vertical offset from the spinner widget for positioning the dropdown in
+           <tr><td><code>{@link #SherlockSpinner_android_dropDownSelector com.vizteck.navigationdrawer:android_dropDownSelector}</code></td><td> List selector to use for spinnerMode="dropdown" display.</td></tr>
+           <tr><td><code>{@link #SherlockSpinner_android_dropDownVerticalOffset com.vizteck.navigationdrawer:android_dropDownVerticalOffset}</code></td><td> Vertical offset from the spinner widget for positioning the dropdown in
              spinnerMode="dropdown".</td></tr>
-           <tr><td><code>{@link #SherlockSpinner_android_dropDownWidth android:dropDownWidth}</code></td><td> Width of the dropdown in spinnerMode="dropdown".</td></tr>
-           <tr><td><code>{@link #SherlockSpinner_android_gravity android:gravity}</code></td><td> Gravity setting for positioning the currently selected item.</td></tr>
-           <tr><td><code>{@link #SherlockSpinner_android_popupBackground android:popupBackground}</code></td><td> Background drawable to use for the dropdown in spinnerMode="dropdown".</td></tr>
-           <tr><td><code>{@link #SherlockSpinner_android_popupPromptView android:popupPromptView}</code></td><td> Reference to a layout to use for displaying a prompt in the dropdown for
+           <tr><td><code>{@link #SherlockSpinner_android_dropDownWidth com.vizteck.navigationdrawer:android_dropDownWidth}</code></td><td> Width of the dropdown in spinnerMode="dropdown".</td></tr>
+           <tr><td><code>{@link #SherlockSpinner_android_gravity com.vizteck.navigationdrawer:android_gravity}</code></td><td> Gravity setting for positioning the currently selected item.</td></tr>
+           <tr><td><code>{@link #SherlockSpinner_android_popupBackground com.vizteck.navigationdrawer:android_popupBackground}</code></td><td> Background drawable to use for the dropdown in spinnerMode="dropdown".</td></tr>
+           <tr><td><code>{@link #SherlockSpinner_android_popupPromptView com.vizteck.navigationdrawer:android_popupPromptView}</code></td><td> Reference to a layout to use for displaying a prompt in the dropdown for
              spinnerMode="dropdown".</td></tr>
-           <tr><td><code>{@link #SherlockSpinner_android_prompt android:prompt}</code></td><td> The prompt to display when the spinner's dialog is shown.</td></tr>
+           <tr><td><code>{@link #SherlockSpinner_android_prompt com.vizteck.navigationdrawer:android_prompt}</code></td><td> The prompt to display when the spinner's dialog is shown.</td></tr>
            </table>
            @see #SherlockSpinner_android_dropDownHorizontalOffset
            @see #SherlockSpinner_android_dropDownSelector
@@ -7096,25 +7900,23 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
          */
         public static final int[] SherlockSpinner = {
             0x010100af, 0x01010175, 0x01010176, 0x0101017b,
-            0x01010262, 0x010102ac, 0x010102ad, 0x0101041f
+            0x01010262, 0x010102ac, 0x010102ad, 0x0101043a
         };
         /**
           <p>
           @attr description
            Horizontal offset from the spinner widget for positioning the dropdown
              in spinnerMode="dropdown". 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#dropDownHorizontalOffset}.
-          @attr name android:dropDownHorizontalOffset
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_dropDownHorizontalOffset}.
+          @attr name android:android_dropDownHorizontalOffset
         */
         public static final int SherlockSpinner_android_dropDownHorizontalOffset = 5;
         /**
           <p>
           @attr description
            List selector to use for spinnerMode="dropdown" display. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#dropDownSelector}.
-          @attr name android:dropDownSelector
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_dropDownSelector}.
+          @attr name android:android_dropDownSelector
         */
         public static final int SherlockSpinner_android_dropDownSelector = 1;
         /**
@@ -7122,36 +7924,32 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           @attr description
            Vertical offset from the spinner widget for positioning the dropdown in
              spinnerMode="dropdown". 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#dropDownVerticalOffset}.
-          @attr name android:dropDownVerticalOffset
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_dropDownVerticalOffset}.
+          @attr name android:android_dropDownVerticalOffset
         */
         public static final int SherlockSpinner_android_dropDownVerticalOffset = 6;
         /**
           <p>
           @attr description
            Width of the dropdown in spinnerMode="dropdown". 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#dropDownWidth}.
-          @attr name android:dropDownWidth
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_dropDownWidth}.
+          @attr name android:android_dropDownWidth
         */
         public static final int SherlockSpinner_android_dropDownWidth = 4;
         /**
           <p>
           @attr description
            Gravity setting for positioning the currently selected item. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#gravity}.
-          @attr name android:gravity
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_gravity}.
+          @attr name android:android_gravity
         */
         public static final int SherlockSpinner_android_gravity = 0;
         /**
           <p>
           @attr description
            Background drawable to use for the dropdown in spinnerMode="dropdown". 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#popupBackground}.
-          @attr name android:popupBackground
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_popupBackground}.
+          @attr name android:android_popupBackground
         */
         public static final int SherlockSpinner_android_popupBackground = 2;
         /**
@@ -7161,16 +7959,15 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
              spinnerMode="dropdown". This layout must contain a TextView with the id
              @android:id/text1 to be populated with the prompt text. 
           <p>This is a private symbol.
-          @attr name android:popupPromptView
+          @attr name android:android_popupPromptView
         */
         public static final int SherlockSpinner_android_popupPromptView = 7;
         /**
           <p>
           @attr description
            The prompt to display when the spinner's dialog is shown. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#prompt}.
-          @attr name android:prompt
+          <p>This corresponds to the global attribute          resource symbol {@link com.vizteck.navigationdrawer.R.attr#android_prompt}.
+          @attr name android:android_prompt
         */
         public static final int SherlockSpinner_android_prompt = 3;
         /** Attributes that can be used with a SherlockTheme.
@@ -7207,7 +8004,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <tr><td><code>{@link #SherlockTheme_actionSpinnerItemStyle com.vizteck.navigationdrawer:actionSpinnerItemStyle}</code></td><td></td></tr>
            <tr><td><code>{@link #SherlockTheme_activatedBackgroundIndicator com.vizteck.navigationdrawer:activatedBackgroundIndicator}</code></td><td> Drawable used as a background for activated items.</td></tr>
            <tr><td><code>{@link #SherlockTheme_activityChooserViewStyle com.vizteck.navigationdrawer:activityChooserViewStyle}</code></td><td> Default ActivityChooserView style.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_android_windowIsFloating android:windowIsFloating}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_android_windowIsFloating com.vizteck.navigationdrawer:android_windowIsFloating}</code></td><td></td></tr>
            <tr><td><code>{@link #SherlockTheme_buttonStyleSmall com.vizteck.navigationdrawer:buttonStyleSmall}</code></td><td> Small Button style.</td></tr>
            <tr><td><code>{@link #SherlockTheme_dividerVertical com.vizteck.navigationdrawer:dividerVertical}</code></td><td> Drawable to use for generic vertical dividers.</td></tr>
            <tr><td><code>{@link #SherlockTheme_dropDownListViewStyle com.vizteck.navigationdrawer:dropDownListViewStyle}</code></td><td></td></tr>
@@ -7320,7 +8117,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:absForceOverflow
+          @attr name android:absForceOverflow
         */
         public static final int SherlockTheme_absForceOverflow = 52;
         /**
@@ -7332,7 +8129,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:actionBarDivider
+          @attr name android:actionBarDivider
         */
         public static final int SherlockTheme_actionBarDivider = 9;
         /**
@@ -7344,7 +8141,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:actionBarItemBackground
+          @attr name android:actionBarItemBackground
         */
         public static final int SherlockTheme_actionBarItemBackground = 10;
         /**
@@ -7371,7 +8168,7 @@ containing a value of this type.
 <tr><td><code>wrap_content</code></td><td>0</td><td></td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:actionBarSize
+          @attr name android:actionBarSize
         */
         public static final int SherlockTheme_actionBarSize = 8;
         /**
@@ -7386,7 +8183,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:actionBarSplitStyle
+          @attr name android:actionBarSplitStyle
         */
         public static final int SherlockTheme_actionBarSplitStyle = 6;
         /**
@@ -7398,7 +8195,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:actionBarStyle
+          @attr name android:actionBarStyle
         */
         public static final int SherlockTheme_actionBarStyle = 5;
         /**
@@ -7408,7 +8205,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.vizteck.navigationdrawer:actionBarTabBarStyle
+          @attr name android:actionBarTabBarStyle
         */
         public static final int SherlockTheme_actionBarTabBarStyle = 2;
         /**
@@ -7420,7 +8217,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:actionBarTabStyle
+          @attr name android:actionBarTabStyle
         */
         public static final int SherlockTheme_actionBarTabStyle = 1;
         /**
@@ -7430,7 +8227,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.vizteck.navigationdrawer:actionBarTabTextStyle
+          @attr name android:actionBarTabTextStyle
         */
         public static final int SherlockTheme_actionBarTabTextStyle = 3;
         /**
@@ -7448,7 +8245,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:actionBarWidgetTheme
+          @attr name android:actionBarWidgetTheme
         */
         public static final int SherlockTheme_actionBarWidgetTheme = 7;
         /**
@@ -7458,7 +8255,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.vizteck.navigationdrawer:actionButtonStyle
+          @attr name android:actionButtonStyle
         */
         public static final int SherlockTheme_actionButtonStyle = 38;
         /**
@@ -7468,7 +8265,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.vizteck.navigationdrawer:actionDropDownStyle
+          @attr name android:actionDropDownStyle
         */
         public static final int SherlockTheme_actionDropDownStyle = 37;
         /**
@@ -7481,7 +8278,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:actionMenuTextAppearance
+          @attr name android:actionMenuTextAppearance
         */
         public static final int SherlockTheme_actionMenuTextAppearance = 11;
         /**
@@ -7495,7 +8292,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:actionMenuTextColor
+          @attr name android:actionMenuTextColor
         */
         public static final int SherlockTheme_actionMenuTextColor = 12;
         /**
@@ -7507,7 +8304,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:actionModeBackground
+          @attr name android:actionModeBackground
         */
         public static final int SherlockTheme_actionModeBackground = 15;
         /**
@@ -7517,7 +8314,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.vizteck.navigationdrawer:actionModeCloseButtonStyle
+          @attr name android:actionModeCloseButtonStyle
         */
         public static final int SherlockTheme_actionModeCloseButtonStyle = 14;
         /**
@@ -7529,7 +8326,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:actionModeCloseDrawable
+          @attr name android:actionModeCloseDrawable
         */
         public static final int SherlockTheme_actionModeCloseDrawable = 17;
         /**
@@ -7541,7 +8338,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:actionModePopupWindowStyle
+          @attr name android:actionModePopupWindowStyle
         */
         public static final int SherlockTheme_actionModePopupWindowStyle = 19;
         /**
@@ -7553,7 +8350,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:actionModeShareDrawable
+          @attr name android:actionModeShareDrawable
         */
         public static final int SherlockTheme_actionModeShareDrawable = 18;
         /**
@@ -7565,7 +8362,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:actionModeSplitBackground
+          @attr name android:actionModeSplitBackground
         */
         public static final int SherlockTheme_actionModeSplitBackground = 16;
         /**
@@ -7575,7 +8372,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.vizteck.navigationdrawer:actionModeStyle
+          @attr name android:actionModeStyle
         */
         public static final int SherlockTheme_actionModeStyle = 13;
         /**
@@ -7585,7 +8382,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.vizteck.navigationdrawer:actionOverflowButtonStyle
+          @attr name android:actionOverflowButtonStyle
         */
         public static final int SherlockTheme_actionOverflowButtonStyle = 4;
         /**
@@ -7595,7 +8392,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.vizteck.navigationdrawer:actionSpinnerItemStyle
+          @attr name android:actionSpinnerItemStyle
         */
         public static final int SherlockTheme_actionSpinnerItemStyle = 43;
         /**
@@ -7607,7 +8404,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:activatedBackgroundIndicator
+          @attr name android:activatedBackgroundIndicator
         */
         public static final int SherlockTheme_activatedBackgroundIndicator = 51;
         /**
@@ -7619,13 +8416,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:activityChooserViewStyle
+          @attr name android:activityChooserViewStyle
         */
         public static final int SherlockTheme_activityChooserViewStyle = 50;
         /**
-          <p>This symbol is the offset where the {@link android.R.attr#windowIsFloating}
+          <p>This symbol is the offset where the {@link com.vizteck.navigationdrawer.R.attr#android_windowIsFloating}
           attribute's value can be found in the {@link #SherlockTheme} array.
-          @attr name android:windowIsFloating
+          @attr name android:android_windowIsFloating
         */
         public static final int SherlockTheme_android_windowIsFloating = 0;
         /**
@@ -7637,7 +8434,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:buttonStyleSmall
+          @attr name android:buttonStyleSmall
         */
         public static final int SherlockTheme_buttonStyleSmall = 20;
         /**
@@ -7649,7 +8446,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:dividerVertical
+          @attr name android:dividerVertical
         */
         public static final int SherlockTheme_dividerVertical = 36;
         /**
@@ -7659,7 +8456,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.vizteck.navigationdrawer:dropDownListViewStyle
+          @attr name android:dropDownListViewStyle
         */
         public static final int SherlockTheme_dropDownListViewStyle = 40;
         /**
@@ -7675,7 +8472,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.vizteck.navigationdrawer:dropdownListPreferredItemHeight
+          @attr name android:dropdownListPreferredItemHeight
         */
         public static final int SherlockTheme_dropdownListPreferredItemHeight = 42;
         /**
@@ -7685,7 +8482,7 @@ containing a value of this type.
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.vizteck.navigationdrawer:homeAsUpIndicator
+          @attr name android:homeAsUpIndicator
         */
         public static final int SherlockTheme_homeAsUpIndicator = 39;
         /**
@@ -7695,7 +8492,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.vizteck.navigationdrawer:listPopupWindowStyle
+          @attr name android:listPopupWindowStyle
         */
         public static final int SherlockTheme_listPopupWindowStyle = 49;
         /**
@@ -7713,7 +8510,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:listPreferredItemHeightSmall
+          @attr name android:listPreferredItemHeightSmall
         */
         public static final int SherlockTheme_listPreferredItemHeightSmall = 30;
         /**
@@ -7731,7 +8528,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:listPreferredItemPaddingLeft
+          @attr name android:listPreferredItemPaddingLeft
         */
         public static final int SherlockTheme_listPreferredItemPaddingLeft = 31;
         /**
@@ -7749,7 +8546,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:listPreferredItemPaddingRight
+          @attr name android:listPreferredItemPaddingRight
         */
         public static final int SherlockTheme_listPreferredItemPaddingRight = 32;
         /**
@@ -7759,7 +8556,7 @@ containing a value of this type.
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.vizteck.navigationdrawer:popupMenuStyle
+          @attr name android:popupMenuStyle
         */
         public static final int SherlockTheme_popupMenuStyle = 41;
         /**
@@ -7769,7 +8566,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.vizteck.navigationdrawer:spinnerDropDownItemStyle
+          @attr name android:spinnerDropDownItemStyle
         */
         public static final int SherlockTheme_spinnerDropDownItemStyle = 29;
         /**
@@ -7779,7 +8576,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.vizteck.navigationdrawer:spinnerItemStyle
+          @attr name android:spinnerItemStyle
         */
         public static final int SherlockTheme_spinnerItemStyle = 28;
         /**
@@ -7791,7 +8588,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:textAppearanceLargePopupMenu
+          @attr name android:textAppearanceLargePopupMenu
         */
         public static final int SherlockTheme_textAppearanceLargePopupMenu = 22;
         /**
@@ -7803,7 +8600,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:textAppearanceListItemSmall
+          @attr name android:textAppearanceListItemSmall
         */
         public static final int SherlockTheme_textAppearanceListItemSmall = 33;
         /**
@@ -7815,7 +8612,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:textAppearanceSmall
+          @attr name android:textAppearanceSmall
         */
         public static final int SherlockTheme_textAppearanceSmall = 24;
         /**
@@ -7827,7 +8624,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:textAppearanceSmallPopupMenu
+          @attr name android:textAppearanceSmallPopupMenu
         */
         public static final int SherlockTheme_textAppearanceSmallPopupMenu = 23;
         /**
@@ -7842,7 +8639,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.vizteck.navigationdrawer:textColorPrimary
+          @attr name android:textColorPrimary
         */
         public static final int SherlockTheme_textColorPrimary = 25;
         /**
@@ -7857,7 +8654,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.vizteck.navigationdrawer:textColorPrimaryDisableOnly
+          @attr name android:textColorPrimaryDisableOnly
         */
         public static final int SherlockTheme_textColorPrimaryDisableOnly = 26;
         /**
@@ -7872,7 +8669,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.vizteck.navigationdrawer:textColorPrimaryInverse
+          @attr name android:textColorPrimaryInverse
         */
         public static final int SherlockTheme_textColorPrimaryInverse = 27;
         /**
@@ -7886,7 +8683,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.vizteck.navigationdrawer:windowActionBar
+          @attr name android:windowActionBar
         */
         public static final int SherlockTheme_windowActionBar = 45;
         /**
@@ -7900,7 +8697,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.vizteck.navigationdrawer:windowActionBarOverlay
+          @attr name android:windowActionBarOverlay
         */
         public static final int SherlockTheme_windowActionBarOverlay = 46;
         /**
@@ -7914,7 +8711,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.vizteck.navigationdrawer:windowActionModeOverlay
+          @attr name android:windowActionModeOverlay
         */
         public static final int SherlockTheme_windowActionModeOverlay = 47;
         /**
@@ -7927,7 +8724,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.vizteck.navigationdrawer:windowContentOverlay
+          @attr name android:windowContentOverlay
         */
         public static final int SherlockTheme_windowContentOverlay = 21;
         /**
@@ -7943,7 +8740,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.vizteck.navigationdrawer:windowMinWidthMajor
+          @attr name android:windowMinWidthMajor
         */
         public static final int SherlockTheme_windowMinWidthMajor = 34;
         /**
@@ -7959,7 +8756,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.vizteck.navigationdrawer:windowMinWidthMinor
+          @attr name android:windowMinWidthMinor
         */
         public static final int SherlockTheme_windowMinWidthMinor = 35;
         /**
@@ -7973,7 +8770,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.vizteck.navigationdrawer:windowNoTitle
+          @attr name android:windowNoTitle
         */
         public static final int SherlockTheme_windowNoTitle = 44;
         /**
@@ -7987,8 +8784,331 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.vizteck.navigationdrawer:windowSplitActionBar
+          @attr name android:windowSplitActionBar
         */
         public static final int SherlockTheme_windowSplitActionBar = 48;
+        /**  Attributes for the WalletFragment &lt;fragment&gt; tag 
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #WalletFragmentOptions_environment com.vizteck.navigationdrawer:environment}</code></td><td> Google Wallet environment to use </td></tr>
+           <tr><td><code>{@link #WalletFragmentOptions_fragmentMode com.vizteck.navigationdrawer:fragmentMode}</code></td><td> Fragment mode </td></tr>
+           <tr><td><code>{@link #WalletFragmentOptions_fragmentStyle com.vizteck.navigationdrawer:fragmentStyle}</code></td><td> A style resource specifing attributes to customize the look and feel of WalletFragment </td></tr>
+           <tr><td><code>{@link #WalletFragmentOptions_theme com.vizteck.navigationdrawer:theme}</code></td><td> Theme to be used for the Wallet selector </td></tr>
+           </table>
+           @see #WalletFragmentOptions_environment
+           @see #WalletFragmentOptions_fragmentMode
+           @see #WalletFragmentOptions_fragmentStyle
+           @see #WalletFragmentOptions_theme
+         */
+        public static final int[] WalletFragmentOptions = {
+            0x7f010075, 0x7f010076, 0x7f010077, 0x7f010078
+        };
+        /**
+          <p>
+          @attr description
+           Google Wallet environment to use 
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>production</code></td><td>1</td><td></td></tr>
+<tr><td><code>sandbox</code></td><td>0</td><td></td></tr>
+<tr><td><code>strict_sandbox</code></td><td>2</td><td></td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name android:environment
+        */
+        public static final int WalletFragmentOptions_environment = 1;
+        /**
+          <p>
+          @attr description
+           Fragment mode 
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>buyButton</code></td><td>1</td><td></td></tr>
+<tr><td><code>selectionDetails</code></td><td>2</td><td></td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name android:fragmentMode
+        */
+        public static final int WalletFragmentOptions_fragmentMode = 3;
+        /**
+          <p>
+          @attr description
+           A style resource specifing attributes to customize the look and feel of WalletFragment 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name android:fragmentStyle
+        */
+        public static final int WalletFragmentOptions_fragmentStyle = 2;
+        /**
+          <p>
+          @attr description
+           Theme to be used for the Wallet selector 
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>holo_dark</code></td><td>0</td><td></td></tr>
+<tr><td><code>holo_light</code></td><td>1</td><td></td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name android:theme
+        */
+        public static final int WalletFragmentOptions_theme = 0;
+        /**  Attributes that may be specified in a style resource to customize the look and feel of
+         WalletFragment 
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_buyButtonAppearance com.vizteck.navigationdrawer:buyButtonAppearance}</code></td><td> Appearance of the buy button.</td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_buyButtonHeight com.vizteck.navigationdrawer:buyButtonHeight}</code></td><td> Height of the buy button.</td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_buyButtonText com.vizteck.navigationdrawer:buyButtonText}</code></td><td> Text on the buy button.</td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_buyButtonWidth com.vizteck.navigationdrawer:buyButtonWidth}</code></td><td> Width of the buy button.</td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsBackground com.vizteck.navigationdrawer:maskedWalletDetailsBackground}</code></td><td> Masked wallet details background </td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsButtonBackground com.vizteck.navigationdrawer:maskedWalletDetailsButtonBackground}</code></td><td> "Change" button background in masked wallet details view </td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsButtonTextAppearance com.vizteck.navigationdrawer:maskedWalletDetailsButtonTextAppearance}</code></td><td> TextAppearance for the "Change" button in masked wallet details view </td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsHeaderTextAppearance com.vizteck.navigationdrawer:maskedWalletDetailsHeaderTextAppearance}</code></td><td> TextAppearance for headers describing masked wallet details </td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsLogoImageType com.vizteck.navigationdrawer:maskedWalletDetailsLogoImageType}</code></td><td> Type of the wallet logo image in masked wallet details view </td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsLogoTextColor com.vizteck.navigationdrawer:maskedWalletDetailsLogoTextColor}</code></td><td> Color of the Google Wallet logo text in masked wallet details view </td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsTextAppearance com.vizteck.navigationdrawer:maskedWalletDetailsTextAppearance}</code></td><td> TextAppearance for masked wallet details </td></tr>
+           </table>
+           @see #WalletFragmentStyle_buyButtonAppearance
+           @see #WalletFragmentStyle_buyButtonHeight
+           @see #WalletFragmentStyle_buyButtonText
+           @see #WalletFragmentStyle_buyButtonWidth
+           @see #WalletFragmentStyle_maskedWalletDetailsBackground
+           @see #WalletFragmentStyle_maskedWalletDetailsButtonBackground
+           @see #WalletFragmentStyle_maskedWalletDetailsButtonTextAppearance
+           @see #WalletFragmentStyle_maskedWalletDetailsHeaderTextAppearance
+           @see #WalletFragmentStyle_maskedWalletDetailsLogoImageType
+           @see #WalletFragmentStyle_maskedWalletDetailsLogoTextColor
+           @see #WalletFragmentStyle_maskedWalletDetailsTextAppearance
+         */
+        public static final int[] WalletFragmentStyle = {
+            0x7f010079, 0x7f01007a, 0x7f01007b, 0x7f01007c,
+            0x7f01007d, 0x7f01007e, 0x7f01007f, 0x7f010080,
+            0x7f010081, 0x7f010082, 0x7f010083
+        };
+        /**
+          <p>
+          @attr description
+           Appearance of the buy button. Must be one of "classic", "grayscale" and "monochrome" 
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>classic</code></td><td>1</td><td></td></tr>
+<tr><td><code>grayscale</code></td><td>2</td><td></td></tr>
+<tr><td><code>monochrome</code></td><td>3</td><td></td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name android:buyButtonAppearance
+        */
+        public static final int WalletFragmentStyle_buyButtonAppearance = 3;
+        /**
+          <p>
+          @attr description
+           Height of the buy button. This includes an 8dp padding (4dp on each side) used for
+             pressed and focused states of the button. The value can be a specific height, e.g.
+             "48dp", or special values "match_parent" and "wrap_content". 
+
+
+          <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+<p>May be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>match_parent</code></td><td>-1</td><td></td></tr>
+<tr><td><code>wrap_content</code></td><td>-2</td><td></td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name android:buyButtonHeight
+        */
+        public static final int WalletFragmentStyle_buyButtonHeight = 0;
+        /**
+          <p>
+          @attr description
+           Text on the buy button. Must be one of "buy_with_google", "buy_now" and "book_now" 
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>buy_with_google</code></td><td>1</td><td></td></tr>
+<tr><td><code>buy_now</code></td><td>2</td><td></td></tr>
+<tr><td><code>book_now</code></td><td>3</td><td></td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name android:buyButtonText
+        */
+        public static final int WalletFragmentStyle_buyButtonText = 2;
+        /**
+          <p>
+          @attr description
+           Width of the buy button. This includes an 8dp padding (4dp on each side) used for
+             pressed and focused states of the button. The value can be a specific width, e.g.
+             "300dp", or special values "match_parent" and "wrap_content". 
+
+
+          <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+<p>May be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>match_parent</code></td><td>-1</td><td></td></tr>
+<tr><td><code>wrap_content</code></td><td>-2</td><td></td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name android:buyButtonWidth
+        */
+        public static final int WalletFragmentStyle_buyButtonWidth = 1;
+        /**
+          <p>
+          @attr description
+           Masked wallet details background 
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          <p>This is a private symbol.
+          @attr name android:maskedWalletDetailsBackground
+        */
+        public static final int WalletFragmentStyle_maskedWalletDetailsBackground = 6;
+        /**
+          <p>
+          @attr description
+           "Change" button background in masked wallet details view 
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          <p>This is a private symbol.
+          @attr name android:maskedWalletDetailsButtonBackground
+        */
+        public static final int WalletFragmentStyle_maskedWalletDetailsButtonBackground = 8;
+        /**
+          <p>
+          @attr description
+           TextAppearance for the "Change" button in masked wallet details view 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name android:maskedWalletDetailsButtonTextAppearance
+        */
+        public static final int WalletFragmentStyle_maskedWalletDetailsButtonTextAppearance = 7;
+        /**
+          <p>
+          @attr description
+           TextAppearance for headers describing masked wallet details 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name android:maskedWalletDetailsHeaderTextAppearance
+        */
+        public static final int WalletFragmentStyle_maskedWalletDetailsHeaderTextAppearance = 5;
+        /**
+          <p>
+          @attr description
+           Type of the wallet logo image in masked wallet details view 
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>classic</code></td><td>1</td><td></td></tr>
+<tr><td><code>monochrome</code></td><td>2</td><td></td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name android:maskedWalletDetailsLogoImageType
+        */
+        public static final int WalletFragmentStyle_maskedWalletDetailsLogoImageType = 10;
+        /**
+          <p>
+          @attr description
+           Color of the Google Wallet logo text in masked wallet details view 
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name android:maskedWalletDetailsLogoTextColor
+        */
+        public static final int WalletFragmentStyle_maskedWalletDetailsLogoTextColor = 9;
+        /**
+          <p>
+          @attr description
+           TextAppearance for masked wallet details 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name android:maskedWalletDetailsTextAppearance
+        */
+        public static final int WalletFragmentStyle_maskedWalletDetailsTextAppearance = 4;
     };
 }

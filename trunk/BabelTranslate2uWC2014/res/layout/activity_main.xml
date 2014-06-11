@@ -26,5 +26,4 @@
         android:divider="@color/list_divider"
         android:dividerHeight="1dp"
         android:listSelector="@drawable/drawer_list_selection" />
-
 </android.support.v4.widget.DrawerLayout>

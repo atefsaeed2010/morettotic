@@ -219,6 +219,10 @@ public class FragmentLogin extends Fragment {
 
 		});
 
+		// AdView adView = (AdView) rootView.findViewById(R.id.adView);
+		// AdRequest adRequest = new AdRequest.Builder().build();
+		// adView.loadAd(adRequest);
+
 		return rootView;
 	}
 
@@ -347,13 +351,16 @@ public class FragmentLogin extends Fragment {
 
 	private void checkMyCountry(View rootView, String ctr) {
 		if (ctr.equals("BR")) {
-			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonBrazil);
+			myCountry = (RadioButton) rootView
+					.findViewById(R.id.radioButtonBrazil);
 		} else if (ctr.equals("EN")) {
-			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonEua);
+			myCountry = (RadioButton) rootView
+					.findViewById(R.id.radioButtonEua);
 		} else if (ctr.equals("GR")) {
 			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonGr);
 		} else if (ctr.equals("FR")) {
-			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonFrance);
+			myCountry = (RadioButton) rootView
+					.findViewById(R.id.radioButtonFrance);
 		} else if (ctr.equals("JP")) {
 			myCountry = (RadioButton) rootView.findViewById(R.id.radioButtonJP);
 		} else if (ctr.equals("CH")) {
@@ -367,6 +374,6 @@ public class FragmentLogin extends Fragment {
 					.findViewById(R.id.radioButtonBrazil);
 		}
 		myCountry.setChecked(true);
-		myCountry.scrollTo(	myCountry.getLeft(), 0);
+		myCountry.scrollTo(myCountry.getLeft(), 0);
 	}
 }

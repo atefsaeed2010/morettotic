@@ -1,7 +1,5 @@
 package br.com.morettotic.viewmenu;
 
-import static br.com.morettotic.viewmenu.MainActivity.MY_PROFILE;
-
 import java.util.ArrayList;
 
 import android.annotation.SuppressLint;
@@ -28,7 +26,6 @@ import br.com.morettotic.sip.CSIPService;
 import br.com.morettotic.viewmenu.action.DefaultAction;
 import br.com.morettotic.viewmenu.adapter.NavDrawerListAdapter;
 import br.com.morettotic.viewmenu.model.NavDrawerItem;
-import br.com.morettotic.viewmenu.utils.UserPreferences;
 
 import com.vizteck.navigationdrawer.R;
 
@@ -103,7 +100,7 @@ public class MainActivity extends Activity {
 		navDrawerItems.add(new NavDrawerItem("Configurations",
 				R.drawable.ic_config));
 
-		navDrawerItems.add(new NavDrawerItem("Babel2u Coins",
+		navDrawerItems.add(new NavDrawerItem("Univoxer Coins",
 				R.drawable.ic_payment));
 
 		navDrawerItems.add(new NavDrawerItem("Exit", R.drawable.ic_exit));
@@ -189,7 +186,7 @@ public class MainActivity extends Activity {
 
 	public void displayView(int position) {
 		try {
-			// update the main content with called Fragment			
+			// update the main content with called Fragment
 			switch (position) {
 			case 0:
 				fragment = new FragmentLogin();
@@ -199,16 +196,19 @@ public class MainActivity extends Activity {
 				break;
 			case 2:
 				double credits = Float.parseFloat(MY_PROFILE.getCredits());
-				//Nao possui creditos meu amigo vai comprar!!!!!!
+				// Nao possui creditos meu amigo vai comprar!!!!!!
 				if (credits < 1) {
-					displayView(5);					
+					displayView(5);
 				} else {
 					fragment = new FragmentCountries();
 				}
 				break;
-			//nunca passa aqui se nao tiver acesso a tela de chamadas e tiver comprado creditos!
+			// nunca passa aqui se nao tiver acesso a tela de chamadas e tiver
+			// comprado creditos!
 			case 3:// Se nao tiver destinatario nao pode abrir tela de chamada!
-				if (MY_PROFILE.getRoleId().equals("1")&&(MY_PROFILE.getSipTranslatorU() == null || MY_PROFILE.getSipTranslatorU().equals("null"))) {
+				if (MY_PROFILE.getRoleId().equals("1")
+						&& (MY_PROFILE.getSipTranslatorU() == null || MY_PROFILE
+								.getSipTranslatorU().equals("null"))) {
 					displayView(2);
 				} else {
 					fragment = new FragmentConference();
@@ -263,36 +263,36 @@ public class MainActivity extends Activity {
 	private void destroy() {
 		AlertDialog.Builder adb = new AlertDialog.Builder(this);
 
-	    adb.setTitle("Exit?");
-	    adb.setIcon(R.drawable.ic_exit);
+		adb.setTitle("Exit?");
+		adb.setIcon(R.drawable.ic_exit);
 
-	    adb.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-	        public void onClick(DialogInterface dialog, int which) {
-	        	
-	        	CSIPService.destroy();
-	            DefaultAction da = new DefaultAction();
-	            da.setStatusAction(MY_PROFILE.getId(), "OFF");
-	            da.execute();	    		
-	    		
-	    		try {
-	    			Thread.sleep(5000);
-	    		} catch (InterruptedException e) {
-	    			// TODO Auto-generated catch block
-	    			//e.printStackTrace();
-	    		}
-	    		MY_PROFILE = null;
-	    		//MAINWINDOW.finish();
-	    		System.exit(0);
-	      } });
+		adb.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int which) {
 
+				CSIPService.destroy();
+				DefaultAction da = new DefaultAction();
+				da.setStatusAction(MY_PROFILE.getId(), "OFF");
+				da.execute();
 
-	    adb.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-	        public void onClick(DialogInterface dialog, int which) {
-	        	displayView(2);
-	      } });
-	    adb.show();
-		
-		
+				try {
+					Thread.sleep(5000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					// e.printStackTrace();
+				}
+				MY_PROFILE = null;
+				// MAINWINDOW.finish();
+				System.exit(0);
+			}
+		});
+
+		adb.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int which) {
+				displayView(2);
+			}
+		});
+		adb.show();
+
 	}
 
 	@Override
