@@ -24,7 +24,6 @@ import com.csipsimple.api.SipManager;
 import com.csipsimple.api.SipProfile;
 import com.csipsimple.api.SipProfileState;
 import com.csipsimple.service.SipService;
-import com.csipsimple.ui.incall.IOnCallActionTrigger;
 
 /**
  * Ligação com o SipService, deve ser a ponte entre as duas app
@@ -53,7 +52,7 @@ public class CSIPService {
 		instance.sipProfile = null;
 	}
 
-	private static final String APP_NAME = "Babel2u Translator";
+	private static final String APP_NAME = "Univoxer";
 	private static final String THIS_FILE = "CSIPService";
 	private static String usuario = "translator_pt_en";
 	private static String servidorSIP = "ekiga.net";
@@ -80,19 +79,15 @@ public class CSIPService {
 		destino = uName + "@" + sName;
 		// destino = uName;
 	}
-	
-	public static boolean isSipConnected(){
-		/*try {
-			//sipProfileState = service.getSipProfileState(idConexaoSIP.intValue());
-			//return sipProfileState.isValidForCall();
-		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return false;
-		}
-		
-*/	
-	return true;	
+
+	public static boolean isSipConnected() {
+		/*
+		 * try { //sipProfileState =
+		 * service.getSipProfileState(idConexaoSIP.intValue()); //return
+		 * sipProfileState.isValidForCall(); } catch (RemoteException e) { //
+		 * TODO Auto-generated catch block e.printStackTrace(); return false; }
+		 */
+		return true;
 	}
 
 	private BroadcastReceiver listenerChamada = new BroadcastReceiver() {
@@ -137,20 +132,20 @@ public class CSIPService {
 
 		if (CSIPService.instance == null) {
 			CSIPService.instance = new CSIPService(a);
-			((MainActivity) a).bindService(new Intent(a, SipService.class),instance);
+			((MainActivity) a).bindService(new Intent(a, SipService.class),
+					instance);
 		}
-		
+
 		isSipConnected();
 		//
-	//	try {
-			//service.sipStart();
-			//sipProfileState.getStatusText();
-	//	} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-	//		e.printStackTrace();
-	//	}
-		
-		
+		// try {
+		// service.sipStart();
+		// sipProfileState.getStatusText();
+		// } catch (RemoteException e) {
+		// TODO Auto-generated catch block
+		// e.printStackTrace();
+		// }
+
 		return CSIPService.instance;
 		// return null;
 	}
@@ -173,7 +168,8 @@ public class CSIPService {
 						if (cursor.moveToFirst()) {
 							SipProfile foundProfile = new SipProfile(cursor);
 							idConexaoSIP = foundProfile.id;
-							sipProfileState = service.getSipProfileState(idConexaoSIP.intValue());
+							sipProfileState = service
+									.getSipProfileState(idConexaoSIP.intValue());
 							if (sipProfileState != null) {
 								usuarioSIPLogado = sipProfileState.isActive()
 										&& sipProfileState.isValidForCall()
