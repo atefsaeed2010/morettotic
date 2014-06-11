@@ -38,18 +38,20 @@ public class CSIPService {
 	};
 
 	public static void destroy() {
-		if (instance.service != null) {
-			try {
-				instance.service.forceStopService();
-			} catch (RemoteException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+		if (instance != null) {
+			if (instance.service != null) {
+				try {
+					instance.service.forceStopService();
+				} catch (RemoteException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
+			instance.connection = null;
+			instance.service = null;
+			instance.activity = null;
+			instance.sipProfile = null;
 		}
-		instance.connection = null;
-		instance.service = null;
-		instance.activity = null;
-		instance.sipProfile = null;
 	}
 
 	private static final String APP_NAME = "Univoxer";
