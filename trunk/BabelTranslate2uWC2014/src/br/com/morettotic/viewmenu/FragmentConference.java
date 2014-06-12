@@ -12,7 +12,6 @@ import org.json.JSONObject;
 
 import android.app.Fragment;
 import android.app.ProgressDialog;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -31,7 +30,7 @@ import android.widget.Chronometer.OnChronometerTickListener;
 import br.com.morettotic.sip.CSIPService;
 import br.com.morettotic.viewmenu.utils.URLParser;
 
-import com.vizteck.navigationdrawer.R;
+import br.com.morettotic.navdraw.*;
 
 public class FragmentConference extends Fragment {
 	private ProgressDialog dialog = null;

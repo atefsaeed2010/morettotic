@@ -28,7 +28,7 @@ import br.com.morettotic.viewmenu.utils.URLParser;
 
 import com.csipsimple.api.ISipService;
 import com.csipsimple.service.SipService;
-import com.vizteck.navigationdrawer.R;
+import br.com.morettotic.navdraw.*;
 
 public class FragmentCountries extends Fragment {
 

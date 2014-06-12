@@ -28,7 +28,7 @@ import android.widget.TextView;
 import br.com.morettotic.entity.Profile;
 import br.com.morettotic.viewmenu.utils.URLParser;
 
-import com.vizteck.navigationdrawer.R;
+import br.com.morettotic.navdraw.*;
 
 import static br.com.morettotic.viewmenu.MainActivity.*;
 import static br.com.morettotic.entity.Profile.*;

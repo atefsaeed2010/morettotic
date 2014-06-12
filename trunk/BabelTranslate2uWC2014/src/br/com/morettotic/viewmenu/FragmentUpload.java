@@ -38,7 +38,7 @@ import br.com.morettotic.sip.CSIPService;
 import br.com.morettotic.viewmenu.action.DefaultAction;
 import br.com.morettotic.viewmenu.utils.URLParser;
 
-import com.vizteck.navigationdrawer.R;
+import br.com.morettotic.navdraw.*;
 
 public class FragmentUpload extends Fragment {
 	private TextView messageText;

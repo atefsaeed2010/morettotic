@@ -41,7 +41,7 @@ import br.com.morettotic.sip.CSIPService;
 import br.com.morettotic.viewmenu.utils.URLParser;
 import br.com.morettotic.viewmenu.utils.UserPreferences;
 
-import com.vizteck.navigationdrawer.R;
+import br.com.morettotic.navdraw.*;
 
 @SuppressLint("NewApi")
 public class FragmentLogin extends Fragment {

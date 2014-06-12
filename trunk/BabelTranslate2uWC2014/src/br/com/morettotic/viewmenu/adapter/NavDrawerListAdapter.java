@@ -3,7 +3,7 @@ package br.com.morettotic.viewmenu.adapter;
 
 import br.com.morettotic.viewmenu.model.NavDrawerItem;
 
-import com.vizteck.navigationdrawer.R;
+import br.com.morettotic.navdraw.*;
 
 import java.util.ArrayList;
 

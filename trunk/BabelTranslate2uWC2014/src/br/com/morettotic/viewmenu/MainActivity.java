@@ -27,7 +27,7 @@ import br.com.morettotic.viewmenu.action.DefaultAction;
 import br.com.morettotic.viewmenu.adapter.NavDrawerListAdapter;
 import br.com.morettotic.viewmenu.model.NavDrawerItem;
 
-import com.vizteck.navigationdrawer.R;
+import br.com.morettotic.navdraw.*;
 
 @SuppressLint("NewApi")
 public class MainActivity extends Activity {
