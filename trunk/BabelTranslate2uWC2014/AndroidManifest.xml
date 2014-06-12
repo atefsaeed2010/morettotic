@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.morettotic.navdraw"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionCode="4"
+    android:versionName="UnivoxerCopa" >
+
+    <uses-sdk android:minSdkVersion="4" android:targetSdkVersion="18" />
+    
+    <uses-configuration
+        android:reqFiveWayNav="false"
+        android:reqHardKeyboard="false"
+        android:reqTouchScreen="finger" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:requiresSmallestWidthDp="320"
+        android:resizeable="false"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -19,7 +35,7 @@
     <!--
     <uses-permission android:name="android.permission.CALL_PRIVILEGED" /> 
     was useless anyway as only granted to system app and
-    we don't have core integration anymore with these plugins
+    we don't have core integration anymore with these plugins
     -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
@@ -29,7 +45,6 @@
     <uses-permission android:name="android.permission.USE_SIP" />
     <uses-permission android:name="android.permission.CONFIGURE_SIP" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
@@ -46,10 +61,6 @@
         android:name="android.permission.CONFIGURE_SIP"
         android:permissionGroup="android.permission-group.COST_MONEY"
         android:protectionLevel="dangerous" />
-
-    <uses-sdk
-        android:minSdkVersion="8"
-        android:targetSdkVersion="17" />
 
     <application
         android:allowBackup="true"
@@ -141,7 +152,8 @@
             android:name="br.com.morettotic.viewmenu.FragmentUpload"
             android:label="@string/title_activity_fragment_upload" >
         </activity>
-        <activity
+        <!--
+             <activity
             android:name="br.com.morettotic.viewmenu.InCallActivity"
             android:label="@string/title_activity_in_call" >
         </activity>
@@ -149,13 +161,18 @@
             android:name="br.com.morettotic.viewmenu.EmChamada"
             android:label="@string/title_activity_em_chamada" >
         </activity>
-       <!--  <activity
+        -->
+        <!--
+        <activity
             android:name="com.vizteck.navigationdrawer.IncallActivity"
             android:label="@string/title_activity_incall" >
-        </activity> -->
-        <!-- <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        </activity>
+        -->
+        <!--
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
         <activity android:name="com.google.android.gms.ads.AdActivity"
-             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/> -->
+             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+        -->
     </application>
 
 </manifest>
