@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
-import br.com.morettotic.navdraw.*;
+import br.com.morettotic.navdraw.R;
 
 public class FragmentPaypal extends Fragment {
 	private View rootView;

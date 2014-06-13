@@ -37,11 +37,10 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import br.com.morettotic.entity.Profile;
+import br.com.morettotic.navdraw.R;
 import br.com.morettotic.sip.CSIPService;
 import br.com.morettotic.viewmenu.utils.URLParser;
 import br.com.morettotic.viewmenu.utils.UserPreferences;
-
-import br.com.morettotic.navdraw.*;
 
 @SuppressLint("NewApi")
 public class FragmentLogin extends Fragment {

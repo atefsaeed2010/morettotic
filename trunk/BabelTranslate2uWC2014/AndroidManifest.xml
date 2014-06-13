@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.morettotic.navdraw"
-    android:versionCode="4"
-    android:versionName="UnivoxerCopa" >
+    android:versionCode="31"
+    android:versionName="Copa 2014" >
 
-    <uses-sdk android:minSdkVersion="4" android:targetSdkVersion="18" />
-    
+    <uses-sdk
+        android:minSdkVersion="4"
+        android:targetSdkVersion="18" />
+
     <uses-configuration
         android:reqFiveWayNav="false"
         android:reqHardKeyboard="false"
@@ -24,6 +26,7 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -31,12 +34,6 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-    <!--
-    <uses-permission android:name="android.permission.CALL_PRIVILEGED" /> 
-    was useless anyway as only granted to system app and
-    we don't have core integration anymore with these plugins
-    -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -51,7 +48,9 @@
     <!-- Not taken into account? -->
     <uses-permission android:name="android.permission.RAISED_THREAD_PRIORITY" />
 
-    <uses-feature android:name="android.hardware.sip.voip" />
+    <!-- <uses-feature android:name="android.hardware.sip.voip" /> -->
+    <uses-feature android:name="android.hardware.microphone" />
+    <uses-feature android:name="android.hardware.wifi" />
 
     <permission
         android:name="android.permission.USE_SIP"
@@ -160,18 +159,18 @@
         <activity
             android:name="br.com.morettotic.viewmenu.EmChamada"
             android:label="@string/title_activity_em_chamada" >
-        </activity>
+        </activity>
         -->
         <!--
         <activity
             android:name="com.vizteck.navigationdrawer.IncallActivity"
             android:label="@string/title_activity_incall" >
-        </activity>
+        </activity>
         -->
         <!--
         <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
         <activity android:name="com.google.android.gms.ads.AdActivity"
-             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
         -->
     </application>
 

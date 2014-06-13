@@ -27,10 +27,10 @@ import android.widget.RatingBar;
 import android.widget.RatingBar.OnRatingBarChangeListener;
 import android.widget.TextView;
 import android.widget.Chronometer.OnChronometerTickListener;
+import br.com.morettotic.navdraw.*;
 import br.com.morettotic.sip.CSIPService;
 import br.com.morettotic.viewmenu.utils.URLParser;
-
-import br.com.morettotic.navdraw.*;
+import br.com.morettotic.navdraw.R;
 
 public class FragmentConference extends Fragment {
 	private ProgressDialog dialog = null;

@@ -1,5 +1,20 @@
 package br.com.morettotic.viewmenu;
 
+import static br.com.morettotic.entity.Profile.BIRTH;
+import static br.com.morettotic.entity.Profile.C_CREDITS;
+import static br.com.morettotic.entity.Profile.C_EMAIL;
+import static br.com.morettotic.entity.Profile.C_NAME;
+import static br.com.morettotic.entity.Profile.C_NATURE;
+import static br.com.morettotic.entity.Profile.C_PAYPALL;
+import static br.com.morettotic.entity.Profile.C_PROFICIENCY;
+import static br.com.morettotic.entity.Profile.C_ROLE;
+import static br.com.morettotic.entity.Profile.C_SIP_PASS;
+import static br.com.morettotic.entity.Profile.C_SIP_SERVER;
+import static br.com.morettotic.entity.Profile.C_SIP_USER;
+import static br.com.morettotic.entity.Profile.MAIN_URL;
+import static br.com.morettotic.viewmenu.MainActivity.MAINWINDOW;
+import static br.com.morettotic.viewmenu.MainActivity.MY_PROFILE;
+
 import java.net.URLEncoder;
 
 import org.json.JSONException;
@@ -26,12 +41,8 @@ import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 import br.com.morettotic.entity.Profile;
+import br.com.morettotic.navdraw.R;
 import br.com.morettotic.viewmenu.utils.URLParser;
-
-import br.com.morettotic.navdraw.*;
-
-import static br.com.morettotic.viewmenu.MainActivity.*;
-import static br.com.morettotic.entity.Profile.*;
 
 /**
  * http://www.nosnaldeia.com.br/babel_json_services/?action=SAVE_PROFILE&id_user

@@ -1,34 +1,36 @@
 package br.com.morettotic.viewmenu;
 
+import static br.com.morettotic.entity.Profile.CALL_TOKEN;
+import static br.com.morettotic.entity.Profile.C_CREDITS;
+import static br.com.morettotic.entity.Profile.C_ID_TRANSLATOR;
+import static br.com.morettotic.entity.Profile.C_SIP_SERVER_T;
+import static br.com.morettotic.entity.Profile.C_TRANSLATOR;
+import static br.com.morettotic.entity.Profile.C_TRANSLATOR_AVATAR;
+import static br.com.morettotic.entity.Profile.C_USER_AVATAR;
+import static br.com.morettotic.entity.Profile.MAIN_URL;
+import static br.com.morettotic.entity.Profile.SIP_USER_TRANSLATOR;
+import static br.com.morettotic.viewmenu.MainActivity.MAINWINDOW;
+import static br.com.morettotic.viewmenu.MainActivity.MY_PROFILE;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import static br.com.morettotic.viewmenu.MainActivity.*;
-import static br.com.morettotic.entity.Profile.*;
 import android.app.Fragment;
 import android.app.ProgressDialog;
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
 import android.media.AudioManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.IBinder;
-import android.os.RemoteException;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import br.com.morettotic.entity.ServiceType;
+import br.com.morettotic.navdraw.R;
 import br.com.morettotic.sip.CSIPService;
 import br.com.morettotic.viewmenu.utils.URLParser;
 
 import com.csipsimple.api.ISipService;
-import com.csipsimple.service.SipService;
-import br.com.morettotic.navdraw.*;
 
 public class FragmentCountries extends Fragment {
 
