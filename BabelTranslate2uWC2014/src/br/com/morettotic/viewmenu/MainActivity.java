@@ -22,12 +22,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import br.com.morettotic.entity.Profile;
+import br.com.morettotic.navdraw.R;
 import br.com.morettotic.sip.CSIPService;
 import br.com.morettotic.viewmenu.action.DefaultAction;
 import br.com.morettotic.viewmenu.adapter.NavDrawerListAdapter;
 import br.com.morettotic.viewmenu.model.NavDrawerItem;
-
-import br.com.morettotic.navdraw.*;
 
 @SuppressLint("NewApi")
 public class MainActivity extends Activity {

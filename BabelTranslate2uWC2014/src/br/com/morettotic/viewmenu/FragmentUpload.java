@@ -2,9 +2,8 @@ package br.com.morettotic.viewmenu;
 
 import static br.com.morettotic.entity.Profile.MAIN_URL;
 import static br.com.morettotic.entity.Profile.UPLOAD_CONFIG;
-import static br.com.morettotic.viewmenu.MainActivity.MY_PROFILE;
-
 import static br.com.morettotic.viewmenu.MainActivity.MAINWINDOW;
+import static br.com.morettotic.viewmenu.MainActivity.MY_PROFILE;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,7 +18,6 @@ import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Vibrator;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -30,15 +28,13 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.CompoundButton;
-import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import br.com.morettotic.entity.Profile;
+import br.com.morettotic.navdraw.R;
 import br.com.morettotic.sip.CSIPService;
 import br.com.morettotic.viewmenu.action.DefaultAction;
 import br.com.morettotic.viewmenu.utils.URLParser;
-
-import br.com.morettotic.navdraw.*;
 
 public class FragmentUpload extends Fragment {
 	private TextView messageText;
