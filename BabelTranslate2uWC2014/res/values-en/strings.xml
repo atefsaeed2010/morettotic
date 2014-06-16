@@ -2,4 +2,5 @@
 <resources>
     <string name="transltateto">Translate to</string>
     <string name="translateto">Translate to</string>
+    <string name="yourlanguage">Your language</string>
 </resources>

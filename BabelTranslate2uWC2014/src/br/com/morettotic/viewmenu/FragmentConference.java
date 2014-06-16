@@ -61,7 +61,13 @@ public class FragmentConference extends Fragment {
 		//to.set
 		//Change flags 
 		setBackgroundStyle(from, MY_PROFILE.getNature().charAt(0));
-		setBackgroundStyle(to,MY_PROFILE.getCallToLanguage().charAt(0) );
+		if(MY_PROFILE.getRoleId().equals("1")){
+			setBackgroundStyle(to,MY_PROFILE.getCallToLanguage().charAt(0) );
+		}else{
+			setBackgroundStyle(to,MY_PROFILE.getProficiency().charAt(0) );
+		}
+		
+		
 		
 		translatorName.setText(MY_PROFILE.getTranslatorName());
 

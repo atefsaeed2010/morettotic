@@ -18,6 +18,7 @@ import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -47,69 +48,71 @@ public class FragmentUpload extends Fragment {
 	private WebView web;
 	private final String UPLOAD_SERVER_URI = MAIN_URL + UPLOAD_CONFIG;
 	private View rootView;
-	
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
-		rootView = inflater.inflate(R.layout.upload_fragment,
-				container, false);
+		rootView = inflater.inflate(R.layout.upload_fragment, container, false);
 		super.onCreate(savedInstanceState);
 
-		
-		s1 = (Switch)rootView.findViewById(R.id.switchStatus);
+		s1 = (Switch) rootView.findViewById(R.id.switchStatus);
 		dialog = new ProgressDialog(rootView.getContext());
 		escolherImagem = (Button) rootView.findViewById(R.id.escolherImagem);
 		uploadButton = (Button) rootView.findViewById(R.id.btUpload1);
 		messageText = (TextView) rootView.findViewById(R.id.messageText);
 		messageText.setText("Uploading file path: " + uploadFile);
 		web = (WebView) rootView.findViewById(R.id.webView1);
-				
-		//?action=AVATAR_VIEW&id_user=1
-		
-		if (!(MY_PROFILE.getId().equals("")
-				&& MY_PROFILE.getId().equals("-1"))) {
-			//carrega a imagem do perfil
-			web.loadUrl(MAIN_URL + "?action=AVATAR_VIEW&id_user="+MY_PROFILE.getId());
+
+		// ?action=AVATAR_VIEW&id_user=1
+
+		if (!(MY_PROFILE.getId().equals("") && MY_PROFILE.getId().equals("-1"))) {
+			// carrega a imagem do perfil
+			web.loadUrl(MAIN_URL + "?action=AVATAR_VIEW&id_user="
+					+ MY_PROFILE.getId());
 			messageText.setText("");
-		}else{
-			//carrega a default
+		} else {
+			// carrega a default
 			web.loadUrl(MAIN_URL + "libs/avatars/resized_IMG-1381441477-V.jpg");
 			messageText.setText("Please upload your avatar!");
 		}
-		
-		
+
 		s1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-		    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-		    	String status = "OFF";
-		        if (isChecked) {
-		            //new Vibrate2
-		        	status = "ON";
-		        	CSIPService.getInstance(MAINWINDOW, MY_PROFILE);
-		        	new br.com.morettotic.viewmenu.utils.Vibrator2u(MAINWINDOW).switchButtonON();
-		        } else {
-		        	//CSIPService.destroy();
-		            // The toggle is disabled
-		        	new br.com.morettotic.viewmenu.utils.Vibrator2u(MAINWINDOW).switchButtonOFF();
-		        }
-		        DefaultAction da = new DefaultAction();
-		        da.setStatusAction(MY_PROFILE.getId(), status);
-		        da.execute();
-		    }
+			public void onCheckedChanged(CompoundButton buttonView,
+					boolean isChecked) {
+				String status = "OFF";
+				if (isChecked) {
+					// new Vibrate2
+					status = "ON";
+					CSIPService.getInstance(MAINWINDOW, MY_PROFILE);
+					new br.com.morettotic.viewmenu.utils.Vibrator2u(MAINWINDOW)
+							.switchButtonON();
+				} else {
+					// CSIPService.destroy();
+					// The toggle is disabled
+					new br.com.morettotic.viewmenu.utils.Vibrator2u(MAINWINDOW)
+							.switchButtonOFF();
+				}
+				DefaultAction da = new DefaultAction();
+				da.setStatusAction(MY_PROFILE.getId(), status);
+				da.execute();
+			}
 		});
-		
+
 		/************* Php script path ****************/
-		
 
 		escolherImagem.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent();
-				intent.setType("image/*");
+				intent.setType("image/jpeg");
+				//intent.setData(Uri.parse("path://sdcard/"));
 				intent.setAction(Intent.ACTION_GET_CONTENT);
-				startActivityForResult(Intent.createChooser(intent, "Pic your avatar"),SELECT_PICTURE);
+				intent.addCategory(Intent.CATEGORY_OPENABLE);
+				startActivityForResult(
+						Intent.createChooser(intent, "Pic your avatar"),
+						SELECT_PICTURE);
 			}
 		});
 
@@ -121,46 +124,49 @@ public class FragmentUpload extends Fragment {
 				 * dialog = ProgressDialog.show(rootView.getContext(), "",
 				 * "Uploading imagem...", true);
 				 */
+				try {
+					dialog.setMessage("Uploading Avatar..");
+					dialog.show();
+					new Thread(new Runnable() {
+						public void run() {
 
-				dialog.setMessage("Uploading Avatar..");
-				dialog.show();
-				new Thread(new Runnable() {
-					public void run() {
+							// messageText.setText("uploading iniciado.....");
+							String a1[] = uploadFile.split("/");
+							System.out.print(a1);
 
-						// messageText.setText("uploading iniciado.....");
-						String a1[] = uploadFile.split("/");
-						System.out.print(a1);
+							new URLParser().uploadFile(uploadFile,
+									UPLOAD_SERVER_URI, rootView);
 
-						new URLParser().uploadFile(uploadFile, UPLOAD_SERVER_URI,
-								rootView);
-						
-						String image =  a1[a1.length - 1];
-						
-						web.loadUrl(Profile.MAIN_URL + Profile.AVATAR + image);
-						
-						if (!(MY_PROFILE.getId().equals("")
-								&& MY_PROFILE.getId().equals("-1"))) {
-							// A��o para gravar a imagem no perfil.
-							// web.loadUrl(
-							// Profile.MAIN_URL+"libs/avatars/resized_"+a1[a1.length-1]);
-							String url = MAIN_URL+"?action=AVATAR&id_user="+MY_PROFILE.getId()+"&image_path="+image;
-							
-							MY_PROFILE.setAvatar("resized_"+image);
-							
-							web.loadUrl(url);
-							
+							String image = a1[a1.length - 1];
+
+							web.loadUrl(Profile.MAIN_URL + Profile.AVATAR
+									+ image);
+
+							if (!(MY_PROFILE.getId().equals("") && MY_PROFILE
+									.getId().equals("-1"))) {
+								// Açao para gravar a imagem no perfil.
+								// web.loadUrl(
+								// Profile.MAIN_URL+"libs/avatars/resized_"+a1[a1.length-1]);
+								String url = MAIN_URL
+										+ "?action=AVATAR&id_user="
+										+ MY_PROFILE.getId() + "&image_path="
+										+ image;
+
+								MY_PROFILE.setAvatar("resized_" + image);
+
+								web.loadUrl(url);
+
+							}
+
+							dialog.dismiss();
 						}
-
-						
-
-						dialog.dismiss();
-					}
-				}).start();
+					}).start();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
 		});
-		
-		
-		
+
 		return rootView;
 	}
 

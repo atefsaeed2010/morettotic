@@ -37,19 +37,6 @@
         <requestFocus />
     </EditText>
 
-    <Button
-        android:id="@+id/sign_in_button"
-        style="@style/button_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/checkBoxEula"
-        android:hint="Signin or register"
-        android:paddingLeft="32dp"
-        android:paddingRight="32dp"
-        android:text="Signin or register" />
-
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView1"
         android:layout_width="200dp"
@@ -84,7 +71,8 @@
                     android:layout_height="wrap_content"
                     android:button="@drawable/ch_b"
                     style="@style/radio_style"
-                    android:text="CH" />
+                    android:text="CH" 
+                    android:visibility="gone"/>
 
                 <RadioButton
                     android:id="@+id/radioButtonMR"
@@ -92,7 +80,8 @@
                     android:layout_height="wrap_content"
                     android:button="@drawable/mr"
                     style="@style/radio_style"
-                    android:text="MR" />
+                    android:text="MR"
+                    android:visibility="gone" />
 
                 <RadioButton
                     android:id="@+id/radioButtonES"
@@ -108,7 +97,8 @@
                     android:layout_height="wrap_content"
                     style="@style/radio_style"
                     android:button="@drawable/jp_b"
-                    android:text="JP" />
+                    android:text="JP"
+                    android:visibility="gone" />
 
                 <RadioButton
                     android:id="@+id/radioButtonBrazil"
@@ -145,23 +135,35 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-    <CheckBox
-        android:id="@+id/checkBoxEula"
+    <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/horizontalScrollView1"
-        android:checked="true"
-        android:text="@string/eula" />
+        android:layout_below="@+id/password12"
+        android:layout_centerHorizontal="true"
+        android:text="Your language"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <CheckBox
         android:id="@+id/checkBoxConnected"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/checkBoxEula"
-        android:layout_alignBottom="@+id/checkBoxEula"
-        android:layout_toLeftOf="@+id/checkBoxEula"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/horizontalScrollView1"
         android:checked="true"
         android:text="Remember me" />
+
+    <Button
+        android:id="@+id/sign_in_button"
+        style="@style/button_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/checkBoxConnected"
+        android:hint="Signin or register"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:text="Signin or register" />
     
 </RelativeLayout>

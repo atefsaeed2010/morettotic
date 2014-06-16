@@ -15,12 +15,6 @@
         android:layout_centerInParent="true"
         android:orientation="vertical" >
 
-        <Spinner
-            android:id="@+id/spinner1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/service_array" />
-
         <LinearLayout
             android:id="@+id/linearLayout1"
             android:layout_width="wrap_content"
@@ -76,7 +70,8 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
                 android:background="@android:color/transparent"
-                android:src="@drawable/ch_b" />
+                android:src="@drawable/ch_b" 
+                android:visibility="gone"/>
         </LinearLayout>
 
         <LinearLayout
@@ -84,17 +79,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center" >
-
-            <ImageButton
-                android:id="@+id/imageButtonBR"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@android:color/transparent"
-                android:src="@drawable/br_b" />
 
             <ImageButton
                 android:id="@+id/imageButtonMR"
@@ -105,7 +89,9 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
                 android:background="@android:color/transparent"
-                android:src="@drawable/mr" />
+                android:src="@drawable/mr"
+                android:visibility="gone" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -133,8 +119,39 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
                 android:background="@android:color/transparent"
-                android:src="@drawable/jp_b" />
+                android:src="@drawable/jp_b"
+                android:visibility="gone" />
+
+            <ImageButton
+                android:id="@+id/imageButtonBR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/br_b" />
+
         </LinearLayout>
     </LinearLayout>
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
+        android:entries="@array/service_array" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout4"
+        android:layout_centerHorizontal="true"
+        android:text="Choose language:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>
