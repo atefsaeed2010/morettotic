@@ -86,10 +86,10 @@ public class FragmentLogin extends Fragment {
 		passwd1.setText(UserPreferences.getPass(MAINWINDOW));
 		// passwd1.setText(MainActivity.MY_PROFILE.getPassWd());
 
-		eula = (CheckBox) rootView.findViewById(R.id.checkBoxEula);
+	//	eula = (CheckBox) rootView.findViewById(R.id.checkBoxEula);
 		saveInstance = (CheckBox) rootView.findViewById(R.id.checkBoxConnected);
 		// final Intent intent = new Intent(this, ConfActivity.class);
-		eula.setOnClickListener(new View.OnClickListener() {
+		/**eula.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				// Perform action on click
 				AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView
@@ -106,7 +106,7 @@ public class FragmentLogin extends Fragment {
 				AlertDialog alert11 = builder1.create();
 				alert11.show();
 			}
-		});
+		});**/
 
 		button = (Button) rootView.findViewById(R.id.sign_in_button);
 
@@ -118,8 +118,7 @@ public class FragmentLogin extends Fragment {
 					StringBuilder msg = new StringBuilder();
 					RadioGroup g = (RadioGroup) getActivity().findViewById(
 							R.id.radioGroupRole1);
-					CheckBox eula = (CheckBox) getActivity().findViewById(
-							R.id.checkBoxEula);
+				//	CheckBox eula = (CheckBox) getActivity().findViewById(R.id.checkBoxEula);
 
 					// Returns an integer which represents the selected radio
 					// button's ID
@@ -141,9 +140,9 @@ public class FragmentLogin extends Fragment {
 					} else if (selected == -1) {
 						msg.append("Please select yout country!\n");
 						hasErros = true;
-					} else if (!eula.isChecked()) {
+					/*} else if (!eula.isChecked()) {
 						msg.append("Please read and agree with EULA!\n");
-						hasErros = true;
+						hasErros = true;*/
 					} else {
 
 						RadioButton b = (RadioButton) getActivity()

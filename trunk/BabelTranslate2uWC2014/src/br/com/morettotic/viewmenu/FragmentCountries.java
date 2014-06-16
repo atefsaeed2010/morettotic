@@ -15,8 +15,10 @@ import static br.com.morettotic.viewmenu.MainActivity.MY_PROFILE;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.media.AudioManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -172,7 +174,7 @@ public class FragmentCountries extends Fragment {
 			}
 		});
 		final ImageButton button1GR = (ImageButton) rootView
-				.findViewById(R.id.imageButtonJP);
+				.findViewById(R.id.imageButtonGR);
 
 		
 		
@@ -256,10 +258,32 @@ public class FragmentCountries extends Fragment {
 			// TODO Auto-generated method stub
 			MY_PROFILE.setJson(result);
 			CSIPService.setDestino(MY_PROFILE.getSipTranslatorServer(), MY_PROFILE.getSipServ());
+			
 			if(hasTranslatorOnline){
 				MAINWINDOW.displayView(3);
+				dialog.dismiss();
+			}else{
+				
+				dialog.dismiss();
+				
+				AlertDialog.Builder builder1 = new AlertDialog.Builder(MAINWINDOW);
+				builder1.setMessage("Try again later. All translators are busy.");
+				builder1.setIcon(R.drawable.ic_payment);
+				builder1.setCancelable(true);
+				builder1.setNegativeButton("OK",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								
+								dialog.cancel();
+								
+							}
+						});
+
+				//alert11 = builder1.create();
+				builder1.show();
+				
 			}
-			dialog.dismiss();
+			
 			
 			super.onPostExecute(result);
 		}

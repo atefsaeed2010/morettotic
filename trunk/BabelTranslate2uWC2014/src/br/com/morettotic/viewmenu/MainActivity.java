@@ -99,7 +99,7 @@ public class MainActivity extends Activity {
 		navDrawerItems.add(new NavDrawerItem("Configurations",
 				R.drawable.ic_config));
 
-		navDrawerItems.add(new NavDrawerItem("Univoxer Coins",
+		navDrawerItems.add(new NavDrawerItem("Univoxer Credits",
 				R.drawable.ic_payment));
 
 		navDrawerItems.add(new NavDrawerItem("Exit", R.drawable.ic_exit));
@@ -195,8 +195,8 @@ public class MainActivity extends Activity {
 				break;
 			case 2:
 				double credits = Float.parseFloat(MY_PROFILE.getCredits());
-				// Nao possui creditos meu amigo vai comprar!!!!!!
-				if (credits < 1) {
+				// Nao possui creditos meu amigo vai comprar (é usuario)!!!!!!
+				if (credits < 1&&MY_PROFILE.getRoleId().equals("1")) {
 					displayView(5);
 				} else {
 					fragment = new FragmentCountries();
