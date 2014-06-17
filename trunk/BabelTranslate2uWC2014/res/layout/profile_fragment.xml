@@ -70,7 +70,8 @@
                         android:layout_width="142dp"
                         android:layout_height="wrap_content"
                         android:button="@drawable/ch_b"
-                        android:text="CH" />
+                        android:text="CH"
+                        android:visibility="gone" />
 
                     <RadioButton
                         android:id="@+id/radioButtonMR"
@@ -78,7 +79,8 @@
                         android:layout_width="142dp"
                         android:layout_height="wrap_content"
                         android:button="@drawable/mr"
-                        android:text="MR" />
+                        android:text="MR"
+                        android:visibility="gone"  />
 
                     <RadioButton
                         android:id="@+id/radioButtonES"
@@ -94,7 +96,8 @@
                         android:layout_width="142dp"
                         android:layout_height="wrap_content"
                         android:button="@drawable/jp_b"
-                        android:text="JP" />
+                        android:text="JP"
+                        android:visibility="gone"  />
 
                     <RadioButton
                         android:id="@+id/radioButtonBrazil"
