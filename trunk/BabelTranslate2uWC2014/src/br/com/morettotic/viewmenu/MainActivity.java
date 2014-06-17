@@ -270,7 +270,7 @@ public class MainActivity extends Activity {
 
 				CSIPService.destroy();
 				DefaultAction da = new DefaultAction();
-				da.setStatusAction(MY_PROFILE.getId(), "OFF");
+				da.setStatusAction(MY_PROFILE.getId(), "EXIT");
 				da.execute();
 
 				try {
