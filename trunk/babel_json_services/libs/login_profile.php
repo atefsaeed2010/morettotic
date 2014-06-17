@@ -39,6 +39,16 @@ if ($result) {
     $_SESSION["EMAIL"] = $email;
     $_SESSION["PASSWD"] = md5($passwd);
 }
+//
+//Atualiza conta sip
+$query = " select id_user from profile where email like '%$email%'";
+$result = mysqli_query($con, $query);
+$row = mysqli_fetch_array($result);
+$myId = $row['id_user'];
+
+//Remove contas e atualiza sip user do pool
+$query = "SELECT `fn_update_sip`($myId) AS `fn_update_sip`";
+$result = mysqli_query($con, $query);
 
 //Objeto default para imprimir o json
 include 'json_profile.php';

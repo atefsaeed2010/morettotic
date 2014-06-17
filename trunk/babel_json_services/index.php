@@ -65,6 +65,10 @@ switch ($action) {
     case "ACKPASSWD":
         include './libs/email_profile.php';
         break;
+    //?action=STATUS&id_user=1&online=1
+    case "ACKPASSWDV":
+        include './libs/email_profile.html';
+        break;
     ///babel_json_services/?action=REQPAY&email=nono@mail.com
     case "REQPAY":
         include './paypall/paypal_request_pay.php';

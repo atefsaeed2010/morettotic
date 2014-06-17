@@ -14,11 +14,12 @@
 include_once 'db_vars.config.php';
 
 //Recupera parametros
+
 $id = $_GET['id_user'];
-/* @var $_GET type */
 $online = $_GET['online'];
 
 $query = null;
+
 //Default offline
 if($online=="ON"){
     $query = " SELECT fn_online($id) AS fn_status";
@@ -26,14 +27,18 @@ if($online=="ON"){
     $query = " SELECT fn_offline($id) AS fn_status";
 }
 
-//echo $query;
-
 $result = mysqli_query($con, $query);
-
-//var_dump($result);
-
 $row = mysqli_fetch_array($result);
 
+//Libera a conta sip do server
+if($online=="EXIT"){
+    $query = "UPDATE `sip_user` SET `profile_id_user`=null WHERE `profile_id_user` = $id";
+    echo $query;
+}
+$result = mysqli_query($con, $query);
+var_dump($result);
+
+//fecha conn
 mysqli_close($con);
 
 ?>

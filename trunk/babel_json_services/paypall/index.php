@@ -29,7 +29,7 @@ $row = mysqli_fetch_array($result);
         <style>
             .as_wrapper1{
                 margin:0 auto;
-                width:98%;
+                width:200px;
                 font-family:Arial;
                 color:#333;
                 font-size:22px;
@@ -65,7 +65,7 @@ $row = mysqli_fetch_array($result);
                 margin-bottom:10px;
             }
             .mbt1{
-                width: 100%;
+                width: 70%;
                 border:1px solid #f9f68a; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px;font-size:12px;font-family:arial, helvetica, sans-serif; padding: 10px 10px 10px 10px; text-decoration:none; display:inline-block;text-shadow: 5px 5px 0 rgba(0,0,0,0.3);font-weight:bold; color: #000000;
                 background-color: #fcfac0; background-image: -webkit-gradient(linear, left top, left bottom, from(#fcfac0), to(#f6f283));
                 background-image: -webkit-linear-gradient(top, #fcfac0, #f6f283);
@@ -76,7 +76,7 @@ $row = mysqli_fetch_array($result);
                 height: 15px;
             }
             .mbt{
-                width: 100%;
+                width: 70%;
                 border:1px solid #ffc826; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px;font-size:12px;font-family:arial, helvetica, sans-serif; padding: 10px 10px 10px 10px; text-decoration:none; display:inline-block;text-shadow: -1px -1px 0 rgba(0,0,0,0.3);font-weight:bold; color: #FFFFFF;
                 background-color: #ffd65e; background-image: -webkit-gradient(linear, left top, left bottom, from(#ffd65e), to(#febf04));
                 background-image: -webkit-linear-gradient(top, #ffd65e, #febf04);
@@ -85,11 +85,12 @@ $row = mysqli_fetch_array($result);
                 background-image: -o-linear-gradient(top, #ffd65e, #febf04);
                 background-image: linear-gradient(to bottom, #ffd65e, #febf04);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ffd65e, endColorstr=#febf04);
                 height: 30px;
+              
             }
         </style>
     </head>
 
-    <body style="background-image: url('http://www.nosnaldeia.com.br/babel_json_services/libs/avatars/bg_icon.png')">
+    <body style="background-image: url('http://www.nosnaldeia.com.br/babel_json_services/libs/avatars/bg_icon.png'); background-repeat: no-repeat">
         <div class="as_wrapper">
             <br>
                 <br>
@@ -103,7 +104,7 @@ $row = mysqli_fetch_array($result);
                                 <tr>
                                     <td colspan="2">
                                         Welcome:<b>
-                                            <label><?php echo $row['name']; ?>(<?php echo $row['email']; ?>)</label>
+                                            <label><?php echo $row['name']; ?><br>Email:(<?php echo $row['email']; ?>)</label>
                                         </b>
                                         <input type="hidden" name="payer_lname" value="<?php echo $row['name']; ?>" />
                                         <input type="hidden" name="user_id" value="<?php echo $id; ?>" />
