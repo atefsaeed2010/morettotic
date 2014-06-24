@@ -114,7 +114,8 @@ session_start();
     require_once("../libs/db_vars.config.php"); // include the library file
 
     define('EMAIL_ADD', 'malacma@gmail.com'); // define any notification email
-    define('PAYPAL_EMAIL_ADD', 'malacma-facilitator@gmail.com'); // facilitator email which will receive payments change this email to a live paypal account id when the site goes live
+    // define('PAYPAL_EMAIL_ADD', 'malacma-facilitator@gmail.com'); // facilitator email which will receive payments change this email to a live paypal account id when the site goes live
+    define('PAYPAL_EMAIL_ADD', 'malacma@gmail.com');
     define('PAYMENT_COMPLETED', 'Completed');
 
     $p = new paypal_class(); // paypal class
