@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 17-Jun-2014 às 18:29
+-- Generation Time: 24-Jun-2014 às 04:57
 -- Versão do servidor: 5.1.73-cll
 -- PHP Version: 5.4.23
 
@@ -19,11 +19,14 @@ SET time_zone = "+00:00";
 --
 -- Database: `seenergi_babel`
 --
+CREATE DATABASE IF NOT EXISTS `seenergi_babel` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `seenergi_babel`;
 
 DELIMITER $$
 --
 -- Functions
 --
+DROP FUNCTION IF EXISTS `fn_add_credits`$$
 CREATE DEFINER=`seenergi`@`localhost` FUNCTION `fn_add_credits`(`p_invoice` VARCHAR(255), `p_credits` FLOAT) RETURNS float
 BEGIN
 DECLARE my_credits FLOAT;
@@ -34,6 +37,7 @@ SELECT credits into my_credits FROM `profile` WHERE id_user = (select user_id fr
 RETURN my_credits;
 END$$
 
+DROP FUNCTION IF EXISTS `fn_change_pass`$$
 CREATE DEFINER=`seenergi`@`localhost` FUNCTION `fn_change_pass`(`pemail` VARCHAR(200), `psenha` VARCHAR(300)) RETURNS int(11)
     NO SQL
 begin
@@ -41,6 +45,7 @@ update profile set passwd = psenha where email like pemail;
 return 1;
 end$$
 
+DROP FUNCTION IF EXISTS `fn_get_avatar`$$
 CREATE DEFINER=`seenergi`@`localhost` FUNCTION `fn_get_avatar`(`p_id_user` INT) RETURNS varchar(300) CHARSET latin1
 BEGIN
 DECLARE my_avatar VARCHAR(300);
@@ -50,6 +55,7 @@ SELECT image_path into my_avatar from avatar where idavatar = (select avatar_ida
 RETURN my_avatar;
 END$$
 
+DROP FUNCTION IF EXISTS `fn_log`$$
 CREATE DEFINER=`seenergi`@`localhost` FUNCTION `fn_log`(`my_id` INT(11), `p_ip` VARCHAR(255)) RETURNS int(11)
     NO SQL
 BEGIN
@@ -64,6 +70,7 @@ INSERT INTO `log`(idlog,ip,date,id_user)  VALUES(null,p_ip,now(),my_id);
 RETURN -1;
 END$$
 
+DROP FUNCTION IF EXISTS `fn_login`$$
 CREATE DEFINER=`seenergi`@`localhost` FUNCTION `fn_login`(`p_ip` VARCHAR(50), `p_email` VARCHAR(200), `p_language` VARCHAR(2)) RETURNS int(11)
     NO SQL
 BEGIN
@@ -85,6 +92,7 @@ INSERT INTO `log`(idlog,ip,date,id_user)  VALUES(null,p_ip,now(),my_id);
 RETURN my_nature;
 END$$
 
+DROP FUNCTION IF EXISTS `fn_offline`$$
 CREATE DEFINER=`seenergi`@`localhost` FUNCTION `fn_offline`(`p_id` INT(11)) RETURNS int(11)
     NO SQL
 begin
@@ -92,6 +100,7 @@ UPDATE `profile` SET `online`= '0',`avaliable`='0' where id_user= p_id;
 return 0;
 end$$
 
+DROP FUNCTION IF EXISTS `fn_online`$$
 CREATE DEFINER=`seenergi`@`localhost` FUNCTION `fn_online`(`p_id` INT(11)) RETURNS int(11)
     NO SQL
 begin
@@ -101,6 +110,7 @@ update profile set avaliable = true where id_user= p_id;
 return 1;
 end$$
 
+DROP FUNCTION IF EXISTS `fn_rate_translator`$$
 CREATE DEFINER=`seenergi`@`localhost` FUNCTION `fn_rate_translator`(`id_user` INT(11), `id_trans` INT(11), `rate` FLOAT) RETURNS double
     NO SQL
 BEGIN
@@ -113,6 +123,18 @@ SELECT (sum(rate)/count(rate)) into id_eval FROM `evaluation` WHERE profile_id_t
 RETURN id_eval;
 END$$
 
+DROP FUNCTION IF EXISTS `fn_release_sip`$$
+CREATE DEFINER=`seenergi`@`localhost` FUNCTION `fn_release_sip`(`t1` INT) RETURNS int(11)
+    NO SQL
+begin
+
+update sip_user set profile_id_user = null where profile_id_user not in (SELECT id_user FROM `view_find_away` where awayTime <t1 and  awayTime >0 group by id_user ORDER BY id_user desc);
+
+return -1;
+
+end$$
+
+DROP FUNCTION IF EXISTS `fn_set_avatar`$$
 CREATE DEFINER=`seenergi`@`localhost` FUNCTION `fn_set_avatar`(`p_image` VARCHAR(300), `p_id_user` INT(11)) RETURNS int(11)
     NO SQL
 BEGIN
@@ -129,6 +151,7 @@ RETURN img_id;
 
 END$$
 
+DROP FUNCTION IF EXISTS `fn_set_busy`$$
 CREATE DEFINER=`seenergi`@`localhost` FUNCTION `fn_set_busy`(`p_user` INT(11), `p_trans` INT(11)) RETURNS int(11)
     NO SQL
 begin
@@ -138,6 +161,7 @@ update profile set online = 1, avaliable = 0 where id_user in (p_trans,p_user);
 return 1;
 end$$
 
+DROP FUNCTION IF EXISTS `fn_set_unavaliable`$$
 CREATE DEFINER=`seenergi`@`localhost` FUNCTION `fn_set_unavaliable`(`p_id_user` INT(11), `p_id_translator` INT(11)) RETURNS int(11)
     NO SQL
 begin
@@ -149,6 +173,7 @@ return -1;
 
 end$$
 
+DROP FUNCTION IF EXISTS `fn_sipacc`$$
 CREATE DEFINER=`seenergi`@`localhost` FUNCTION `fn_sipacc`(`p_email` VARCHAR(200), `p_pass` VARCHAR(300)) RETURNS int(11)
     NO SQL
 BEGIN
@@ -167,6 +192,7 @@ return my_sip;
 
 END$$
 
+DROP FUNCTION IF EXISTS `fn_update_sip`$$
 CREATE DEFINER=`seenergi`@`localhost` FUNCTION `fn_update_sip`(`id_user` INT(11)) RETURNS int(11)
     NO SQL
 BEGIN
@@ -193,18 +219,19 @@ DELIMITER ;
 -- Estrutura da tabela `avatar`
 --
 
+DROP TABLE IF EXISTS `avatar`;
 CREATE TABLE IF NOT EXISTS `avatar` (
   `idavatar` int(11) NOT NULL AUTO_INCREMENT,
   `image_path` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`idavatar`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=532 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=556 ;
 
 --
 -- Extraindo dados da tabela `avatar`
 --
 
 INSERT INTO `avatar` (`idavatar`, `image_path`) VALUES
-(1, ''),
+(1, 'resized_Screenshot_2014-04-15-01-22-30-1.png'),
 (201, 'Patryck.jpg'),
 (202, 'Richard.jpg'),
 (203, 'Luís.jpg'),
@@ -527,7 +554,24 @@ INSERT INTO `avatar` (`idavatar`, `image_path`) VALUES
 (527, 'IMG_20140615_155351.jpg'),
 (529, 'jun 16, 2014 07:18:45 PM.jpeg'),
 (530, 'IMG-20140614-WA0006.jpg'),
-(531, 'IMG_20140531_184322.jpg');
+(531, 'IMG_20140531_184322.jpg'),
+(532, 'sound_on_demo.png'),
+(534, 'IMG_20131124_002357.jpg'),
+(535, '18469'),
+(536, '17990'),
+(537, '17492'),
+(540, '18342'),
+(541, 'IMG-20140619-WA0006.jpg'),
+(543, 'VID-20140531-WA0000.mp4'),
+(544, '73615'),
+(545, '204889'),
+(547, '2566071'),
+(548, '78858'),
+(551, '11197'),
+(552, 'image-ced1ce5a63c2d00cb28e5cbc29c92a17b415e17a8ef7924a784aa8ba9867cf32-V.jpg'),
+(553, 'Screenshot_2014-06-21-00-51-47~2.jpg'),
+(554, 'IMG-20140619-WA0002.jpg'),
+(555, 'IMG_20140623_194652.jpg');
 
 -- --------------------------------------------------------
 
@@ -535,6 +579,7 @@ INSERT INTO `avatar` (`idavatar`, `image_path`) VALUES
 -- Estrutura da tabela `call`
 --
 
+DROP TABLE IF EXISTS `call`;
 CREATE TABLE IF NOT EXISTS `call` (
   `id_call` int(11) NOT NULL AUTO_INCREMENT,
   `start_t` timestamp NULL DEFAULT NULL,
@@ -567,6 +612,7 @@ INSERT INTO `call` (`id_call`, `start_t`, `end_t`, `from_c`, `to_c`, `service_ty
 -- Estrutura da tabela `evaluation`
 --
 
+DROP TABLE IF EXISTS `evaluation`;
 CREATE TABLE IF NOT EXISTS `evaluation` (
   `idevaluation` int(11) NOT NULL AUTO_INCREMENT,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -584,6 +630,7 @@ CREATE TABLE IF NOT EXISTS `evaluation` (
 -- Estrutura da tabela `language`
 --
 
+DROP TABLE IF EXISTS `language`;
 CREATE TABLE IF NOT EXISTS `language` (
   `id_lang` int(11) NOT NULL,
   `description` varchar(45) NOT NULL,
@@ -611,6 +658,7 @@ INSERT INTO `language` (`id_lang`, `description`, `token`) VALUES
 -- Estrutura da tabela `log`
 --
 
+DROP TABLE IF EXISTS `log`;
 CREATE TABLE IF NOT EXISTS `log` (
   `idlog` int(11) NOT NULL AUTO_INCREMENT,
   `ip` varchar(45) NOT NULL,
@@ -619,7 +667,7 @@ CREATE TABLE IF NOT EXISTS `log` (
   `optype` enum('save','call','paypall','finish','register','login','password') DEFAULT NULL,
   PRIMARY KEY (`idlog`),
   KEY `fk_log_profile_idx` (`id_user`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=665 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=729 ;
 
 --
 -- Extraindo dados da tabela `log`
@@ -807,7 +855,71 @@ INSERT INTO `log` (`idlog`, `ip`, `date`, `id_user`, `optype`) VALUES
 (661, '179.216.171.104', '2014-06-17 21:25:59', 205, NULL),
 (662, '179.216.171.104', '2014-06-17 21:27:40', 205, NULL),
 (663, '179.216.171.104', '2014-06-17 21:27:42', 205, NULL),
-(664, '179.216.171.104', '2014-06-17 21:27:59', 205, NULL);
+(664, '179.216.171.104', '2014-06-17 21:27:59', 205, NULL),
+(665, '179.216.171.104', '2014-06-17 21:49:45', 205, NULL),
+(666, '179.216.171.104', '2014-06-17 21:49:52', 205, NULL),
+(667, '179.216.171.104', '2014-06-17 21:55:15', 205, NULL),
+(668, '179.216.171.104', '2014-06-17 21:56:25', 205, NULL),
+(669, '179.216.171.104', '2014-06-17 21:56:51', 205, NULL),
+(670, '186.222.53.23', '2014-06-18 22:17:28', 2147, NULL),
+(671, '186.222.53.23', '2014-06-18 22:17:31', 2147, NULL),
+(672, '186.222.53.23', '2014-06-18 22:17:54', 2147, NULL),
+(673, '186.222.53.23', '2014-06-18 22:17:56', 2147, NULL),
+(674, '186.222.53.23', '2014-06-18 22:18:01', 2147, NULL),
+(675, '186.222.53.23', '2014-06-18 22:18:33', 2147, NULL),
+(676, '186.222.53.23', '2014-06-18 22:18:36', 2147, NULL),
+(677, '186.222.53.23', '2014-06-18 22:20:33', 2147, NULL),
+(678, '186.222.53.23', '2014-06-18 22:20:35', 2147, NULL),
+(679, '186.222.53.23', '2014-06-18 22:20:41', 2147, NULL),
+(680, '186.222.53.23', '2014-06-18 22:20:45', 2147, NULL),
+(681, '186.222.53.23', '2014-06-18 22:20:48', 2147, NULL),
+(682, '186.222.53.23', '2014-06-18 23:55:06', 2147, NULL),
+(683, '186.222.53.23', '2014-06-18 23:55:08', 2147, NULL),
+(684, '186.222.53.23', '2014-06-18 23:55:12', 2147, NULL),
+(685, '186.222.53.23', '2014-06-18 23:55:16', 2147, NULL),
+(686, '186.222.53.23', '2014-06-18 23:58:29', 2147, NULL),
+(687, '186.222.53.23', '2014-06-18 23:58:31', 2147, NULL),
+(688, '186.222.53.23', '2014-06-18 23:58:40', 2147, NULL),
+(689, '186.222.53.23', '2014-06-19 00:06:33', 2147, NULL),
+(690, '186.222.53.23', '2014-06-19 00:06:35', 2147, NULL),
+(691, '186.222.53.23', '2014-06-19 00:06:41', 2147, NULL),
+(692, '186.222.53.23', '2014-06-19 00:06:45', 2147, NULL),
+(693, '186.222.53.23', '2014-06-19 00:07:14', 2147, NULL),
+(694, '186.222.53.23', '2014-06-19 00:07:16', 2147, NULL),
+(695, '186.222.53.23', '2014-06-19 00:07:30', 2147, NULL),
+(696, '186.222.53.23', '2014-06-19 00:07:37', 2147, NULL),
+(697, '186.222.53.23', '2014-06-19 00:35:54', 2147, NULL),
+(698, '186.222.53.23', '2014-06-19 00:37:11', 2147, NULL),
+(699, '186.222.53.23', '2014-06-19 00:37:36', 2147, NULL),
+(700, '186.222.53.23', '2014-06-19 00:37:44', 2147, NULL),
+(701, '186.222.53.23', '2014-06-19 00:38:13', 2147, NULL),
+(702, '179.216.171.104', '2014-06-23 06:02:27', 1907, NULL),
+(703, '193.28.178.61', '2014-06-23 07:43:45', 1907, NULL),
+(704, '179.216.171.104', '2014-06-24 01:39:00', 1907, NULL),
+(705, '186.222.53.23', '2014-06-24 02:19:10', 2147, NULL),
+(706, '186.222.53.23', '2014-06-24 02:19:12', 2147, NULL),
+(707, '186.222.53.23', '2014-06-24 02:19:26', 2147, NULL),
+(708, '186.222.53.23', '2014-06-24 02:19:27', 2147, NULL),
+(709, '186.222.53.23', '2014-06-24 02:22:19', 2147, NULL),
+(710, '186.222.53.23', '2014-06-24 02:22:22', 2147, NULL),
+(711, '186.222.53.23', '2014-06-24 02:22:34', 2147, NULL),
+(712, '186.222.53.23', '2014-06-24 02:22:38', 2147, NULL),
+(713, '186.222.53.23', '2014-06-24 02:26:41', 205, NULL),
+(714, '179.216.171.104', '2014-06-24 03:06:33', 1907, NULL),
+(715, '179.216.171.104', '2014-06-24 04:09:16', 205, NULL),
+(716, '179.216.171.104', '2014-06-24 04:24:05', 205, NULL),
+(717, '179.216.171.104', '2014-06-24 04:35:36', 205, NULL),
+(718, '179.216.171.104', '2014-06-24 04:39:12', 205, NULL),
+(719, '179.216.171.104', '2014-06-24 04:42:03', 205, NULL),
+(720, '179.216.171.104', '2014-06-24 04:44:27', 205, NULL),
+(721, '179.216.171.104', '2014-06-24 04:55:15', 205, NULL),
+(722, '179.216.171.104', '2014-06-24 05:09:18', 205, NULL),
+(723, '179.216.171.104', '2014-06-24 05:15:01', 205, NULL),
+(724, '179.216.171.104', '2014-06-24 05:37:58', 205, NULL),
+(725, '179.216.171.104', '2014-06-24 06:09:30', 205, NULL),
+(726, '179.216.171.104', '2014-06-24 06:12:53', 205, NULL),
+(727, '179.216.171.104', '2014-06-24 06:17:06', 205, NULL),
+(728, '179.216.171.104', '2014-06-24 07:13:44', 1907, NULL);
 
 -- --------------------------------------------------------
 
@@ -815,6 +927,7 @@ INSERT INTO `log` (`idlog`, `ip`, `date`, `id_user`, `optype`) VALUES
 -- Estrutura da tabela `network`
 --
 
+DROP TABLE IF EXISTS `network`;
 CREATE TABLE IF NOT EXISTS `network` (
   `idnetwork` int(11) NOT NULL AUTO_INCREMENT,
   `facebook` varchar(300) DEFAULT NULL,
@@ -844,13 +957,14 @@ INSERT INTO `network` (`idnetwork`, `facebook`, `country`, `whatsapp`, `viber`, 
 -- Estrutura da tabela `paypal_log`
 --
 
+DROP TABLE IF EXISTS `paypal_log`;
 CREATE TABLE IF NOT EXISTS `paypal_log` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `txn_id` varchar(600) NOT NULL,
   `log` text NOT NULL,
   `posted_date` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Extraindo dados da tabela `paypal_log`
@@ -859,7 +973,8 @@ CREATE TABLE IF NOT EXISTS `paypal_log` (
 INSERT INTO `paypal_log` (`id`, `txn_id`, `log`, `posted_date`) VALUES
 (1, '4P887111CN718644V', '{mc_gross:100.00,invoice:1441238994,protection_eligibility:Eligible,address_status:unconfirmed,item_number1:1,payer_id:DGV5Q2363653Y,tax:0.00,address_street:Rua General Bittencourt  397  casa\r\nCentro,payment_date:10:44:32 May 26, 2014 PDT,payment_status:Completed,charset:windows-1252,address_zip:88020-100,mc_shipping:0.00,mc_handling:0.00,first_name:MORETTO TIC,mc_fee:4.20,address_country_code:BR,address_name:MORETTO TIC MORETTO TECNOLOGIA DA INFORMACAO E COMUNICACAO''s Test Store,notify_version:3.8,custom:,payer_status:verified,business:malacma-facilitator@gmail.com,address_country:Brazil,num_cart_items:1,mc_handling1:0.00,address_city:Florianópolis,verify_sign:AFcWxV21C7fd0v3bYYYRCpSSRl31A1c1kIeRbR7SsywCqc97mGKu3M7N,payer_email:malacma@gmail.com,mc_shipping1:0.00,tax1:0.00,txn_id:4P887111CN718644V,payment_type:instant,payer_business_name:MORETTO TIC MORETTO TECNOLOGIA DA INFORMACAO E COMUNICACAO''s Test Store,last_name:MORETTO TECNOLOGIA DA INFORMACAO E COMUNICACAO,address_state:SC,item_name1:Babel2u Coins,receiver_email:malacma-facilitator@gmail.com,payment_fee:4.20,quantity1:1,receiver_id:REQ8GEKT48VW6,txn_type:cart,mc_gross_1:100.00,mc_currency:USD,residence_country:BR,test_ipn:1,transaction_subject:,payment_gross:100.00,ipn_track_id:3d5885678e832,a1:null}', '2014-05-26 14:44:38'),
 (2, '5NR89944FX207544Y', '{mc_gross:5.00,invoice:1528351756,protection_eligibility:Eligible,address_status:unconfirmed,item_number1:1,payer_id:DGV5Q2363653Y,tax:0.00,address_street:Rua General Bittencourt  397  casa\r\nCentro,payment_date:11:31:14 May 26, 2014 PDT,payment_status:Completed,charset:windows-1252,address_zip:88020-100,mc_shipping:0.00,mc_handling:0.00,first_name:MORETTO TIC,mc_fee:0.50,address_country_code:BR,address_name:MORETTO TIC MORETTO TECNOLOGIA DA INFORMACAO E COMUNICACAO''s Test Store,notify_version:3.8,custom:,payer_status:verified,business:malacma-facilitator@gmail.com,address_country:Brazil,num_cart_items:1,mc_handling1:0.00,address_city:Florianópolis,verify_sign:Ac.eGBZJO8gkI4pLznA4cUG0IVpGAa05yFrc5JPYmrdK7RfuGpUAOPPO,payer_email:malacma@gmail.com,mc_shipping1:0.00,tax1:0.00,txn_id:5NR89944FX207544Y,payment_type:instant,payer_business_name:MORETTO TIC MORETTO TECNOLOGIA DA INFORMACAO E COMUNICACAO''s Test Store,last_name:MORETTO TECNOLOGIA DA INFORMACAO E COMUNICACAO,address_state:SC,item_name1:Babel2u Coins,receiver_email:malacma-facilitator@gmail.com,payment_fee:0.50,quantity1:1,receiver_id:REQ8GEKT48VW6,txn_type:cart,mc_gross_1:5.00,mc_currency:USD,residence_country:BR,test_ipn:1,transaction_subject:,payment_gross:5.00,ipn_track_id:ac148c4f7013c,a1:null}', '2014-05-26 15:31:17'),
-(3, '26647260W9631751H', '{mc_gross:20.00,invoice:2123121570,protection_eligibility:Ineligible,address_status:unconfirmed,item_number1:1,payer_id:SSB9N9BKRP968,tax:0.00,address_street:Rua francisco goulart 96,405,payment_date:17:30:55 Jun 14, 2014 PDT,payment_status:Pending,charset:windows-1252,address_zip:88036600,mc_shipping:0.00,mc_handling:0.00,first_name:Arthur,address_country_code:BR,address_name:USER1 USER1,notify_version:3.8,custom:,payer_status:unverified,address_country:Brazil,num_cart_items:1,mc_handling1:0.00,address_city:florianopolis,verify_sign:AFP9pU0kCAvVAVimKAU0y2nVnOYQAsJyzTgn.sKmWT06VcHQSvU.UHKE,payer_email:artur@labirinto.com.br,mc_shipping1:0.00,txn_id:26647260W9631751H,payment_type:instant,last_name:Sanders Júnior,address_state:Santa Catarina,item_name1:Babel2u Coins,receiver_email:malacma-facilitator@gmail.com,quantity1:1,pending_reason:unilateral,txn_type:cart,mc_gross_1:20.00,mc_currency:USD,residence_country:BR,transaction_subject:Shopping CartBabel2u Coins,payment_gross:20.00,ipn_track_id:54008d49b60c2,a1:null}', '2014-06-14 21:30:59');
+(3, '26647260W9631751H', '{mc_gross:20.00,invoice:2123121570,protection_eligibility:Ineligible,address_status:unconfirmed,item_number1:1,payer_id:SSB9N9BKRP968,tax:0.00,address_street:Rua francisco goulart 96,405,payment_date:17:30:55 Jun 14, 2014 PDT,payment_status:Pending,charset:windows-1252,address_zip:88036600,mc_shipping:0.00,mc_handling:0.00,first_name:Arthur,address_country_code:BR,address_name:USER1 USER1,notify_version:3.8,custom:,payer_status:unverified,address_country:Brazil,num_cart_items:1,mc_handling1:0.00,address_city:florianopolis,verify_sign:AFP9pU0kCAvVAVimKAU0y2nVnOYQAsJyzTgn.sKmWT06VcHQSvU.UHKE,payer_email:artur@labirinto.com.br,mc_shipping1:0.00,txn_id:26647260W9631751H,payment_type:instant,last_name:Sanders Júnior,address_state:Santa Catarina,item_name1:Babel2u Coins,receiver_email:malacma-facilitator@gmail.com,quantity1:1,pending_reason:unilateral,txn_type:cart,mc_gross_1:20.00,mc_currency:USD,residence_country:BR,transaction_subject:Shopping CartBabel2u Coins,payment_gross:20.00,ipn_track_id:54008d49b60c2,a1:null}', '2014-06-14 21:30:59'),
+(4, '4M9085866J991054B', '{mc_gross:5.00,invoice:2055152327,protection_eligibility:Ineligible,address_status:unconfirmed,item_number1:1,payer_id:HRCMN9449A4QQ,tax:0.00,address_street:antonio da silveira, 225,payment_date:16:58:08 Jun 18, 2014 PDT,payment_status:Pending,charset:windows-1252,address_zip:88062155,mc_shipping:0.00,mc_handling:0.00,first_name:João Guilherme,address_country_code:BR,address_name:GUIME GUIME,notify_version:3.8,custom:,payer_status:unverified,address_country:Brazil,num_cart_items:1,mc_handling1:0.00,address_city:FlorianÃ³polis,verify_sign:AaX4hzCdcB1ANiXCuXM2rOXwWrA7Aa7tg-Z.3b730e.px8O-nh1iGQZK,payer_email:jgoliveira78@gmail.com,mc_shipping1:0.00,txn_id:4M9085866J991054B,payment_type:instant,last_name:de Oliveira,address_state:Santa Catarina,item_name1:Babel2u Coins,receiver_email:malacma-facilitator@gmail.com,quantity1:1,pending_reason:unilateral,txn_type:cart,mc_gross_1:5.00,mc_currency:USD,residence_country:BR,transaction_subject:Shopping CartBabel2u Coins,payment_gross:5.00,ipn_track_id:3438fbe3e2b1a,a1:null}', '2014-06-18 20:58:14');
 
 -- --------------------------------------------------------
 
@@ -867,6 +982,7 @@ INSERT INTO `paypal_log` (`id`, `txn_id`, `log`, `posted_date`) VALUES
 -- Estrutura da tabela `profile`
 --
 
+DROP TABLE IF EXISTS `profile`;
 CREATE TABLE IF NOT EXISTS `profile` (
   `id_user` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(200) NOT NULL,
@@ -889,7 +1005,7 @@ CREATE TABLE IF NOT EXISTS `profile` (
   KEY `fk_user_profile_language1_idx` (`nature`),
   KEY `fk_user_profile_language2_idx` (`proficiency`),
   KEY `fk_profile_avatar1_idx` (`avatar_idavatar`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2148 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2151 ;
 
 --
 -- Extraindo dados da tabela `profile`
@@ -900,7 +1016,7 @@ INSERT INTO `profile` (`id_user`, `name`, `email`, `passwd`, `online`, `avaliabl
 (202, 'LUÍS AUGUSTO MACHADO MORETTO', 'LUIS@FEPESE.UFSC.BR', 'e10adc3949ba59abbe56e057f20f883e', 0, 0, '2014-06-01', '8e98bdc6-5c03-4666-b847-178a595c3c34', 0, 1, 1, 1, NULL, 0),
 (203, 'MURILO 6COMNETO', 'MURILO@CONNECTNET.COM.BR', 'e10adc3949ba59abbe56e057f20f883e', 0, 0, '2014-06-01', 'f00309bf-7a77-4886-ad38-fe19e5bdd5fa', 0, 1, 1, 1, NULL, 0),
 (204, 'SIMONE MORETTO', 'SIMORETTO@BRTURBO.COM', 'e10adc3949ba59abbe56e057f20f883e', 0, 0, '2014-06-01', '19f1336b-a956-41bf-8681-d0be0301a9f8', 0, 1, 1, 1, NULL, 0),
-(205, 'MISLENE RICHARTZ MORETTO', 'MIMI_RICHARTZ@HOTMAIL.COM', 'e10adc3949ba59abbe56e057f20f883e', 0, 0, '2014-06-01', 'a5739b65-6e5e-4e2e-b3b7-0ac5cea255fe', 0, 2, 3, 1, NULL, 0),
+(205, 'MISLENE RICHARTZ MORETTO', 'MIMI_RICHARTZ@HOTMAIL.COM', 'e10adc3949ba59abbe56e057f20f883e', 1, 1, '2014-06-01', 'a5739b65-6e5e-4e2e-b3b7-0ac5cea255fe', 0, 2, 3, 1, 555, 0),
 (206, 'MURILO 6COMNETO', 'MURILO737@GMAIL.COM', 'e10adc3949ba59abbe56e057f20f883e', 0, 0, '2014-06-01', '9cf9fcc7-e9a1-44d6-a47b-bdbdf0e7ac53', 0, 1, 1, 1, NULL, 0),
 (207, 'MARCELLO THIRY', 'THIRY@UNIVALI.BR', 'e10adc3949ba59abbe56e057f20f883e', 0, 0, '2014-06-01', '1b136d89-c08b-4894-a583-c9d473aed0c2', 0, 1, 1, 1, NULL, 0),
 (208, 'ADEMIR-ENG@UNIVALI.BR', 'ADEMIR-ENG@UNIVALI.BR', 'e10adc3949ba59abbe56e057f20f883e', 0, 0, '2014-06-01', '38f04169-d4f6-4347-996f-3ec8fb50c1cd', 0, 1, 1, 1, NULL, 0),
@@ -2628,7 +2744,9 @@ INSERT INTO `profile` (`id_user`, `name`, `email`, `passwd`, `online`, `avaliabl
 (2144, 'ARTHUR', 'asanders2@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', 1, 1, '0000-00-00', '244a1324-3955-4e5f-a73e-c5b7ee49ad52', 0, 1, 1, 1, 1, 0),
 (2145, 'USER1', 'user1@labirinto.com.br', '24c9e15e52afc47c225b757e7bee1f9d', 0, 0, '0000-00-00', '6a3210e9-df90-4cbe-821e-63b87e640a18', 0, 1, 1, 1, 1, 0),
 (2146, 'USERT1', 'usert1@labirinto.com.br', '3a1dc8ce15b12c9733b6468cf3694ab2', 0, 0, '2014-07-14', 'eff28d3f-47be-4f23-975f-db8fd5c30c8a', 0, 2, 1, 2, 1, 0),
-(2147, 'GUIME', 'jgoliveira78@gmail.com', 'ad477cae0be072d0a2a49ade6d09970d', 1, 1, '1979-12-28', '9bfb2b20-3624-4a1c-a437-b796e4e27cbd', 0, 1, 1, 1, 1, 0);
+(2147, 'GUIME', 'jgoliveira78@gmail.com', 'ad477cae0be072d0a2a49ade6d09970d', 1, 1, '1977-12-28', '9e72fa93-8faf-4405-bcb2-991ffd9f241e', 0, 1, 1, 1, 1, 0),
+(2148, 'TRADUTOR1', 'tradutor1@labirinto.com.br', '0a0affcee14062e476dfee3338cccdc4', 1, 1, '0000-00-00', '17a9ec65-ffa6-4ce8-a0a9-b9fa45f295ec', 0, 2, 1, 2, 1, 0),
+(2149, 'TRADUTOR2', 'tradutor2@labirinto.com.br', '76d80224611fc919a5d54f0ff9fba446', 1, 1, '0000-00-00', 'cbfc8a86-26c3-4844-a806-8bd68c602e31', 0, 2, 1, 2, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -2636,6 +2754,7 @@ INSERT INTO `profile` (`id_user`, `name`, `email`, `passwd`, `online`, `avaliabl
 -- Estrutura da tabela `purchase`
 --
 
+DROP TABLE IF EXISTS `purchase`;
 CREATE TABLE IF NOT EXISTS `purchase` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `invoice` varchar(300) NOT NULL,
@@ -2659,7 +2778,7 @@ CREATE TABLE IF NOT EXISTS `purchase` (
   PRIMARY KEY (`id`),
   KEY `fk_profile_id` (`user_id`),
   KEY `fk_log_id` (`log_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=61 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=71 ;
 
 --
 -- Extraindo dados da tabela `purchase`
@@ -2689,7 +2808,17 @@ INSERT INTO `purchase` (`id`, `invoice`, `trasaction_id`, `log_id`, `user_id`, `
 (57, '1728518556', '', NULL, 1907, '1', 'Babel2u Coins', '1', '5', 'MARCELO.LEANDRO@UNIVILLE.BR', 'MARCELO.LEANDRO@UNIVILLE.BR', 'Rua General Bittencourt/Centro', 'FlorianÃ³polis', 'Santa Catarina', '88020100', 'BR', 'MARCELO.LEANDRO@UNIVILLE.BR', 'pending', '2014-06-16 17:29:00'),
 (58, '2044313689', '', NULL, 1907, '1', 'Babel2u Coins', '1', '20', 'MARCELO.LEANDRO@UNIVILLE.BR', 'MARCELO.LEANDRO@UNIVILLE.BR', 'Rua General Bittencourt/Centro', 'FlorianÃ³polis', 'Santa Catarina', '88020100', 'BR', 'MARCELO.LEANDRO@UNIVILLE.BR', 'pending', '2014-06-16 20:44:51'),
 (59, '2046175370', '', NULL, 1907, '1', 'Babel2u Coins', '1', '20', 'MARCELO.LEANDRO@UNIVILLE.BR', 'MARCELO.LEANDRO@UNIVILLE.BR', 'Rua General Bittencourt/Centro', 'IjuÃ­', 'Santa Catarina', '98700000', 'BR', 'MARCELO.LEANDRO@UNIVILLE.BR', 'pending', '2014-06-16 20:46:50'),
-(60, '2054464894', '', NULL, 1907, '1', 'Babel2u Coins', '1', '20', 'MARCELO.LEANDRO@UNIVILLE.BR', 'MARCELO.LEANDRO@UNIVILLE.BR', 'Rua General Bittencourt/Centro', 'FlorianÃ³polis', 'Santa Catarina', '88020100', 'BR', 'MARCELO.LEANDRO@UNIVILLE.BR', 'pending', '2014-06-16 20:54:51');
+(60, '2054464894', '', NULL, 1907, '1', 'Babel2u Coins', '1', '20', 'MARCELO.LEANDRO@UNIVILLE.BR', 'MARCELO.LEANDRO@UNIVILLE.BR', 'Rua General Bittencourt/Centro', 'FlorianÃ³polis', 'Santa Catarina', '88020100', 'BR', 'MARCELO.LEANDRO@UNIVILLE.BR', 'pending', '2014-06-16 20:54:51'),
+(61, '2055152327', '', NULL, 2147, '1', 'Babel2u Coins', '1', '5', 'GUIME', 'GUIME', 'antonio da silveira, 225', 'FlorianÃ³polis', 'Santa Catarina', '88062155', 'BR', 'jgoliveira78@gmail.com', 'pending', '2014-06-18 20:56:41'),
+(62, '0443454750', '', NULL, 1907, '1', 'Babel2u Coins', '1', '20', 'MARCELO.LEANDRO@UNIVILLE.BR', 'MARCELO.LEANDRO@UNIVILLE.BR', 'Rua General Bittencourt/Centro', 'IjuÃ­', '', '98700000', 'EU', 'MARCELO.LEANDRO@UNIVILLE.BR', 'pending', '2014-06-23 04:44:01'),
+(63, '2238588268', '', NULL, 1907, '1', 'Babel2u Coins', '1', '200', 'MARCELO.LEANDRO@UNIVILLE.BR', 'MARCELO.LEANDRO@UNIVILLE.BR', 'Rua General Bittencourt/Centro', 'FlorianÃ³polis', 'Santa Catarina', '88020100', 'BR', 'MARCELO.LEANDRO@UNIVILLE.BR', 'pending', '2014-06-23 22:39:08'),
+(64, '2238588268', '', NULL, 1907, '1', 'Babel2u Coins', '1', '200', 'MARCELO.LEANDRO@UNIVILLE.BR', 'MARCELO.LEANDRO@UNIVILLE.BR', 'Rua General Bittencourt/Centro', 'FlorianÃ³polis', 'Santa Catarina', '88020100', 'BR', 'MARCELO.LEANDRO@UNIVILLE.BR', 'pending', '2014-06-23 22:39:44'),
+(65, '2238588268', '', NULL, 1907, '1', 'Babel2u Coins', '1', '200', 'MARCELO.LEANDRO@UNIVILLE.BR', 'MARCELO.LEANDRO@UNIVILLE.BR', 'Rua General Bittencourt/Centro', 'FlorianÃ³polis', 'Santa Catarina', '88020100', 'BR', 'MARCELO.LEANDRO@UNIVILLE.BR', 'pending', '2014-06-23 22:40:09'),
+(66, '2238588268', '', NULL, 1907, '1', 'Babel2u Coins', '1', '200', 'MARCELO.LEANDRO@UNIVILLE.BR', 'MARCELO.LEANDRO@UNIVILLE.BR', 'Rua General Bittencourt/Centro', 'FlorianÃ³polis', 'Santa Catarina', '88020100', 'BR', 'MARCELO.LEANDRO@UNIVILLE.BR', 'pending', '2014-06-23 22:40:36'),
+(67, '2238588268', '', NULL, 1907, '1', 'Babel2u Coins', '1', '200', 'MARCELO.LEANDRO@UNIVILLE.BR', 'MARCELO.LEANDRO@UNIVILLE.BR', 'Rua General Bittencourt/Centro', 'FlorianÃ³polis', 'Santa Catarina', '88020100', 'BR', 'MARCELO.LEANDRO@UNIVILLE.BR', 'pending', '2014-06-23 23:51:31'),
+(68, '2238588268', '', NULL, 1907, '1', 'Babel2u Coins', '1', '200', 'MARCELO.LEANDRO@UNIVILLE.BR', 'MARCELO.LEANDRO@UNIVILLE.BR', '/', 'IjuÃ­', 'Santa Catarina', '98700000', 'BR', 'MARCELO.LEANDRO@UNIVILLE.BR', 'pending', '2014-06-23 23:52:13'),
+(69, '2238588268', '', NULL, 1907, '1', 'Babel2u Coins', '1', '200', 'MARCELO.LEANDRO@UNIVILLE.BR', 'MARCELO.LEANDRO@UNIVILLE.BR', '/', 'IjuÃ­', 'Santa Catarina', '98700000', 'BR', 'MARCELO.LEANDRO@UNIVILLE.BR', 'pending', '2014-06-23 23:52:43'),
+(70, '0006335677', '', NULL, 1907, '1', 'Babel2u Coins', '1', '1000', 'MARCELO.LEANDRO@UNIVILLE.BR', 'MARCELO.LEANDRO@UNIVILLE.BR', 'Rua General Bittencourt/Centro', 'FlorianÃ³polis', 'Santa Catarina', '88020100', 'BR', 'MARCELO.LEANDRO@UNIVILLE.BR', 'pending', '2014-06-24 00:06:41');
 
 -- --------------------------------------------------------
 
@@ -2697,6 +2826,7 @@ INSERT INTO `purchase` (`id`, `invoice`, `trasaction_id`, `log_id`, `user_id`, `
 -- Estrutura da tabela `role`
 --
 
+DROP TABLE IF EXISTS `role`;
 CREATE TABLE IF NOT EXISTS `role` (
   `id_role` int(11) NOT NULL,
   `role_name` varchar(20) NOT NULL,
@@ -2717,6 +2847,7 @@ INSERT INTO `role` (`id_role`, `role_name`) VALUES
 -- Estrutura da tabela `service_type`
 --
 
+DROP TABLE IF EXISTS `service_type`;
 CREATE TABLE IF NOT EXISTS `service_type` (
   `idservice_type` int(11) NOT NULL AUTO_INCREMENT,
   `description` varchar(100) DEFAULT NULL,
@@ -2740,6 +2871,7 @@ INSERT INTO `service_type` (`idservice_type`, `description`) VALUES
 -- Estrutura da tabela `sip_server`
 --
 
+DROP TABLE IF EXISTS `sip_server`;
 CREATE TABLE IF NOT EXISTS `sip_server` (
   `idsip_server` int(11) NOT NULL AUTO_INCREMENT,
   `servername` varchar(200) NOT NULL,
@@ -2760,6 +2892,7 @@ INSERT INTO `sip_server` (`idsip_server`, `servername`) VALUES
 -- Estrutura da tabela `sip_user`
 --
 
+DROP TABLE IF EXISTS `sip_user`;
 CREATE TABLE IF NOT EXISTS `sip_user` (
   `idsip_user` int(11) NOT NULL AUTO_INCREMENT,
   `user` varchar(100) DEFAULT NULL,
@@ -2769,18 +2902,18 @@ CREATE TABLE IF NOT EXISTS `sip_user` (
   PRIMARY KEY (`idsip_user`),
   KEY `fk_sip_user_profile1_idx` (`profile_id_user`),
   KEY `fk_sip_user_sip_server1_idx` (`sip_server_idsip_server`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=31 ;
 
 --
 -- Extraindo dados da tabela `sip_user`
 --
 
 INSERT INTO `sip_user` (`idsip_user`, `user`, `pass`, `profile_id_user`, `sip_server_idsip_server`) VALUES
+(0, 'user_pt_bt', 'user_pt_bt', NULL, 1),
 (1, 'Univoxer3', 'Univoxer3', NULL, 1),
 (2, 'Univoxer2', 'Univoxer2', NULL, 1),
 (3, 'Univoxer1', 'Univoxer1', NULL, 1),
 (4, 'Univoxer4', 'Univoxer4', NULL, 1),
-(5, 'user_pt_bt', 'user_pt_bt', NULL, 1),
 (6, 'translator_pt_en', 'translator_pt_en', NULL, 1),
 (7, 'ekooossss', 'ekooossss', NULL, 1),
 (8, 'Univoxer5', 'Univoxer5', NULL, 1),
@@ -2789,13 +2922,27 @@ INSERT INTO `sip_user` (`idsip_user`, `user`, `pass`, `profile_id_user`, `sip_se
 (14, 'univoxer8', 'univoxer8', NULL, 1),
 (15, 'univoxer9', 'univoxer9', NULL, 1),
 (16, 'univoxera', 'univoxera', NULL, 1),
-(17, 'univoxerb', 'univoxerb', NULL, 1);
+(17, 'univoxerb', 'univoxerb', NULL, 1),
+(18, 'univoxer1b', 'univoxer1b', NULL, 1),
+(19, 'univoxer1c', 'univoxer1c', NULL, 1),
+(20, 'univoxer1d', 'univoxer1d', NULL, 1),
+(21, 'univoxer1e', 'univoxer1e', NULL, 1),
+(22, 'univoxer1f', 'univoxer1f', NULL, 1),
+(23, 'univoxer1g', 'univoxer1g', NULL, 1),
+(24, 'univoxer1h', 'univoxer1h', NULL, 1),
+(25, 'univoxerk1', 'univoxerk1', NULL, 1),
+(26, 'univoxerk2', 'univoxerk2', NULL, 1),
+(27, 'univoxerk3', 'univoxerk3', NULL, 1),
+(28, 'univoxerk4', 'univoxerk4', NULL, 1),
+(29, 'univoxerk5', 'univoxerk5', NULL, 1),
+(30, 'univoxerk6', 'univoxerk6', NULL, 1);
 
 -- --------------------------------------------------------
 
 --
 -- Stand-in structure for view `view_call_info`
 --
+DROP VIEW IF EXISTS `view_call_info`;
 CREATE TABLE IF NOT EXISTS `view_call_info` (
 `token` varchar(220)
 ,`end_t` timestamp
@@ -2808,8 +2955,22 @@ CREATE TABLE IF NOT EXISTS `view_call_info` (
 -- --------------------------------------------------------
 
 --
+-- Stand-in structure for view `view_find_away`
+--
+DROP VIEW IF EXISTS `view_find_away`;
+CREATE TABLE IF NOT EXISTS `view_find_away` (
+`id_user` int(11)
+,`idlog` int(11)
+,`date` timestamp
+,`agora` datetime
+,`awayTime` double(17,0)
+);
+-- --------------------------------------------------------
+
+--
 -- Stand-in structure for view `view_paypall`
 --
+DROP VIEW IF EXISTS `view_paypall`;
 CREATE TABLE IF NOT EXISTS `view_paypall` (
 `id_user` int(11)
 ,`name` varchar(200)
@@ -2836,6 +2997,7 @@ CREATE TABLE IF NOT EXISTS `view_paypall` (
 --
 -- Stand-in structure for view `view_profile`
 --
+DROP VIEW IF EXISTS `view_profile`;
 CREATE TABLE IF NOT EXISTS `view_profile` (
 `id_user` int(11)
 ,`name` varchar(200)
@@ -2860,6 +3022,7 @@ CREATE TABLE IF NOT EXISTS `view_profile` (
 --
 -- Stand-in structure for view `view_profile_by_last_ip`
 --
+DROP VIEW IF EXISTS `view_profile_by_last_ip`;
 CREATE TABLE IF NOT EXISTS `view_profile_by_last_ip` (
 `email` varchar(200)
 ,`online` tinyint(1)
@@ -2871,6 +3034,7 @@ CREATE TABLE IF NOT EXISTS `view_profile_by_last_ip` (
 --
 -- Stand-in structure for view `view_profile_count`
 --
+DROP VIEW IF EXISTS `view_profile_count`;
 CREATE TABLE IF NOT EXISTS `view_profile_count` (
 `passwd` varchar(240)
 ,`total` bigint(21)
@@ -2880,6 +3044,7 @@ CREATE TABLE IF NOT EXISTS `view_profile_count` (
 --
 -- Stand-in structure for view `view_profile_sip_acc`
 --
+DROP VIEW IF EXISTS `view_profile_sip_acc`;
 CREATE TABLE IF NOT EXISTS `view_profile_sip_acc` (
 `id_user` int(11)
 ,`name` varchar(200)
@@ -2899,6 +3064,7 @@ CREATE TABLE IF NOT EXISTS `view_profile_sip_acc` (
 --
 -- Stand-in structure for view `view_profile_tomaps`
 --
+DROP VIEW IF EXISTS `view_profile_tomaps`;
 CREATE TABLE IF NOT EXISTS `view_profile_tomaps` (
 `calls` bigint(21)
 ,`image` varchar(500)
@@ -2923,6 +3089,15 @@ CREATE TABLE IF NOT EXISTS `view_profile_tomaps` (
 DROP TABLE IF EXISTS `view_call_info`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`seenergi`@`localhost` SQL SECURITY DEFINER VIEW `view_call_info` AS select `a`.`token` AS `token`,`a`.`end_t` AS `end_t`,`a`.`start_t` AS `start_t`,(select `c`.`id_user` from `profile` `c` where (`c`.`id_user` = `a`.`from_c`)) AS `id_from`,(select `c`.`id_user` from `profile` `c` where (`c`.`id_user` = `a`.`to_c`)) AS `id_to`,(select `c`.`credits` from `profile` `c` where (`c`.`id_user` = `a`.`from_c`)) AS `credits_user`,(select `c`.`credits` from `profile` `c` where (`c`.`id_user` = `a`.`to_c`)) AS `credits_translator` from `call` `a`;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `view_find_away`
+--
+DROP TABLE IF EXISTS `view_find_away`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`seenergi`@`localhost` SQL SECURITY DEFINER VIEW `view_find_away` AS select `log`.`id_user` AS `id_user`,`log`.`idlog` AS `idlog`,`log`.`date` AS `date`,now() AS `agora`,(date_format(now(),'%Y%m%e%I%i%s') - date_format(`log`.`date`,'%Y%m%e%I%i%s')) AS `awayTime` from `log` order by `log`.`date` desc WITH CASCADED CHECK OPTION;
 
 -- --------------------------------------------------------
 
