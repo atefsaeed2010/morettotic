@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bk_login"
+    android:gravity="end" >
+
+    <!-- you can set layout accordingly -->
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="98dp"
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/password12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/email"
+        android:ems="10"
+        android:hint="@string/passwd"
+        android:imeActionId="@+id/login"
+        android:imeActionLabel="@string/passwd"
+        android:imeOptions="actionUnspecified"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:singleLine="true" >
+
+        <requestFocus />
+    </EditText>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView1"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/sign_in_button"
+        android:layout_alignRight="@+id/sign_in_button"
+        android:layout_below="@+id/password12"
+        android:layout_margin="5dp"
+        android:fadeScrollbars="false"
+        android:scrollbarAlwaysDrawVerticalTrack="true" >
+
+        <LinearLayout
+            style="@style/flag_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="140dp"
+            android:layout_gravity="top"
+            android:layout_marginTop="48dp"
+            android:background="@android:color/transparent"
+            android:orientation="horizontal" >
+
+            <RadioGroup
+                android:id="@+id/radioGroupRole1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/radioButtonCH"
+                    android:layout_width="142dp"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/ch_b"
+                    style="@style/radio_style"
+                    android:text="CH" 
+                    android:visibility="gone"/>
+
+                <RadioButton
+                    android:id="@+id/radioButtonMR"
+                    android:layout_width="142dp"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/mr"
+                    style="@style/radio_style"
+                    android:text="MR" 
+                    android:visibility="gone"/>
+
+                <RadioButton
+                    android:id="@+id/radioButtonES"
+                    android:layout_width="142dp"
+                    android:layout_height="wrap_content"
+                    style="@style/radio_style"
+                    android:button="@drawable/es_b"
+                    android:text="ES" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonJP"
+                    android:layout_width="142dp"
+                    android:layout_height="wrap_content"
+                    style="@style/radio_style"
+                    android:button="@drawable/jp_b"
+                    android:visibility="gone"
+                    android:text="JP" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonBrazil"
+                    android:layout_width="142dp"
+                    style="@style/radio_style"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/br_b"
+                    android:text="BR" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonGr"
+                    android:layout_width="142dp"
+                    style="@style/radio_style"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/gr_b"
+                    android:text="GR" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonEua"
+                    android:layout_width="142dp"
+                    style="@style/radio_style"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/uk_b"
+                    android:text="EN" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonFrance"
+                    android:layout_width="142dp"
+                    android:layout_height="wrap_content"
+                    style="@style/radio_style"
+                    android:button="@drawable/fr_b"
+                    android:text="FR" />
+            </RadioGroup>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password12"
+        android:layout_centerHorizontal="true"
+        android:text="Your language"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <CheckBox
+        android:id="@+id/checkBoxConnected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/horizontalScrollView1"
+        android:checked="true"
+        android:text="Remember me" />
+
+    <Button
+        android:id="@+id/sign_in_button"
+        style="@style/button_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/checkBoxConnected"
+        android:hint="Signin or register"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:text="Signin or register" />
+    
+</RelativeLayout>
