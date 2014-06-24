@@ -1,8 +1,6 @@
 package br.com.morettotic.viewmenu;
 
-import android.app.AlertDialog;
 import android.app.Fragment;
-import android.content.DialogInterface;
 import static br.com.morettotic.viewmenu.MainActivity.*;
 import static br.com.morettotic.entity.Profile.*;
 import android.os.Bundle;
@@ -14,16 +12,13 @@ import br.com.morettotic.navdraw.R;
 
 public class FragmentPaypal extends Fragment {
 	private View rootView;
-	private AlertDialog.Builder builder1;
 	private WebView web;
-	private AlertDialog alert11;
-
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 		
 		
 		rootView = inflater.inflate(R.layout.paypal_fragment,container, false);
-		/*builder1 = new AlertDialog.Builder(MAINWINDOW);
+		/*AlertDialog.Builder builder1 = new AlertDialog.Builder(MAINWINDOW);
 		builder1.setMessage("Buy coins!");
 		builder1.setIcon(R.drawable.ic_payment);
 		builder1.setCancelable(true);
