@@ -10,9 +10,12 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.drawable.Drawable;
@@ -48,6 +51,7 @@ public class FragmentUpload extends Fragment {
 	private WebView web;
 	private final String UPLOAD_SERVER_URI = MAIN_URL + UPLOAD_CONFIG;
 	private View rootView;
+	private AlertDialog.Builder builder1;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -107,7 +111,7 @@ public class FragmentUpload extends Fragment {
 			public void onClick(View v) {
 				Intent intent = new Intent();
 				intent.setType("image/jpeg");
-				//intent.setData(Uri.parse("path://sdcard/"));
+				// intent.setData(Uri.parse("path://sdcard/"));
 				intent.setAction(Intent.ACTION_GET_CONTENT);
 				intent.addCategory(Intent.CATEGORY_OPENABLE);
 				startActivityForResult(
@@ -171,14 +175,35 @@ public class FragmentUpload extends Fragment {
 	}
 
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if (resultCode == this.getActivity().RESULT_OK) {
-			if (requestCode == SELECT_PICTURE) {
-				Uri selectedImageUri = data.getData();
-				Log.d("onActivityResult selectedImageUri: ",
-						selectedImageUri.getPath());
-				uploadFile = getPath(selectedImageUri);
-				Log.d("onActivityResult uploadFile: ", uploadFile);
+		try {
+			
+			if (resultCode == Activity.RESULT_OK) {
+				if (requestCode == SELECT_PICTURE) {
+					Uri selectedImageUri = data.getData();
+					
+					//Log.d("onActivityResult selectedImageUri: ", selectedImageUri.getPath());
+					
+					uploadFile = getPath(selectedImageUri);
+					
+					//Log.d("onActivityResult uploadFile: ", uploadFile);
+				}
 			}
+		} catch (Exception e) {
+			builder1 = new AlertDialog.Builder(MAINWINDOW);
+			builder1.setMessage("Please try again later!" +e.getLocalizedMessage());
+			//builder1.setIcon(R.drawable.ic_payment);
+			builder1.setCancelable(true);
+			builder1.setNegativeButton("OK",
+					new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int id) {
+							
+							dialog.cancel();
+							
+						}
+					});
+
+			//alert11 = builder1.create();
+			builder1.show();
 		}
 	}
 
@@ -193,8 +218,7 @@ public class FragmentUpload extends Fragment {
 		Cursor cursor = this.getActivity().getContentResolver()
 				.query(uri, projection, null, null, null);
 		if (cursor != null) {
-			int column_index = cursor
-					.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+			int column_index = 0;//cursor.getColumnIndex(MediaStore.Images.Media.DATA);
 			cursor.moveToFirst();
 			return cursor.getString(column_index);
 		}
@@ -215,7 +239,7 @@ public class FragmentUpload extends Fragment {
 		return true;
 	}
 
-	private Drawable ImageOperations(Context ctx, String url,
+	/**private Drawable ImageOperations(Context ctx, String url,
 			String saveFilename) {
 		try {
 			InputStream is = (InputStream) this.fetch(url);
@@ -226,7 +250,7 @@ public class FragmentUpload extends Fragment {
 		} catch (IOException e) {
 			return null;
 		}
-	}
+	}**/
 
 	public Object fetch(String address) throws MalformedURLException,
 			IOException {

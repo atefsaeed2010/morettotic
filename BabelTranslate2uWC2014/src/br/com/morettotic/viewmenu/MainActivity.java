@@ -263,7 +263,7 @@ public class MainActivity extends Activity {
 		AlertDialog.Builder adb = new AlertDialog.Builder(this);
 
 		adb.setTitle("Exit?");
-		adb.setIcon(R.drawable.ic_exit);
+		//adb.setIcon(R.drawable.ic_exit);
 
 		adb.setPositiveButton("OK", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
