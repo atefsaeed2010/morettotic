@@ -22,7 +22,9 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
@@ -40,6 +42,16 @@ public class URLParser {
 
 	// constructor
 	public URLParser() {
+	}
+	
+	public static final void sendEmailIntent(String txt, Activity a){
+		Intent intent = new Intent(Intent.ACTION_SEND);
+		intent.setType("text/html");
+		intent.putExtra(Intent.EXTRA_EMAIL, "malacma@gmail.com");
+		intent.putExtra(Intent.EXTRA_SUBJECT, "ERRO");
+		intent.putExtra(Intent.EXTRA_TEXT, "I'm email body.");
+
+		a.startActivity(Intent.createChooser(intent, "Send Email"));
 	}
 	
 	public int uploadFile(String caminhoImagem, String caminhoServidor,final View rootView) {

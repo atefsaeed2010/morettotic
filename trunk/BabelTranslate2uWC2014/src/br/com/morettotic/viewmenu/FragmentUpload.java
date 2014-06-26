@@ -175,34 +175,48 @@ public class FragmentUpload extends Fragment {
 	}
 
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data); 
 		try {
+
+			if (resultCode == Activity.RESULT_OK
+					&& requestCode == SELECT_PICTURE) {
+
+				Uri selectedImageUri = data.getData();
+
+				// Log.d("onActivityResult selectedImageUri: ",
+				// selectedImageUri.getPath());
+
+				uploadFile = getPath(selectedImageUri);
 			
-			if (resultCode == Activity.RESULT_OK) {
-				if (requestCode == SELECT_PICTURE) {
-					Uri selectedImageUri = data.getData();
-					
-					//Log.d("onActivityResult selectedImageUri: ", selectedImageUri.getPath());
-					
-					uploadFile = getPath(selectedImageUri);
-					
-					//Log.d("onActivityResult uploadFile: ", uploadFile);
-				}
+
 			}
 		} catch (Exception e) {
+			final String erro = e.getMessage();
 			builder1 = new AlertDialog.Builder(MAINWINDOW);
-			builder1.setMessage("Please try again later!" +e.getLocalizedMessage());
-			//builder1.setIcon(R.drawable.ic_payment);
+			builder1.setMessage("Please try again later! Send the error by email to us fix it! Thanks");
+			// builder1.setIcon(R.drawable.ic_payment);
 			builder1.setCancelable(true);
 			builder1.setNegativeButton("OK",
 					new DialogInterface.OnClickListener() {
 						public void onClick(DialogInterface dialog, int id) {
 							
-							dialog.cancel();
+							URLParser.sendEmailIntent(erro, MAINWINDOW);
 							
+							dialog.cancel();
+
+						}
+					});
+			builder1.setPositiveButton("Cancel",
+					new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int id) {
+							
+							
+							dialog.cancel();
+
 						}
 					});
 
-			//alert11 = builder1.create();
+			// alert11 = builder1.create();
 			builder1.show();
 		}
 	}
@@ -218,7 +232,7 @@ public class FragmentUpload extends Fragment {
 		Cursor cursor = this.getActivity().getContentResolver()
 				.query(uri, projection, null, null, null);
 		if (cursor != null) {
-			int column_index = 0;//cursor.getColumnIndex(MediaStore.Images.Media.DATA);
+			int column_index = 0;// cursor.getColumnIndex(MediaStore.Images.Media.DATA);
 			cursor.moveToFirst();
 			return cursor.getString(column_index);
 		}
@@ -239,18 +253,13 @@ public class FragmentUpload extends Fragment {
 		return true;
 	}
 
-	/**private Drawable ImageOperations(Context ctx, String url,
-			String saveFilename) {
-		try {
-			InputStream is = (InputStream) this.fetch(url);
-			Drawable d = Drawable.createFromStream(is, "src");
-			return d;
-		} catch (MalformedURLException e) {
-			return null;
-		} catch (IOException e) {
-			return null;
-		}
-	}**/
+	/**
+	 * private Drawable ImageOperations(Context ctx, String url, String
+	 * saveFilename) { try { InputStream is = (InputStream) this.fetch(url);
+	 * Drawable d = Drawable.createFromStream(is, "src"); return d; } catch
+	 * (MalformedURLException e) { return null; } catch (IOException e) { return
+	 * null; } }
+	 **/
 
 	public Object fetch(String address) throws MalformedURLException,
 			IOException {

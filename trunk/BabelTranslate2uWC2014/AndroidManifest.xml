@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.morettotic.navdraw"
-    android:versionCode="5755"
-    android:versionName="WC2014" >
+    android:versionCode="69"
+    android:versionName="beta1.0.12" >
 
     <uses-sdk
         android:minSdkVersion="4"
