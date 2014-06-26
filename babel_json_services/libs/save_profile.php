@@ -68,7 +68,7 @@ if ($id == "-1" || $id == "") {
                 'true',  
                 '" . $birth . "',  
                 '" . $paypall . "',  
-                '0',  
+                '5',  
                 '" . $role . "',  
                 '" . $natureP . "', 
                 '" . $proficiency . "' ,  
