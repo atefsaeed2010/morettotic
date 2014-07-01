@@ -1,48 +1,75 @@
-<!--?php
-/** * Copyright 2011 Facebook, Inc.
- * * Licensed under the Apache License, Version 2.0 (the "License"); you may
- * not use this file except in compliance with the License. You may obtain * a copy of the License at
- * *     http://www.apache.org/licenses/LICENSE-2.0
- * * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
- * License for the specific language governing permissions and limitations * under the License.
- */require 'facebook.php';
+<?php
+/**
+ * Copyright 2011 Facebook, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may
+ * not use this file except in compliance with the License. You may obtain
+ * a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations
+ * under the License.
+ */
+require 'facebook.php';
+
 // Create our Application instance (replace this with your appId and secret).
-$facebook = new Facebook(array(    'appId' =-->
+$facebook = new Facebook(array(
+    'appId' => '754601351216534',
+    'secret' => 'd9ed7cf6495fba5f78e09032740669f6',
+        ));
+
+// Get User ID
+$user = $facebook->getUser();
+
+// We may or may not have this data based on whether the user is logged in.
+//
+// If we have a $user id here, it means we know the user is logged into
+// Facebook, but we don't know if the access token is valid. An access
+// token is invalid if the user logged out of Facebook.
+
+if ($user) {
+    try {
+        // Proceed knowing you have a logged in user who's authenticated.
+        $user_profile = $facebook->api('/me');
+        $friends = $facebook->api('/me/friends');
+
+        //print_r($friends);
+        //echo "<img src=\"https://graph.facebook.com/" . $user->id . "/picture\">";
+    } catch (FacebookApiException $e) {
+        error_log($e);
+        $user = null;
+    }
+}
+
+// Login or logout url will be needed depending on current user state.
+if ($user) {
+    $logoutUrl = $facebook->getLogoutUrl();
+} else {
+    $statusUrl = $facebook->getLoginStatusUrl();
+    $loginUrl = $facebook->getLoginUrl();
+}
+
+// This call will always work since we are fetching public data.
+//$naitik = $facebook->api('/naitik');
+
+
+
+function get_file_name($copyurl) {
+    return $copyurl . "jpg";
+}
+?>
+<!doctype html>
 <html xmlns:fb="http://www.facebook.com/2008/fbml">
-  <head>
-    <meta content="text/html; charset=windows-1252" http-equiv="content-type">
-  </head>
-  <body>'754601351216534', 'secret' =&gt;
-    'd9ed7cf6495fba5f78e09032740669f6', ));
-    // Get User ID
-    $user = $facebook-&gt;getUser();
-    // We may or may not have this data based on whether the user is logged in.
-    //
-    // If we have a $user id here, it means we know the user is logged into
-    // Facebook, but we don't know if the access token is valid. An access
-    // token is invalid if the user logged out of Facebook.
-    if ($user) { try { // Proceed knowing you have a logged in user who's
-    authenticated. $user_profile = $facebook-&gt;api('/me'); $friends =
-    $facebook-&gt;api('/me/friends'); //print_r($friends); //echo "<img src="%5C%22https://graph.facebook.com/%22"
-      .="" $user-="">id . "/picture\"&gt;"; } catch (FacebookApiException $e) {
-    error_log($e); $user = null; }
-    }
-    // Login or logout url will be needed depending on current user state.
-    if ($user) { $logoutUrl = $facebook-&gt;getLogoutUrl();
-    } else { $statusUrl = $facebook-&gt;getLoginStatusUrl(); $loginUrl =
-    $facebook-&gt;getLoginUrl();
-    }
-    // This call will always work since we are fetching public data.
-    //$naitik = $facebook-&gt;api('/naitik');
-    function get_file_name($copyurl) { return $copyurl . "jpg";
-    }
-    ?&gt;
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.24/themes/base/jquery-ui.css">
-    <script language="javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script language="javascript" src="http://code.jquery.com/ui/jquery-ui-git.js"></script>
-    <title>UNIVOXER FACEBOOK</title>
-    <style>
+    <head>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.24/themes/base/jquery-ui.css">
+        <script language="javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script language="javascript" src="http://code.jquery.com/ui/jquery-ui-git.js"></script>
+        <title>UNIVOXER FACEBOOK</title>
+        <style>
             body {
                 font-family: 'Lucida Grande', Verdana, Arial, sans-serif;
                 margin-left: 0px;
@@ -114,78 +141,97 @@ $facebook = new Facebook(array(    'appId' =-->
                 height: 30px;
             }
         </style>
-    <?php if ($user): ?>
-    <?php else: ?>
-    <div> <a href="%3C?php%20echo%20$loginUrl;%20?%3E">Login with Facebook</a>
-    </div>
-    <?php endif ?>
-    <?php if ($user): ?>
-    <?php             //$json = json_encode($user_profile);
-            // var_dump($json);            //var_dump($user_profile);
+    </head>
+    <body >
+
+
+        <?php if ($user): ?>
+
+        <?php else: ?>
+            <div>
+                <a href="<?php echo $loginUrl; ?>">Login with Facebook</a>
+            </div>
+        <?php endif ?>
+
+
+
+
+        <?php if ($user): ?>
+
+            <?php
+            //$json = json_encode($user_profile);
+            // var_dump($json);
+            //var_dump($user_profile);
             //copia a imagem do face pro meu diretorio
+
             $dir = '../libs/avatars/';
-            $iurm = "https://graph.facebook.com/" . $user . "/picture";            //echo get_file_name($iurm);
+
+            $iurm = "https://graph.facebook.com/" . $user . "/picture";
+            //echo get_file_name($iurm);
             $fName = "resized_$user.jpg";
-            copy($iurm, $dir . $fName);            //var_dump($content);
-            //Store in the filesystem.            //echo $dir . get_file_name();
+
+            copy($iurm, $dir . $fName);
+            //var_dump($content);
+            //Store in the filesystem.
+            //echo $dir . get_file_name();
             ?>
-    <form action="paypal." method="post" name="form1">
-      <table class="as_wrapper1">
-        <tbody>
-          <tr>
-            <td colspan="2">
-              <h3>Univoxer - facebook</h3>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <h4>Registre-se</h4>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2"> <input name="avatar" value="&lt;?php echo " https:=""
-                graph.facebook.com="" $user="" picture"="" ?="" type="hidden">"
-              /&gt; <input name="id_user" value="-1" type="hidden"> </td>
-          </tr>
-          <tr>
-            <td><label>Avatar</label></td>
-            <td><img src="%3C?php%20echo%20$iurm;%20?%3E"></td>
-          </tr>
-          <tr>
-            <td><label>Welcome:</label></td>
-            <td><input name="name" value="&lt;?php echo strtoupper($user_profile['name']); ?&gt;"
-                class="mbt1" type="text"></td>
-          </tr>
-          <tr>
-            <td><label>email</label></td>
-            <td><input name="email" value="&lt;?php echo " ";="" ?="" type="text">"
-              class="mbt1"/&gt;</td>
-          </tr>
-          <tr>
-            <td><label>Birthday</label></td>
-            <td><input name="birthday" id="datepicker" value="&lt;?php echo " ";=""
-                ?="" type="text">" class="mbt1"/&gt;</td>
-          </tr>
-          <tr>
-            <td><label>Password</label></td>
-            <td><input name="passwd" value="&lt;?php echo " ";="" ?="" type="password">"
-              class="mbt1"/&gt;</td>
-          </tr>
-          <tr>
-            <td><label>Password 1</label></td>
-            <td><input name="passwd1" value="&lt;?php echo " ";="" ?="" type="password">"
-              class="mbt1"/&gt;</td>
-          </tr>
-          <tr>
-            <td colspan="2" align="right"> <input id="submit1" value="Register"
-                class="mbt" type="button"> </td>
-          </tr>
-        </tbody>
-      </table>
-    </form>
-    <?php else: ?> <strong><em>You are not Connected.</em></strong>
-    <?php endif ?>
-    <script>
+            <a href="index.php"></a>
+            <form action="paypal." method="post" name="form1"> 
+
+                <table class="as_wrapper1">
+                    <tr>
+                        <td colspan="2">
+                            <h3>Univoxer - facebook</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <h4>Registre-se</h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="hidden" name="avatar" value="<?php echo "https://graph.facebook.com/$user/picture" ?>" />
+                            <input type="hidden" name="id_user" value="-1" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Avatar</label></td>
+                        <td><img src="<?php echo $iurm; ?>"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label>Welcome:</label></td>
+                        <td><input type="text" name="name" value="<?php echo strtoupper($user_profile['name']); ?>" class="mbt1"/></td>
+                    </tr>
+                    <tr>
+                        <td><label>email</label></td>
+                        <td><input type="text" name="email" value="<?php echo ""; ?>" class="mbt1"/></td>
+                    </tr>
+                    <tr>
+                        <td><label>Birthday</label></td>
+                        <td><input type="text" name="birthday"id="datepicker" value="<?php echo ""; ?>" class="mbt1"/></td>
+                    </tr>
+                    <tr>
+                        <td><label>Password</label></td>
+                        <td><input type="password" name="passwd" value="<?php echo ""; ?>" class="mbt1"/></td>
+                    </tr>
+                    <tr>
+                        <td><label>Password 1</label></td>
+                        <td><input type="password" name="passwd1" value="<?php echo ""; ?>" class="mbt1"/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="right">
+                            <input type="button" id="submit1" value="Register" class="mbt"/>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+<?php else: ?>
+            <strong><em>You are not Connected.</em></strong>
+        <?php endif ?>
+        <script>
             document.getElementById("submit1").onclick = function() {
                 //alert();
                 if (!validateEmail(document.form1.email.value)) {
@@ -204,7 +250,7 @@ $facebook = new Facebook(array(    'appId' =-->
                     alert("Birthday required!");
                     return;
                 }
-                if (document.form1.passwd.value != document.form1.passwd1.value) {
+                if (document.form1.passwd.value != document.form1.passwd.value) {
                     alert("Password dont match!");
                     return;
                 }
@@ -277,5 +323,5 @@ $facebook = new Facebook(array(    'appId' =-->
                 return re.test(email);
             }
         </script>
-  </body>
+    </body>
 </html>

@@ -90,7 +90,7 @@ $row = mysqli_fetch_array($result);
         </style>
     </head>
 
-    <body style="background-image: url('http://www.nosnaldeia.com.br/babel_json_services/libs/avatars/bg_icon.png'); background-repeat: no-repeat">
+    <body style="background-size: 100% 100% ;background-image: url('http://www.nosnaldeia.com.br/babel_json_services/libs/avatars/bg_icon.png'); background-repeat: no-repeat">
         <div class="as_wrapper">
             <br>
                 <br>

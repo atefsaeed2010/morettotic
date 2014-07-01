@@ -24,6 +24,15 @@ $mensagem = "FINISH CONF";
 //Finish time from call
 $end_time = gmdate("Y-m-d H:i:s", $timestamp);
 
+//se tiver o id do tradutor
+if (isset($_GET['id_t'])) {
+    $query = "SELECT token FROM `call` WHERE `to_c` = " . $_GET['id_t'] 
+            . " and start_t = end_t order by id_call desc limit 1";
+    $result = mysqli_query($con, $query);
+    $row = mysqli_fetch_array($result);
+    $token = $row['token'];
+}
+
 //Update a call set finish time
 $query = "UPDATE  `call` SET  `end_t` =  '$end_time' WHERE  token = '$token'";
 $result = mysqli_query($con, $query);
@@ -56,7 +65,7 @@ $hours = $interval->format('%h');
 $minutes = $interval->format('%i');
 
 
-$spend_credits = ((50*$minutes)/60);
+$spend_credits = ((50 * $minutes) / 60);
 //echo $hours;
 //echo $spend_credits;
 //echo $interval;

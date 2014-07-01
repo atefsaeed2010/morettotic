@@ -83,6 +83,9 @@ switch ($action) {
     case "SHOWCOINS":
         include './paypall/coins.html';
         break;
+    case "MAPS":
+        include './libs/social_maps.php';
+        break;
     default:
         include './libs/login_profile.php';
         break;
