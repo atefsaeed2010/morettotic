@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bk_login"
-    android:gravity="end" >
+    android:gravity="fill_horizontal" >
 
     <!-- you can set layout accordingly -->
 
@@ -164,6 +164,7 @@
         android:hint="Signin or register"
         android:paddingLeft="32dp"
         android:paddingRight="32dp"
-        android:text="Signin or register" />
+        android:text="Signin or register"
+         />
     
 </RelativeLayout>

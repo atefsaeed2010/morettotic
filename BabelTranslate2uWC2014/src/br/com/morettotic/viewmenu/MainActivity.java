@@ -96,10 +96,10 @@ public class MainActivity extends Activity {
 		navDrawerItems.add(new NavDrawerItem("Conference",
 				R.drawable.ic_conference));
 
-		navDrawerItems.add(new NavDrawerItem("Configurations",
-				R.drawable.ic_config));
-
-		navDrawerItems.add(new NavDrawerItem("Univoxer Credits",
+		//navDrawerItems.add(new NavDrawerItem("Configurations",
+		//		R.drawable.ic_config));
+		//navDrawerItems.
+		navDrawerItems.add(new NavDrawerItem("Coins",
 				R.drawable.ic_payment));
 
 		navDrawerItems.add(new NavDrawerItem("Exit", R.drawable.ic_exit));
@@ -197,7 +197,7 @@ public class MainActivity extends Activity {
 				double credits = Float.parseFloat(MY_PROFILE.getCredits());
 				// Nao possui creditos meu amigo vai comprar (é usuario)!!!!!!
 				if (credits < 1&&MY_PROFILE.getRoleId().equals("1")) {
-					displayView(5);
+					displayView(4);
 				} else {
 					fragment = new FragmentCountries();
 				}
@@ -213,13 +213,13 @@ public class MainActivity extends Activity {
 					fragment = new FragmentConference();
 				}
 				break;
-			case 4:
+			/*case 4:
 				fragment = new FragmentUpload();
-				break;
-			case 5:
+				break;*/
+			case 4:
 				fragment = new FragmentPaypal();
 				break;
-			case 6:
+			case 5:
 				destroy();
 				break;
 			default:

@@ -35,6 +35,13 @@ public class FragmentPaypal extends Fragment {
 		builder1.show();*/
 		
 		web = (WebView) rootView.findViewById(R.id.paypallWebView);
+		
+		//web.setWebChromeClient(new InredisChromeClient(this));
+		//web.setWebViewClient(new InredisWebViewClient(this));
+		web.clearCache(true);
+		web.clearHistory();
+		web.getSettings().setJavaScriptEnabled(true);
+		web.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
 		web.loadUrl(MAIN_URL + "paypall/?id="+MY_PROFILE.getId());
 		
 		//Vibra pro amigo comprar moedas

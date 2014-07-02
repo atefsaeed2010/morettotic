@@ -14,8 +14,8 @@
         <item>Profile</item>
         <item>Translate</item>
         <item>Conference</item>
-        <item>Configurations</item>
-        <item>Univoxer Coins</item>
+      <!--  <item>Configurations</item> -->
+        <item>Coins</item>
         <item>Exit</item>
     </string-array>
 
@@ -26,7 +26,7 @@
         <item>@drawable/ic_profile</item>
         <item>@drawable/ic_translatetou</item>
         <item>@drawable/ic_conference</item>
-        <item>@drawable/bt_upload</item>
+       <!--   <item>@drawable/bt_upload</item>-->
         <item>@drawable/ic_payment</item>
         <item>@drawable/ic_exit</item>
     </array>
