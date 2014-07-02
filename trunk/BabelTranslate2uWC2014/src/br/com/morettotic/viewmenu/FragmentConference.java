@@ -1,5 +1,6 @@
 package br.com.morettotic.viewmenu;
 
+import static br.com.morettotic.entity.Profile.FINISH_CONF1;
 import static br.com.morettotic.entity.Profile.FINISH_CONF;
 import static br.com.morettotic.entity.Profile.MAIN_URL;
 import static br.com.morettotic.viewmenu.MainActivity.MAINWINDOW;
@@ -34,15 +35,14 @@ import br.com.morettotic.navdraw.R;
 
 public class FragmentConference extends Fragment {
 	private ProgressDialog dialog = null;
-	private TextView translatorName, credits,textViewTime;
+	private TextView translatorName, credits, textViewTime;
 	private Button atender, desligar;
 	private View rootView;
 	private RatingBar ratingBar1;
 	private WebView web;
-	private ImageView from,to;
+	private ImageView from, to;
 	private long startTime, countUp;
 	private Chronometer stopWatch;
-	
 
 	// this Fragment will be called from MainActivity
 	public FragmentConference() {
@@ -55,73 +55,80 @@ public class FragmentConference extends Fragment {
 		rootView = inflater.inflate(R.layout.conference_fragment, container,
 				false);
 		translatorName = (TextView) rootView.findViewById(R.id.textView1);
-		
+
 		from = (ImageView) rootView.findViewById(R.id.imageViewFrom);
 		to = (ImageView) rootView.findViewById(R.id.imageViewTo);
-		//to.set
-		//Change flags 
+		// to.set
+		// Change flags
 		setBackgroundStyle(from, MY_PROFILE.getNature().charAt(0));
-		if(MY_PROFILE.getRoleId().equals("1")){
-			setBackgroundStyle(to,MY_PROFILE.getCallToLanguage().charAt(0) );
-		}else{
-			setBackgroundStyle(to,MY_PROFILE.getProficiency().charAt(0) );
+		if (MY_PROFILE.getRoleId().equals("1")) {
+			setBackgroundStyle(to, MY_PROFILE.getCallToLanguage().charAt(0));
+		} else {
+			setBackgroundStyle(to, MY_PROFILE.getProficiency().charAt(0));
 		}
-		
-		
-		
+
 		translatorName.setText(MY_PROFILE.getTranslatorName());
 
 		credits = (TextView) rootView.findViewById(R.id.textViewCredits);
 		stopWatch = (Chronometer) rootView.findViewById(R.id.chronometer1);
-        startTime = SystemClock.elapsedRealtime();
+		startTime = SystemClock.elapsedRealtime();
 
-        textViewTime= (TextView) rootView.findViewById(R.id.textViewTime);
-        stopWatch.setOnChronometerTickListener(new OnChronometerTickListener(){
-            @Override
-            public void onChronometerTick(Chronometer arg0) {
-                countUp = (SystemClock.elapsedRealtime() - arg0.getBase()) / 1000;
-                String asText = (countUp / 60) + ":" + (countUp % 60); 
-                textViewTime.setText(asText);
-            }
-        });
-        
-		
-		
+		textViewTime = (TextView) rootView.findViewById(R.id.textViewTime);
+		stopWatch.setOnChronometerTickListener(new OnChronometerTickListener() {
+			@Override
+			public void onChronometerTick(Chronometer arg0) {
+				countUp = (SystemClock.elapsedRealtime() - arg0.getBase()) / 1000;
+				String asText = (countUp / 60) + ":" + (countUp % 60);
+				textViewTime.setText(asText);
+			}
+		});
+
 		credits.setText("Credits: (" + MY_PROFILE.getCredits() + ") minutes");
 
 		dialog = new ProgressDialog(rootView.getContext());
-		
+
 		ratingBar1 = (RatingBar) rootView.findViewById(R.id.ratingBar1);
-		
+
 		web = (WebView) rootView.findViewById(R.id.avatarIdWebView);
 		// web.loadUrl("http://nosnaldeia.com.br/babel_json_services/libs/avatars/resized_IMG_20140322_180057.jpg");
-		web.loadUrl(MAIN_URL + "?action=AVATAR_VIEW&id_user="+ MY_PROFILE.getTranslatorId());
-		
+		web.loadUrl(MAIN_URL + "?action=AVATAR_VIEW&id_user="
+				+ MY_PROFILE.getTranslatorId());
+
 		atender = (Button) rootView.findViewById(R.id.atender);
 		desligar = (Button) rootView.findViewById(R.id.button2);
-		
-		CSIPService csipService = CSIPService.getInstance(getActivity(),MY_PROFILE);
-		
+
+		CSIPService csipService = CSIPService.getInstance(getActivity(),
+				MY_PROFILE);
+
 		if (!csipService.isChamadaEmAndamento()) {
-			if (MY_PROFILE.getSipTranslatorU() == null || MY_PROFILE.getSipTranslatorU().equals("null")) {
+			if (MY_PROFILE.getSipTranslatorU() == null
+					|| MY_PROFILE.getSipTranslatorU().equals("null")) {
 				MAINWINDOW.displayView(2);
-			}else{
+			} else {
 				CSIPService.getInstance(getActivity(), MY_PROFILE).ligar();
 				atender.setVisibility(View.GONE);
+				ratingBar1.setVisibility(View.VISIBLE);// Exibe
 				stopWatch.start();
 			}
 		} else {
-			ratingBar1.setVisibility(View.GONE);//Tradutor nao visualiza  a barra de votacao
-			web.loadUrl(MAIN_URL + "?action=AVATAR_VIEW&id_user="+ MY_PROFILE.getId());
+			//ratingBar1.setVisibility(View.GONE);// Tradutor nao visualiza a
+												// barra de votacao
+			web.loadUrl(MAIN_URL + "?action=AVATAR_VIEW&id_user="
+					+ MY_PROFILE.getId());
 			atender.setVisibility(View.VISIBLE);
+			ratingBar1.setVisibility(View.GONE);// Exibe
 		}
-		
+
 		desligar.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				// Perform action on click
 				dialog.setMessage("Finish...");
 				dialog.show();
-				new FinishConfAction().execute(MAIN_URL + FINISH_CONF+ MY_PROFILE.getCallToken());
+				if (MY_PROFILE.getCallToken() != null) {
+					new FinishConfAction().execute(MAIN_URL + FINISH_CONF + MY_PROFILE.getCallToken());
+				} else {
+					new FinishConfAction().execute(MAIN_URL + FINISH_CONF1 + MY_PROFILE.getId());
+				}
 
 			}
 		});
@@ -134,20 +141,22 @@ public class FragmentConference extends Fragment {
 			}
 		});
 
-		ratingBar1.setVisibility(View.VISIBLE);//Exibe
-		ratingBar1.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
+		
+		ratingBar1
+				.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
 					public void onRatingChanged(RatingBar ratingBar,
 							float rating, boolean fromUser) {
 						String.valueOf(rating);
 						//
-						new RateAction().execute(MAIN_URL + 
-								"?action=EVALUATION&id_user="+MY_PROFILE.getId()+
-								"&id_trans="+MY_PROFILE.getTranslatorId()+
-								"&rate="+rating);
-						ratingBar1.setVisibility(View.GONE);//votou some
+						new RateAction().execute(MAIN_URL
+								+ "?action=EVALUATION&id_user="
+								+ MY_PROFILE.getId() + "&id_trans="
+								+ MY_PROFILE.getTranslatorId() + "&rate="
+								+ rating);
+						ratingBar1.setVisibility(View.GONE);// votou some
 					}
 				});
-		
+
 		return rootView;
 	}
 
@@ -190,7 +199,8 @@ public class FragmentConference extends Fragment {
 		protected void onPostExecute(String result) {
 			// TODO Auto-generated method stub
 			MY_PROFILE.setJson(result);
-			CSIPService.setDestino(MY_PROFILE.getSipServ(),MY_PROFILE.getSipTranslatorU());
+			CSIPService.setDestino(MY_PROFILE.getSipServ(),
+					MY_PROFILE.getSipTranslatorU());
 
 			dialog.dismiss();
 			MAINWINDOW.displayView(2);
@@ -198,6 +208,7 @@ public class FragmentConference extends Fragment {
 		}
 
 	}
+
 	class RateAction extends AsyncTask<String, Void, String> {
 
 		protected String doInBackground(String... urls) {
@@ -210,7 +221,7 @@ public class FragmentConference extends Fragment {
 
 			try {
 				json1 = jParser.getStringFromUrl(urls[0]);
-				
+
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -230,9 +241,9 @@ public class FragmentConference extends Fragment {
 		}
 
 	}
-	
-	private void setBackgroundStyle(ImageView imageV, char from){
-		switch(from){
+
+	private void setBackgroundStyle(ImageView imageV, char from) {
+		switch (from) {
 		case '1':
 			imageV.setBackgroundResource(R.drawable.br_b);
 			break;
@@ -257,10 +268,9 @@ public class FragmentConference extends Fragment {
 		case '8':
 			imageV.setBackgroundResource(R.drawable.es_b);
 			break;
-	
+
 		}
-			
-		
-		//imageV.setBackgroundResource(R.drawable.ic_brasil);
+
+		// imageV.setBackgroundResource(R.drawable.ic_brasil);
 	}
 }

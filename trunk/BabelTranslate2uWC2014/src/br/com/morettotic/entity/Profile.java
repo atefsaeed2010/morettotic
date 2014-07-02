@@ -40,6 +40,7 @@ public class Profile implements Serializable {
 	public static final String C_TRANSLATOR_AVATAR = "translator_avatar";
 	public static final String C_USER_AVATAR = "user_avatar";
 	public static final String FINISH_CONF = "?action=FINISH_PROFILE&token=";
+	public static final String FINISH_CONF1 = "?action=FINISH_PROFILE&id_t=";
 	
 
 	private String json;

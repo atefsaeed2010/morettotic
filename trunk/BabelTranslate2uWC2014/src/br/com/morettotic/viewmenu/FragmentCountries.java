@@ -292,7 +292,23 @@ public class FragmentCountries extends Fragment {
 	
 	private void loadTranslator(String countryId,String countryName){
 		
-		new br.com.morettotic.viewmenu.utils.Vibrator2u(MainActivity.MAINWINDOW).callButton();
+		if(Float.parseFloat(MY_PROFILE.getCredits())<1){
+			AlertDialog.Builder builder1 = new AlertDialog.Builder(MAINWINDOW);
+			builder1.setMessage("Buy coins to call a translator. \nTotal coins:"+MY_PROFILE.getCredits());
+			builder1.setIcon(R.drawable.ic_payment);
+			builder1.setCancelable(true);
+			builder1.setNegativeButton("OK",
+					new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int id) {
+							MAINWINDOW.displayView(4);
+							dialog.cancel();							
+						}
+					});
+			builder1.show();
+			return;
+		}
+		
+		new br.com.morettotic.viewmenu.utils.Vibrator2u(MAINWINDOW).callButton();
 
 		spinnerTxt = serviceType.getSelectedItem().toString();
 		
