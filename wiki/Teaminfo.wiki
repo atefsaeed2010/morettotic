@@ -16,7 +16,7 @@ ideia inicial com a timeline e as opções para controlar os dados e a visibilid
 [https://drive.google.com/file/d/0B0QFV1hpvxNXaDk0cF9FX0phRkxaa1pVN1VSbldtSEcxZW04/edit?usp=sharing]
 ----
 
-== UNIVOX ==
+== UNIVOXER ==
 
   * SITE (CONSULTA SALDO, COMPRA CREDITO, PAGAMENTO)ok
   * COMPRAR NUVEM DO GOOGLE ok
