@@ -1,6 +1,14 @@
 #Todo
+----
 
 = List @Todo = 
+
+= REUNIAO 24/07/2014 =
+
+|| Smarcities || Implementação da persistência da engine do sistema usando o hibernate || GEORGE||
+|| Smarcities / IMAP || Design da interface e da identidade visual|| Guime||
+||IMAP||Implementação da prova de conceito dos componentes da arquitetura usando JSF|| Jackson||
+----
 
 == UNIVOX ==
 
