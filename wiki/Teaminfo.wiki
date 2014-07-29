@@ -1,4 +1,6 @@
 #Todo
+
+Forum [https://groups.google.com/forum/#!forum/smartcities_sinapse]
 ----
 
 = List @Todo = 
