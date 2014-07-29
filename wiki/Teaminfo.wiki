@@ -7,7 +7,7 @@
 || Smarcities || Implementação da persistência da engine do sistema usando o hibernate || GEORGE||
 || Smarcities / IMAP || Design da interface e da identidade visual|| Guime||
 ||IMAP||Implementação da prova de conceito dos componentes da arquitetura usando JSF|| Jackson||
-
+||Univoxer||Preparar para a Abrasel Ceara||Moretto||
 ----
 
 == UNIVOXER ==
