@@ -9,6 +9,7 @@
 ||IMAP||Implementação do arquitetura usando HTML 5 HERON js Servlet e mapas hibernate || Jackson||
 ||Univoxer||Preparar para a Abrasel Ceara||Moretto / Arthur *** ABERTO||
 ||Smartcities||Aberto||Moretto / Arthur *** ABERTO||
+||INFRA|| COnfiguração do servidor ||Moretto / Jaque||
 
 
 
