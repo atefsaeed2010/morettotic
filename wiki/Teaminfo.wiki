@@ -2,6 +2,16 @@
 
 = List @Todo = 
 
+= REUNIAO 8/08/2014 =
+
+|| Smarcities || Implementação da persistência da engine do sistema usando o hibernate || GEORGE *** ABERTO||
+|| Smarcities / IMAP || Design da interface e da identidade visual (Logo imap / trabalhar na interface)|| Guime||
+||IMAP||Implementação do arquitetura usando HTML 5 HERON js Servlet e mapas hibernate || Jackson||
+||Univoxer||Preparar para a Abrasel Ceara||Moretto / Arthur *** ABERTO||
+||Smartcities||Aberto||Moretto / Arthur *** ABERTO||
+
+
+
 = REUNIAO 24/07/2014 =
 
 || Smarcities || Implementação da persistência da engine do sistema usando o hibernate || GEORGE||
